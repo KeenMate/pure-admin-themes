@@ -1,0 +1,68 @@
+{
+  "$schema": "../schemas/pure-admin-theme.schema.json",
+  "name": "Audi",
+  "id": "audi",
+  "version": "2.0.2",
+  "description": "Premium dark theme inspired by Audi's design language with red accents",
+  "author": "KeenMate",
+  "license": "MIT",
+
+  "modes": {
+    "supported": ["light", "dark"],
+    "default": "dark",
+    "cssClass": "pa-mode-{mode}",
+    "autoSwitch": {
+      "enabled": true,
+      "method": "prefers-color-scheme",
+      "respectUserPreference": true
+    }
+  },
+
+  "colorVariants": null,
+
+  "features": {
+    "cssVariables": true,
+    "responsiveLayout": true,
+    "compactMode": true,
+    "sidebarCollapse": true,
+    "sidebarIconMode": true,
+    "customFonts": true,
+    "rtlSupport": false,
+    "printStyles": false
+  },
+
+  "colors": {
+    "accent": "#bb0a30",
+    "accentHover": "#d40000",
+    "background": "#0d0d0d",
+    "surface": "#1a1a1a",
+    "text": "#ffffff",
+    "textSecondary": "#999999",
+    "border": "#333333",
+    "header": "#000000",
+    "sidebar": "#0d0d0d",
+    "footer": "#0d0d0d"
+  },
+
+  "fonts": {
+    "family": "Fira Sans Condensed, Arial Narrow, Arial, sans-serif",
+    "files": [
+      { "family": "Fira Sans Condensed", "src": "assets/fonts/wEOhEADFm8hSaQTFG18FErVhsC9x-tarUfvtrftV.woff2", "weight": 400, "style": "normal" },
+      { "family": "Fira Sans Condensed", "src": "assets/fonts/wEOhEADFm8hSaQTFG18FErVhsC9x-tarUfLtrftV.woff2", "weight": 400, "style": "normal" },
+      { "family": "Fira Sans Condensed", "src": "assets/fonts/wEOhEADFm8hSaQTFG18FErVhsC9x-tarUfrtrftV.woff2", "weight": 400, "style": "normal" },
+      { "family": "Fira Sans Condensed", "src": "assets/fonts/wEOhEADFm8hSaQTFG18FErVhsC9x-tarUfXtrftV.woff2", "weight": 400, "style": "normal" },
+      { "family": "Fira Sans Condensed", "src": "assets/fonts/wEOhEADFm8hSaQTFG18FErVhsC9x-tarUfntrftV.woff2", "weight": 400, "style": "normal" },
+      { "family": "Fira Sans Condensed", "src": "assets/fonts/wEOhEADFm8hSaQTFG18FErVhsC9x-tarUfjtrftV.woff2", "weight": 400, "style": "normal" },
+      { "family": "Fira Sans Condensed", "src": "assets/fonts/wEOhEADFm8hSaQTFG18FErVhsC9x-tarUfbtrQ.woff2", "weight": 400, "style": "normal" }
+    ]
+  },
+
+  "exports": {
+    "css": "./dist/audi.css",
+    "scss": "./src/scss/audi.scss"
+  },
+
+  "dependencies": {
+    "core": "^2.0.0"
+  }
+}

@@ -1,0 +1,6 @@
+node_modules/
+dist/
+*/dist/
+
+# API key config
+.pureadmin

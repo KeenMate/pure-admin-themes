@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cd:*)",
+      "Bash(echo === $\\(basename \"$dir\"\\) ===:*)",
+      "Bash(echo:*)",
+      "Bash(grep:*)",
+      "Bash(ls:*)",
+      "Bash(test:*)",
+      "Bash(mkdir:*)",
+      "Bash(cd \"C:/Git/KM/pure-admin-themes\" && node scripts/pack-theme.js audi 2>&1)",
+      "Bash(cd \"C:/Git/KM/pure-admin-themes\" && node scripts/pack-theme.js express 2>&1)",
+      "Bash(cd \"C:/Git/KM/pure-admin-themes\" && node scripts/pack-theme.js corporate 2>&1 && echo \"=== DONE ===\" && node scripts/pack-theme.js dark 2>&1 && echo \"=== DONE ===\" && node scripts/pack-theme.js minimal 2>&1)"
+    ]
+  }
+}
