@@ -11,7 +11,7 @@
     "publish": "node scripts/publish-themes.js"
   },
   "dependencies": {
-    "@keenmate/pure-admin-core": "^2.0.0"
+    "@keenmate/pure-admin-core": "file:../pure-admin/packages/core"
   },
   "devDependencies": {
     "archiver": "^7.0.0",

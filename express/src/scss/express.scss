@@ -445,11 +445,11 @@ $header-profile-name-color: $express-black;  // Black text on yellow header
   --pa-input-group-append-bg: #{$express-gray-lightest};
   --pa-input-group-append-text: #{$express-dark};
 
-  // Override alert text to white for saturated backgrounds (Express brand)
-  --pa-alert-success-text: #ffffff;
-  --pa-alert-warning-text: #ffffff;
+  // Override alert text for readability on saturated backgrounds
+  --pa-alert-success-text: #{$base-success-text};
+  --pa-alert-warning-text: #{$base-warning-text};
   --pa-alert-danger-text: #ffffff;
-  --pa-alert-info-text: #ffffff;
+  --pa-alert-info-text: #{$base-info-text};
 
 }
 

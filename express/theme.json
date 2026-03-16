@@ -2,7 +2,7 @@
   "$schema": "../schemas/pure-admin-theme.schema.json",
   "name": "Express",
   "id": "express",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "description": "Bold yellow and red theme inspired by logistics brands",
   "author": "KeenMate",
   "license": "MIT",
