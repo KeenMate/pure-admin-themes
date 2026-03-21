@@ -2,6 +2,28 @@
 
 All notable changes to the Pure Admin Themes collection are documented in this file.
 
+## [2.1.0] - 2026-03-21
+
+### Added
+
+- **ayu:** Warm, elegant theme inspired by the Ayu editor color scheme — three variants: Mirage (bluish dark, default), Dark (deep blacks), and Light
+- **cobalt2:** Rich cobalt blues with signature yellow accent, inspired by Wes Bos's Cobalt2 editor scheme
+- **darkmatter:** Deep space blue theme with cool tones and minimal aesthetic
+- **dracula:** Iconic Dracula color scheme with purple accents
+- **gruvbox:** Retro groove color scheme with warm earthy tones — Soft and Light variants plus dark/light modes
+- **night-owl:** Sarah Drasner's Night Owl palette — deep navy blues with electric blue accents
+- **one-dark:** Atom's One Dark color scheme with blue accents
+- **tokyo-night:** VS Code Tokyo Night-inspired theme with blue-purple accents — includes Storm variant
+- **theme.json schema:** New flat `colorVariants` array with nested `modes`, replacing the old `modes` + `colorVariants.supported` structure. Added `modeCssClass`, `variantCssClass`, and `content` fields
+
+### Changed
+
+- **All themes:** Bumped versions to 2.1.0, core dependency to `^2.1.0`
+- **All themes:** Migrated `theme.json` to new schema — colors moved into `colorVariants[].modes[].colors`, removed top-level `modes` and `colors` objects
+- **audi:** Fixed physical CSS properties (`border-left`/`border-right`) to logical properties (`border-inline-start`/`border-inline-end`) for RTL support
+- **express:** Fixed physical CSS properties (`border-right-color`, `border-right`) to logical properties for RTL support
+- **pack-theme.js:** Updated required fields and README generation to work with new schema
+
 ## [2.0.2] - 2026-02-28
 
 ### Fixed

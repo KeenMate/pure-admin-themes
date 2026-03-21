@@ -4,13 +4,21 @@ Official theme collection for [Pure Admin](https://github.com/keenmate/pure-admi
 
 ## Themes
 
-| Theme | Description | Modes | Custom Fonts |
-|-------|-------------|-------|--------------|
+| Theme | Description | Modes / Variants | Custom Fonts |
+|-------|-------------|-----------------|--------------|
 | **Audi** | Premium dark theme with red accents inspired by Audi's design language | dark, light | Fira Sans Condensed |
-| **Corporate** | Professional blue/gray theme for business applications | light, dark | - |
-| **Dark** | Neutral dark theme with color variants (blue, green, red) | dark, light | - |
-| **Express** | Bold yellow and red theme inspired by logistics brands | light, dark | Fira Sans Condensed |
-| **Minimal** | Ultra clean monochrome theme with grayscale palette | light, dark | - |
+| **Ayu** | Warm, elegant theme inspired by the Ayu editor color scheme | dark, light + Dark/Light variants | - |
+| **Cobalt2** | Rich cobalt blues with signature yellow accent (Wes Bos's Cobalt2) | dark | - |
+| **Corporate** | Professional blue/gray theme for business applications | dark, light | - |
+| **Dark** | Neutral dark theme with color variants (blue, green, red) | dark + Blue/Green/Red variants | - |
+| **Darkmatter** | Deep space blue theme with cool tones and minimal aesthetic | dark | - |
+| **Dracula** | Iconic Dracula color scheme with purple accents | dark | - |
+| **Express** | Bold yellow and red theme inspired by logistics brands | dark, light | Fira Sans Condensed |
+| **Gruvbox** | Retro groove color scheme with warm earthy tones and orange accents | dark, light + Soft/Light variants | - |
+| **Minimal** | Ultra clean monochrome theme with grayscale palette | dark, light | - |
+| **Night Owl** | Sarah Drasner's Night Owl palette — deep navy with electric blue accents | dark | - |
+| **One Dark** | Atom's One Dark color scheme with blue accents | dark | - |
+| **Tokyo Night** | VS Code Tokyo Night-inspired with blue-purple accents | dark + Storm variant | - |
 
 Browse and download themes at [pureadmin.io](https://pureadmin.io).
 
@@ -66,10 +74,18 @@ pure-admin-themes/
 │   ├── src/scss/audi.scss      # Theme source
 │   ├── assets/fonts/*.woff2    # Bundled fonts
 │   └── dist/                   # Build output + ZIP
+├── ayu/
+├── cobalt2/
 ├── corporate/
 ├── dark/
+├── darkmatter/
+├── dracula/
 ├── express/
+├── gruvbox/
 ├── minimal/
+├── night-owl/
+├── one-dark/
+├── tokyo-night/
 ├── schemas/
 │   └── pure-admin-theme.schema.json
 ├── scripts/
@@ -129,7 +145,7 @@ sass scss/audi.scss output.css --load-path=node_modules --silence-deprecation=im
 ## Requirements
 
 - Node.js >= 18
-- `@keenmate/pure-admin-core` ^2.0.0
+- `@keenmate/pure-admin-core` ^2.1.0
 
 ## Links
 
