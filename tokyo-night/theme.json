@@ -1,0 +1,77 @@
+{
+  "$schema": "../schemas/pure-admin-theme.schema.json",
+  "name": "Tokyo Night",
+  "id": "tokyo-night",
+  "version": "2.1.0",
+  "description": "VS Code Tokyo Night-inspired dark theme with blue-purple accents and deep blue-black backgrounds",
+  "content": "## Tokyo Night\n\nA dark theme inspired by the popular Tokyo Night color scheme for VS Code. Deep blue-black backgrounds with cool blue-purple accents create a calm, focused interface perfect for long sessions.\n\n### Highlights\n\n- **Two variants** — Night (deep blue-black, default) and Storm (lighter blue, more contrast)\n- **Blue accent (#7dcfff)** for a cool, crisp feel\n- **System fonts** — no custom font download required\n\n### Variants\n\nSwitch variants by adding a CSS class to `<body>`:\n\n```html\n<body>                            <!-- Night (default) -->\n<body class=\"pa-color-storm\">     <!-- Storm (lighter dark) -->\n```\n\n### Usage\n\n```html\n<link rel=\"stylesheet\" href=\"css/tokyo-night.css\">\n```",
+  "author": "KeenMate",
+  "license": "MIT",
+
+  "variantCssClass": "pa-color-{variant}",
+
+  "colorVariants": [
+    {
+      "id": "",
+      "name": "Night",
+      "description": "Deep blue-black backgrounds with cool blue accents",
+      "file": "dist/tokyo-night.css",
+      "modes": [
+        {
+          "id": "dark",
+          "name": "Dark",
+          "default": true,
+          "colors": {
+            "accent": "#7dcfff",
+            "background": "#1a1b26",
+            "surface": "#1e1f2b",
+            "text": "#a9b1d6",
+            "header": "#16161e",
+            "sidebar": "#1e1f2b"
+          }
+        }
+      ]
+    },
+    {
+      "id": "storm",
+      "name": "Storm",
+      "description": "Lighter blue-dark backgrounds with cool blue accents",
+      "file": "dist/tokyo-night.css",
+      "modes": [
+        {
+          "id": "dark",
+          "name": "Dark",
+          "default": true,
+          "colors": {
+            "accent": "#7dcfff",
+            "background": "#24283b",
+            "surface": "#292e42",
+            "text": "#c0caf5",
+            "header": "#1f2335",
+            "sidebar": "#292e42"
+          }
+        }
+      ]
+    }
+  ],
+
+  "features": {
+    "cssVariables": true,
+    "darkMode": true,
+    "lightMode": false,
+    "responsiveLayout": true,
+    "customFonts": false,
+    "printStyles": false
+  },
+
+  "tags": ["dark", "editor", "cool", "blue", "purple", "tokyo", "night", "storm", "vscode"],
+
+  "exports": {
+    "css": "./dist/tokyo-night.css",
+    "scss": "./src/scss/tokyo-night.scss"
+  },
+
+  "dependencies": {
+    "core": "^2.1.0"
+  }
+}

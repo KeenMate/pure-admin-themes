@@ -4,7 +4,7 @@
   "title": "Pure Admin Theme Manifest",
   "description": "Configuration manifest for Pure Admin CSS themes",
   "type": "object",
-  "required": ["name", "id", "version", "modes", "exports"],
+  "required": ["name", "id", "version", "colorVariants", "exports"],
   "properties": {
     "$schema": {
       "type": "string",
@@ -28,6 +28,10 @@
       "type": "string",
       "description": "Brief description of the theme"
     },
+    "content": {
+      "type": "string",
+      "description": "Markdown content for the theme detail page on pureadmin.io"
+    },
     "author": {
       "type": "string",
       "description": "Theme author or organization"
@@ -36,93 +40,95 @@
       "type": "string",
       "description": "License identifier (e.g., MIT, Apache-2.0)"
     },
-    "modes": {
-      "type": "object",
-      "description": "Light/dark mode configuration",
-      "required": ["supported", "default"],
-      "properties": {
-        "supported": {
-          "type": "array",
-          "items": {
-            "type": "string",
-            "enum": ["light", "dark"]
-          },
-          "minItems": 1,
-          "uniqueItems": true,
-          "description": "List of supported color modes"
-        },
-        "default": {
-          "type": "string",
-          "enum": ["light", "dark"],
-          "description": "Default mode when theme is loaded"
-        },
-        "cssClass": {
-          "type": "string",
-          "default": "pa-mode-{mode}",
-          "description": "CSS class pattern for mode switching. Use {mode} as placeholder."
-        },
-        "autoSwitch": {
-          "type": "object",
-          "description": "Automatic mode switching based on system preferences",
-          "properties": {
-            "enabled": {
-              "type": "boolean",
-              "default": false,
-              "description": "Enable automatic mode switching"
-            },
-            "method": {
-              "type": "string",
-              "enum": ["prefers-color-scheme", "time-based", "manual"],
-              "default": "prefers-color-scheme",
-              "description": "Method for automatic switching"
-            },
-            "respectUserPreference": {
-              "type": "boolean",
-              "default": true,
-              "description": "Remember user's manual override"
-            }
-          }
-        }
-      }
+    "modeCssClass": {
+      "type": "string",
+      "default": "pa-mode-{mode}",
+      "description": "CSS class pattern for mode switching. Use {mode} as placeholder."
+    },
+    "variantCssClass": {
+      "type": "string",
+      "default": "pa-color-{variant}",
+      "description": "CSS class pattern for variant switching. Use {variant} as placeholder."
     },
     "colorVariants": {
-      "type": ["object", "null"],
-      "description": "Color variant configuration (e.g., blue, green, red tints)",
-      "properties": {
-        "supported": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "required": ["id", "name"],
-            "properties": {
-              "id": {
-                "type": "string",
-                "description": "Variant identifier (empty string for default)"
-              },
-              "name": {
-                "type": "string",
-                "description": "Display name for the variant"
-              },
-              "description": {
-                "type": "string",
-                "description": "Brief description of the color variant"
-              },
-              "accentColor": {
-                "type": "string",
-                "description": "Primary accent color for this variant"
+      "type": "array",
+      "description": "Color variants with nested mode definitions and key colors",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["name", "modes", "file"],
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Variant identifier (empty string for default variant)"
+          },
+          "name": {
+            "type": "string",
+            "description": "Display name for the variant"
+          },
+          "description": {
+            "type": "string",
+            "description": "Brief description of the color variant"
+          },
+          "file": {
+            "type": "string",
+            "description": "Path to the compiled CSS file for this variant"
+          },
+          "modes": {
+            "type": "array",
+            "description": "Supported color modes for this variant",
+            "minItems": 1,
+            "items": {
+              "type": "object",
+              "required": ["id", "name", "colors"],
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "enum": ["light", "dark"],
+                  "description": "Mode identifier"
+                },
+                "name": {
+                  "type": "string",
+                  "description": "Display name for the mode"
+                },
+                "default": {
+                  "type": "boolean",
+                  "description": "Whether this is the default mode for the variant"
+                },
+                "colors": {
+                  "type": "object",
+                  "required": ["accent", "background", "surface", "text"],
+                  "properties": {
+                    "accent": {
+                      "type": "string",
+                      "description": "Primary accent color"
+                    },
+                    "background": {
+                      "type": "string",
+                      "description": "Main background color"
+                    },
+                    "surface": {
+                      "type": "string",
+                      "description": "Card/surface background color"
+                    },
+                    "text": {
+                      "type": "string",
+                      "description": "Primary text color"
+                    },
+                    "header": {
+                      "type": "string",
+                      "description": "Header background color (optional, shown when distinctive)"
+                    },
+                    "sidebar": {
+                      "type": "string",
+                      "description": "Sidebar background color (optional, shown when distinctive)"
+                    }
+                  },
+                  "description": "Key theme colors for this mode"
+                }
               }
             }
-          },
-          "description": "List of supported color variants"
-        },
-        "default": {
-          "type": "string",
-          "description": "Default variant ID (empty string for default/none)"
-        },
-        "cssClass": {
-          "type": "string",
-          "default": "pa-color-{variant}",
-          "description": "CSS class pattern for variant switching. Use {variant} as placeholder."
+          }
         }
       }
     },
@@ -169,52 +175,6 @@
           "type": "boolean",
           "default": false,
           "description": "Theme includes print-optimized styles"
-        }
-      }
-    },
-    "colors": {
-      "type": "object",
-      "description": "Key theme colors for preview/documentation",
-      "properties": {
-        "accent": {
-          "type": "string",
-          "description": "Primary accent color"
-        },
-        "accentHover": {
-          "type": "string",
-          "description": "Accent color on hover"
-        },
-        "background": {
-          "type": "string",
-          "description": "Main background color"
-        },
-        "surface": {
-          "type": "string",
-          "description": "Card/surface background color"
-        },
-        "text": {
-          "type": "string",
-          "description": "Primary text color"
-        },
-        "textSecondary": {
-          "type": "string",
-          "description": "Secondary/muted text color"
-        },
-        "border": {
-          "type": "string",
-          "description": "Default border color"
-        },
-        "header": {
-          "type": "string",
-          "description": "Header background color"
-        },
-        "sidebar": {
-          "type": "string",
-          "description": "Sidebar background color"
-        },
-        "footer": {
-          "type": "string",
-          "description": "Footer background color"
         }
       }
     },

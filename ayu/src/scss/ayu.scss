@@ -1,0 +1,498 @@
+/* Ayu Theme for Pure Admin - Warm, elegant editor-inspired theme */
+/* Three variants: Mirage (default dark), Dark (deeper), Light */
+@use 'sass:color';
+
+// =============================================================================
+// THEME COLOR SLOTS (1-9) - Ayu-inspired warm palette
+// =============================================================================
+$color-1: #e6b450;  // Golden (primary accent)
+$color-2: #ffb454;  // Warm Orange (functions)
+$color-3: #aad94c;  // Green (strings/success)
+$color-4: #f07178;  // Coral Red (danger)
+$color-5: #d2a6ff;  // Lavender (accent)
+$color-6: #39bae6;  // Cyan (info)
+$color-7: #acb6bf;  // Cool Gray (neutral)
+$color-8: #bfbdb6;  // Warm Gray (text)
+$color-9: #ff8f40;  // Orange (warning)
+
+// Contrast text colors for color slots
+$color-1-text: #1a1a1a;  // Dark on Golden
+$color-2-text: #1a1a1a;  // Dark on Warm Orange
+$color-3-text: #1a1a1a;  // Dark on Green
+$color-4-text: #ffffff;  // White on Coral Red
+$color-5-text: #1a1a1a;  // Dark on Lavender
+$color-6-text: #1a1a1a;  // Dark on Cyan
+$color-7-text: #1a1a1a;  // Dark on Cool Gray
+$color-8-text: #1a1a1a;  // Dark on Warm Gray
+$color-9-text: #1a1a1a;  // Dark on Orange
+
+// =============================================================================
+// AYU COLOR PALETTES
+// =============================================================================
+
+// Mirage palette (default dark mode - bluish backgrounds)
+$mirage-bg:         #1f2430;
+$mirage-bg-deep:    #191e2a;
+$mirage-surface:    #242936;
+$mirage-elevated:   #2b3040;
+$mirage-border:     #33384a;
+$mirage-gutter:     #3d4455;
+$mirage-text:       #cccac2;
+$mirage-text-sec:   #8b919e;
+
+// Dark palette (deeper blacks)
+$dark-bg:           #0b0e14;
+$dark-surface:      #0d1017;
+$dark-elevated:     #131721;
+$dark-border:       #1c212e;
+$dark-gutter:       #2a3041;
+$dark-text:         #bfbdb6;
+$dark-text-sec:     #6c7380;
+
+// Light palette
+$light-bg:          #fcfcfc;
+$light-surface:     #f8f8f8;
+$light-elevated:    #f0f0f0;
+$light-border:      #dfddd6;
+$light-text:        #575f66;
+$light-text-sec:    #8a9199;
+
+// Shared accent (golden/orange)
+$ayu-accent:        #e6b450;
+$ayu-accent-hover:  color.adjust($ayu-accent, $lightness: 8%);
+$ayu-accent-active: color.adjust($ayu-accent, $lightness: 15%);
+
+// Contextual colors (tuned for dark backgrounds)
+$ayu-success:       #aad94c;
+$ayu-success-hover: #87c026;
+$ayu-warning:       #ff8f40;
+$ayu-warning-hover: #f07823;
+$ayu-danger:        #f07178;
+$ayu-danger-hover:  #e84850;
+$ayu-info:          #39bae6;
+$ayu-info-hover:    #1fa4d1;
+
+// =============================================================================
+// BASE VARIABLES - Mirage as default dark mode
+// =============================================================================
+
+// Accent colors (golden)
+$base-accent-color: $ayu-accent;
+$base-accent-color-hover: $ayu-accent-hover;
+$base-accent-color-active: $ayu-accent-active;
+$base-accent-color-light: rgba($ayu-accent, 0.1);
+$base-accent-color-light-hover: rgba($ayu-accent, 0.15);
+
+// Text colors (mirage - warm light text)
+$base-text-color-1: $mirage-text;
+$base-text-color-2: $mirage-text-sec;
+$base-text-color-3: #6c7380;
+$base-text-color-4: #4d5566;
+$base-text-color-on-accent: #1a1a1a;
+
+// Background colors (mirage - bluish surfaces)
+$base-main-bg: $mirage-surface;
+$base-page-bg: $mirage-bg;
+$base-subtle-bg: $mirage-elevated;
+$base-inverse-bg: #ffffff;
+$base-hover-bg: $mirage-elevated;
+$base-active-bg: $mirage-border;
+$base-disabled-bg: $mirage-elevated;
+$base-overlay-bg: rgba(#0b0e14, 0.7);
+$base-shadow-color: rgba(0, 0, 0, 0.35);
+
+// Legacy surface aliases
+$base-surface-1: $base-main-bg;
+$base-surface-2: $base-page-bg;
+$base-surface-3: $mirage-border;
+$base-surface-inverse: $base-inverse-bg;
+
+// Border
+$base-border-color: $mirage-border;
+
+// Input fields
+$base-input-bg: $mirage-bg;
+$base-input-color: $mirage-text;
+$base-input-border: 1px solid $mirage-border;
+$base-input-border-hover: 1px solid $mirage-gutter;
+$base-input-border-focus: 1px solid $ayu-accent;
+$base-input-placeholder-color: $mirage-text-sec;
+
+// Dropdown/Popover
+$base-dropdown-bg: $mirage-surface;
+$base-dropdown-border: $mirage-border;
+$base-dropdown-box-shadow: 0 8px 16px rgba(0, 0, 0, 0.35);
+
+// Tooltip
+$base-tooltip-bg: $mirage-elevated;
+$base-tooltip-text-color: $mirage-text;
+
+// Contextual colors
+$base-success-color: $ayu-success;
+$base-success-color-hover: $ayu-success-hover;
+$base-success-bg-light: rgba($ayu-success, 0.15);
+$base-text-on-success: #1a1a1a;
+
+$base-danger-color: $ayu-danger;
+$base-danger-color-hover: $ayu-danger-hover;
+$base-danger-bg-light: rgba($ayu-danger, 0.15);
+$base-text-on-danger: #ffffff;
+
+$base-warning-color: $ayu-warning;
+$base-warning-color-hover: $ayu-warning-hover;
+$base-warning-bg-light: rgba($ayu-warning, 0.15);
+$base-text-on-warning: #1a1a1a;
+
+$base-info-color: $ayu-info;
+$base-info-color-hover: $ayu-info-hover;
+$base-info-bg-light: rgba($ayu-info, 0.15);
+$base-text-on-info: #ffffff;
+
+// Interactive states
+$base-focus-ring-color: rgba($ayu-accent, 0.3);
+
+// Alert opacity - reduce so white text stays readable on dark backgrounds
+$alert-bg-opacity-dark: 25;
+$alert-border-opacity-dark: 45;
+
+// =============================================================================
+// FRAMEWORK VARIABLES - Import and let them derive from base
+// =============================================================================
+@import '@keenmate/pure-admin-core/src/scss/variables/index';
+
+// Layout-specific overrides
+$main-bg: $mirage-bg;
+$subtle-bg: $mirage-bg-deep;
+$header-bg: $mirage-bg-deep;
+$header-border-color: $mirage-border;
+$header-text: $mirage-text;
+$header-text-secondary: $mirage-text-sec;
+$header-profile-name-color: $mirage-text;
+$sidebar-bg: $mirage-surface;
+$sidebar-text: $mirage-text;
+$sidebar-text-secondary: $mirage-text-sec;
+$sidebar-submenu-bg: $mirage-elevated;
+$sidebar-submenu-hover-bg: $mirage-border;
+$sidebar-submenu-active-bg: $ayu-accent;
+$footer-bg: $mirage-bg-deep;
+$footer-border-color: $mirage-border;
+
+// Card colors
+$card-bg: $mirage-surface;
+$card-header-bg: $mirage-bg;
+$card-footer-bg: $mirage-bg;
+$card-tabs-bg: $mirage-elevated;
+
+// Input colors
+$input-bg: $mirage-bg;
+$input-border: $mirage-border;
+$input-text: $mirage-text;
+
+// Table colors
+$table-bg: $mirage-surface;
+$table-header-bg: $mirage-bg;
+$table-hover-bg: $mirage-elevated;
+$table-stripe: $mirage-bg;
+
+// Button colors
+$btn-primary-bg: color.adjust($ayu-accent, $lightness: -8%);
+$btn-primary-bg-hover: color.adjust($ayu-accent, $lightness: -15%);
+$btn-secondary-bg: $mirage-border;
+$btn-secondary-bg-hover: $mirage-gutter;
+$btn-secondary-text: $mirage-text;
+$btn-light-bg: $mirage-elevated;
+$btn-light-text: $mirage-text;
+$btn-light-bg-hover: $mirage-border;
+$btn-dark-bg: $mirage-bg-deep;
+$btn-dark-bg-hover: #141925;
+$btn-warning-text: #1a1a1a;
+
+// Modal colors
+$modal-overlay-bg: $base-overlay-bg;
+$modal-content-bg: $mirage-surface;
+
+// Form focus colors
+$input-focus-border-color: $base-accent-color;
+$select-focus-border-color: $base-accent-color;
+$textarea-focus-border-color: $base-accent-color;
+
+// Checkbox colors
+$checkbox-border-color-hover: $base-accent-color;
+$checkbox-border-color-checked: $base-accent-color;
+$checkbox-bg-checked: $base-accent-color;
+$checkbox-bg-indeterminate: $base-accent-color;
+$checkbox-focus-shadow: 0 0 0 2px $base-focus-ring-color;
+
+// =============================================================================
+// CORE IMPORTS
+// =============================================================================
+@import '@keenmate/pure-admin-core/src/scss/core';
+@import '@keenmate/pure-admin-core/src/scss/utilities';
+@import '@keenmate/pure-admin-core/src/scss/base-css-variables';
+
+// Active sidebar link - dark text on golden background
+.pa-sidebar__link--active {
+  color: #1a1a1a !important;
+
+  .pa-sidebar__icon,
+  .pa-sidebar__label {
+    color: #1a1a1a !important;
+  }
+}
+
+// =============================================================================
+// CSS VARIABLES - MIRAGE (Default variant)
+// =============================================================================
+:root {
+  --page-loader-bg: rgba(31, 36, 48, 0.95);
+  --page-loader-spinner-border: #{$mirage-border};
+  --page-loader-spinner-accent: #{$ayu-accent};
+
+  @include output-base-css-variables;
+  @include output-pa-css-variables;
+  @include output-pa-alert-variables-dark;
+
+  // Override alert text: use saturated tints of the alert color instead of white
+  --pa-alert-success-text: color-mix(in srgb, var(--pa-success-bg) 90%, black);
+  --pa-alert-danger-text: color-mix(in srgb, var(--pa-danger-bg) 90%, black);
+  --pa-alert-warning-text: color-mix(in srgb, var(--pa-warning-bg) 90%, black);
+  --pa-alert-info-text: color-mix(in srgb, var(--pa-info-bg) 90%, black);
+
+  --base-elevated-bg: #{$mirage-elevated};
+}
+
+// =============================================================================
+// COLOR VARIANT: DARK (deeper blacks, no blue tint)
+// =============================================================================
+.pa-color-dark {
+  --page-loader-bg: rgba(11, 14, 20, 0.95);
+  --page-loader-spinner-accent: #{$ayu-accent};
+
+  --pa-main-bg: #{$dark-bg};
+  --pa-page-bg: #{$dark-bg};
+  --pa-subtle-bg: #{$dark-surface};
+
+  --pa-header-bg: #{$dark-surface};
+  --pa-header-border-color: #{$dark-border};
+  --pa-sidebar-bg: #{$dark-surface};
+  --pa-sidebar-submenu-bg: #{$dark-elevated};
+  --pa-sidebar-submenu-hover-bg: #{$dark-border};
+  --pa-sidebar-submenu-active-bg: #{$ayu-accent};
+  --pa-footer-bg: #{$dark-surface};
+  --pa-footer-border-color: #{$dark-border};
+
+  --pa-text-color-1: #{$dark-text};
+  --pa-text-color-2: #{$dark-text-sec};
+  --pa-border-color: #{$dark-border};
+  --pa-accent: #{$ayu-accent};
+  --pa-accent-hover: rgba(230, 180, 80, 0.15);
+  --pa-accent-light: rgba(230, 180, 80, 0.08);
+
+  --pa-card-bg: #{$dark-elevated};
+  --pa-card-header-bg: #{$dark-surface};
+  --pa-card-footer-bg: #{$dark-surface};
+  --pa-card-tabs-bg: #{$dark-border};
+
+  --pa-input-bg: #{$dark-surface};
+  --pa-input-border: #{$dark-border};
+  --pa-input-text: #{$dark-text};
+  --pa-input-focus-border-color: #{$ayu-accent};
+
+  // Input group
+  --pa-input-group-prepend-bg: #{$dark-elevated};
+  --pa-input-group-prepend-text: #{$dark-text-sec};
+  --pa-input-group-append-bg: #{$dark-elevated};
+  --pa-input-group-append-text: #{$dark-text-sec};
+
+  --pa-table-bg: #{$dark-elevated};
+  --pa-table-header-bg: #{$dark-surface};
+  --pa-table-stripe: #{$dark-surface};
+  --pa-table-hover-bg: #{$dark-border};
+
+  --base-accent-color: #{$ayu-accent};
+  --base-main-bg: #{$dark-elevated};
+  --base-page-bg: #{$dark-bg};
+  --base-subtle-bg: #{$dark-border};
+  --base-hover-bg: #{$dark-border};
+  --base-elevated-bg: #{$dark-elevated};
+  --base-surface-1: #{$dark-elevated};
+  --base-surface-2: #{$dark-bg};
+  --base-surface-3: #{$dark-border};
+  --base-text-color-1: #{$dark-text};
+  --base-text-color-2: #{$dark-text-sec};
+  --base-border-color: #{$dark-border};
+  --base-input-bg: #{$dark-surface};
+  --base-dropdown-bg: #{$dark-elevated};
+}
+
+// =============================================================================
+// COLOR VARIANT: LIGHT
+// =============================================================================
+.pa-color-light {
+  --page-loader-bg: rgba(252, 252, 252, 0.95);
+  --page-loader-spinner-border: #{$light-border};
+  --page-loader-spinner-accent: #f29718;
+
+  // Core colors
+  --pa-main-bg: #{$light-bg};
+  --pa-page-bg: #{$light-bg};
+  --pa-subtle-bg: #{$light-surface};
+  --pa-text-color-1: #{$light-text};
+  --pa-text-color-2: #{$light-text-sec};
+  --pa-accent: #f29718;
+  --pa-accent-hover: rgba(242, 151, 24, 0.12);
+  --pa-accent-light: rgba(242, 151, 24, 0.06);
+  --pa-border-color: #{$light-border};
+
+  // Header - stays dark (Ayu signature)
+  --pa-header-bg: #{$mirage-bg-deep};
+  --pa-header-border-color: #{$mirage-border};
+  --pa-header-text: #{$mirage-text};
+  --pa-header-text-secondary: #{$mirage-text-sec};
+  --pa-header-profile-name-color: #{$mirage-text};
+
+  // Sidebar - light
+  --pa-sidebar-bg: #{$light-surface};
+  --pa-sidebar-text: #{$light-text};
+  --pa-sidebar-text-secondary: #{$light-text-sec};
+  --pa-sidebar-submenu-bg: #{$light-elevated};
+  --pa-sidebar-submenu-hover-bg: #{$light-border};
+  --pa-sidebar-submenu-active-bg: #f29718;
+
+  // Footer - dark
+  --pa-footer-bg: #{$mirage-bg-deep};
+  --pa-footer-border-color: #{$mirage-border};
+
+  // Cards
+  --pa-card-bg: #ffffff;
+  --pa-card-header-bg: #{$light-surface};
+  --pa-card-footer-bg: #{$light-surface};
+  --pa-card-tabs-bg: #{$light-border};
+
+  // Inputs
+  --pa-input-bg: #ffffff;
+  --pa-input-border: #{$light-border};
+  --pa-input-text: #{$light-text};
+  --pa-input-focus-border-color: #f29718;
+
+  // Input group
+  --pa-input-group-prepend-bg: #{$light-elevated};
+  --pa-input-group-prepend-text: #{$light-text-sec};
+  --pa-input-group-append-bg: #{$light-elevated};
+  --pa-input-group-append-text: #{$light-text-sec};
+
+  // Tables
+  --pa-table-bg: #ffffff;
+  --pa-table-header-bg: #{$light-surface};
+  --pa-table-stripe: #{$light-bg};
+  --pa-table-hover-bg: #{$light-elevated};
+
+  // Modals
+  --pa-modal-content-bg: #ffffff;
+  --pa-modal-overlay-bg: rgba(0, 0, 0, 0.5);
+
+  // Loader
+  --pa-loader-overlay-bg: rgba(255, 255, 255, 0.8);
+  --pa-profile-overlay-bg: rgba(0, 0, 0, 0.3);
+
+  // Tooltip/Popover
+  --pa-tooltip-bg: #{$light-text};
+  --pa-tooltip-text: #ffffff;
+  --pa-popover-content-bg: #ffffff;
+
+  // Command palette
+  --pa-command-palette-backdrop-bg: rgba(0, 0, 0, 0.5);
+  --pa-command-palette-item-hover-bg: #{$light-elevated};
+  --pa-command-palette-item-active-bg: rgba(242, 151, 24, 0.15);
+  --pa-command-palette-highlight-bg: rgba(242, 151, 24, 0.2);
+
+  // Alerts - light mode
+  @include output-pa-alert-variables-light;
+
+  // Buttons
+  --pa-btn-secondary-bg: #{$light-border};
+  --pa-btn-secondary-bg-hover: #ccc9bf;
+  --pa-btn-secondary-text: #{$light-text};
+  --pa-btn-light-bg: #{$light-elevated};
+  --pa-btn-light-bg-hover: #{$light-border};
+  --pa-btn-light-text: #{$light-text};
+
+  // Semantic colors
+  --pa-success-bg: #86b300;
+  --pa-success-bg-light: rgba(134, 179, 0, 0.1);
+  --pa-warning-bg: #fa8532;
+  --pa-warning-bg-light: rgba(250, 133, 50, 0.1);
+  --pa-danger-bg: #e65050;
+  --pa-danger-bg-light: rgba(230, 80, 80, 0.1);
+  --pa-info-bg: #399ee6;
+  --pa-info-bg-light: rgba(57, 158, 230, 0.1);
+
+  // Base variables for web components
+  --base-main-bg: #ffffff;
+  --base-page-bg: #{$light-bg};
+  --base-subtle-bg: #{$light-elevated};
+  --base-hover-bg: #{$light-elevated};
+  --base-active-bg: #{$light-border};
+  --base-disabled-bg: #{$light-surface};
+  --base-elevated-bg: #{$light-surface};
+  --base-surface-1: #ffffff;
+  --base-surface-2: #{$light-bg};
+  --base-surface-3: #{$light-elevated};
+  --base-text-color-1: #{$light-text};
+  --base-text-color-2: #{$light-text-sec};
+  --base-text-color-3: #a0a6ad;
+  --base-text-color-4: #{$light-border};
+  --base-accent-color: #f29718;
+  --base-accent-color-hover: #d98510;
+  --base-accent-color-active: #c47810;
+  --base-accent-color-light: rgba(242, 151, 24, 0.1);
+  --base-accent-color-light-hover: rgba(242, 151, 24, 0.15);
+  --base-border-color: #{$light-border};
+  --base-border: 1px solid #{$light-border};
+  --base-input-bg: #ffffff;
+  --base-input-color: #{$light-text};
+  --base-input-border: 1px solid #{$light-border};
+  --base-input-border-hover: 1px solid #f29718;
+  --base-input-border-focus: 1px solid #f29718;
+  --base-input-placeholder-color: #{$light-text-sec};
+  --base-dropdown-bg: #ffffff;
+  --base-dropdown-border: 1px solid #{$light-border};
+  --base-dropdown-box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+  --base-tooltip-bg: #{$light-text};
+  --base-tooltip-text-color: #ffffff;
+
+  .pa-card {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  }
+
+  .pa-btn--secondary {
+    background-color: #{$light-border} !important;
+    color: #{$light-text} !important;
+    border-color: #ccc9bf !important;
+
+    &:hover {
+      background-color: #ccc9bf !important;
+      border-color: #{$light-text-sec} !important;
+    }
+  }
+
+  // Profile panel header - dark background needs light text
+  .pa-profile-panel__header {
+    .pa-profile-panel__name {
+      color: #{$mirage-text};
+    }
+    .pa-profile-panel__email {
+      color: #{$mirage-text-sec};
+    }
+  }
+
+  // Footer - light text on dark background
+  .pa-layout__footer {
+    color: #{$mirage-text-sec};
+
+    a {
+      color: #{$mirage-text};
+      &:hover { color: #f29718; }
+    }
+  }
+}

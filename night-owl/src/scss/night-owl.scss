@@ -1,0 +1,246 @@
+/* Night Owl Theme for Pure Admin - Sarah Drasner's Night Owl editor palette */
+/* Single variant: dark mode only */
+@use 'sass:color';
+
+// =============================================================================
+// THEME COLOR SLOTS (1-9) - Night Owl palette
+// =============================================================================
+$color-1: #82aaff;  // Blue (primary accent)
+$color-2: #7fdbca;  // Cyan (info)
+$color-3: #addb67;  // Green (success)
+$color-4: #ef5350;  // Red (danger)
+$color-5: #c792ea;  // Purple
+$color-6: #ecc48d;  // String/amber
+$color-7: #f78c6c;  // Orange
+$color-8: #ffcb8b;  // Yellow (warning)
+$color-9: #637777;  // Comment/muted
+
+// Contrast text colors for color slots
+$color-1-text: #011627;  // Dark on Blue
+$color-2-text: #011627;  // Dark on Cyan
+$color-3-text: #011627;  // Dark on Green
+$color-4-text: #ffffff;  // White on Red
+$color-5-text: #011627;  // Dark on Purple
+$color-6-text: #011627;  // Dark on Amber
+$color-7-text: #011627;  // Dark on Orange
+$color-8-text: #011627;  // Dark on Yellow
+$color-9-text: #d6deeb;  // Light on Muted
+
+// =============================================================================
+// NIGHT OWL COLOR PALETTE
+// =============================================================================
+
+// Backgrounds (layered navy blues)
+$no-bg-deep:    #010e1a;  // Deepest — header/footer/page chrome
+$no-bg:         #011627;  // Page background (canonical Night Owl bg)
+$no-surface:    #0b2236;  // Cards, sidebar, panels
+$no-elevated:   #122d42;  // Elevated surfaces, focus border
+$no-border:     #1d3b53;  // Borders (Night Owl selection color)
+$no-gutter:     #2a4a68;  // Gutters, subtle dividers
+
+// Text
+$no-text:       #d6deeb;  // Foreground (canonical Night Owl fg)
+$no-text-sec:   #637777;  // Comments / secondary text
+
+// Accent
+$no-accent:        #82aaff;  // Blue — primary accent
+$no-accent-hover:  color.adjust(#82aaff, $lightness: 8%);
+$no-accent-active: color.adjust(#82aaff, $lightness: 14%);
+
+// Semantic colors
+$no-success:       #addb67;
+$no-success-hover: color.adjust(#addb67, $lightness: -8%);
+$no-danger:        #ef5350;
+$no-danger-hover:  color.adjust(#ef5350, $lightness: -8%);
+$no-warning:       #ffcb8b;
+$no-warning-hover: color.adjust(#ffcb8b, $lightness: -8%);
+$no-info:          #7fdbca;
+$no-info-hover:    color.adjust(#7fdbca, $lightness: -8%);
+
+// =============================================================================
+// BASE CSS VARIABLE OVERRIDES (web component interop)
+// =============================================================================
+
+$base-accent-color:              $no-accent;
+$base-accent-color-hover:        $no-accent-hover;
+$base-accent-color-active:       $no-accent-active;
+$base-accent-color-light:        rgba($no-accent, 0.1);
+$base-accent-color-light-hover:  rgba($no-accent, 0.15);
+
+// Text
+$base-text-color-1:         $no-text;
+$base-text-color-2:         $no-text-sec;
+$base-text-color-3:         #4d6a7a;
+$base-text-color-4:         #2a4a68;
+$base-text-color-on-accent: #011627;
+
+// Backgrounds
+$base-main-bg:       $no-surface;
+$base-page-bg:       $no-bg;
+$base-subtle-bg:     $no-elevated;
+$base-inverse-bg:    #ffffff;
+$base-hover-bg:      $no-elevated;
+$base-active-bg:     $no-border;
+$base-disabled-bg:   $no-elevated;
+$base-overlay-bg:    rgba(#010e1a, 0.75);
+$base-shadow-color:  rgba(0, 0, 0, 0.45);
+
+// Legacy surface aliases
+$base-surface-1:       $base-main-bg;
+$base-surface-2:       $base-page-bg;
+$base-surface-3:       $no-border;
+$base-surface-inverse: $base-inverse-bg;
+
+// Border
+$base-border-color: $no-border;
+
+// Inputs
+$base-input-bg:                $no-bg;
+$base-input-color:             $no-text;
+$base-input-border:            1px solid $no-border;
+$base-input-border-hover:      1px solid $no-gutter;
+$base-input-border-focus:      1px solid $no-accent;
+$base-input-placeholder-color: $no-text-sec;
+
+// Dropdown/Popover
+$base-dropdown-bg:         $no-surface;
+$base-dropdown-border:     $no-border;
+$base-dropdown-box-shadow: 0 8px 16px rgba(0, 0, 0, 0.45);
+
+// Tooltip
+$base-tooltip-bg:         $no-elevated;
+$base-tooltip-text-color: $no-text;
+
+// Semantic
+$base-success-color:       $no-success;
+$base-success-color-hover: $no-success-hover;
+$base-success-bg-light:    rgba($no-success, 0.15);
+$base-text-on-success:     #011627;
+
+$base-danger-color:       $no-danger;
+$base-danger-color-hover: $no-danger-hover;
+$base-danger-bg-light:    rgba($no-danger, 0.15);
+$base-text-on-danger:     #ffffff;
+
+$base-warning-color:       $no-warning;
+$base-warning-color-hover: $no-warning-hover;
+$base-warning-bg-light:    rgba($no-warning, 0.15);
+$base-text-on-warning:     #011627;
+
+$base-info-color:       $no-info;
+$base-info-color-hover: $no-info-hover;
+$base-info-bg-light:    rgba($no-info, 0.15);
+$base-text-on-info:     #011627;
+
+// Focus ring
+$base-focus-ring-color: rgba($no-accent, 0.3);
+
+// Alert opacity — keeps white-on-dark alerts readable
+$alert-bg-opacity-dark:     20;
+$alert-border-opacity-dark: 40;
+
+// =============================================================================
+// FRAMEWORK VARIABLES - Import defaults, then apply layout overrides
+// =============================================================================
+@import '@keenmate/pure-admin-core/src/scss/variables/index';
+
+// Layout
+$main-bg:             $no-bg;
+$subtle-bg:           $no-bg-deep;
+$header-bg:           $no-bg-deep;
+$header-border-color: $no-border;
+$header-text:         $no-text;
+$header-text-secondary:       $no-text-sec;
+$header-profile-name-color:   $no-text;
+$sidebar-bg:                  $no-surface;
+$sidebar-text:                $no-text;
+$sidebar-text-secondary:      $no-text-sec;
+$sidebar-submenu-bg:          $no-elevated;
+$sidebar-submenu-hover-bg:    $no-border;
+$sidebar-submenu-active-bg:   $no-accent;
+$footer-bg:                   $no-bg-deep;
+$footer-border-color:         $no-border;
+
+// Cards
+$card-bg:          $no-surface;
+$card-header-bg:   $no-bg;
+$card-footer-bg:   $no-bg;
+$card-tabs-bg:     $no-elevated;
+
+// Inputs
+$input-bg:     $no-bg;
+$input-border: $no-border;
+$input-text:   $no-text;
+
+// Tables
+$table-bg:        $no-surface;
+$table-header-bg: $no-bg;
+$table-hover-bg:  $no-elevated;
+$table-stripe:    $no-bg;
+
+// Buttons
+$btn-primary-bg:         color.adjust($no-accent, $lightness: -10%);
+$btn-primary-bg-hover:   color.adjust($no-accent, $lightness: -18%);
+$btn-secondary-bg:       $no-border;
+$btn-secondary-bg-hover: $no-gutter;
+$btn-secondary-text:     $no-text;
+$btn-light-bg:           $no-elevated;
+$btn-light-text:         $no-text;
+$btn-light-bg-hover:     $no-border;
+$btn-dark-bg:            $no-bg-deep;
+$btn-dark-bg-hover:      color.adjust($no-bg-deep, $lightness: 4%);
+$btn-warning-text:       #011627;
+
+// Modals
+$modal-overlay-bg:  $base-overlay-bg;
+$modal-content-bg:  $no-surface;
+
+// Form focus
+$input-focus-border-color:    $no-accent;
+$select-focus-border-color:   $no-accent;
+$textarea-focus-border-color: $no-accent;
+
+// Checkboxes
+$checkbox-border-color-hover:       $no-accent;
+$checkbox-border-color-checked:     $no-accent;
+$checkbox-bg-checked:               $no-accent;
+$checkbox-bg-indeterminate:         $no-accent;
+$checkbox-focus-shadow:             0 0 0 2px $base-focus-ring-color;
+
+// =============================================================================
+// CORE IMPORTS
+// =============================================================================
+@import '@keenmate/pure-admin-core/src/scss/core';
+@import '@keenmate/pure-admin-core/src/scss/utilities';
+@import '@keenmate/pure-admin-core/src/scss/base-css-variables';
+
+// Active sidebar link — dark text on blue accent background
+.pa-sidebar__link--active {
+  color: #011627 !important;
+
+  .pa-sidebar__icon,
+  .pa-sidebar__label {
+    color: #011627 !important;
+  }
+}
+
+// =============================================================================
+// CSS VARIABLES — Night Owl (single dark variant)
+// =============================================================================
+:root {
+  --page-loader-bg: rgba(1, 22, 39, 0.95);
+  --page-loader-spinner-border: #{$no-border};
+  --page-loader-spinner-accent: #{$no-accent};
+
+  @include output-base-css-variables;
+  @include output-pa-css-variables;
+  @include output-pa-alert-variables-dark;
+
+  // Alert text — tinted toward the alert color, 90% black mix for readability
+  --pa-alert-success-text: color-mix(in srgb, var(--pa-success-bg) 90%, black);
+  --pa-alert-danger-text:  color-mix(in srgb, var(--pa-danger-bg)  90%, black);
+  --pa-alert-warning-text: color-mix(in srgb, var(--pa-warning-bg) 90%, black);
+  --pa-alert-info-text:    color-mix(in srgb, var(--pa-info-bg)    90%, black);
+
+  --base-elevated-bg: #{$no-elevated};
+}

@@ -324,14 +324,14 @@ $card-border-radius: 0; // Sharp edges
   box-shadow: 0 $spacing-xs ($spacing-sm * 2) rgba(0, 0, 0, 0.4);
 }
 
-// Sidebar left-border accent (instead of default right-border)
+// Sidebar start-border accent (instead of default end-border)
 .pa-sidebar__link {
-  border-left: $border-width-thick solid transparent;
-  border-right: none;
+  border-inline-start: $border-width-thick solid transparent;
+  border-inline-end: none;
 }
 
 .pa-sidebar__link--active {
-  border-left-color: var(--pa-accent) !important;
+  border-inline-start-color: var(--pa-accent) !important;
   color: var(--pa-sidebar-text) !important;
 }
 

@@ -1,0 +1,319 @@
+/* Tokyo Night Theme for Pure Admin - VS Code-inspired dark theme */
+/* Two variants: Night (default dark), Storm (lighter dark) */
+@use 'sass:color';
+
+// =============================================================================
+// THEME COLOR SLOTS (1-9) - Tokyo Night palette
+// =============================================================================
+$color-1: #bb9af7;  // Purple (primary accent)
+$color-2: #7dcfff;  // Blue (functions/info)
+$color-3: #9ece6a;  // Green (strings/success)
+$color-4: #ff5370;  // Red (danger)
+$color-5: #2ac3de;  // Cyan (accent)
+$color-6: #73daca;  // Teal (secondary)
+$color-7: #e0af68;  // Yellow (warning)
+$color-8: #ff9e64;  // Orange (warm warning)
+$color-9: #a9b1d6;  // Muted Blue-Gray (neutral)
+
+// Contrast text colors for color slots
+$color-1-text: #1a1b26;  // Dark on Purple
+$color-2-text: #1a1b26;  // Dark on Blue
+$color-3-text: #1a1b26;  // Dark on Green
+$color-4-text: #ffffff;  // White on Red
+$color-5-text: #1a1b26;  // Dark on Cyan
+$color-6-text: #1a1b26;  // Dark on Teal
+$color-7-text: #1a1b26;  // Dark on Yellow
+$color-8-text: #1a1b26;  // Dark on Orange
+$color-9-text: #1a1b26;  // Dark on Neutral
+
+// =============================================================================
+// TOKYO NIGHT COLOR PALETTES
+// =============================================================================
+
+// Night palette (default dark mode - deep blue-blacks)
+$night-bg:          #1a1b26;
+$night-bg-deep:     #16161e;
+$night-surface:     #1e1f2b;
+$night-elevated:    #24283b;
+$night-border:      #2f3348;
+$night-gutter:      #3b4261;
+$night-text:        #a9b1d6;
+$night-text-sec:    #51597d;
+
+// Storm palette (lighter dark - more blue tones)
+$storm-bg:          #24283b;
+$storm-bg-deep:     #1f2335;
+$storm-surface:     #292e42;
+$storm-elevated:    #2f3549;
+$storm-border:      #3b4261;
+$storm-gutter:      #414868;
+$storm-text:        #c0caf5;
+$storm-text-sec:    #565f89;
+
+// Shared accent (blue)
+$tn-accent:         #7dcfff;
+$tn-accent-hover:   color.adjust($tn-accent, $lightness: 8%);
+$tn-accent-active:  color.adjust($tn-accent, $lightness: 15%);
+
+// Contextual colors
+$tn-success:        #9ece6a;
+$tn-success-hover:  #84b050;
+$tn-warning:        #e0af68;
+$tn-warning-hover:  #c99a50;
+$tn-danger:         #ff5370;
+$tn-danger-hover:   #e63d5a;
+$tn-info:           #2ac3de;
+$tn-info-hover:     #1da8c0;
+
+// =============================================================================
+// BASE VARIABLES - Night as default dark mode
+// =============================================================================
+
+// Accent colors (blue)
+$base-accent-color: $tn-accent;
+$base-accent-color-hover: $tn-accent-hover;
+$base-accent-color-active: $tn-accent-active;
+$base-accent-color-light: rgba($tn-accent, 0.1);
+$base-accent-color-light-hover: rgba($tn-accent, 0.15);
+
+// Text colors (night - cool blue-gray text)
+$base-text-color-1: $night-text;
+$base-text-color-2: $night-text-sec;
+$base-text-color-3: #3b4261;
+$base-text-color-4: #2a2f45;
+$base-text-color-on-accent: #1a1b26;
+
+// Background colors (night - deep blue-black surfaces)
+$base-main-bg: $night-surface;
+$base-page-bg: $night-bg;
+$base-subtle-bg: $night-elevated;
+$base-inverse-bg: #ffffff;
+$base-hover-bg: $night-elevated;
+$base-active-bg: $night-border;
+$base-disabled-bg: $night-elevated;
+$base-overlay-bg: rgba(#16161e, 0.8);
+$base-shadow-color: rgba(0, 0, 0, 0.5);
+
+// Legacy surface aliases
+$base-surface-1: $base-main-bg;
+$base-surface-2: $base-page-bg;
+$base-surface-3: $night-border;
+$base-surface-inverse: $base-inverse-bg;
+
+// Border
+$base-border-color: $night-border;
+
+// Input fields
+$base-input-bg: $night-bg;
+$base-input-color: $night-text;
+$base-input-border: 1px solid $night-border;
+$base-input-border-hover: 1px solid $night-gutter;
+$base-input-border-focus: 1px solid $tn-accent;
+$base-input-placeholder-color: $night-text-sec;
+
+// Dropdown/Popover
+$base-dropdown-bg: $night-surface;
+$base-dropdown-border: $night-border;
+$base-dropdown-box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+
+// Tooltip
+$base-tooltip-bg: $night-elevated;
+$base-tooltip-text-color: $night-text;
+
+// Contextual colors
+$base-success-color: $tn-success;
+$base-success-color-hover: $tn-success-hover;
+$base-success-bg-light: rgba($tn-success, 0.15);
+$base-text-on-success: #1a1b26;
+
+$base-danger-color: $tn-danger;
+$base-danger-color-hover: $tn-danger-hover;
+$base-danger-bg-light: rgba($tn-danger, 0.15);
+$base-text-on-danger: #ffffff;
+
+$base-warning-color: $tn-warning;
+$base-warning-color-hover: $tn-warning-hover;
+$base-warning-bg-light: rgba($tn-warning, 0.15);
+$base-text-on-warning: #1a1b26;
+
+$base-info-color: $tn-info;
+$base-info-color-hover: $tn-info-hover;
+$base-info-bg-light: rgba($tn-info, 0.15);
+$base-text-on-info: #1a1b26;
+
+// Interactive states
+$base-focus-ring-color: rgba($tn-accent, 0.3);
+
+// Alert opacity - keep text readable on dark backgrounds
+$alert-bg-opacity-dark: 20;
+$alert-border-opacity-dark: 40;
+
+// =============================================================================
+// FRAMEWORK VARIABLES - Import and let them derive from base
+// =============================================================================
+@import '@keenmate/pure-admin-core/src/scss/variables/index';
+
+// Layout-specific overrides
+$main-bg: $night-bg;
+$subtle-bg: $night-bg-deep;
+$header-bg: $night-bg-deep;
+$header-border-color: $night-border;
+$header-text: $night-text;
+$header-text-secondary: $night-text-sec;
+$header-profile-name-color: $night-text;
+$sidebar-bg: $night-surface;
+$sidebar-text: $night-text;
+$sidebar-text-secondary: $night-text-sec;
+$sidebar-submenu-bg: $night-elevated;
+$sidebar-submenu-hover-bg: $night-border;
+$sidebar-submenu-active-bg: $tn-accent;
+$footer-bg: $night-bg-deep;
+$footer-border-color: $night-border;
+
+// Card colors
+$card-bg: $night-surface;
+$card-header-bg: $night-bg;
+$card-footer-bg: $night-bg;
+$card-tabs-bg: $night-elevated;
+
+// Input colors
+$input-bg: $night-bg;
+$input-border: $night-border;
+$input-text: $night-text;
+
+// Table colors
+$table-bg: $night-surface;
+$table-header-bg: $night-bg;
+$table-hover-bg: $night-elevated;
+$table-stripe: $night-bg;
+
+// Button colors
+$btn-primary-bg: color.adjust($tn-accent, $lightness: -10%);
+$btn-primary-bg-hover: color.adjust($tn-accent, $lightness: -18%);
+$btn-secondary-bg: $night-border;
+$btn-secondary-bg-hover: $night-gutter;
+$btn-secondary-text: $night-text;
+$btn-light-bg: $night-elevated;
+$btn-light-text: $night-text;
+$btn-light-bg-hover: $night-border;
+$btn-dark-bg: $night-bg-deep;
+$btn-dark-bg-hover: #0f1017;
+$btn-warning-text: #1a1b26;
+
+// Modal colors
+$modal-overlay-bg: $base-overlay-bg;
+$modal-content-bg: $night-surface;
+
+// Form focus colors
+$input-focus-border-color: $base-accent-color;
+$select-focus-border-color: $base-accent-color;
+$textarea-focus-border-color: $base-accent-color;
+
+// Checkbox colors
+$checkbox-border-color-hover: $base-accent-color;
+$checkbox-border-color-checked: $base-accent-color;
+$checkbox-bg-checked: $base-accent-color;
+$checkbox-bg-indeterminate: $base-accent-color;
+$checkbox-focus-shadow: 0 0 0 2px $base-focus-ring-color;
+
+// =============================================================================
+// CORE IMPORTS
+// =============================================================================
+@import '@keenmate/pure-admin-core/src/scss/core';
+@import '@keenmate/pure-admin-core/src/scss/utilities';
+@import '@keenmate/pure-admin-core/src/scss/base-css-variables';
+
+// Active sidebar link - dark text on blue accent background
+.pa-sidebar__link--active {
+  color: #1a1b26 !important;
+
+  .pa-sidebar__icon,
+  .pa-sidebar__label {
+    color: #1a1b26 !important;
+  }
+}
+
+// =============================================================================
+// CSS VARIABLES - NIGHT (Default variant)
+// =============================================================================
+:root {
+  --page-loader-bg: rgba(26, 27, 38, 0.95);
+  --page-loader-spinner-border: #{$night-border};
+  --page-loader-spinner-accent: #{$tn-accent};
+
+  @include output-base-css-variables;
+  @include output-pa-css-variables;
+  @include output-pa-alert-variables-dark;
+
+  // Override alert text: use saturated tints of the alert color instead of white
+  --pa-alert-success-text: color-mix(in srgb, var(--pa-success-bg) 90%, black);
+  --pa-alert-danger-text: color-mix(in srgb, var(--pa-danger-bg) 90%, black);
+  --pa-alert-warning-text: color-mix(in srgb, var(--pa-warning-bg) 90%, black);
+  --pa-alert-info-text: color-mix(in srgb, var(--pa-info-bg) 90%, black);
+
+  --base-elevated-bg: #{$night-elevated};
+}
+
+// =============================================================================
+// COLOR VARIANT: STORM (lighter dark, more blue tones)
+// =============================================================================
+.pa-color-storm {
+  --page-loader-bg: rgba(36, 40, 59, 0.95);
+  --page-loader-spinner-accent: #{$tn-accent};
+
+  --pa-main-bg: #{$storm-bg};
+  --pa-page-bg: #{$storm-bg};
+  --pa-subtle-bg: #{$storm-surface};
+
+  --pa-header-bg: #{$storm-bg-deep};
+  --pa-header-border-color: #{$storm-border};
+  --pa-sidebar-bg: #{$storm-surface};
+  --pa-sidebar-submenu-bg: #{$storm-elevated};
+  --pa-sidebar-submenu-hover-bg: #{$storm-border};
+  --pa-sidebar-submenu-active-bg: #{$tn-accent};
+  --pa-footer-bg: #{$storm-bg-deep};
+  --pa-footer-border-color: #{$storm-border};
+
+  --pa-text-color-1: #{$storm-text};
+  --pa-text-color-2: #{$storm-text-sec};
+  --pa-border-color: #{$storm-border};
+  --pa-accent: #{$tn-accent};
+  --pa-accent-hover: rgba(125, 207, 255, 0.15);
+  --pa-accent-light: rgba(125, 207, 255, 0.08);
+
+  --pa-card-bg: #{$storm-surface};
+  --pa-card-header-bg: #{$storm-bg};
+  --pa-card-footer-bg: #{$storm-bg};
+  --pa-card-tabs-bg: #{$storm-elevated};
+
+  --pa-input-bg: #{$storm-bg};
+  --pa-input-border: #{$storm-border};
+  --pa-input-text: #{$storm-text};
+  --pa-input-focus-border-color: #{$tn-accent};
+
+  // Input group
+  --pa-input-group-prepend-bg: #{$storm-elevated};
+  --pa-input-group-prepend-text: #{$storm-text-sec};
+  --pa-input-group-append-bg: #{$storm-elevated};
+  --pa-input-group-append-text: #{$storm-text-sec};
+
+  --pa-table-bg: #{$storm-surface};
+  --pa-table-header-bg: #{$storm-bg};
+  --pa-table-stripe: #{$storm-bg};
+  --pa-table-hover-bg: #{$storm-elevated};
+
+  --base-accent-color: #{$tn-accent};
+  --base-main-bg: #{$storm-surface};
+  --base-page-bg: #{$storm-bg};
+  --base-subtle-bg: #{$storm-elevated};
+  --base-hover-bg: #{$storm-elevated};
+  --base-elevated-bg: #{$storm-elevated};
+  --base-surface-1: #{$storm-surface};
+  --base-surface-2: #{$storm-bg};
+  --base-surface-3: #{$storm-border};
+  --base-text-color-1: #{$storm-text};
+  --base-text-color-2: #{$storm-text-sec};
+  --base-border-color: #{$storm-border};
+  --base-input-bg: #{$storm-bg};
+  --base-dropdown-bg: #{$storm-surface};
+}

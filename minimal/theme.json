@@ -2,23 +2,49 @@
   "$schema": "../schemas/pure-admin-theme.schema.json",
   "name": "Minimal",
   "id": "minimal",
-  "version": "2.0.2",
+  "version": "2.1.0",
   "description": "Ultra clean monochrome theme with grayscale palette",
+  "content": "## Minimal\n\nAn ultra-clean theme that strips the interface down to essentials. The entire palette is built from grays — no color distractions, just content.\n\n### Highlights\n\n- **Monochrome grayscale** palette for maximum simplicity\n- **Subtle accent (#555555)** that blends rather than pops\n- **System fonts** — no custom font download required\n- Dark mode included with inverted grays\n\n### Usage\n\n```html\n<link rel=\"stylesheet\" href=\"css/minimal.css\">\n```\n\nDefaults to light mode. Switch with `pa-mode-light` / `pa-mode-dark` on `<body>`. Auto-switching via `prefers-color-scheme` is enabled by default.",
   "author": "KeenMate",
   "license": "MIT",
 
-  "modes": {
-    "supported": ["light", "dark"],
-    "default": "light",
-    "cssClass": "pa-mode-{mode}",
-    "autoSwitch": {
-      "enabled": true,
-      "method": "prefers-color-scheme",
-      "respectUserPreference": true
-    }
-  },
+  "modeCssClass": "pa-mode-{mode}",
+  "variantCssClass": "pa-color-{variant}",
 
-  "colorVariants": null,
+  "colorVariants": [
+    {
+      "id": "",
+      "name": "Default",
+      "file": "dist/minimal.css",
+      "modes": [
+        {
+          "id": "light",
+          "name": "Light",
+          "default": true,
+          "colors": {
+            "accent": "#555555",
+            "background": "#fafafa",
+            "surface": "#ffffff",
+            "text": "#333333",
+            "header": "#fafafa",
+            "sidebar": "#f8f8f8"
+          }
+        },
+        {
+          "id": "dark",
+          "name": "Dark",
+          "colors": {
+            "accent": "#e8e8e8",
+            "background": "#1a1a1a",
+            "surface": "#242424",
+            "text": "#e8e8e8",
+            "header": "#242424",
+            "sidebar": "#1a1a1a"
+          }
+        }
+      ]
+    }
+  ],
 
   "features": {
     "cssVariables": true,
@@ -31,25 +57,12 @@
     "printStyles": false
   },
 
-  "colors": {
-    "accent": "#555555",
-    "accentHover": "#444444",
-    "background": "#ffffff",
-    "surface": "#ffffff",
-    "text": "#333333",
-    "textSecondary": "#777777",
-    "border": "#e8e8e8",
-    "header": "#fafafa",
-    "sidebar": "#f8f8f8",
-    "footer": "#fafafa"
-  },
-
   "exports": {
     "css": "./dist/minimal.css",
     "scss": "./src/scss/minimal.scss"
   },
 
   "dependencies": {
-    "core": "^2.0.0"
+    "core": "^2.1.0"
   }
 }

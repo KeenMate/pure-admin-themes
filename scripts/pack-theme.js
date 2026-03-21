@@ -99,7 +99,7 @@ try {
 }
 
 // Validate required fields
-const requiredFields = ['name', 'id', 'version', 'modes', 'exports'];
+const requiredFields = ['name', 'id', 'version', 'colorVariants', 'exports'];
 const missing = requiredFields.filter(f => !theme[f]);
 if (missing.length > 0) {
   console.error(`Error: theme.json is missing required fields: ${missing.join(', ')}`);
@@ -406,9 +406,18 @@ if (scssSourcePath) {
 // ---------------------------------------------------------------------------
 // 7. Generate README.md (was section 6)
 // ---------------------------------------------------------------------------
-const modesText = theme.modes && theme.modes.supported
-  ? theme.modes.supported.join(', ')
-  : 'light';
+// Derive supported modes from colorVariants
+const allModeIds = new Set();
+if (Array.isArray(theme.colorVariants)) {
+  for (const variant of theme.colorVariants) {
+    if (Array.isArray(variant.modes)) {
+      for (const mode of variant.modes) {
+        allModeIds.add(mode.id);
+      }
+    }
+  }
+}
+const modesText = allModeIds.size > 0 ? [...allModeIds].join(', ') : 'light';
 
 const tagsText = theme.tags && theme.tags.length > 0
   ? theme.tags.join(', ')
@@ -456,7 +465,7 @@ If you want to customize theme variables before compiling:
 3. Or import in your own SCSS and override variables before the import.
 
 ## Mode Switching
-${theme.modes && theme.modes.supported && theme.modes.supported.length > 1
+${allModeIds.size > 1
   ? `This theme supports ${modesText} modes. Add the mode class to toggle:
 
 \`\`\`html

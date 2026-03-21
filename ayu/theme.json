@@ -1,0 +1,98 @@
+{
+  "$schema": "../schemas/pure-admin-theme.schema.json",
+  "name": "Ayu",
+  "id": "ayu",
+  "version": "2.1.0",
+  "description": "Warm, elegant theme inspired by the Ayu editor color scheme with golden accents",
+  "content": "## Ayu\n\nA warm, elegant theme inspired by the popular Ayu color scheme for code editors. Golden accents on carefully tuned backgrounds create a distinctive, eye-friendly interface.\n\n### Highlights\n\n- **Three variants** — Mirage (bluish dark, default), Dark (deep blacks), and Light\n- **Golden accent (#e6b450)** for a warm, inviting feel\n- **System fonts** — no custom font download required\n\n### Variants\n\nSwitch variants by adding a CSS class to `<body>`:\n\n```html\n<body>                          <!-- Mirage (default) -->\n<body class=\"pa-color-dark\">    <!-- Deep dark -->\n<body class=\"pa-color-light\">   <!-- Light -->\n```\n\n### Usage\n\n```html\n<link rel=\"stylesheet\" href=\"css/ayu.css\">\n```",
+  "author": "KeenMate",
+  "license": "MIT",
+
+  "variantCssClass": "pa-color-{variant}",
+
+  "colorVariants": [
+    {
+      "id": "",
+      "name": "Mirage",
+      "description": "Bluish dark backgrounds with warm golden accents",
+      "file": "dist/ayu.css",
+      "modes": [
+        {
+          "id": "dark",
+          "name": "Dark",
+          "default": true,
+          "colors": {
+            "accent": "#e6b450",
+            "background": "#1f2430",
+            "surface": "#242936",
+            "text": "#cccac2",
+            "header": "#191e2a",
+            "sidebar": "#242936"
+          }
+        }
+      ]
+    },
+    {
+      "id": "dark",
+      "name": "Dark",
+      "description": "Deep black backgrounds with warm golden accents",
+      "file": "dist/ayu.css",
+      "modes": [
+        {
+          "id": "dark",
+          "name": "Dark",
+          "default": true,
+          "colors": {
+            "accent": "#e6b450",
+            "background": "#0b0e14",
+            "surface": "#131721",
+            "text": "#bfbdb6",
+            "header": "#0d1017",
+            "sidebar": "#0d1017"
+          }
+        }
+      ]
+    },
+    {
+      "id": "light",
+      "name": "Light",
+      "description": "Clean light backgrounds with warm orange accents",
+      "file": "dist/ayu.css",
+      "modes": [
+        {
+          "id": "light",
+          "name": "Light",
+          "default": true,
+          "colors": {
+            "accent": "#f29718",
+            "background": "#fcfcfc",
+            "surface": "#ffffff",
+            "text": "#575f66",
+            "header": "#191e2a",
+            "sidebar": "#f8f8f8"
+          }
+        }
+      ]
+    }
+  ],
+
+  "features": {
+    "cssVariables": true,
+    "darkMode": true,
+    "lightMode": true,
+    "responsiveLayout": true,
+    "customFonts": false,
+    "printStyles": false
+  },
+
+  "tags": ["dark", "light", "editor", "warm", "golden", "mirage", "elegant"],
+
+  "exports": {
+    "css": "./dist/ayu.css",
+    "scss": "./src/scss/ayu.scss"
+  },
+
+  "dependencies": {
+    "core": "^2.1.0"
+  }
+}

@@ -1,0 +1,241 @@
+/* Cobalt2 Theme for Pure Admin - Wes Bos Cobalt2 editor-inspired dark theme */
+@use 'sass:color';
+
+// =============================================================================
+// THEME COLOR SLOTS (1-9) - Cobalt2 palette
+// =============================================================================
+$color-1: #ffc600;  // Yellow (primary accent - Cobalt2 signature)
+$color-2: #ff9d00;  // Orange
+$color-3: #a5ff90;  // Green (strings/success)
+$color-4: #ff628c;  // Red (danger)
+$color-5: #fb94ff;  // Purple
+$color-6: #9effff;  // Cyan (info)
+$color-7: #80ffbb;  // Blue-green
+$color-8: #508aaa;  // Muted blue (secondary text)
+$color-9: #0088ff;  // Comment blue
+
+// Contrast text colors for color slots
+$color-1-text: #1a1a1a;  // Dark on Yellow
+$color-2-text: #1a1a1a;  // Dark on Orange
+$color-3-text: #1a1a1a;  // Dark on Green
+$color-4-text: #ffffff;  // White on Red
+$color-5-text: #1a1a1a;  // Dark on Purple
+$color-6-text: #1a1a1a;  // Dark on Cyan
+$color-7-text: #1a1a1a;  // Dark on Blue-green
+$color-8-text: #ffffff;  // White on Muted blue
+$color-9-text: #ffffff;  // White on Comment blue
+
+// =============================================================================
+// COBALT2 COLOR PALETTE
+// =============================================================================
+$cobalt2-bg-deep:   #0d1f2d;   // Deepest bg - header/footer/activity bar
+$cobalt2-bg:        #15232d;   // Page background
+$cobalt2-surface:   #193549;   // Cards, sidebar, panels - editor bg
+$cobalt2-elevated:  #1f4662;   // Elevated surfaces, dropdowns
+$cobalt2-border:    #295a7a;   // Borders
+$cobalt2-gutter:    #336d93;   // Gutters, dividers, muted interactive
+$cobalt2-text:      #ffffff;   // Primary text
+$cobalt2-text-sec:  #508aaa;   // Secondary text - muted blue
+
+// Accent and semantic colors
+$cobalt2-accent:        #ffc600;  // Yellow - Cobalt2 signature
+$cobalt2-accent-hover:  color.adjust($cobalt2-accent, $lightness: 8%);
+$cobalt2-accent-active: color.adjust($cobalt2-accent, $lightness: 15%);
+
+$cobalt2-success:       #a5ff90;
+$cobalt2-success-hover: #7ee86b;
+$cobalt2-warning:       #ff9d00;
+$cobalt2-warning-hover: #e08a00;
+$cobalt2-danger:        #ff628c;
+$cobalt2-danger-hover:  #e84870;
+$cobalt2-info:          #9effff;
+$cobalt2-info-hover:    #70e8e8;
+
+// =============================================================================
+// BASE VARIABLES
+// =============================================================================
+
+// Accent colors (yellow)
+$base-accent-color: $cobalt2-accent;
+$base-accent-color-hover: $cobalt2-accent-hover;
+$base-accent-color-active: $cobalt2-accent-active;
+$base-accent-color-light: rgba($cobalt2-accent, 0.1);
+$base-accent-color-light-hover: rgba($cobalt2-accent, 0.15);
+
+// Text colors
+$base-text-color-1: $cobalt2-text;
+$base-text-color-2: $cobalt2-text-sec;
+$base-text-color-3: $cobalt2-gutter;
+$base-text-color-4: $cobalt2-border;
+$base-text-color-on-accent: #1a1a1a;
+
+// Background colors
+$base-main-bg: $cobalt2-surface;
+$base-page-bg: $cobalt2-bg;
+$base-subtle-bg: $cobalt2-elevated;
+$base-inverse-bg: #ffffff;
+$base-hover-bg: $cobalt2-elevated;
+$base-active-bg: $cobalt2-border;
+$base-disabled-bg: $cobalt2-elevated;
+$base-overlay-bg: rgba(#0d1f2d, 0.75);
+$base-shadow-color: rgba(0, 0, 0, 0.5);
+
+// Legacy surface aliases
+$base-surface-1: $base-main-bg;
+$base-surface-2: $base-page-bg;
+$base-surface-3: $cobalt2-border;
+$base-surface-inverse: $base-inverse-bg;
+
+// Border
+$base-border-color: $cobalt2-border;
+
+// Input fields
+$base-input-bg: $cobalt2-bg;
+$base-input-color: $cobalt2-text;
+$base-input-border: 1px solid $cobalt2-border;
+$base-input-border-hover: 1px solid $cobalt2-gutter;
+$base-input-border-focus: 1px solid $cobalt2-accent;
+$base-input-placeholder-color: $cobalt2-text-sec;
+
+// Dropdown/Popover
+$base-dropdown-bg: $cobalt2-surface;
+$base-dropdown-border: $cobalt2-border;
+$base-dropdown-box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+
+// Tooltip
+$base-tooltip-bg: $cobalt2-elevated;
+$base-tooltip-text-color: $cobalt2-text;
+
+// Contextual colors
+$base-success-color: $cobalt2-success;
+$base-success-color-hover: $cobalt2-success-hover;
+$base-success-bg-light: rgba($cobalt2-success, 0.15);
+$base-text-on-success: #1a1a1a;
+
+$base-danger-color: $cobalt2-danger;
+$base-danger-color-hover: $cobalt2-danger-hover;
+$base-danger-bg-light: rgba($cobalt2-danger, 0.15);
+$base-text-on-danger: #ffffff;
+
+$base-warning-color: $cobalt2-warning;
+$base-warning-color-hover: $cobalt2-warning-hover;
+$base-warning-bg-light: rgba($cobalt2-warning, 0.15);
+$base-text-on-warning: #1a1a1a;
+
+$base-info-color: $cobalt2-info;
+$base-info-color-hover: $cobalt2-info-hover;
+$base-info-bg-light: rgba($cobalt2-info, 0.15);
+$base-text-on-info: #1a1a1a;
+
+// Interactive states
+$base-focus-ring-color: rgba($cobalt2-accent, 0.3);
+
+// Alert opacity - tuned for dark cobalt backgrounds
+$alert-bg-opacity-dark: 20;
+$alert-border-opacity-dark: 40;
+
+// =============================================================================
+// FRAMEWORK VARIABLES - Import and let them derive from base
+// =============================================================================
+@import '@keenmate/pure-admin-core/src/scss/variables/index';
+
+// Layout-specific overrides
+$main-bg: $cobalt2-bg;
+$subtle-bg: $cobalt2-bg-deep;
+$header-bg: $cobalt2-bg-deep;
+$header-border-color: $cobalt2-border;
+$header-text: $cobalt2-text;
+$header-text-secondary: $cobalt2-text-sec;
+$header-profile-name-color: $cobalt2-text;
+$sidebar-bg: $cobalt2-surface;
+$sidebar-text: $cobalt2-text;
+$sidebar-text-secondary: $cobalt2-text-sec;
+$sidebar-submenu-bg: $cobalt2-elevated;
+$sidebar-submenu-hover-bg: $cobalt2-border;
+$sidebar-submenu-active-bg: $cobalt2-accent;
+$footer-bg: $cobalt2-bg-deep;
+$footer-border-color: $cobalt2-border;
+
+// Card colors
+$card-bg: $cobalt2-surface;
+$card-header-bg: $cobalt2-bg;
+$card-footer-bg: $cobalt2-bg;
+$card-tabs-bg: $cobalt2-elevated;
+
+// Input colors
+$input-bg: $cobalt2-bg;
+$input-border: $cobalt2-border;
+$input-text: $cobalt2-text;
+
+// Table colors
+$table-bg: $cobalt2-surface;
+$table-header-bg: $cobalt2-bg;
+$table-hover-bg: $cobalt2-elevated;
+$table-stripe: $cobalt2-bg;
+
+// Button colors
+$btn-primary-bg: color.adjust($cobalt2-accent, $lightness: -8%);
+$btn-primary-bg-hover: color.adjust($cobalt2-accent, $lightness: -15%);
+$btn-secondary-bg: $cobalt2-border;
+$btn-secondary-bg-hover: $cobalt2-gutter;
+$btn-secondary-text: $cobalt2-text;
+$btn-light-bg: $cobalt2-elevated;
+$btn-light-text: $cobalt2-text;
+$btn-light-bg-hover: $cobalt2-border;
+$btn-dark-bg: $cobalt2-bg-deep;
+$btn-dark-bg-hover: #0a1824;
+$btn-warning-text: #1a1a1a;
+
+// Modal colors
+$modal-overlay-bg: $base-overlay-bg;
+$modal-content-bg: $cobalt2-surface;
+
+// Form focus colors
+$input-focus-border-color: $base-accent-color;
+$select-focus-border-color: $base-accent-color;
+$textarea-focus-border-color: $base-accent-color;
+
+// Checkbox colors
+$checkbox-border-color-hover: $base-accent-color;
+$checkbox-border-color-checked: $base-accent-color;
+$checkbox-bg-checked: $base-accent-color;
+$checkbox-bg-indeterminate: $base-accent-color;
+$checkbox-focus-shadow: 0 0 0 2px $base-focus-ring-color;
+
+// =============================================================================
+// CORE IMPORTS
+// =============================================================================
+@import '@keenmate/pure-admin-core/src/scss/core';
+@import '@keenmate/pure-admin-core/src/scss/utilities';
+@import '@keenmate/pure-admin-core/src/scss/base-css-variables';
+
+// Active sidebar link - dark text on yellow accent background
+.pa-sidebar__link--active {
+  color: #1a1a1a !important;
+
+  .pa-sidebar__icon,
+  .pa-sidebar__label {
+    color: #1a1a1a !important;
+  }
+}
+
+// =============================================================================
+// CSS VARIABLES - ROOT (Single variant, dark only)
+// =============================================================================
+:root {
+  --page-loader-bg: rgba(21, 35, 45, 0.95);
+  --page-loader-spinner-border: #{$cobalt2-border};
+  --page-loader-spinner-accent: #{$cobalt2-accent};
+
+  @include output-base-css-variables;
+  @include output-pa-css-variables;
+  @include output-pa-alert-variables-dark;
+
+  // Alert text: saturated tints of each alert color (readable on dark cobalt backgrounds)
+  --pa-alert-success-text: color-mix(in srgb, var(--pa-success-bg) 90%, black);
+  --pa-alert-danger-text: color-mix(in srgb, var(--pa-danger-bg) 90%, black);
+  --pa-alert-warning-text: color-mix(in srgb, var(--pa-warning-bg) 90%, black);
+  --pa-alert-info-text: color-mix(in srgb, var(--pa-info-bg) 90%, black);
+
+  --base-elevated-bg: #{$cobalt2-elevated};
+}

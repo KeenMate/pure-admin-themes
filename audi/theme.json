@@ -2,23 +2,49 @@
   "$schema": "../schemas/pure-admin-theme.schema.json",
   "name": "Audi",
   "id": "audi",
-  "version": "2.0.2",
+  "version": "2.1.0",
   "description": "Premium dark theme inspired by Audi's design language with red accents",
+  "content": "## Audi\n\nA premium dark theme drawing inspiration from Audi's iconic design language. Deep blacks and precise red accents create a sophisticated, high-contrast interface.\n\n### Highlights\n\n- **Dark-first design** with carefully tuned contrast ratios\n- **Red accent (#bb0a30)** for interactive elements and focus states\n- **Fira Sans Condensed** bundled font for a sleek, condensed typographic feel\n- Light mode included for well-lit environments\n\n### Usage\n\n```html\n<link rel=\"stylesheet\" href=\"css/audi.css\">\n```\n\nThe theme defaults to dark mode. Switch with `pa-mode-light` / `pa-mode-dark` on `<body>`. Auto-switching via `prefers-color-scheme` is enabled by default.",
   "author": "KeenMate",
   "license": "MIT",
 
-  "modes": {
-    "supported": ["light", "dark"],
-    "default": "dark",
-    "cssClass": "pa-mode-{mode}",
-    "autoSwitch": {
-      "enabled": true,
-      "method": "prefers-color-scheme",
-      "respectUserPreference": true
-    }
-  },
+  "modeCssClass": "pa-mode-{mode}",
+  "variantCssClass": "pa-color-{variant}",
 
-  "colorVariants": null,
+  "colorVariants": [
+    {
+      "id": "",
+      "name": "Default",
+      "file": "dist/audi.css",
+      "modes": [
+        {
+          "id": "dark",
+          "name": "Dark",
+          "default": true,
+          "colors": {
+            "accent": "#ff0000",
+            "background": "#0a0a0a",
+            "surface": "#1a1a1a",
+            "text": "#ffffff",
+            "header": "#000000",
+            "sidebar": "#1a1a1a"
+          }
+        },
+        {
+          "id": "light",
+          "name": "Light",
+          "colors": {
+            "accent": "#ff0000",
+            "background": "#f8f9fa",
+            "surface": "#ffffff",
+            "text": "#212529",
+            "header": "#f8f9fa",
+            "sidebar": "#ffffff"
+          }
+        }
+      ]
+    }
+  ],
 
   "features": {
     "cssVariables": true,
@@ -29,19 +55,6 @@
     "customFonts": true,
     "rtlSupport": false,
     "printStyles": false
-  },
-
-  "colors": {
-    "accent": "#bb0a30",
-    "accentHover": "#d40000",
-    "background": "#0d0d0d",
-    "surface": "#1a1a1a",
-    "text": "#ffffff",
-    "textSecondary": "#999999",
-    "border": "#333333",
-    "header": "#000000",
-    "sidebar": "#0d0d0d",
-    "footer": "#0d0d0d"
   },
 
   "fonts": {
@@ -63,6 +76,6 @@
   },
 
   "dependencies": {
-    "core": "^2.0.0"
+    "core": "^2.1.0"
   }
 }

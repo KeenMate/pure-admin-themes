@@ -1,0 +1,236 @@
+/* Darkmatter Theme for Pure Admin - Deep space blue, minimal and sleek */
+/* Inspired by the Darkmatter Sublime Text theme */
+@use 'sass:color';
+
+// =============================================================================
+// DARKMATTER COLOR PALETTE
+// =============================================================================
+
+// Backgrounds (deep navy/space)
+$dm-bg:          #14191f;
+$dm-bg-deep:     #0e1217;
+$dm-surface:     #1b232c;
+$dm-elevated:    #212b37;
+$dm-border:      #283545;
+$dm-gutter:      #344556;
+
+// Text
+$dm-text:        #aec2e0;
+$dm-text-bright: #d0dfe6;
+$dm-text-sec:    #516a88;
+$dm-text-muted:  #3d5570;
+
+// Accent colors
+$dm-blue:        #267fb5;
+$dm-blue-bright: #4cbbff;
+$dm-cyan:        #6ee2ff;
+$dm-green:       #95cc5e;
+$dm-yellow:      #ffe792;
+$dm-orange:      #fe8019;
+$dm-red:         #ff5370;
+$dm-purple:      #c792ea;
+
+// Selection
+$dm-selection:   #183c66;
+
+// =============================================================================
+// THEME COLOR SLOTS (1-9)
+// =============================================================================
+$color-1: $dm-blue-bright;  // Primary (blue)
+$color-2: $dm-cyan;         // Cyan
+$color-3: $dm-green;        // Green
+$color-4: $dm-red;          // Red
+$color-5: $dm-purple;       // Purple
+$color-6: $dm-cyan;         // Info
+$color-7: $dm-text-sec;     // Neutral
+$color-8: $dm-yellow;       // Yellow
+$color-9: $dm-orange;       // Orange
+
+$color-1-text: #ffffff;
+$color-2-text: #1a1a1a;
+$color-3-text: #1a1a1a;
+$color-4-text: #ffffff;
+$color-5-text: #ffffff;
+$color-6-text: #1a1a1a;
+$color-7-text: #ffffff;
+$color-8-text: #1a1a1a;
+$color-9-text: #1a1a1a;
+
+// =============================================================================
+// BASE VARIABLES
+// =============================================================================
+
+// Accent (bright blue)
+$base-accent-color: $dm-blue-bright;
+$base-accent-color-hover: color.adjust($dm-blue-bright, $lightness: 8%);
+$base-accent-color-active: color.adjust($dm-blue-bright, $lightness: 15%);
+$base-accent-color-light: rgba($dm-blue-bright, 0.1);
+$base-accent-color-light-hover: rgba($dm-blue-bright, 0.15);
+
+// Text
+$base-text-color-1: $dm-text;
+$base-text-color-2: $dm-text-sec;
+$base-text-color-3: $dm-text-muted;
+$base-text-color-4: #2d4050;
+$base-text-color-on-accent: #ffffff;
+
+// Backgrounds
+$base-main-bg: $dm-surface;
+$base-page-bg: $dm-bg;
+$base-subtle-bg: $dm-elevated;
+$base-inverse-bg: $dm-text;
+$base-hover-bg: $dm-elevated;
+$base-active-bg: $dm-border;
+$base-disabled-bg: $dm-elevated;
+$base-overlay-bg: rgba($dm-bg-deep, 0.8);
+$base-shadow-color: rgba(0, 0, 0, 0.4);
+
+// Legacy surface aliases
+$base-surface-1: $base-main-bg;
+$base-surface-2: $base-page-bg;
+$base-surface-3: $dm-border;
+$base-surface-inverse: $base-inverse-bg;
+
+// Border
+$base-border-color: $dm-border;
+
+// Input
+$base-input-bg: $dm-bg;
+$base-input-color: $dm-text;
+$base-input-border: 1px solid $dm-border;
+$base-input-border-hover: 1px solid $dm-gutter;
+$base-input-border-focus: 1px solid $dm-blue-bright;
+$base-input-placeholder-color: $dm-text-muted;
+
+// Dropdown/Popover
+$base-dropdown-bg: $dm-surface;
+$base-dropdown-border: $dm-border;
+$base-dropdown-box-shadow: 0 8px 16px rgba(0, 0, 0, 0.45);
+
+// Tooltip
+$base-tooltip-bg: $dm-elevated;
+$base-tooltip-text-color: $dm-text;
+
+// Contextual colors
+$base-success-color: $dm-green;
+$base-success-color-hover: color.adjust($dm-green, $lightness: -8%);
+$base-success-bg-light: rgba($dm-green, 0.12);
+$base-text-on-success: #1a1a1a;
+
+$base-danger-color: $dm-red;
+$base-danger-color-hover: color.adjust($dm-red, $lightness: -8%);
+$base-danger-bg-light: rgba($dm-red, 0.12);
+$base-text-on-danger: #ffffff;
+
+$base-warning-color: $dm-yellow;
+$base-warning-color-hover: color.adjust($dm-yellow, $lightness: -10%);
+$base-warning-bg-light: rgba($dm-yellow, 0.12);
+$base-text-on-warning: #1a1a1a;
+
+$base-info-color: $dm-cyan;
+$base-info-color-hover: color.adjust($dm-cyan, $lightness: -8%);
+$base-info-bg-light: rgba($dm-cyan, 0.12);
+$base-text-on-info: #1a1a1a;
+
+// Interactive states
+$base-focus-ring-color: rgba($dm-blue-bright, 0.3);
+
+// Alert opacity
+$alert-bg-opacity-dark: 20;
+$alert-border-opacity-dark: 40;
+
+// =============================================================================
+// FRAMEWORK VARIABLES
+// =============================================================================
+@import '@keenmate/pure-admin-core/src/scss/variables/index';
+
+// Layout overrides
+$main-bg: $dm-bg;
+$subtle-bg: $dm-bg-deep;
+$header-bg: $dm-bg-deep;
+$header-border-color: $dm-border;
+$header-text: $dm-text;
+$header-text-secondary: $dm-text-sec;
+$header-profile-name-color: $dm-text-bright;
+$sidebar-bg: $dm-surface;
+$sidebar-text: $dm-text;
+$sidebar-text-secondary: $dm-text-sec;
+$sidebar-submenu-bg: $dm-elevated;
+$sidebar-submenu-hover-bg: $dm-border;
+$sidebar-submenu-active-bg: $dm-blue;
+$footer-bg: $dm-bg-deep;
+$footer-border-color: $dm-border;
+
+// Cards
+$card-bg: $dm-surface;
+$card-header-bg: $dm-bg;
+$card-footer-bg: $dm-bg;
+$card-tabs-bg: $dm-elevated;
+
+// Input
+$input-bg: $dm-bg;
+$input-border: $dm-border;
+$input-text: $dm-text;
+
+// Tables
+$table-bg: $dm-surface;
+$table-header-bg: $dm-bg;
+$table-hover-bg: $dm-elevated;
+$table-stripe: $dm-bg;
+
+// Buttons
+$btn-primary-bg: $dm-blue;
+$btn-primary-bg-hover: color.adjust($dm-blue, $lightness: -5%);
+$btn-secondary-bg: $dm-border;
+$btn-secondary-bg-hover: $dm-gutter;
+$btn-secondary-text: $dm-text;
+$btn-light-bg: $dm-elevated;
+$btn-light-text: $dm-text;
+$btn-light-bg-hover: $dm-border;
+$btn-dark-bg: $dm-bg-deep;
+$btn-dark-bg-hover: $dm-bg;
+$btn-warning-text: #1a1a1a;
+
+// Modal
+$modal-overlay-bg: $base-overlay-bg;
+$modal-content-bg: $dm-surface;
+
+// Form focus
+$input-focus-border-color: $base-accent-color;
+$select-focus-border-color: $base-accent-color;
+$textarea-focus-border-color: $base-accent-color;
+
+// Checkbox
+$checkbox-border-color-hover: $base-accent-color;
+$checkbox-border-color-checked: $base-accent-color;
+$checkbox-bg-checked: $base-accent-color;
+$checkbox-bg-indeterminate: $base-accent-color;
+$checkbox-focus-shadow: 0 0 0 2px $base-focus-ring-color;
+
+// =============================================================================
+// CORE IMPORTS
+// =============================================================================
+@import '@keenmate/pure-admin-core/src/scss/core';
+@import '@keenmate/pure-admin-core/src/scss/utilities';
+@import '@keenmate/pure-admin-core/src/scss/base-css-variables';
+
+// =============================================================================
+// CSS VARIABLES - DARK (Default, only variant)
+// =============================================================================
+:root {
+  --page-loader-bg: rgba(20, 25, 31, 0.95);
+  --page-loader-spinner-border: #{$dm-border};
+  --page-loader-spinner-accent: #{$dm-blue-bright};
+
+  @include output-base-css-variables;
+  @include output-pa-css-variables;
+  @include output-pa-alert-variables-dark;
+
+  // Override alert text for readability on deep backgrounds
+  --pa-alert-success-text: color-mix(in srgb, var(--pa-success-bg) 90%, black);
+  --pa-alert-danger-text: color-mix(in srgb, var(--pa-danger-bg) 90%, black);
+  --pa-alert-warning-text: color-mix(in srgb, var(--pa-warning-bg) 90%, black);
+  --pa-alert-info-text: color-mix(in srgb, var(--pa-info-bg) 90%, black);
+
+  --base-elevated-bg: #{$dm-elevated};
+}

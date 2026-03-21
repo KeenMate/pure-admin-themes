@@ -350,7 +350,7 @@ $header-profile-name-color: $express-black;  // Black text on yellow header
 
 // Sidebar - black background with white/light text
 .pa-sidebar {
-  border-right-color: $express-black !important;
+  border-inline-end-color: $express-black !important;
 
   &__link,
   &__toggle {
@@ -364,7 +364,7 @@ $header-profile-name-color: $express-black;  // Black text on yellow header
 
   &__link--active {
     background-color: $express-red !important;
-    border-right: 3px solid $express-yellow !important;
+    border-inline-end: 3px solid $express-yellow !important;
     color: #ffffff !important;
   }
 

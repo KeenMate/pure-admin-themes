@@ -2,23 +2,49 @@
   "$schema": "../schemas/pure-admin-theme.schema.json",
   "name": "Express",
   "id": "express",
-  "version": "2.0.3",
+  "version": "2.1.0",
   "description": "Bold yellow and red theme inspired by logistics brands",
+  "content": "## Express\n\nA bold, high-energy theme inspired by the visual identity of logistics and delivery brands. Bright yellow headers and red accents make for an unmistakable, action-oriented interface.\n\n### Highlights\n\n- **Yellow header (#FFCC00)** and **red accent (#D40511)** for a striking, branded look\n- **Fira Sans Condensed** bundled font for a compact, industrial feel\n- **Black sidebar** contrasting against light content areas\n- Dark mode included with adjusted contrast\n\n### Usage\n\n```html\n<link rel=\"stylesheet\" href=\"css/express.css\">\n```\n\nDefaults to light mode. Switch with `pa-mode-light` / `pa-mode-dark` on `<body>`. Auto-switching via `prefers-color-scheme` is enabled by default.",
   "author": "KeenMate",
   "license": "MIT",
 
-  "modes": {
-    "supported": ["light", "dark"],
-    "default": "light",
-    "cssClass": "pa-mode-{mode}",
-    "autoSwitch": {
-      "enabled": true,
-      "method": "prefers-color-scheme",
-      "respectUserPreference": true
-    }
-  },
+  "modeCssClass": "pa-mode-{mode}",
+  "variantCssClass": "pa-color-{variant}",
 
-  "colorVariants": null,
+  "colorVariants": [
+    {
+      "id": "",
+      "name": "Default",
+      "file": "dist/express.css",
+      "modes": [
+        {
+          "id": "light",
+          "name": "Light",
+          "default": true,
+          "colors": {
+            "accent": "#D40511",
+            "background": "#F2F2F2",
+            "surface": "#ffffff",
+            "text": "#333333",
+            "header": "#FFCC00",
+            "sidebar": "#000000"
+          }
+        },
+        {
+          "id": "dark",
+          "name": "Dark",
+          "colors": {
+            "accent": "#D40511",
+            "background": "#1a1a1a",
+            "surface": "#242424",
+            "text": "#ffffff",
+            "header": "#FFCC00",
+            "sidebar": "#1a1a1a"
+          }
+        }
+      ]
+    }
+  ],
 
   "features": {
     "cssVariables": true,
@@ -29,19 +55,6 @@
     "customFonts": true,
     "rtlSupport": false,
     "printStyles": false
-  },
-
-  "colors": {
-    "accent": "#D40511",
-    "accentHover": "#F91320",
-    "background": "#F2F2F2",
-    "surface": "#ffffff",
-    "text": "#333333",
-    "textSecondary": "#8C8C8C",
-    "border": "#E5E5E5",
-    "header": "#FFCC00",
-    "sidebar": "#000000",
-    "footer": "#FFCC00"
   },
 
   "fonts": {
@@ -63,6 +76,6 @@
   },
 
   "dependencies": {
-    "core": "^2.0.0"
+    "core": "^2.1.0"
   }
 }

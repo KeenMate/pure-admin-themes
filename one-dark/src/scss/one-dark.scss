@@ -1,0 +1,247 @@
+/* One Dark Theme for Pure Admin - Atom's One Dark editor color scheme */
+/* Single dark variant */
+@use 'sass:color';
+
+// =============================================================================
+// THEME COLOR SLOTS (1-9) - One Dark palette
+// =============================================================================
+$color-1: #61afef;  // Blue (primary accent)
+$color-2: #c678dd;  // Purple
+$color-3: #98c379;  // Green (success)
+$color-4: #e06c75;  // Red (danger)
+$color-5: #56b6c2;  // Cyan (info)
+$color-6: #e5c07b;  // Yellow (warning)
+$color-7: #d19a66;  // Orange
+$color-8: #abb2bf;  // Foreground text
+$color-9: #5c6370;  // Comment gray
+
+// Contrast text colors for color slots
+$color-1-text: #1e2127;  // Dark on Blue
+$color-2-text: #1e2127;  // Dark on Purple
+$color-3-text: #1e2127;  // Dark on Green
+$color-4-text: #ffffff;  // White on Red
+$color-5-text: #1e2127;  // Dark on Cyan
+$color-6-text: #1e2127;  // Dark on Yellow
+$color-7-text: #1e2127;  // Dark on Orange
+$color-8-text: #1e2127;  // Dark on Foreground
+$color-9-text: #ffffff;  // White on Comment
+
+// =============================================================================
+// ONE DARK COLOR PALETTE
+// =============================================================================
+
+// Background surfaces
+$od-bg-deep:    #1e2127;  // Deepest bg - header, footer
+$od-page-bg:    #21252b;  // Page background, sidebar
+$od-surface:    #282c34;  // Cards, panels
+$od-elevated:   #2c313a;  // Elevated surfaces, selection
+$od-border:     #3e4452;  // Focus border, borders
+$od-gutter:     #4b5363;  // Gutter, strong borders
+
+// Text
+$od-text:       #abb2bf;  // Primary foreground
+$od-text-sec:   #5c6370;  // Comment / secondary
+
+// Accent colors
+$od-accent:        #61afef;  // Blue - primary accent
+$od-accent-hover:  color.adjust($od-accent, $lightness: 8%);
+$od-accent-active: color.adjust($od-accent, $lightness: 15%);
+
+// Contextual semantic colors
+$od-success:       #98c379;
+$od-success-hover: color.adjust($od-success, $lightness: -8%);
+$od-danger:        #e06c75;
+$od-danger-hover:  color.adjust($od-danger, $lightness: -8%);
+$od-warning:       #e5c07b;
+$od-warning-hover: color.adjust($od-warning, $lightness: -8%);
+$od-info:          #56b6c2;
+$od-info-hover:    color.adjust($od-info, $lightness: -8%);
+
+// =============================================================================
+// BASE VARIABLES
+// =============================================================================
+
+// Accent
+$base-accent-color:             $od-accent;
+$base-accent-color-hover:       $od-accent-hover;
+$base-accent-color-active:      $od-accent-active;
+$base-accent-color-light:       rgba($od-accent, 0.1);
+$base-accent-color-light-hover: rgba($od-accent, 0.15);
+
+// Text
+$base-text-color-1:         $od-text;
+$base-text-color-2:         $od-text-sec;
+$base-text-color-3:         #4b5363;
+$base-text-color-4:         #3e4452;
+$base-text-color-on-accent: #1e2127;
+
+// Backgrounds
+$base-main-bg:       $od-surface;
+$base-page-bg:       $od-page-bg;
+$base-subtle-bg:     $od-elevated;
+$base-inverse-bg:    #ffffff;
+$base-hover-bg:      $od-elevated;
+$base-active-bg:     $od-border;
+$base-disabled-bg:   $od-elevated;
+$base-overlay-bg:    rgba(#1e2127, 0.75);
+$base-shadow-color:  rgba(0, 0, 0, 0.4);
+
+// Legacy surface aliases
+$base-surface-1:       $base-main-bg;
+$base-surface-2:       $base-page-bg;
+$base-surface-3:       $od-border;
+$base-surface-inverse: $base-inverse-bg;
+
+// Border
+$base-border-color: $od-border;
+
+// Input fields
+$base-input-bg:                 $od-page-bg;
+$base-input-color:              $od-text;
+$base-input-border:             1px solid $od-border;
+$base-input-border-hover:       1px solid $od-gutter;
+$base-input-border-focus:       1px solid $od-accent;
+$base-input-placeholder-color:  $od-text-sec;
+
+// Dropdown / Popover
+$base-dropdown-bg:         $od-surface;
+$base-dropdown-border:     $od-border;
+$base-dropdown-box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+
+// Tooltip
+$base-tooltip-bg:         $od-elevated;
+$base-tooltip-text-color: $od-text;
+
+// Contextual colors
+$base-success-color:       $od-success;
+$base-success-color-hover: $od-success-hover;
+$base-success-bg-light:    rgba($od-success, 0.15);
+$base-text-on-success:     #1e2127;
+
+$base-danger-color:        $od-danger;
+$base-danger-color-hover:  $od-danger-hover;
+$base-danger-bg-light:     rgba($od-danger, 0.15);
+$base-text-on-danger:      #ffffff;
+
+$base-warning-color:       $od-warning;
+$base-warning-color-hover: $od-warning-hover;
+$base-warning-bg-light:    rgba($od-warning, 0.15);
+$base-text-on-warning:     #1e2127;
+
+$base-info-color:          $od-info;
+$base-info-color-hover:    $od-info-hover;
+$base-info-bg-light:       rgba($od-info, 0.15);
+$base-text-on-info:        #1e2127;
+
+// Focus ring
+$base-focus-ring-color: rgba($od-accent, 0.3);
+
+// Alert opacity - dark-tuned so text stays readable
+$alert-bg-opacity-dark:     20;
+$alert-border-opacity-dark: 40;
+
+// =============================================================================
+// FRAMEWORK VARIABLES - Import and let them derive from base
+// =============================================================================
+@import '@keenmate/pure-admin-core/src/scss/variables/index';
+
+// Layout-specific overrides
+$main-bg:                     $od-page-bg;
+$subtle-bg:                   $od-bg-deep;
+$header-bg:                   $od-bg-deep;
+$header-border-color:         $od-border;
+$header-text:                 $od-text;
+$header-text-secondary:       $od-text-sec;
+$header-profile-name-color:   $od-text;
+$sidebar-bg:                  $od-page-bg;
+$sidebar-text:                $od-text;
+$sidebar-text-secondary:      $od-text-sec;
+$sidebar-submenu-bg:          $od-surface;
+$sidebar-submenu-hover-bg:    $od-elevated;
+$sidebar-submenu-active-bg:   $od-accent;
+$footer-bg:                   $od-bg-deep;
+$footer-border-color:         $od-border;
+
+// Card colors
+$card-bg:          $od-surface;
+$card-header-bg:   $od-page-bg;
+$card-footer-bg:   $od-page-bg;
+$card-tabs-bg:     $od-elevated;
+
+// Input colors
+$input-bg:     $od-page-bg;
+$input-border: $od-border;
+$input-text:   $od-text;
+
+// Table colors
+$table-bg:        $od-surface;
+$table-header-bg: $od-page-bg;
+$table-hover-bg:  $od-elevated;
+$table-stripe:    $od-page-bg;
+
+// Button colors
+$btn-primary-bg:         color.adjust($od-accent, $lightness: -8%);
+$btn-primary-bg-hover:   color.adjust($od-accent, $lightness: -15%);
+$btn-secondary-bg:       $od-border;
+$btn-secondary-bg-hover: $od-gutter;
+$btn-secondary-text:     $od-text;
+$btn-light-bg:           $od-elevated;
+$btn-light-text:         $od-text;
+$btn-light-bg-hover:     $od-border;
+$btn-dark-bg:            $od-bg-deep;
+$btn-dark-bg-hover:      color.adjust($od-bg-deep, $lightness: -4%);
+$btn-warning-text:       #1e2127;
+
+// Modal colors
+$modal-overlay-bg:  $base-overlay-bg;
+$modal-content-bg:  $od-surface;
+
+// Form focus colors
+$input-focus-border-color:    $base-accent-color;
+$select-focus-border-color:   $base-accent-color;
+$textarea-focus-border-color: $base-accent-color;
+
+// Checkbox colors
+$checkbox-border-color-hover:      $base-accent-color;
+$checkbox-border-color-checked:    $base-accent-color;
+$checkbox-bg-checked:              $base-accent-color;
+$checkbox-bg-indeterminate:        $base-accent-color;
+$checkbox-focus-shadow:            0 0 0 2px $base-focus-ring-color;
+
+// =============================================================================
+// CORE IMPORTS
+// =============================================================================
+@import '@keenmate/pure-admin-core/src/scss/core';
+@import '@keenmate/pure-admin-core/src/scss/utilities';
+@import '@keenmate/pure-admin-core/src/scss/base-css-variables';
+
+// Active sidebar link - white text on blue accent background is fine
+.pa-sidebar__link--active {
+  color: #ffffff !important;
+
+  .pa-sidebar__icon,
+  .pa-sidebar__label {
+    color: #ffffff !important;
+  }
+}
+
+// =============================================================================
+// CSS VARIABLES - ROOT
+// =============================================================================
+:root {
+  --page-loader-bg: rgba(40, 44, 52, 0.95);
+  --page-loader-spinner-border: #{$od-border};
+  --page-loader-spinner-accent: #{$od-accent};
+
+  @include output-base-css-variables;
+  @include output-pa-css-variables;
+  @include output-pa-alert-variables-dark;
+
+  // Alert text: saturated tints of the alert color on dark semi-transparent bg
+  --pa-alert-success-text: color-mix(in srgb, var(--pa-success-bg) 90%, black);
+  --pa-alert-danger-text:  color-mix(in srgb, var(--pa-danger-bg)  90%, black);
+  --pa-alert-warning-text: color-mix(in srgb, var(--pa-warning-bg) 90%, black);
+  --pa-alert-info-text:    color-mix(in srgb, var(--pa-info-bg)    90%, black);
+
+  --base-elevated-bg: #{$od-elevated};
+}

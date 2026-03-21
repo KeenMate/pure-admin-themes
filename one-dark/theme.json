@@ -1,0 +1,56 @@
+{
+  "$schema": "../schemas/pure-admin-theme.schema.json",
+  "name": "One Dark",
+  "id": "one-dark",
+  "version": "2.1.0",
+  "description": "Dark theme inspired by Atom's One Dark color scheme with blue accents",
+  "content": "## One Dark\n\nA clean, focused dark theme inspired by Atom's iconic One Dark color scheme. Neutral cool-toned backgrounds with a distinctive blue accent create a productive, distraction-free interface.\n\n### Highlights\n\n- **Blue accent (#61afef)** — the signature One Dark blue\n- **Cool neutral surfaces** — #282c34 editor background, no blue tint\n- **System fonts** — no custom font download required\n\n### Usage\n\n```html\n<link rel=\"stylesheet\" href=\"css/one-dark.css\">\n```",
+  "author": "KeenMate",
+  "license": "MIT",
+
+  "variantCssClass": "pa-color-{variant}",
+
+  "colorVariants": [
+    {
+      "id": "",
+      "name": "One Dark",
+      "description": "Atom's One Dark palette with blue accent",
+      "file": "dist/one-dark.css",
+      "modes": [
+        {
+          "id": "dark",
+          "name": "Dark",
+          "default": true,
+          "colors": {
+            "accent": "#61afef",
+            "background": "#21252b",
+            "surface": "#282c34",
+            "text": "#abb2bf",
+            "header": "#1e2127",
+            "sidebar": "#21252b"
+          }
+        }
+      ]
+    }
+  ],
+
+  "features": {
+    "cssVariables": true,
+    "darkMode": true,
+    "lightMode": false,
+    "responsiveLayout": true,
+    "customFonts": false,
+    "printStyles": false
+  },
+
+  "tags": ["dark", "editor", "one-dark", "atom", "blue", "cool", "minimal"],
+
+  "exports": {
+    "css": "./dist/one-dark.css",
+    "scss": "./src/scss/one-dark.scss"
+  },
+
+  "dependencies": {
+    "core": "^2.1.0"
+  }
+}

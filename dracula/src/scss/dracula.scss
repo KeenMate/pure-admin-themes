@@ -1,0 +1,232 @@
+/* Dracula Theme for Pure Admin - Dark theme inspired by the Dracula color scheme */
+@use 'sass:color';
+
+// =============================================================================
+// DRACULA OFFICIAL PALETTE
+// =============================================================================
+$dracula-background:   #282a36;
+$dracula-current-line: #44475a;
+$dracula-foreground:   #f8f8f2;
+$dracula-comment:      #6272a4;
+$dracula-cyan:         #8be9fd;
+$dracula-green:        #50fa7b;
+$dracula-orange:       #ffb86c;
+$dracula-pink:         #ff79c6;
+$dracula-purple:       #bd93f9;  // PRIMARY ACCENT
+$dracula-red:          #ff5555;
+$dracula-yellow:       #f1fa8c;
+
+// =============================================================================
+// DRACULA SURFACE PALETTE
+// =============================================================================
+$bg-deep:    #21222c;  // Darker than background - header/footer
+$bg:         #282a36;  // Page background
+$surface:    #2d2f3d;  // Cards, sidebar (slightly lighter)
+$elevated:   #343746;  // Elevated surfaces
+$border:     #44475a;  // Current line as border
+$text-1:     #f8f8f2;  // Foreground - primary text
+$text-2:     #6272a4;  // Comment - secondary text
+
+// Accent
+$accent:        $dracula-purple;
+$accent-hover:  color.adjust($dracula-purple, $lightness: 8%);
+$accent-active: color.adjust($dracula-purple, $lightness: 15%);
+
+// Contextual colors
+$dracula-success:       $dracula-green;
+$dracula-success-hover: color.adjust($dracula-green, $lightness: -10%);
+$dracula-danger:        $dracula-red;
+$dracula-danger-hover:  color.adjust($dracula-red, $lightness: -8%);
+$dracula-warning:       $dracula-orange;
+$dracula-warning-hover: color.adjust($dracula-orange, $lightness: -8%);
+$dracula-info:          $dracula-cyan;
+$dracula-info-hover:    color.adjust($dracula-cyan, $lightness: -10%);
+
+// =============================================================================
+// BASE CSS VARIABLES
+// =============================================================================
+
+// Accent colors (purple)
+$base-accent-color:             $accent;
+$base-accent-color-hover:       $accent-hover;
+$base-accent-color-active:      $accent-active;
+$base-accent-color-light:       rgba($accent, 0.1);
+$base-accent-color-light-hover: rgba($accent, 0.15);
+
+// Text colors
+$base-text-color-1:          $text-1;
+$base-text-color-2:          $text-2;
+$base-text-color-3:          #4d5566;
+$base-text-color-4:          #3a3c4d;
+$base-text-color-on-accent:  #1a1a2e;
+
+// Background colors
+$base-main-bg:       $surface;
+$base-page-bg:       $bg;
+$base-subtle-bg:     $elevated;
+$base-inverse-bg:    #ffffff;
+$base-hover-bg:      $elevated;
+$base-active-bg:     $border;
+$base-disabled-bg:   $elevated;
+$base-overlay-bg:    rgba(#21222c, 0.75);
+$base-shadow-color:  rgba(0, 0, 0, 0.4);
+
+// Legacy surface aliases
+$base-surface-1:       $base-main-bg;
+$base-surface-2:       $base-page-bg;
+$base-surface-3:       $border;
+$base-surface-inverse: $base-inverse-bg;
+
+// Border
+$base-border-color: $border;
+
+// Input fields
+$base-input-bg:                  $bg;
+$base-input-color:               $text-1;
+$base-input-border:              1px solid $border;
+$base-input-border-hover:        1px solid $dracula-comment;
+$base-input-border-focus:        1px solid $accent;
+$base-input-placeholder-color:   $text-2;
+
+// Dropdown/Popover
+$base-dropdown-bg:         $surface;
+$base-dropdown-border:     $border;
+$base-dropdown-box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+
+// Tooltip
+$base-tooltip-bg:         $elevated;
+$base-tooltip-text-color: $text-1;
+
+// Contextual colors
+$base-success-color:       $dracula-success;
+$base-success-color-hover: $dracula-success-hover;
+$base-success-bg-light:    rgba($dracula-success, 0.15);
+$base-text-on-success:     #1a1a2e;
+
+$base-danger-color:        $dracula-danger;
+$base-danger-color-hover:  $dracula-danger-hover;
+$base-danger-bg-light:     rgba($dracula-danger, 0.15);
+$base-text-on-danger:      #ffffff;
+
+$base-warning-color:       $dracula-warning;
+$base-warning-color-hover: $dracula-warning-hover;
+$base-warning-bg-light:    rgba($dracula-warning, 0.15);
+$base-text-on-warning:     #1a1a2e;
+
+$base-info-color:          $dracula-info;
+$base-info-color-hover:    $dracula-info-hover;
+$base-info-bg-light:       rgba($dracula-info, 0.15);
+$base-text-on-info:        #1a1a2e;
+
+// Focus ring
+$base-focus-ring-color: rgba($accent, 0.3);
+
+// Alert opacity - tuned for dark backgrounds
+$alert-bg-opacity-dark:     20;
+$alert-border-opacity-dark: 40;
+
+// =============================================================================
+// FRAMEWORK VARIABLES - Import and let them derive from base
+// =============================================================================
+@import '@keenmate/pure-admin-core/src/scss/variables/index';
+
+// Layout-specific overrides
+$main-bg:                       $bg;
+$subtle-bg:                     $bg-deep;
+$header-bg:                     $bg-deep;
+$header-border-color:           $border;
+$header-text:                   $text-1;
+$header-text-secondary:         $text-2;
+$header-profile-name-color:     $text-1;
+$sidebar-bg:                    $surface;
+$sidebar-text:                  $text-1;
+$sidebar-text-secondary:        $text-2;
+$sidebar-submenu-bg:            $elevated;
+$sidebar-submenu-hover-bg:      $border;
+$sidebar-submenu-active-bg:     $accent;
+$footer-bg:                     $bg-deep;
+$footer-border-color:           $border;
+
+// Card colors
+$card-bg:          $surface;
+$card-header-bg:   $bg;
+$card-footer-bg:   $bg;
+$card-tabs-bg:     $elevated;
+
+// Input colors
+$input-bg:     $bg;
+$input-border: $border;
+$input-text:   $text-1;
+
+// Table colors
+$table-bg:        $surface;
+$table-header-bg: $bg;
+$table-hover-bg:  $elevated;
+$table-stripe:    $bg;
+
+// Button colors
+$btn-primary-bg:          color.adjust($accent, $lightness: -8%);
+$btn-primary-bg-hover:    color.adjust($accent, $lightness: -15%);
+$btn-secondary-bg:        $border;
+$btn-secondary-bg-hover:  $dracula-current-line;
+$btn-secondary-text:      $text-1;
+$btn-light-bg:            $elevated;
+$btn-light-text:          $text-1;
+$btn-light-bg-hover:      $border;
+$btn-dark-bg:             $bg-deep;
+$btn-dark-bg-hover:       #191a23;
+$btn-warning-text:        #1a1a2e;
+
+// Modal colors
+$modal-overlay-bg:   $base-overlay-bg;
+$modal-content-bg:   $surface;
+
+// Form focus colors
+$input-focus-border-color:    $base-accent-color;
+$select-focus-border-color:   $base-accent-color;
+$textarea-focus-border-color: $base-accent-color;
+
+// Checkbox colors
+$checkbox-border-color-hover:       $base-accent-color;
+$checkbox-border-color-checked:     $base-accent-color;
+$checkbox-bg-checked:               $base-accent-color;
+$checkbox-bg-indeterminate:         $base-accent-color;
+$checkbox-focus-shadow:             0 0 0 2px $base-focus-ring-color;
+
+// =============================================================================
+// CORE IMPORTS
+// =============================================================================
+@import '@keenmate/pure-admin-core/src/scss/core';
+@import '@keenmate/pure-admin-core/src/scss/utilities';
+@import '@keenmate/pure-admin-core/src/scss/base-css-variables';
+
+// Active sidebar link - dark text on purple accent background
+.pa-sidebar__link--active {
+  color: #1a1a2e !important;
+
+  .pa-sidebar__icon,
+  .pa-sidebar__label {
+    color: #1a1a2e !important;
+  }
+}
+
+// =============================================================================
+// CSS VARIABLES
+// =============================================================================
+:root {
+  --page-loader-bg: rgba(40, 42, 54, 0.95);
+  --page-loader-spinner-border: #{$border};
+  --page-loader-spinner-accent: #{$accent};
+
+  @include output-base-css-variables;
+  @include output-pa-css-variables;
+  @include output-pa-alert-variables-dark;
+
+  // Alert text: saturated tints of the alert color instead of white
+  --pa-alert-success-text: color-mix(in srgb, var(--pa-success-bg) 90%, black);
+  --pa-alert-danger-text:  color-mix(in srgb, var(--pa-danger-bg)  90%, black);
+  --pa-alert-warning-text: color-mix(in srgb, var(--pa-warning-bg) 90%, black);
+  --pa-alert-info-text:    color-mix(in srgb, var(--pa-info-bg)    90%, black);
+
+  --base-elevated-bg: #{$elevated};
+}
