@@ -2,6 +2,25 @@
 /* Three variants: Mirage (default dark), Dark (deeper), Light */
 @use 'sass:color';
 
+// Bundled font: Monda
+@font-face {
+  font-family: 'Monda';
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url('../assets/fonts/monda-latin-ext.woff2') format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Monda';
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url('../assets/fonts/monda-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+
 // =============================================================================
 // THEME COLOR SLOTS (1-9) - Ayu-inspired warm palette
 // =============================================================================
@@ -149,6 +168,7 @@ $base-info-bg-light: rgba($ayu-info, 0.15);
 $base-text-on-info: #ffffff;
 
 // Interactive states
+$base-font-family: 'Monda', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 $base-focus-ring-color: rgba($ayu-accent, 0.3);
 
 // Alert opacity - reduce so white text stays readable on dark backgrounds
@@ -197,9 +217,9 @@ $table-stripe: $mirage-bg;
 // Button colors
 $btn-primary-bg: color.adjust($ayu-accent, $lightness: -8%);
 $btn-primary-bg-hover: color.adjust($ayu-accent, $lightness: -15%);
-$btn-secondary-bg: $mirage-border;
-$btn-secondary-bg-hover: $mirage-gutter;
-$btn-secondary-text: $mirage-text;
+$btn-secondary-bg: $mirage-text-sec;
+$btn-secondary-bg-hover: $mirage-text;
+$btn-secondary-text: $mirage-bg;
 $btn-light-bg: $mirage-elevated;
 $btn-light-text: $mirage-text;
 $btn-light-bg-hover: $mirage-border;
@@ -231,13 +251,19 @@ $checkbox-focus-shadow: 0 0 0 2px $base-focus-ring-color;
 @import '@keenmate/pure-admin-core/src/scss/base-css-variables';
 
 // Active sidebar link - dark text on golden background
-.pa-sidebar__link--active {
+// Submenu toggle active: dark text on solid golden bg
+.pa-sidebar__toggle--active {
   color: #1a1a1a !important;
 
   .pa-sidebar__icon,
   .pa-sidebar__label {
     color: #1a1a1a !important;
   }
+}
+
+// Secondary button: visible border in all variants
+.pa-btn--secondary {
+  border-color: var(--pa-btn-secondary-bg);
 }
 
 // =============================================================================
@@ -339,9 +365,9 @@ $checkbox-focus-shadow: 0 0 0 2px $base-focus-ring-color;
   --pa-subtle-bg: #{$light-surface};
   --pa-text-color-1: #{$light-text};
   --pa-text-color-2: #{$light-text-sec};
-  --pa-accent: #f29718;
-  --pa-accent-hover: rgba(242, 151, 24, 0.12);
-  --pa-accent-light: rgba(242, 151, 24, 0.06);
+  --pa-accent: #c47b10;
+  --pa-accent-hover: rgba(196, 123, 16, 0.15);
+  --pa-accent-light: rgba(196, 123, 16, 0.10);
   --pa-border-color: #{$light-border};
 
   // Header - stays dark (Ayu signature)
@@ -410,9 +436,9 @@ $checkbox-focus-shadow: 0 0 0 2px $base-focus-ring-color;
   @include output-pa-alert-variables-light;
 
   // Buttons
-  --pa-btn-secondary-bg: #{$light-border};
-  --pa-btn-secondary-bg-hover: #ccc9bf;
-  --pa-btn-secondary-text: #{$light-text};
+  --pa-btn-secondary-bg: #{$light-text-sec};
+  --pa-btn-secondary-bg-hover: #{$light-text};
+  --pa-btn-secondary-text: #ffffff;
   --pa-btn-light-bg: #{$light-elevated};
   --pa-btn-light-bg-hover: #{$light-border};
   --pa-btn-light-text: #{$light-text};
@@ -466,13 +492,13 @@ $checkbox-focus-shadow: 0 0 0 2px $base-focus-ring-color;
   }
 
   .pa-btn--secondary {
-    background-color: #{$light-border} !important;
-    color: #{$light-text} !important;
-    border-color: #ccc9bf !important;
+    background-color: #{$light-text-sec} !important;
+    color: #ffffff !important;
+    border-color: #{$light-text-sec} !important;
 
     &:hover {
-      background-color: #ccc9bf !important;
-      border-color: #{$light-text-sec} !important;
+      background-color: #{$light-text} !important;
+      border-color: #{$light-text} !important;
     }
   }
 

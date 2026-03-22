@@ -216,7 +216,7 @@ $checkbox-focus-shadow:            0 0 0 2px $base-focus-ring-color;
 @import '@keenmate/pure-admin-core/src/scss/base-css-variables';
 
 // Active sidebar link - white text on blue accent background is fine
-.pa-sidebar__link--active {
+.pa-sidebar__toggle--active {
   color: #ffffff !important;
 
   .pa-sidebar__icon,

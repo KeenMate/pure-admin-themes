@@ -332,12 +332,6 @@ $card-border-radius: 0; // Sharp edges
 
 .pa-sidebar__link--active {
   border-inline-start-color: var(--pa-accent) !important;
-  color: var(--pa-sidebar-text) !important;
-}
-
-.pa-sidebar__link--active .pa-sidebar__label,
-.pa-sidebar__link--active .pa-sidebar__icon {
-  color: var(--pa-sidebar-text) !important;
 }
 
 // =============================================================================

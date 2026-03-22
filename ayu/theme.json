@@ -76,12 +76,20 @@
     }
   ],
 
+  "fonts": {
+    "family": "Monda, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif",
+    "files": [
+      { "family": "Monda", "src": "assets/fonts/monda-latin.woff2", "weight": "400 700", "style": "normal" },
+      { "family": "Monda", "src": "assets/fonts/monda-latin-ext.woff2", "weight": "400 700", "style": "normal" }
+    ]
+  },
+
   "features": {
     "cssVariables": true,
     "darkMode": true,
     "lightMode": true,
     "responsiveLayout": true,
-    "customFonts": false,
+    "customFonts": true,
     "printStyles": false
   },
 

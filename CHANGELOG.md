@@ -2,6 +2,23 @@
 
 All notable changes to the Pure Admin Themes collection are documented in this file.
 
+## [2.1.1] - 2026-03-22
+
+### Fixed
+
+- **All themes:** Active sidebar link now uses accent color for text instead of default sidebar text — fixes low contrast active state across all dark themes
+- **All themes:** Removed `!important` overrides on `.pa-sidebar__link--active` — core now handles this; dark text override moved to `.pa-sidebar__toggle--active` for solid accent backgrounds
+- **ayu:** Secondary button outline now visible in all variants (Mirage, Dark, Light)
+- **ayu:** Darkened accent color in Light variant (`#c47b10` instead of `#f29718`) for better inline code and helper text readability
+- **ayu:** Fixed Dark variant active sidebar link — was showing invisible dark text on dark background
+
+### Added
+
+- **dark:** Bundled Play font (woff2, latin + latin-ext)
+- **ayu:** Bundled Monda font (woff2, latin + latin-ext)
+
+---
+
 ## [2.1.0] - 2026-03-21
 
 ### Added
