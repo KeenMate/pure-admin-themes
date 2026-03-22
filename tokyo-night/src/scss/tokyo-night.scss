@@ -209,6 +209,12 @@ $input-focus-border-color: $base-accent-color;
 $select-focus-border-color: $base-accent-color;
 $textarea-focus-border-color: $base-accent-color;
 
+// Input group prepend/append - readable text
+$input-group-prepend-bg: $night-elevated;
+$input-group-prepend-text: $night-text;
+$input-group-append-bg: $night-elevated;
+$input-group-append-text: $night-text;
+
 // Checkbox colors
 $checkbox-border-color-hover: $base-accent-color;
 $checkbox-border-color-checked: $base-accent-color;

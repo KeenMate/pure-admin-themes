@@ -236,6 +236,12 @@ $input-focus-border-color: $base-accent-color;
 $select-focus-border-color: $base-accent-color;
 $textarea-focus-border-color: $base-accent-color;
 
+// Input group prepend/append - readable text (Mirage default)
+$input-group-prepend-bg: $mirage-elevated;
+$input-group-prepend-text: $mirage-text;
+$input-group-append-bg: $mirage-elevated;
+$input-group-append-text: $mirage-text;
+
 // Checkbox colors
 $checkbox-border-color-hover: $base-accent-color;
 $checkbox-border-color-checked: $base-accent-color;

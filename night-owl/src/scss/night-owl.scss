@@ -200,6 +200,12 @@ $input-focus-border-color:    $no-accent;
 $select-focus-border-color:   $no-accent;
 $textarea-focus-border-color: $no-accent;
 
+// Input group prepend/append
+$input-group-prepend-bg: $no-elevated;
+$input-group-prepend-text: $no-text;
+$input-group-append-bg: $no-elevated;
+$input-group-append-text: $no-text;
+
 // Checkboxes
 $checkbox-border-color-hover:       $no-accent;
 $checkbox-border-color-checked:     $no-accent;

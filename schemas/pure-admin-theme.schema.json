@@ -186,6 +186,11 @@
           "type": "string",
           "description": "Primary font family"
         },
+        "url": {
+          "type": "string",
+          "format": "uri",
+          "description": "URL to the font's homepage or specimen page (e.g. Google Fonts)"
+        },
         "familyHeading": {
           "type": "string",
           "description": "Heading font family (if different)"

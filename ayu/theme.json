@@ -78,6 +78,7 @@
 
   "fonts": {
     "family": "Monda, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif",
+    "url": "https://fonts.google.com/specimen/Monda",
     "files": [
       { "family": "Monda", "src": "assets/fonts/monda-latin.woff2", "weight": "400 700", "style": "normal" },
       { "family": "Monda", "src": "assets/fonts/monda-latin-ext.woff2", "weight": "400 700", "style": "normal" }

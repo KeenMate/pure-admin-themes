@@ -11,6 +11,7 @@ All notable changes to the Pure Admin Themes collection are documented in this f
 - **ayu:** Secondary button outline now visible in all variants (Mirage, Dark, Light)
 - **ayu:** Darkened accent color in Light variant (`#c47b10` instead of `#f29718`) for better inline code and helper text readability
 - **ayu:** Fixed Dark variant active sidebar link — was showing invisible dark text on dark background
+- **ayu, cobalt2, darkmatter, dracula, gruvbox, night-owl, one-dark, tokyo-night:** Input group prepend/append text now readable — uses theme-appropriate elevated background and primary text instead of default gray-on-gray
 
 ### Added
 
