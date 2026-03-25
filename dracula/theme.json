@@ -2,7 +2,7 @@
   "$schema": "../schemas/pure-admin-theme.schema.json",
   "name": "Dracula",
   "id": "dracula",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "description": "Dark theme inspired by the iconic Dracula color scheme with purple accents",
   "content": "## Dracula\n\nA dark theme inspired by the iconic Dracula color scheme for code editors. Deep navy backgrounds with vivid purple accents create a distinctive, atmospheric admin interface.\n\n### Highlights\n\n- **Dark only** — single variant, no mode switching needed\n- **Purple accent (#bd93f9)** for a signature Dracula feel\n- **Full Dracula palette** — cyan, green, orange, pink, red, and yellow all mapped to semantic roles\n- **System fonts** — no custom font download required\n\n### Usage\n\n```html\n<link rel=\"stylesheet\" href=\"css/dracula.css\">\n```",
   "author": "KeenMate",
@@ -51,6 +51,6 @@
   },
 
   "dependencies": {
-    "core": "^2.1.0"
+    "core": "^2.2.0"
   }
 }

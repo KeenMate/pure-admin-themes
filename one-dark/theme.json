@@ -2,7 +2,7 @@
   "$schema": "../schemas/pure-admin-theme.schema.json",
   "name": "One Dark",
   "id": "one-dark",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "description": "Dark theme inspired by Atom's One Dark color scheme with blue accents",
   "content": "## One Dark\n\nA clean, focused dark theme inspired by Atom's iconic One Dark color scheme. Neutral cool-toned backgrounds with a distinctive blue accent create a productive, distraction-free interface.\n\n### Highlights\n\n- **Blue accent (#61afef)** — the signature One Dark blue\n- **Cool neutral surfaces** — #282c34 editor background, no blue tint\n- **System fonts** — no custom font download required\n\n### Usage\n\n```html\n<link rel=\"stylesheet\" href=\"css/one-dark.css\">\n```",
   "author": "KeenMate",
@@ -51,6 +51,6 @@
   },
 
   "dependencies": {
-    "core": "^2.1.0"
+    "core": "^2.2.0"
   }
 }

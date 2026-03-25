@@ -2,7 +2,7 @@
   "$schema": "../schemas/pure-admin-theme.schema.json",
   "name": "Express",
   "id": "express",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "description": "Bold yellow and red theme inspired by logistics brands",
   "content": "## Express\n\nA bold, high-energy theme inspired by the visual identity of logistics and delivery brands. Bright yellow headers and red accents make for an unmistakable, action-oriented interface.\n\n### Highlights\n\n- **Yellow header (#FFCC00)** and **red accent (#D40511)** for a striking, branded look\n- **Fira Sans Condensed** bundled font for a compact, industrial feel\n- **Black sidebar** contrasting against light content areas\n- Dark mode included with adjusted contrast\n\n### Usage\n\n```html\n<link rel=\"stylesheet\" href=\"css/express.css\">\n```\n\nDefaults to light mode. Switch with `pa-mode-light` / `pa-mode-dark` on `<body>`. Auto-switching via `prefers-color-scheme` is enabled by default.",
   "author": "KeenMate",
@@ -77,6 +77,6 @@
   },
 
   "dependencies": {
-    "core": "^2.1.0"
+    "core": "^2.2.0"
   }
 }
