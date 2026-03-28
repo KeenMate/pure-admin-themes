@@ -2,7 +2,7 @@
   "$schema": "../schemas/pure-admin-theme.schema.json",
   "name": "Ayu",
   "id": "ayu",
-  "version": "2.2.0",
+  "version": "2.3.0",
   "description": "Warm, elegant theme inspired by the Ayu editor color scheme with golden accents",
   "content": "## Ayu\n\nA warm, elegant theme inspired by the popular Ayu color scheme for code editors. Golden accents on carefully tuned backgrounds create a distinctive, eye-friendly interface.\n\n### Highlights\n\n- **Three variants** — Mirage (bluish dark, default), Dark (deep blacks), and Light\n- **Golden accent (#e6b450)** for a warm, inviting feel\n- **System fonts** — no custom font download required\n\n### Variants\n\nSwitch variants by adding a CSS class to `<body>`:\n\n```html\n<body>                          <!-- Mirage (default) -->\n<body class=\"pa-color-dark\">    <!-- Deep dark -->\n<body class=\"pa-color-light\">   <!-- Light -->\n```\n\n### Usage\n\n```html\n<link rel=\"stylesheet\" href=\"css/ayu.css\">\n```",
   "author": "KeenMate",

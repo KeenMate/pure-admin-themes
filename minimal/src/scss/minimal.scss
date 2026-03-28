@@ -4,26 +4,26 @@
 // =============================================================================
 // THEME COLOR SLOTS (1-9) - Minimal muted palette
 // =============================================================================
-$color-1: #374151;  // Gray 700 (primary)
-$color-2: #6b7280;  // Gray 500 (secondary)
-$color-3: #059669;  // Emerald 600 (muted success)
-$color-4: #d97706;  // Amber 600 (muted warning)
-$color-5: #4f46e5;  // Indigo 600 (accent)
+$color-1: #9ca3af;  // Gray 400 (light)
+$color-2: #d97706;  // Amber 600 (muted warning)
+$color-3: #6b7280;  // Gray 500 (secondary)
+$color-4: #db2777;  // Pink 600 (highlight)
+$color-5: #059669;  // Emerald 600 (muted success)
 $color-6: #7c3aed;  // Violet 600 (subtle)
-$color-7: #9ca3af;  // Gray 400 (light)
-$color-8: #1f2937;  // Gray 800 (dark)
-$color-9: #db2777;  // Pink 600 (highlight)
+$color-7: #4f46e5;  // Indigo 600 (accent)
+$color-8: #374151;  // Gray 700 (primary)
+$color-9: #1f2937;  // Gray 800 (dark)
 
 // Contrast text colors for color slots
-$color-1-text: #ffffff;  // White on Gray 700
-$color-2-text: #ffffff;  // White on Gray 500
-$color-3-text: #ffffff;  // White on Emerald 600
-$color-4-text: #ffffff;  // White on Amber 600
-$color-5-text: #ffffff;  // White on Indigo 600
+$color-1-text: #1a1a1a;  // Dark on Gray 400 (light background)
+$color-2-text: #ffffff;  // White on Amber 600
+$color-3-text: #ffffff;  // White on Gray 500
+$color-4-text: #ffffff;  // White on Pink 600
+$color-5-text: #ffffff;  // White on Emerald 600
 $color-6-text: #ffffff;  // White on Violet 600
-$color-7-text: #1a1a1a;  // Dark on Gray 400 (light background)
-$color-8-text: #ffffff;  // White on Gray 800
-$color-9-text: #ffffff;  // White on Pink 600
+$color-7-text: #ffffff;  // White on Indigo 600
+$color-8-text: #ffffff;  // White on Gray 700
+$color-9-text: #ffffff;  // White on Gray 800
 
 // ============================================================================
 // MINIMAL COLOR PALETTE - Grayscale focused

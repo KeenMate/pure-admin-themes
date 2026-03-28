@@ -5,25 +5,25 @@
 // =============================================================================
 // THEME COLOR SLOTS (1-9) - Night Owl palette
 // =============================================================================
-$color-1: #82aaff;  // Blue (primary accent)
-$color-2: #7fdbca;  // Cyan (info)
+$color-1: #ffcb8b;  // Yellow (warning)
+$color-2: #ecc48d;  // String/amber
 $color-3: #addb67;  // Green (success)
-$color-4: #ef5350;  // Red (danger)
+$color-4: #7fdbca;  // Cyan (info)
 $color-5: #c792ea;  // Purple
-$color-6: #ecc48d;  // String/amber
-$color-7: #f78c6c;  // Orange
-$color-8: #ffcb8b;  // Yellow (warning)
+$color-6: #f78c6c;  // Orange
+$color-7: #82aaff;  // Blue (primary accent)
+$color-8: #ef5350;  // Red (danger)
 $color-9: #637777;  // Comment/muted
 
 // Contrast text colors for color slots
-$color-1-text: #011627;  // Dark on Blue
-$color-2-text: #011627;  // Dark on Cyan
+$color-1-text: #011627;  // Dark on Yellow
+$color-2-text: #011627;  // Dark on Amber
 $color-3-text: #011627;  // Dark on Green
-$color-4-text: #ffffff;  // White on Red
+$color-4-text: #011627;  // Dark on Cyan
 $color-5-text: #011627;  // Dark on Purple
-$color-6-text: #011627;  // Dark on Amber
-$color-7-text: #011627;  // Dark on Orange
-$color-8-text: #011627;  // Dark on Yellow
+$color-6-text: #011627;  // Dark on Orange
+$color-7-text: #011627;  // Dark on Blue
+$color-8-text: #ffffff;  // White on Red
 $color-9-text: #d6deeb;  // Light on Muted
 
 // =============================================================================
@@ -157,7 +157,7 @@ $sidebar-text:                $no-text;
 $sidebar-text-secondary:      $no-text-sec;
 $sidebar-submenu-bg:          $no-elevated;
 $sidebar-submenu-hover-bg:    $no-border;
-$sidebar-submenu-active-bg:   $no-accent;
+$sidebar-submenu-active-bg: rgba($no-accent, 0.2);
 $footer-bg:                   $no-bg-deep;
 $footer-border-color:         $no-border;
 

@@ -2,7 +2,7 @@
   "$schema": "../schemas/pure-admin-theme.schema.json",
   "name": "Dark",
   "id": "dark",
-  "version": "2.2.0",
+  "version": "2.3.0",
   "description": "Neutral dark theme with optional color variants (blue, green, red)",
   "content": "## Dark\n\nA versatile dark theme with a neutral base and optional color variants. The default palette uses soft blue accents on dark grays, but you can switch to green or red tints for a completely different feel.\n\n### Highlights\n\n- **Color variants** — switch between Default (blue), Blue, Green, and Red accents\n- **Neutral gray base** that works well with any content\n- **System fonts** — no custom font download required\n- Light mode included as an alternative\n\n### Color Variants\n\nApply a variant by adding a CSS class to `<body>`:\n\n```html\n<body class=\"pa-mode-dark\">                     <!-- default blue accent -->\n<body class=\"pa-mode-dark pa-color-blue\">        <!-- slate blue tint -->\n<body class=\"pa-mode-dark pa-color-green\">       <!-- green tint -->\n<body class=\"pa-mode-dark pa-color-red\">         <!-- red tint -->\n```\n\n### Usage\n\n```html\n<link rel=\"stylesheet\" href=\"css/dark.css\">\n```\n\nDefaults to dark mode. Auto-switching via `prefers-color-scheme` is enabled by default.",
   "author": "KeenMate",

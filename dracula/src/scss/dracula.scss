@@ -43,6 +43,30 @@ $dracula-info:          $dracula-cyan;
 $dracula-info-hover:    color.adjust($dracula-cyan, $lightness: -10%);
 
 // =============================================================================
+// THEME COLOR SLOTS (1-9) - Sorted light to dark by luminance
+// =============================================================================
+$color-1: $dracula-yellow;    // Yellow (L=235)
+$color-2: $dracula-cyan;      // Cyan (L=207)
+$color-3: $dracula-orange;    // Orange (L=197)
+$color-4: $dracula-green;     // Green (L=185)
+$color-5: $dracula-purple;    // Purple (L=171)
+$color-6: $dracula-pink;      // Pink (L=170)
+$color-7: $dracula-red;       // Red (L=136)
+$color-8: $dracula-comment;   // Comment (L=115)
+$color-9: $dracula-current-line; // Current Line (L=68)
+
+// Contrast text colors for color slots
+$color-1-text: #282a36;  // Dark on Yellow
+$color-2-text: #282a36;  // Dark on Cyan
+$color-3-text: #282a36;  // Dark on Orange
+$color-4-text: #282a36;  // Dark on Green
+$color-5-text: #282a36;  // Dark on Purple
+$color-6-text: #282a36;  // Dark on Pink
+$color-7-text: #ffffff;  // White on Red
+$color-8-text: #ffffff;  // White on Comment
+$color-9-text: #f8f8f2;  // Foreground on Current Line
+
+// =============================================================================
 // BASE CSS VARIABLES
 // =============================================================================
 
@@ -136,14 +160,14 @@ $subtle-bg:                     $bg-deep;
 $header-bg:                     $bg-deep;
 $header-border-color:           $border;
 $header-text:                   $text-1;
-$header-text-secondary:         $text-2;
+$header-text-secondary:         color.adjust($text-2, $lightness: 15%);
 $header-profile-name-color:     $text-1;
 $sidebar-bg:                    $surface;
 $sidebar-text:                  $text-1;
-$sidebar-text-secondary:        $text-2;
+$sidebar-text-secondary:        color.adjust($text-2, $lightness: 15%);
 $sidebar-submenu-bg:            $elevated;
 $sidebar-submenu-hover-bg:      $border;
-$sidebar-submenu-active-bg:     $accent;
+$sidebar-submenu-active-bg:     rgba($accent, 0.2);
 $footer-bg:                     $bg-deep;
 $footer-border-color:           $border;
 
@@ -205,6 +229,11 @@ $checkbox-focus-shadow:             0 0 0 2px $base-focus-ring-color;
 @import '@keenmate/pure-admin-core/src/scss/core';
 @import '@keenmate/pure-admin-core/src/scss/utilities';
 @import '@keenmate/pure-admin-core/src/scss/base-css-variables';
+
+// Navbar hover — ensure text is readable on accent background
+.pa-header__nav a:hover {
+  color: $text-1 !important;
+}
 
 // Active sidebar link - dark text on purple accent background
 .pa-sidebar__toggle--active {

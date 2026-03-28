@@ -2,6 +2,26 @@
 
 All notable changes to the Pure Admin Themes collection are documented in this file.
 
+## [2.3.0] - 2026-03-26
+
+### Changed
+
+- **All themes:** Color slots (`$color-1` through `$color-9`) reordered by perceived luminance — `color-1` is now always the lightest, `color-9` always the darkest. This is a **breaking change** for anyone referencing specific slot numbers
+- **All themes:** Bumped versions to 2.3.0
+
+### Added
+
+- **dracula:** Added 9 theme color slots (`$color-1` through `$color-9`) with contrast text colors — was the only theme missing them. Uses official Dracula palette: yellow, cyan, orange, green, purple, pink, red, comment, current-line
+
+### Fixed
+
+- **ayu, cobalt2, darkmatter, dracula, express, gruvbox, night-owl, one-dark, tokyo-night:** Active sidebar submenu background changed from solid accent to `rgba($accent, 0.2)` — fixes accent-on-accent unreadable active state
+- **dark:** Same fix applied to color variant overrides (blue, green, red) — default variant was already fine
+- **dracula:** Brightened sidebar and header secondary text (`$text-2` + 15% lightness) for better readability on dark surfaces
+- **dracula, gruvbox:** Navbar hover text now uses foreground color instead of accent — fixes unreadable hover state on accent background
+
+---
+
 ## [2.1.1] - 2026-03-22
 
 ### Fixed

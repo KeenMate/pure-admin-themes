@@ -1,18 +1,61 @@
 #!/usr/bin/env node
 
 // =============================================================================
-// publish-themes.js — Pack + upload one or all themes to pure-theme-park
+// publish-themes.js — Pack + upload one or all themes to pureadmin.io
 // =============================================================================
+// Distributed by pureadmin.io — https://pureadmin.io/api/tools/publish-themes.js
+//
 // Usage:
 //   node scripts/publish-themes.js [theme] [--api-key KEY] [--url URL]
 //
-// Examples:
-//   node scripts/publish-themes.js --api-key xxx           # publish all
-//   node scripts/publish-themes.js audi --api-key xxx      # publish one
-//   make publish THEME=audi PUREADMIN_API_KEY=xxx         # via Makefile
-//
-// API key can come from --api-key flag or PUREADMIN_API_KEY env var.
-// URL can come from --url flag or PUREADMIN_URL env var.
+// API key can come from --api-key flag, PUREADMIN_API_KEY env var,
+// or a .pureadmin config file.
+// =============================================================================
+
+const TOOL_VERSION = '1.0.0';
+const TOOL_NAME = 'publish-themes.js';
+const UPDATE_URL = process.env.PUREADMIN_URL
+  ? `${process.env.PUREADMIN_URL.replace(/\/api\/.*$/, '')}/api/tools/${TOOL_NAME}`
+  : `https://pureadmin.io/api/tools/${TOOL_NAME}`;
+
+// ---------------------------------------------------------------------------
+// Self-update check (non-blocking, best-effort)
+// ---------------------------------------------------------------------------
+async function checkForUpdates() {
+  if (process.env.PUREADMIN_NO_UPDATE_CHECK === '1') return;
+  try {
+    const https = require(UPDATE_URL.startsWith('https') ? 'https' : 'http');
+    const res = await new Promise((resolve, reject) => {
+      const req = https.get(UPDATE_URL, { method: 'HEAD', timeout: 3000 }, resolve);
+      req.on('error', reject);
+      req.on('timeout', () => { req.destroy(); reject(new Error('timeout')); });
+    });
+    const serverVersion = res.headers['x-tool-version'];
+    if (serverVersion && serverVersion !== TOOL_VERSION) {
+      console.log(`\n  Update available: ${TOOL_NAME} ${TOOL_VERSION} → ${serverVersion}`);
+      console.log(`  Run: curl -o ${TOOL_NAME} ${UPDATE_URL}\n`);
+      if (process.env.PUREADMIN_AUTO_UPDATE === '1') {
+        console.log('  Auto-updating...');
+        const fs = require('fs');
+        const data = await new Promise((resolve, reject) => {
+          https.get(UPDATE_URL, { timeout: 10000 }, (res) => {
+            const chunks = [];
+            res.on('data', c => chunks.push(c));
+            res.on('end', () => resolve(Buffer.concat(chunks)));
+            res.on('error', reject);
+          }).on('error', reject);
+        });
+        fs.writeFileSync(__filename, data);
+        console.log('  Updated. Re-run the command.\n');
+        process.exit(0);
+      }
+    }
+  } catch {}
+}
+checkForUpdates();
+
+// =============================================================================
+// Main script
 // =============================================================================
 
 const fs = require('fs');
@@ -63,6 +106,9 @@ for (let i = 0; i < args.length; i++) {
     apiKey = args[++i];
   } else if (args[i] === '--url' && args[i + 1]) {
     uploadUrl = args[++i];
+  } else if (args[i] === '--version' || args[i] === '-V') {
+    console.log(`${TOOL_NAME} v${TOOL_VERSION}`);
+    process.exit(0);
   } else if (!args[i].startsWith('--') && !themeName) {
     themeName = args[i];
   }

@@ -36,25 +36,25 @@ $dm-selection:   #183c66;
 // =============================================================================
 // THEME COLOR SLOTS (1-9)
 // =============================================================================
-$color-1: $dm-blue-bright;  // Primary (blue)
-$color-2: $dm-cyan;         // Cyan
-$color-3: $dm-green;        // Green
-$color-4: $dm-red;          // Red
-$color-5: $dm-purple;       // Purple
-$color-6: $dm-cyan;         // Info
-$color-7: $dm-text-sec;     // Neutral
-$color-8: $dm-yellow;       // Yellow
-$color-9: $dm-orange;       // Orange
+$color-1: $dm-yellow;  // Yellow
+$color-2: $dm-cyan;  // Cyan
+$color-3: $dm-cyan;  // Info
+$color-4: $dm-green;  // Green
+$color-5: $dm-purple;  // Purple
+$color-6: $dm-blue-bright;  // Primary (blue)
+$color-7: $dm-orange;  // Orange
+$color-8: $dm-red;  // Red
+$color-9: $dm-text-sec;  // Neutral
 
-$color-1-text: #ffffff;
+$color-1-text: #1a1a1a;
 $color-2-text: #1a1a1a;
 $color-3-text: #1a1a1a;
-$color-4-text: #ffffff;
+$color-4-text: #1a1a1a;
 $color-5-text: #ffffff;
-$color-6-text: #1a1a1a;
-$color-7-text: #ffffff;
-$color-8-text: #1a1a1a;
-$color-9-text: #1a1a1a;
+$color-6-text: #ffffff;
+$color-7-text: #1a1a1a;
+$color-8-text: #ffffff;
+$color-9-text: #ffffff;
 
 // =============================================================================
 // BASE VARIABLES
@@ -157,7 +157,7 @@ $sidebar-text: $dm-text;
 $sidebar-text-secondary: $dm-text-sec;
 $sidebar-submenu-bg: $dm-elevated;
 $sidebar-submenu-hover-bg: $dm-border;
-$sidebar-submenu-active-bg: $dm-blue;
+$sidebar-submenu-active-bg: rgba($dm-blue, 0.2);
 $footer-bg: $dm-bg-deep;
 $footer-border-color: $dm-border;
 

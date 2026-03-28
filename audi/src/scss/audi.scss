@@ -103,26 +103,26 @@ $base-text-on-info: #ffffff;
 // =============================================================================
 // THEME COLOR SLOTS (1-9) - Audi-inspired palette
 // =============================================================================
-$color-1: #bb0a30;  // Audi Red (classic)
-$color-2: #ff4444;  // Light Red
+$color-1: #d4af37;  // Gold (premium)
+$color-2: #8c8c8c;  // Silver (metallic)
 $color-3: #ff6600;  // Orange (warning tone)
-$color-4: #d4af37;  // Gold (premium)
+$color-4: #ff4444;  // Light Red
 $color-5: #00a0a0;  // Teal (contrast)
-$color-6: #0066cc;  // Blue (professional)
-$color-7: #8c8c8c;  // Silver (metallic)
-$color-8: #404040;  // Charcoal (neutral)
-$color-9: #6b3fa0;  // Purple (luxury)
+$color-6: #6b3fa0;  // Purple (luxury)
+$color-7: #0066cc;  // Blue (professional)
+$color-8: #bb0a30;  // Audi Red (classic)
+$color-9: #404040;  // Charcoal (neutral)
 
 // Contrast text colors for color slots
-$color-1-text: #ffffff;  // White on Audi Red
-$color-2-text: #ffffff;  // White on Light Red
+$color-1-text: #1a1a1a;  // Dark on Gold (light background)
+$color-2-text: #ffffff;  // White on Silver
 $color-3-text: #ffffff;  // White on Orange
-$color-4-text: #1a1a1a;  // Dark on Gold (light background)
+$color-4-text: #ffffff;  // White on Light Red
 $color-5-text: #ffffff;  // White on Teal
-$color-6-text: #ffffff;  // White on Blue
-$color-7-text: #ffffff;  // White on Silver
-$color-8-text: #ffffff;  // White on Charcoal
-$color-9-text: #ffffff;  // White on Purple
+$color-6-text: #ffffff;  // White on Purple
+$color-7-text: #ffffff;  // White on Blue
+$color-8-text: #ffffff;  // White on Audi Red
+$color-9-text: #ffffff;  // White on Charcoal
 
 // Typography - Fira Sans Condensed for Audi brand
 $base-font-family: "Fira Sans Condensed", "Arial Narrow", "Arial", sans-serif;

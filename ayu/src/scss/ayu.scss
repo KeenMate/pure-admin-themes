@@ -24,26 +24,26 @@
 // =============================================================================
 // THEME COLOR SLOTS (1-9) - Ayu-inspired warm palette
 // =============================================================================
-$color-1: #e6b450;  // Golden (primary accent)
-$color-2: #ffb454;  // Warm Orange (functions)
-$color-3: #aad94c;  // Green (strings/success)
-$color-4: #f07178;  // Coral Red (danger)
-$color-5: #d2a6ff;  // Lavender (accent)
-$color-6: #39bae6;  // Cyan (info)
-$color-7: #acb6bf;  // Cool Gray (neutral)
-$color-8: #bfbdb6;  // Warm Gray (text)
-$color-9: #ff8f40;  // Orange (warning)
+$color-1: #ffb454;  // Warm Orange (functions)
+$color-2: #d2a6ff;  // Lavender (accent)
+$color-3: #bfbdb6;  // Warm Gray (text)
+$color-4: #aad94c;  // Green (strings/success)
+$color-5: #e6b450;  // Golden (primary accent)
+$color-6: #acb6bf;  // Cool Gray (neutral)
+$color-7: #ff8f40;  // Orange (warning)
+$color-8: #39bae6;  // Cyan (info)
+$color-9: #f07178;  // Coral Red (danger)
 
 // Contrast text colors for color slots
-$color-1-text: #1a1a1a;  // Dark on Golden
-$color-2-text: #1a1a1a;  // Dark on Warm Orange
-$color-3-text: #1a1a1a;  // Dark on Green
-$color-4-text: #ffffff;  // White on Coral Red
-$color-5-text: #1a1a1a;  // Dark on Lavender
-$color-6-text: #1a1a1a;  // Dark on Cyan
-$color-7-text: #1a1a1a;  // Dark on Cool Gray
-$color-8-text: #1a1a1a;  // Dark on Warm Gray
-$color-9-text: #1a1a1a;  // Dark on Orange
+$color-1-text: #1a1a1a;  // Dark on Warm Orange
+$color-2-text: #1a1a1a;  // Dark on Lavender
+$color-3-text: #1a1a1a;  // Dark on Warm Gray
+$color-4-text: #1a1a1a;  // Dark on Green
+$color-5-text: #1a1a1a;  // Dark on Golden
+$color-6-text: #1a1a1a;  // Dark on Cool Gray
+$color-7-text: #1a1a1a;  // Dark on Orange
+$color-8-text: #1a1a1a;  // Dark on Cyan
+$color-9-text: #ffffff;  // White on Coral Red
 
 // =============================================================================
 // AYU COLOR PALETTES
@@ -193,7 +193,7 @@ $sidebar-text: $mirage-text;
 $sidebar-text-secondary: $mirage-text-sec;
 $sidebar-submenu-bg: $mirage-elevated;
 $sidebar-submenu-hover-bg: $mirage-border;
-$sidebar-submenu-active-bg: $ayu-accent;
+$sidebar-submenu-active-bg: rgba($ayu-accent, 0.2);
 $footer-bg: $mirage-bg-deep;
 $footer-border-color: $mirage-border;
 
@@ -309,7 +309,7 @@ $checkbox-focus-shadow: 0 0 0 2px $base-focus-ring-color;
   --pa-sidebar-bg: #{$dark-surface};
   --pa-sidebar-submenu-bg: #{$dark-elevated};
   --pa-sidebar-submenu-hover-bg: #{$dark-border};
-  --pa-sidebar-submenu-active-bg: #{$ayu-accent};
+  --pa-sidebar-submenu-active-bg: #{rgba($ayu-accent, 0.2)};
   --pa-footer-bg: #{$dark-surface};
   --pa-footer-border-color: #{$dark-border};
 
@@ -389,7 +389,7 @@ $checkbox-focus-shadow: 0 0 0 2px $base-focus-ring-color;
   --pa-sidebar-text-secondary: #{$light-text-sec};
   --pa-sidebar-submenu-bg: #{$light-elevated};
   --pa-sidebar-submenu-hover-bg: #{$light-border};
-  --pa-sidebar-submenu-active-bg: #f29718;
+  --pa-sidebar-submenu-active-bg: #{rgba(#f29718, 0.2)};
 
   // Footer - dark
   --pa-footer-bg: #{$mirage-bg-deep};

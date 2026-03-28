@@ -1,0 +1,72 @@
+{
+  "$schema": "https://pureadmin.io/schemas/pure-admin-theme.schema.json",
+  "name": "Café Industrial",
+  "id": "cafeindustrial",
+  "version": "2.2.0",
+  "description": "Dark warm theme with golden amber accents, inspired by the Café Industrial brand",
+  "content": "## Café Industrial\n\nA warm, industrial-themed design inspired by the Café Industrial brand. Golden amber accents from the gear motif pair with warm black and cream backgrounds for a sophisticated, steampunk-tinged aesthetic.\n\n### Highlights\n\n- **Golden amber accent (#d4952b)** drawn from the Café Industrial gear logo\n- **Dark mode** with warm brownish-black backgrounds (not pure black)\n- **Light mode** with cream/linen tones — aged paper, coffee-stained warmth\n- **Barlow** font family (Google Fonts) for an industrial, mechanical character\n- Supports `prefers-color-scheme` auto-switching\n\n### Usage\n\n```html\n<link rel=\"stylesheet\" href=\"css/cafeindustrial.css\">\n```\n\nDefaults to dark mode. Switch with `pa-mode-light` / `pa-mode-dark` on `<body>`. Auto-switching via `prefers-color-scheme` is enabled by default.",
+  "author": "KeenMate",
+  "license": "MIT",
+
+  "tags": ["dark", "warm", "industrial", "restaurant", "cafe", "amber", "steampunk"],
+
+  "homepage": "https://github.com/KeenMate/pure-admin-cafeindustrial-theme",
+
+  "modeCssClass": "pa-mode-{mode}",
+  "variantCssClass": "pa-color-{variant}",
+
+  "colorVariants": [
+    {
+      "id": "",
+      "name": "Default",
+      "file": "dist/cafeindustrial.css",
+      "modes": [
+        {
+          "id": "dark",
+          "name": "Dark",
+          "default": true,
+          "colors": {
+            "accent": "#d4952b",
+            "background": "#151210",
+            "surface": "#1e1a15",
+            "text": "#e8e0d4",
+            "header": "#1e1a15",
+            "sidebar": "#181410"
+          }
+        },
+        {
+          "id": "light",
+          "name": "Light",
+          "colors": {
+            "accent": "#b87d24",
+            "background": "#fffcf8",
+            "surface": "#f7f2eb",
+            "text": "#3d3428",
+            "header": "#f7f2eb",
+            "sidebar": "#fffcf8"
+          }
+        }
+      ]
+    }
+  ],
+
+  "features": {
+    "cssVariables": true,
+    "responsiveLayout": true,
+    "compactMode": true,
+    "sidebarCollapse": true,
+    "sidebarIconMode": true,
+    "customFonts": false,
+    "rtlSupport": false,
+    "printStyles": false
+  },
+
+  "exports": {
+    "css": "./dist/cafeindustrial.css",
+    "scss": "./src/scss/cafeindustrial.scss"
+  },
+
+  "dependencies": {
+    "core": "^2.2.0"
+  }
+}

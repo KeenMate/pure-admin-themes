@@ -4,26 +4,26 @@
 // =============================================================================
 // THEME COLOR SLOTS (1-9) - Express logistics palette
 // =============================================================================
-$color-1: #D40511;  // Express Red (primary)
-$color-2: #FFCC00;  // Express Yellow (brand)
+$color-1: #FFCC00;  // Express Yellow (brand)
+$color-2: #8C8C8C;  // Gray (neutral)
 $color-3: #ff6b00;  // Orange (urgent)
-$color-4: #00a651;  // Green (delivered)
-$color-5: #0066cc;  // Blue (tracking)
+$color-4: #00b4d8;  // Cyan (info)
+$color-5: #00a651;  // Green (delivered)
 $color-6: #6b3fa0;  // Purple (premium)
-$color-7: #8C8C8C;  // Gray (neutral)
-$color-8: #333333;  // Dark (contrast)
-$color-9: #00b4d8;  // Cyan (info)
+$color-7: #0066cc;  // Blue (tracking)
+$color-8: #D40511;  // Express Red (primary)
+$color-9: #333333;  // Dark (contrast)
 
 // Contrast text colors for color slots
-$color-1-text: #ffffff;  // White on Express Red
-$color-2-text: #1a1a1a;  // Dark on Express Yellow (light background)
+$color-1-text: #1a1a1a;  // Dark on Express Yellow (light background)
+$color-2-text: #ffffff;  // White on Gray
 $color-3-text: #ffffff;  // White on Orange
-$color-4-text: #ffffff;  // White on Green
-$color-5-text: #ffffff;  // White on Blue
+$color-4-text: #ffffff;  // White on Cyan
+$color-5-text: #ffffff;  // White on Green
 $color-6-text: #ffffff;  // White on Purple
-$color-7-text: #ffffff;  // White on Gray
-$color-8-text: #ffffff;  // White on Dark
-$color-9-text: #ffffff;  // White on Cyan
+$color-7-text: #ffffff;  // White on Blue
+$color-8-text: #ffffff;  // White on Express Red
+$color-9-text: #ffffff;  // White on Dark
 
 // ============================================================================
 // EXPRESS COLOR PALETTE
@@ -144,7 +144,7 @@ $header-border-color: $express-yellow;
 $sidebar-bg: $express-black;        // Black sidebar
 $sidebar-submenu-bg: #1a1a1a;
 $sidebar-submenu-hover-bg: rgba(255, 255, 255, 0.1);
-$sidebar-submenu-active-bg: $express-red;
+$sidebar-submenu-active-bg: rgba($express-red, 0.2);
 $footer-bg: $express-yellow;        // Bold yellow footer
 $footer-border-color: $express-yellow;
 $text-color-1: $base-text-color-1;
@@ -499,7 +499,7 @@ $header-profile-name-color: $express-black;  // Black text on yellow header
   --pa-sidebar-text-secondary: #ffffff;
   --pa-sidebar-submenu-bg: #{$dark-bg};
   --pa-sidebar-submenu-hover-bg: rgba(255, 255, 255, 0.1);
-  --pa-sidebar-submenu-active-bg: #{$express-red};
+  --pa-sidebar-submenu-active-bg: #{rgba($express-red, 0.2)};
 
   // Footer stays yellow
   --pa-footer-bg: #{$express-yellow};

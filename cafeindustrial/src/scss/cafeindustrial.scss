@@ -1,0 +1,587 @@
+// ============================================================================
+// CAFÉ INDUSTRIAL THEME (Dark + Light Mode)
+// ============================================================================
+// Industrial steampunk aesthetic inspired by the Café Industrial brand.
+// Supports runtime switching between dark and light modes via body class.
+//
+// Color palette extracted from the logo:
+//   - Golden amber accent (#d4952b) from the gear motif
+//   - Dark mode: warm black backgrounds (brownish, not pure black)
+//   - Light mode: warm cream/linen backgrounds with dark amber accents
+//
+// Usage:
+//   <link rel="stylesheet" href="cafeindustrial.css">
+// ============================================================================
+
+@use 'sass:color';
+
+// =============================================================================
+// GOOGLE FONTS - Barlow (industrial/mechanical character)
+// =============================================================================
+@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Barlow+Condensed:wght@500;600;700&display=swap');
+
+// =============================================================================
+// CAFÉ INDUSTRIAL COLOR PALETTE
+// =============================================================================
+
+// Brand colors (shared across modes)
+$ci-gold: #d4952b;
+$ci-gold-hover: #e8a83c;
+$ci-gold-active: #f0b84e;
+$ci-gold-dark: #b87d24;
+$ci-copper: #8b6914;
+
+// Dark mode palette
+$ci-dark-page: #151210;
+$ci-dark-card: #1e1a15;
+$ci-dark-surface: #2a2420;
+$ci-dark-elevated: #252019;
+$ci-dark-border: #3d3428;
+$ci-dark-hover: #2f2820;
+$ci-dark-active: #3a3128;
+$ci-dark-input: #1a1614;
+$ci-dark-sidebar: #181410;
+$ci-dark-text-1: #e8e0d4;
+$ci-dark-text-2: #a89880;
+$ci-dark-text-3: #8a7b69;
+$ci-dark-text-4: #6b5e4f;
+
+// =============================================================================
+// BASE VARIABLE OVERRIDES (Dark Mode Default)
+// Override $base-* variables BEFORE importing pure-admin core.
+// =============================================================================
+
+// --- Typography ---
+$base-font-family: 'Barlow', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+// --- Accent: Golden amber from the gear ---
+$base-accent-color: $ci-gold;
+$base-accent-color-hover: $ci-gold-hover;
+$base-accent-color-active: $ci-gold-active;
+$base-accent-color-light: rgba($ci-gold, 0.08);
+$base-accent-color-light-hover: rgba($ci-gold, 0.15);
+
+// --- Text: Warm off-whites ---
+$base-text-color-1: $ci-dark-text-1;
+$base-text-color-2: $ci-dark-text-2;
+$base-text-color-3: $ci-dark-text-3;
+$base-text-color-4: $ci-dark-text-4;
+$base-text-color-on-accent: #1a1714;
+
+// --- Backgrounds: Warm dark tones ---
+$base-main-bg: $ci-dark-card;
+$base-page-bg: $ci-dark-page;
+$base-subtle-bg: $ci-dark-surface;
+$base-inverse-bg: $ci-dark-text-1;
+$base-overlay-bg: rgba(10, 8, 6, 0.7);
+$base-shadow-color: rgba(0, 0, 0, 0.4);
+$base-elevated-bg: $ci-dark-elevated;
+
+// Interactive state backgrounds
+$base-hover-bg: $ci-dark-hover;
+$base-active-bg: $ci-dark-active;
+$base-disabled-bg: $ci-dark-elevated;
+
+// Legacy surface aliases
+$base-surface-1: $base-main-bg;
+$base-surface-2: $base-page-bg;
+$base-surface-3: $base-subtle-bg;
+
+// --- Borders: Warm dark ---
+$base-border-color: $ci-dark-border;
+$base-border: 1px solid $base-border-color;
+
+// --- Inputs: Dark fields ---
+$base-input-bg: $ci-dark-input;
+$base-input-color: $ci-dark-text-1;
+$base-input-border: 1px solid $ci-dark-border;
+$base-input-border-hover: 1px solid #5a4d3e;
+$base-input-border-focus: 1px solid $ci-gold;
+$base-input-placeholder-color: $ci-dark-text-4;
+$base-input-bg-disabled: rgba($ci-dark-input, 0.5);
+
+// --- Dropdown ---
+$base-dropdown-bg: $ci-dark-card;
+$base-dropdown-border: 1px solid $ci-dark-border;
+$base-dropdown-box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+
+// --- Tooltip: Light on dark ---
+$base-tooltip-bg: $ci-dark-text-1;
+$base-tooltip-text-color: #1a1714;
+
+// --- Contextual: Success (warm green) ---
+$base-success-color: #4a9e5c;
+$base-success-color-hover: color.adjust(#4a9e5c, $lightness: -10%);
+$base-success-bg-light: rgba(#4a9e5c, 0.15);
+$base-success-bg-subtle: rgba(#4a9e5c, 0.10);
+$base-success-border: rgba(#4a9e5c, 0.3);
+$base-success-text: #8fd49e;
+$base-success-text-light: rgba(#4a9e5c, 0.2);
+$base-text-on-success: #ffffff;
+
+// --- Contextual: Danger (warm red) ---
+$base-danger-color: #c94444;
+$base-danger-color-hover: color.adjust(#c94444, $lightness: -10%);
+$base-danger-bg-light: rgba(#c94444, 0.15);
+$base-danger-bg-subtle: rgba(#c94444, 0.10);
+$base-danger-border: rgba(#c94444, 0.3);
+$base-danger-text: #f09090;
+$base-danger-text-light: rgba(#c94444, 0.2);
+$base-text-on-danger: #ffffff;
+
+// --- Contextual: Warning (amber, close to accent) ---
+$base-warning-color: #e8a83c;
+$base-warning-color-hover: color.adjust(#e8a83c, $lightness: -10%);
+$base-warning-bg-light: rgba(#e8a83c, 0.15);
+$base-warning-bg-subtle: rgba(#e8a83c, 0.10);
+$base-warning-border: rgba(#e8a83c, 0.3);
+$base-warning-text: #f0c870;
+$base-warning-text-light: rgba(#e8a83c, 0.2);
+$base-text-on-warning: #1a1714;
+
+// --- Contextual: Info (warm teal) ---
+$base-info-color: #3a8fa0;
+$base-info-color-hover: color.adjust(#3a8fa0, $lightness: -10%);
+$base-info-bg-light: rgba(#3a8fa0, 0.15);
+$base-info-bg-subtle: rgba(#3a8fa0, 0.10);
+$base-info-border: rgba(#3a8fa0, 0.3);
+$base-info-text: #7cc8d8;
+$base-info-text-light: rgba(#3a8fa0, 0.2);
+$base-text-on-info: #ffffff;
+
+// --- Interactive states ---
+$base-hover-overlay: rgba(255, 255, 255, 0.04);
+$base-active-overlay: rgba(255, 255, 255, 0.08);
+$base-focus-ring-color: $ci-gold;
+
+// --- Alert derivation parameters (dark theme tuning) ---
+$alert-bg-opacity-light: 45;
+$alert-bg-opacity-dark: 45;
+$alert-border-opacity-light: 70;
+$alert-border-opacity-dark: 70;
+$alert-text-mix-light: 80%;
+$alert-text-mix-dark: 80%;
+
+// =============================================================================
+// DERIVED VARIABLE OVERRIDES (Dark Mode)
+// =============================================================================
+
+// Layout colors
+$header-bg: $ci-dark-card;
+$sidebar-bg: $ci-dark-sidebar;
+$sidebar-submenu-bg: $ci-dark-input;
+$sidebar-submenu-hover-bg: $ci-dark-elevated;
+$sidebar-submenu-active-bg: $ci-dark-surface;
+$footer-bg: $ci-dark-card;
+
+// Card colors
+$card-bg: $ci-dark-card;
+$card-header-bg: $ci-dark-input;
+$card-footer-bg: $ci-dark-input;
+$card-tabs-bg: $ci-dark-input;
+
+// Table colors
+$table-bg: $ci-dark-card;
+$table-header-bg: $ci-dark-input;
+$table-stripe: $ci-dark-input;
+$table-hover-bg: $ci-dark-elevated;
+$table-hover-accent-width: 3px;
+$table-hover-accent-color: $ci-gold;
+
+// Button overrides
+$btn-secondary-bg: $ci-dark-border;
+$btn-secondary-bg-hover: #4a3f32;
+$btn-secondary-text: $ci-dark-text-1;
+$btn-dark-bg: #0d0b09;
+$btn-dark-bg-hover: #050403;
+$btn-dark-text: $ci-dark-text-1;
+$btn-light-bg: $ci-dark-surface;
+$btn-light-bg-hover: $ci-dark-border;
+$btn-light-text: $ci-dark-text-1;
+
+// Modal
+$modal-overlay-bg: rgba(10, 8, 6, 0.75);
+$modal-content-bg: $ci-dark-card;
+
+// Loader
+$loader-overlay-bg: rgba($ci-dark-page, 0.85);
+
+// Scrollbar
+$scrollbar-width: 8px;
+
+// Badge colors for dark theme
+$badge-success-bg: rgba(#4a9e5c, 0.2);
+$badge-success-text: #8fd49e;
+$badge-warning-bg: rgba(#e8a83c, 0.2);
+$badge-warning-text: #f0c870;
+$badge-info-bg: rgba(#3a8fa0, 0.2);
+$badge-info-text: #7cc8d8;
+$badge-danger-bg: rgba(#c94444, 0.2);
+$badge-danger-text: #f09090;
+
+// Composite badge
+$composite-badge-icon-bg: $ci-dark-border;
+$composite-badge-label-bg: $ci-dark-surface;
+$composite-badge-label-text: $ci-dark-text-1;
+$composite-badge-label-hover-bg: $ci-dark-border;
+
+// Shadows - deeper for dark theme
+$shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
+$shadow-md: 0 2px 8px rgba(0, 0, 0, 0.35);
+$shadow-lg: 0 4px 16px rgba(0, 0, 0, 0.4);
+$shadow-xl: 0 0 60px rgba(0, 0, 0, 0.3);
+
+// Custom theme color slots - Café Industrial brand palette
+$color-1: $ci-gold;             // Primary gold
+$color-1-text: #1a1714;
+$color-2: $ci-gold-dark;        // Dark copper
+$color-2-text: #ffffff;
+$color-3: $ci-gold-hover;       // Light amber
+$color-3-text: #1a1714;
+$color-4: $ci-copper;           // Deep bronze
+$color-4-text: #ffffff;
+$color-5: #4a3f32;              // Warm brown
+$color-5-text: $ci-dark-text-1;
+$color-6: #c94444;              // Industrial red
+$color-6-text: #ffffff;
+$color-7: #4a9e5c;              // Muted green
+$color-7-text: #ffffff;
+$color-8: #3a8fa0;              // Warm teal
+$color-8-text: #ffffff;
+$color-9: $ci-dark-surface;     // Dark surface
+$color-9-text: $ci-dark-text-1;
+
+// =============================================================================
+// IMPORT PURE ADMIN CORE
+// Variables are set above, core will use them via !default
+// =============================================================================
+@import '@keenmate/pure-admin-core/src/scss/variables/index';
+@import '@keenmate/pure-admin-core/src/scss/core';
+@import '@keenmate/pure-admin-core/src/scss/utilities';
+@import '@keenmate/pure-admin-core/src/scss/base-css-variables';
+
+// =============================================================================
+// CSS VARIABLES - DARK MODE (Default)
+// =============================================================================
+:root, .pa-mode-dark {
+  --page-loader-bg: rgba(21, 18, 16, 0.95);
+  --page-loader-spinner-border: #{$ci-dark-border};
+  --page-loader-spinner-accent: #{$ci-gold};
+
+  @include output-base-css-variables;
+  @include output-pa-css-variables;
+  @include output-pa-alert-variables-dark;
+
+  // Override base-elevated-bg for dark mode
+  --base-elevated-bg: #{$ci-dark-elevated};
+}
+
+// =============================================================================
+// CSS VARIABLES - LIGHT MODE
+// =============================================================================
+.pa-mode-light {
+  // Light palette: warm cream/linen tones inspired by café aesthetics
+  // Think: aged paper, linen tablecloths, coffee-stained menus
+  $light-white: #fffcf8;         // Warm white (slight cream)
+  $light-cream: #f7f2eb;         // Cream/linen background
+  $light-sand: #ede6db;          // Sandy light surface
+  $light-tan: #ddd4c6;           // Tan border/divider
+  $light-khaki: #c8bba8;         // Muted warm gray
+  $light-brown-light: #a89880;   // Light brown (secondary text)
+  $light-brown: #6b5e4f;         // Warm brown text
+  $light-brown-dark: #3d3428;    // Dark brown text (primary)
+  $light-espresso: #2a2015;      // Espresso (near-black)
+
+  // Darker amber for light mode (needs more contrast on light bg)
+  $light-accent: #b87d24;
+  $light-accent-hover: color.adjust($light-accent, $lightness: -8%);
+
+  --page-loader-bg: rgba(247, 242, 235, 0.95);
+  --page-loader-spinner-border: #{$light-tan};
+  --page-loader-spinner-accent: #{$light-accent};
+
+  // Core colors - warm cream backgrounds
+  --pa-main-bg: #{$light-cream};
+  --pa-page-bg: #{$light-white};
+  --pa-subtle-bg: #{$light-cream};
+
+  // Text colors - dark warm text
+  --pa-text-color-1: #{$light-brown-dark};
+  --pa-text-color-2: #{$light-brown-light};
+
+  // Accent - slightly darker gold for contrast on light bg
+  --pa-accent: #{$light-accent};
+  --pa-accent-hover: rgba($light-accent, 0.12);
+  --pa-accent-light: rgba($light-accent, 0.06);
+
+  // Border
+  --pa-border-color: #{$light-tan};
+
+  // Header - keep dark (brand identity, like the logo's dark background)
+  --pa-header-bg: #{$ci-dark-card};
+  --pa-header-border-color: #{$ci-dark-border};
+  --pa-header-text: #{$ci-dark-text-1};
+  --pa-header-text-secondary: #{$ci-dark-text-2};
+  --pa-header-profile-name-color: #{$ci-dark-text-1};
+
+  // Sidebar - keep dark (brand identity)
+  --pa-sidebar-bg: #{$ci-dark-sidebar};
+  --pa-sidebar-text: #{$ci-dark-text-1};
+  --pa-sidebar-text-secondary: #{$ci-dark-text-2};
+  --pa-sidebar-submenu-bg: #{$ci-dark-input};
+  --pa-sidebar-submenu-hover-bg: rgba($ci-gold, 0.15);
+  --pa-sidebar-submenu-active-bg: rgba($ci-gold, 0.25);
+
+  // Footer - keep dark
+  --pa-footer-bg: #{$ci-dark-card};
+  --pa-footer-border-color: #{$ci-dark-border};
+
+  // Cards - warm cream
+  --pa-card-bg: #{$light-white};
+  --pa-card-header-bg: #{$light-cream};
+  --pa-card-footer-bg: #{$light-cream};
+  --pa-card-tabs-bg: #{$light-sand};
+
+  // Inputs - clean warm white
+  --pa-input-bg: #{$light-white};
+  --pa-input-border: #{$light-tan};
+  --pa-input-text: #{$light-brown-dark};
+  --pa-input-focus-border-color: #{$light-accent};
+  --pa-select-focus-border-color: #{$light-accent};
+  --pa-textarea-focus-border-color: #{$light-accent};
+
+  // Input group
+  --pa-input-group-prepend-bg: #{$light-sand};
+  --pa-input-group-prepend-text: #{$light-brown};
+  --pa-input-group-append-bg: #{$light-sand};
+  --pa-input-group-append-text: #{$light-brown};
+
+  // Checkbox
+  --pa-checkbox-border-color: #{$light-tan};
+  --pa-checkbox-border-color-hover: #{$light-accent};
+  --pa-checkbox-border-color-checked: #{$light-accent};
+  --pa-checkbox-bg: #{$light-white};
+  --pa-checkbox-bg-checked: #{$light-accent};
+  --pa-checkbox-bg-indeterminate: #{$light-accent};
+  --pa-checkbox-checkmark-color: #ffffff;
+  --pa-checkbox-focus-shadow: 0 0 0 2px rgba($light-accent, 0.25);
+
+  // Tables - light surfaces
+  --pa-table-bg: #{$light-white};
+  --pa-table-header-bg: #{$light-cream};
+  --pa-table-stripe: #{$light-cream};
+  --pa-table-hover-bg: #{$light-sand};
+  --pa-table-hover-accent-color: #{$light-accent};
+
+  // Modals
+  --pa-modal-content-bg: #{$light-white};
+  --pa-modal-overlay-bg: rgba(42, 32, 21, 0.5);
+
+  // Loader overlay
+  --pa-loader-overlay-bg: rgba(247, 242, 235, 0.85);
+
+  // Profile panel
+  --pa-profile-overlay-bg: rgba(42, 32, 21, 0.3);
+
+  // Detail panel
+  --pa-detail-panel-overlay-bg: rgba(42, 32, 21, 0.3);
+  --pa-detail-panel-selected-bg: rgba($light-accent, 0.08);
+
+  // Tooltip/Popover - dark tooltip on light bg
+  --pa-tooltip-bg: #{$light-espresso};
+  --pa-tooltip-text: #{$ci-dark-text-1};
+  --pa-popover-content-bg: #{$light-white};
+
+  // Command palette
+  --pa-command-palette-backdrop-bg: rgba(42, 32, 21, 0.5);
+  --pa-command-palette-item-hover-bg: #{$light-sand};
+  --pa-command-palette-item-active-bg: rgba($light-accent, 0.15);
+  --pa-command-palette-highlight-bg: rgba($light-accent, 0.2);
+  --pa-command-palette-highlight-text: #{$light-accent};
+
+  // Multiselect
+  --pa-multiselect-dropdown-bg: #{$light-white};
+  --pa-multiselect-dropdown-border: #{$light-tan};
+  --pa-multiselect-dropdown-text: #{$light-brown-dark};
+  --pa-multiselect-hint-bg: #{$light-cream};
+  --pa-multiselect-hint-border: #{$light-tan};
+  --pa-multiselect-option-hover-bg: #{$light-cream};
+  --pa-multiselect-pill-bg: rgba($light-accent, 0.1);
+  --pa-multiselect-pill-border: #{$light-accent};
+
+  // Buttons
+  --pa-btn-primary-bg: #{$light-accent};
+  --pa-btn-primary-bg-hover: #{$light-accent-hover};
+  --pa-btn-primary-bg-light: rgba($light-accent, 0.08);
+  --pa-btn-primary-text: #ffffff;
+  --pa-btn-secondary-bg: #{$light-sand};
+  --pa-btn-secondary-bg-hover: #{$light-tan};
+  --pa-btn-secondary-text: #{$light-brown-dark};
+  --pa-btn-light-bg: #{$light-cream};
+  --pa-btn-light-bg-hover: #{$light-sand};
+  --pa-btn-light-text: #{$light-brown-dark};
+  --pa-btn-dark-bg: #{$light-espresso};
+  --pa-btn-dark-bg-hover: #1a1510;
+  --pa-btn-dark-text: #{$ci-dark-text-1};
+
+  // Semantic colors (slightly adjusted for light bg)
+  --pa-success-bg: #3d8b4e;
+  --pa-success-bg-light: rgba(61, 139, 78, 0.1);
+  --pa-success-bg-subtle: rgba(61, 139, 78, 0.06);
+  --pa-warning-bg: #c4901e;
+  --pa-warning-bg-light: rgba(196, 144, 30, 0.1);
+  --pa-warning-bg-subtle: rgba(196, 144, 30, 0.06);
+  --pa-danger-bg: #b83a3a;
+  --pa-danger-bg-light: rgba(184, 58, 58, 0.1);
+  --pa-danger-bg-subtle: rgba(184, 58, 58, 0.06);
+  --pa-info-bg: #2e7a89;
+  --pa-info-bg-light: rgba(46, 122, 137, 0.1);
+  --pa-info-bg-subtle: rgba(46, 122, 137, 0.06);
+
+  // Badge colors - light mode
+  --pa-badge-success-bg: rgba(61, 139, 78, 0.12);
+  --pa-badge-success-text: #2d6e3c;
+  --pa-badge-warning-bg: rgba(196, 144, 30, 0.12);
+  --pa-badge-warning-text: #8b6914;
+  --pa-badge-info-bg: rgba(46, 122, 137, 0.12);
+  --pa-badge-info-text: #1e5f6d;
+  --pa-badge-danger-bg: rgba(184, 58, 58, 0.12);
+  --pa-badge-danger-text: #8b2c2c;
+
+  // Composite badge
+  --pa-composite-badge-icon-bg: #{$light-sand};
+  --pa-composite-badge-label-bg: #{$light-cream};
+  --pa-composite-badge-label-text: #{$light-brown-dark};
+  --pa-composite-badge-label-hover-bg: #{$light-sand};
+
+  // Alert colors - light mode derivation
+  @include output-pa-alert-variables-light;
+
+  // Base variables for web components (light mode)
+  --base-main-bg: #{$light-white};
+  --base-page-bg: #{$light-cream};
+  --base-subtle-bg: #{$light-sand};
+  --base-hover-bg: #{$light-sand};
+  --base-active-bg: #{$light-tan};
+  --base-disabled-bg: #{$light-cream};
+  --base-elevated-bg: #{$light-cream};
+  --base-surface-1: #{$light-white};
+  --base-surface-2: #{$light-cream};
+  --base-surface-3: #{$light-sand};
+  --base-text-color-1: #{$light-brown-dark};
+  --base-text-color-2: #{$light-brown-light};
+  --base-text-color-3: #{$light-khaki};
+  --base-text-color-4: #{$light-tan};
+  --base-text-color-on-accent: #ffffff;
+  --base-accent-color: #{$light-accent};
+  --base-accent-color-hover: #{$light-accent-hover};
+  --base-accent-color-active: #{color.adjust($light-accent, $lightness: -15%)};
+  --base-accent-color-light: rgba($light-accent, 0.08);
+  --base-accent-color-light-hover: rgba($light-accent, 0.15);
+  --base-border-color: #{$light-tan};
+  --base-border: 1px solid #{$light-tan};
+  --base-input-bg: #{$light-white};
+  --base-input-color: #{$light-brown-dark};
+  --base-input-border: 1px solid #{$light-tan};
+  --base-input-border-hover: 1px solid #{$light-accent};
+  --base-input-border-focus: 1px solid #{$light-accent};
+  --base-input-placeholder-color: #{$light-khaki};
+  --base-dropdown-bg: #{$light-white};
+  --base-dropdown-border: 1px solid #{$light-tan};
+  --base-dropdown-box-shadow: 0 8px 16px rgba(42, 32, 21, 0.12);
+  --base-tooltip-bg: #{$light-espresso};
+  --base-tooltip-text-color: #{$ci-dark-text-1};
+  --base-shadow-color: rgba(42, 32, 21, 0.1);
+
+  // Light card shadow
+  .pa-card {
+    box-shadow: 0 1px 4px rgba(42, 32, 21, 0.08);
+  }
+
+  // Secondary button styling for light mode
+  .pa-btn--secondary {
+    background-color: #{$light-sand} !important;
+    color: #{$light-brown-dark} !important;
+    border-color: #{$light-tan} !important;
+
+    &:hover {
+      background-color: #{$light-tan} !important;
+      border-color: #{$light-khaki} !important;
+    }
+  }
+
+  // Footer - light text on dark background
+  .pa-layout__footer {
+    color: #{$ci-dark-text-2};
+
+    a {
+      color: #{$ci-dark-text-1};
+
+      &:hover {
+        color: #{$ci-gold};
+      }
+    }
+  }
+
+  // Profile panel header - dark background needs light text
+  .pa-profile-panel__header {
+    .pa-profile-panel__name {
+      color: #{$ci-dark-text-1};
+    }
+
+    .pa-profile-panel__email {
+      color: #{$ci-dark-text-2};
+    }
+  }
+
+  // Selection color for light mode
+  ::selection {
+    background: rgba($light-accent, 0.25);
+    color: #{$light-brown-dark};
+  }
+
+  // Scrollbar - warm light tones
+  ::-webkit-scrollbar-thumb {
+    background: #{$light-tan};
+
+    &:hover {
+      background: #{$light-khaki};
+    }
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #{$light-cream};
+  }
+}
+
+// =============================================================================
+// CAFÉ INDUSTRIAL THEME REFINEMENTS (Global - both modes)
+// =============================================================================
+
+// Scrollbar - warm amber tones (dark mode default)
+::-webkit-scrollbar-thumb {
+  background: $ci-dark-border;
+
+  &:hover {
+    background: #5a4d3e;
+  }
+}
+
+::-webkit-scrollbar-track {
+  background: $ci-dark-page;
+}
+
+// Selection color (dark mode default)
+::selection {
+  background: rgba($ci-gold, 0.3);
+  color: $ci-dark-text-1;
+}
+
+// Link colors
+a {
+  color: $ci-gold;
+
+  &:hover {
+    color: $ci-gold-hover;
+  }
+}

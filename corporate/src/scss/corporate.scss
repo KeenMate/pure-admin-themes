@@ -4,26 +4,26 @@
 // =============================================================================
 // THEME COLOR SLOTS (1-9) - Corporate professional palette
 // =============================================================================
-$color-1: #0284c7;  // Corporate Blue (primary)
-$color-2: #0ea5e9;  // Sky Blue (lighter)
+$color-1: #f59e0b;  // Amber (attention)
+$color-2: #ec4899;  // Pink (highlight)
 $color-3: #10b981;  // Emerald (success)
-$color-4: #f59e0b;  // Amber (attention)
-$color-5: #6366f1;  // Indigo (accent)
-$color-6: #8b5cf6;  // Violet (creative)
+$color-4: #0ea5e9;  // Sky Blue (lighter)
+$color-5: #8b5cf6;  // Violet (creative)
+$color-6: #6366f1;  // Indigo (accent)
 $color-7: #64748b;  // Slate (neutral)
-$color-8: #334155;  // Dark Slate (contrast)
-$color-9: #ec4899;  // Pink (highlight)
+$color-8: #0284c7;  // Corporate Blue (primary)
+$color-9: #334155;  // Dark Slate (contrast)
 
 // Contrast text colors for color slots
-$color-1-text: #ffffff;  // White on Corporate Blue
-$color-2-text: #ffffff;  // White on Sky Blue
+$color-1-text: #1a1a1a;  // Dark on Amber (light background)
+$color-2-text: #ffffff;  // White on Pink
 $color-3-text: #ffffff;  // White on Emerald
-$color-4-text: #1a1a1a;  // Dark on Amber (light background)
-$color-5-text: #ffffff;  // White on Indigo
-$color-6-text: #ffffff;  // White on Violet
+$color-4-text: #ffffff;  // White on Sky Blue
+$color-5-text: #ffffff;  // White on Violet
+$color-6-text: #ffffff;  // White on Indigo
 $color-7-text: #ffffff;  // White on Slate
-$color-8-text: #ffffff;  // White on Dark Slate
-$color-9-text: #ffffff;  // White on Pink
+$color-8-text: #ffffff;  // White on Corporate Blue
+$color-9-text: #ffffff;  // White on Dark Slate
 
 // =============================================================================
 // CORPORATE COLOR PALETTE

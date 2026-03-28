@@ -57,25 +57,25 @@ $faded-orange:   #af3a03;
 // =============================================================================
 // THEME COLOR SLOTS (1-9)
 // =============================================================================
-$color-1: $bright-orange;   // Primary accent
-$color-2: $bright-yellow;   // Secondary
-$color-3: $bright-green;    // Success
-$color-4: $bright-red;      // Danger
-$color-5: $bright-purple;   // Accent
-$color-6: $bright-aqua;     // Info
-$color-7: $gray;            // Neutral
-$color-8: $bright-blue;     // Muted accent
-$color-9: $bright-yellow;   // Highlight
+$color-1: $bright-yellow;  // Secondary
+$color-2: $bright-yellow;  // Highlight
+$color-3: $bright-aqua;  // Info
+$color-4: $bright-green;  // Success
+$color-5: $bright-purple;  // Accent
+$color-6: $bright-orange;  // Primary accent
+$color-7: $bright-blue;  // Muted accent
+$color-8: $gray;  // Neutral
+$color-9: $bright-red;  // Danger
 
 $color-1-text: #1a1a1a;
 $color-2-text: #1a1a1a;
 $color-3-text: #1a1a1a;
-$color-4-text: #ffffff;
+$color-4-text: #1a1a1a;
 $color-5-text: #ffffff;
 $color-6-text: #1a1a1a;
 $color-7-text: #1a1a1a;
 $color-8-text: #1a1a1a;
-$color-9-text: #1a1a1a;
+$color-9-text: #ffffff;
 
 // =============================================================================
 // BASE VARIABLES - Dark Medium as default
@@ -178,7 +178,7 @@ $sidebar-text: $light1;
 $sidebar-text-secondary: $light4;
 $sidebar-submenu-bg: $dark2;
 $sidebar-submenu-hover-bg: $dark3;
-$sidebar-submenu-active-bg: $bright-orange;
+$sidebar-submenu-active-bg: rgba($bright-orange, 0.2);
 $footer-bg: $dark0-hard;
 $footer-border-color: $dark2;
 
@@ -240,6 +240,11 @@ $checkbox-focus-shadow: 0 0 0 2px $base-focus-ring-color;
 @import '@keenmate/pure-admin-core/src/scss/core';
 @import '@keenmate/pure-admin-core/src/scss/utilities';
 @import '@keenmate/pure-admin-core/src/scss/base-css-variables';
+
+// Navbar hover — ensure text is readable on accent background
+.pa-header__nav a:hover {
+  color: $light1 !important;
+}
 
 // Active sidebar link - dark text on orange background
 .pa-sidebar__toggle--active {
@@ -347,7 +352,7 @@ $checkbox-focus-shadow: 0 0 0 2px $base-focus-ring-color;
   --pa-sidebar-text-secondary: #{$dark3};
   --pa-sidebar-submenu-bg: #{$light2};
   --pa-sidebar-submenu-hover-bg: #{$light3};
-  --pa-sidebar-submenu-active-bg: #{$neutral-orange};
+  --pa-sidebar-submenu-active-bg: #{rgba($neutral-orange, 0.2)};
 
   // Footer - dark
   --pa-footer-bg: #{$dark0-hard};

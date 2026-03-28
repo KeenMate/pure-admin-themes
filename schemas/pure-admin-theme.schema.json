@@ -4,11 +4,16 @@
   "title": "Pure Admin Theme Manifest",
   "description": "Configuration manifest for Pure Admin CSS themes",
   "type": "object",
-  "required": ["name", "id", "version", "colorVariants", "exports"],
+  "required": ["name", "id", "version", "manifestVersion", "colorVariants", "exports"],
   "properties": {
     "$schema": {
       "type": "string",
       "description": "Reference to the JSON schema for validation"
+    },
+    "manifestVersion": {
+      "type": "string",
+      "enum": ["1.0"],
+      "description": "Version of the theme.json manifest schema. Determines which fields are expected and how they are interpreted."
     },
     "name": {
       "type": "string",
@@ -30,7 +35,7 @@
     },
     "content": {
       "type": "string",
-      "description": "Markdown content for the theme detail page on pureadmin.io"
+      "description": "Markdown content for the theme detail page"
     },
     "author": {
       "type": "string",
@@ -52,15 +57,15 @@
     },
     "colorVariants": {
       "type": "array",
-      "description": "Color variants with nested mode definitions and key colors",
       "minItems": 1,
+      "description": "Color variants, each with its own modes and per-mode color palette",
       "items": {
         "type": "object",
-        "required": ["name", "modes", "file"],
+        "required": ["id", "name", "file", "modes"],
         "properties": {
           "id": {
             "type": "string",
-            "description": "Variant identifier (empty string for default variant)"
+            "description": "Variant identifier (empty string for default)"
           },
           "name": {
             "type": "string",
@@ -72,15 +77,15 @@
           },
           "file": {
             "type": "string",
-            "description": "Path to the compiled CSS file for this variant"
+            "description": "CSS file path for this variant"
           },
           "modes": {
             "type": "array",
-            "description": "Supported color modes for this variant",
             "minItems": 1,
+            "description": "Available modes for this variant",
             "items": {
               "type": "object",
-              "required": ["id", "name", "colors"],
+              "required": ["id", "name"],
               "properties": {
                 "id": {
                   "type": "string",
@@ -93,38 +98,28 @@
                 },
                 "default": {
                   "type": "boolean",
-                  "description": "Whether this is the default mode for the variant"
+                  "default": false,
+                  "description": "Whether this is the default mode"
                 },
                 "colors": {
-                  "type": "object",
-                  "required": ["accent", "background", "surface", "text"],
-                  "properties": {
-                    "accent": {
-                      "type": "string",
-                      "description": "Primary accent color"
+                  "description": "Color palette for this mode. Object {role: value} or array [{type, value}].",
+                  "oneOf": [
+                    {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "required": ["type", "value"],
+                        "properties": {
+                          "type": { "type": "string" },
+                          "value": { "type": "string" }
+                        }
+                      }
                     },
-                    "background": {
-                      "type": "string",
-                      "description": "Main background color"
-                    },
-                    "surface": {
-                      "type": "string",
-                      "description": "Card/surface background color"
-                    },
-                    "text": {
-                      "type": "string",
-                      "description": "Primary text color"
-                    },
-                    "header": {
-                      "type": "string",
-                      "description": "Header background color (optional, shown when distinctive)"
-                    },
-                    "sidebar": {
-                      "type": "string",
-                      "description": "Sidebar background color (optional, shown when distinctive)"
+                    {
+                      "type": "object",
+                      "additionalProperties": { "type": "string" }
                     }
-                  },
-                  "description": "Key theme colors for this mode"
+                  ]
                 }
               }
             }
@@ -304,27 +299,70 @@
     },
     "checksums": {
       "type": "object",
-      "description": "SHA-256 checksums of packaged files, computed by pack-theme.js. Used by pure-theme-park to detect changes on upload.",
+      "description": "SHA-256 checksums of packaged files and metadata, computed by pack-theme.js. Used by pureadmin.io to verify integrity and detect changes on upload.",
       "properties": {
         "css": {
           "type": "string",
           "pattern": "^sha256:[a-f0-9]{64}$",
-          "description": "SHA-256 of the compiled CSS file (sha256:<hex>)"
+          "description": "SHA-256 of the compiled CSS file (sha256:<hex>). Legacy shorthand — prefer checksums.files."
         },
         "scss": {
           "type": "string",
           "pattern": "^sha256:[a-f0-9]{64}$",
-          "description": "SHA-256 of the SCSS source file (sha256:<hex>)"
+          "description": "SHA-256 of the SCSS source file (sha256:<hex>). Legacy shorthand — prefer checksums.files."
         },
         "assets": {
           "type": "object",
-          "description": "SHA-256 checksums of bundled assets, keyed by ZIP-relative path",
+          "description": "SHA-256 checksums of bundled assets, keyed by ZIP-relative path. Legacy — prefer checksums.files.",
           "additionalProperties": {
             "type": "string",
             "pattern": "^sha256:[a-f0-9]{64}$"
           }
+        },
+        "files": {
+          "type": "object",
+          "description": "SHA-256 checksums of ALL files in the ZIP (excluding theme.json itself), keyed by ZIP-relative path. This is the authoritative source for file integrity verification.",
+          "additionalProperties": {
+            "type": "string",
+            "pattern": "^sha256:[a-f0-9]{64}$"
+          }
+        },
+        "metadata": {
+          "type": "string",
+          "pattern": "^sha256:[a-f0-9]{64}$",
+          "description": "SHA-256 of canonical JSON encoding of descriptive metadata (name, id, version, description, author, license, content, tags). Detects content-only updates without CSS changes."
         }
       }
+    },
+    "external_domains": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Declared list of external domains referenced in CSS files (e.g. font CDNs, image hosts). All url() references to external domains must be declared here. Undeclared external domains will cause upload rejection."
+    },
+    "scripts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["file", "purpose"],
+        "properties": {
+          "file": {
+            "type": "string",
+            "description": "ZIP-relative path to the JS file"
+          },
+          "purpose": {
+            "type": "string",
+            "description": "Description of what the script does"
+          },
+          "scope": {
+            "type": "string",
+            "enum": ["global", "component", "utility"],
+            "description": "Scope of the script's effects"
+          }
+        }
+      },
+      "description": "Declared JavaScript files included in the theme. All .js files in the ZIP must be declared here with their purpose. Undeclared JS files will cause upload rejection. Note: JS extensions are not yet supported by the Pure Admin runtime."
     },
     "dependencies": {
       "type": "object",

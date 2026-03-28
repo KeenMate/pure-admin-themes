@@ -5,26 +5,26 @@
 // =============================================================================
 // THEME COLOR SLOTS (1-9) - Tokyo Night palette
 // =============================================================================
-$color-1: #bb9af7;  // Purple (primary accent)
-$color-2: #7dcfff;  // Blue (functions/info)
-$color-3: #9ece6a;  // Green (strings/success)
-$color-4: #ff5370;  // Red (danger)
-$color-5: #2ac3de;  // Cyan (accent)
-$color-6: #73daca;  // Teal (secondary)
-$color-7: #e0af68;  // Yellow (warning)
-$color-8: #ff9e64;  // Orange (warm warning)
-$color-9: #a9b1d6;  // Muted Blue-Gray (neutral)
+$color-1: #7dcfff;  // Blue (functions/info)
+$color-2: #73daca;  // Teal (secondary)
+$color-3: #e0af68;  // Yellow (warning)
+$color-4: #ff9e64;  // Orange (warm warning)
+$color-5: #9ece6a;  // Green (strings/success)
+$color-6: #a9b1d6;  // Muted Blue-Gray (neutral)
+$color-7: #bb9af7;  // Purple (primary accent)
+$color-8: #2ac3de;  // Cyan (accent)
+$color-9: #ff5370;  // Red (danger)
 
 // Contrast text colors for color slots
-$color-1-text: #1a1b26;  // Dark on Purple
-$color-2-text: #1a1b26;  // Dark on Blue
-$color-3-text: #1a1b26;  // Dark on Green
-$color-4-text: #ffffff;  // White on Red
-$color-5-text: #1a1b26;  // Dark on Cyan
-$color-6-text: #1a1b26;  // Dark on Teal
-$color-7-text: #1a1b26;  // Dark on Yellow
-$color-8-text: #1a1b26;  // Dark on Orange
-$color-9-text: #1a1b26;  // Dark on Neutral
+$color-1-text: #1a1b26;  // Dark on Blue
+$color-2-text: #1a1b26;  // Dark on Teal
+$color-3-text: #1a1b26;  // Dark on Yellow
+$color-4-text: #1a1b26;  // Dark on Orange
+$color-5-text: #1a1b26;  // Dark on Green
+$color-6-text: #1a1b26;  // Dark on Neutral
+$color-7-text: #1a1b26;  // Dark on Purple
+$color-8-text: #1a1b26;  // Dark on Cyan
+$color-9-text: #ffffff;  // White on Red
 
 // =============================================================================
 // TOKYO NIGHT COLOR PALETTES
@@ -166,7 +166,7 @@ $sidebar-text: $night-text;
 $sidebar-text-secondary: $night-text-sec;
 $sidebar-submenu-bg: $night-elevated;
 $sidebar-submenu-hover-bg: $night-border;
-$sidebar-submenu-active-bg: $tn-accent;
+$sidebar-submenu-active-bg: rgba($tn-accent, 0.2);
 $footer-bg: $night-bg-deep;
 $footer-border-color: $night-border;
 
@@ -276,7 +276,7 @@ $checkbox-focus-shadow: 0 0 0 2px $base-focus-ring-color;
   --pa-sidebar-bg: #{$storm-surface};
   --pa-sidebar-submenu-bg: #{$storm-elevated};
   --pa-sidebar-submenu-hover-bg: #{$storm-border};
-  --pa-sidebar-submenu-active-bg: #{$tn-accent};
+  --pa-sidebar-submenu-active-bg: #{rgba($tn-accent, 0.2)};
   --pa-footer-bg: #{$storm-bg-deep};
   --pa-footer-border-color: #{$storm-border};
 

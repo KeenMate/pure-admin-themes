@@ -4,24 +4,24 @@
 // =============================================================================
 // THEME COLOR SLOTS (1-9) - Cobalt2 palette
 // =============================================================================
-$color-1: #ffc600;  // Yellow (primary accent - Cobalt2 signature)
-$color-2: #ff9d00;  // Orange
-$color-3: #a5ff90;  // Green (strings/success)
-$color-4: #ff628c;  // Red (danger)
+$color-1: #9effff;  // Cyan (info)
+$color-2: #a5ff90;  // Green (strings/success)
+$color-3: #80ffbb;  // Blue-green
+$color-4: #ffc600;  // Yellow (primary accent - Cobalt2 signature)
 $color-5: #fb94ff;  // Purple
-$color-6: #9effff;  // Cyan (info)
-$color-7: #80ffbb;  // Blue-green
+$color-6: #ff9d00;  // Orange
+$color-7: #ff628c;  // Red (danger)
 $color-8: #508aaa;  // Muted blue (secondary text)
 $color-9: #0088ff;  // Comment blue
 
 // Contrast text colors for color slots
-$color-1-text: #1a1a1a;  // Dark on Yellow
-$color-2-text: #1a1a1a;  // Dark on Orange
-$color-3-text: #1a1a1a;  // Dark on Green
-$color-4-text: #ffffff;  // White on Red
+$color-1-text: #1a1a1a;  // Dark on Cyan
+$color-2-text: #1a1a1a;  // Dark on Green
+$color-3-text: #1a1a1a;  // Dark on Blue-green
+$color-4-text: #1a1a1a;  // Dark on Yellow
 $color-5-text: #1a1a1a;  // Dark on Purple
-$color-6-text: #1a1a1a;  // Dark on Cyan
-$color-7-text: #1a1a1a;  // Dark on Blue-green
+$color-6-text: #1a1a1a;  // Dark on Orange
+$color-7-text: #ffffff;  // White on Red
 $color-8-text: #ffffff;  // White on Muted blue
 $color-9-text: #ffffff;  // White on Comment blue
 
@@ -152,7 +152,7 @@ $sidebar-text: $cobalt2-text;
 $sidebar-text-secondary: $cobalt2-text-sec;
 $sidebar-submenu-bg: $cobalt2-elevated;
 $sidebar-submenu-hover-bg: $cobalt2-border;
-$sidebar-submenu-active-bg: $cobalt2-accent;
+$sidebar-submenu-active-bg: rgba($cobalt2-accent, 0.2);
 $footer-bg: $cobalt2-bg-deep;
 $footer-border-color: $cobalt2-border;
 

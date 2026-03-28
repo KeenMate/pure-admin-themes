@@ -3,32 +3,64 @@
 // =============================================================================
 // pack-theme.js — Package a Pure Admin theme into a distributable zip
 // =============================================================================
+// Distributed by pureadmin.io — https://pureadmin.io/api/tools/pack-theme.js
 //
-// Usage:
-//   node pack-theme.js <theme-dir> [--output <dir>]
-//
-// Example:
-//   node pack-theme.js corporate
-//   node pack-theme.js audi --output ./releases/
-//
-// The script:
-//   1. Reads and validates theme.json from the theme directory
-//   2. Verifies CSS file exists (or compiles SCSS if missing)
-//   3. Generates a README.md with usage instructions
-//   4. Packages everything into pure-admin-theme-{id}-{version}.zip
-//
-// Zip contents:
-//   pure-admin-theme-{id}-{version}.zip
-//   ├── theme.json                    (enriched with asset checksums)
-//   ├── css/{id}.css
-//   ├── scss/{id}.scss                (optional)
-//   ├── preview/thumbnail.*           (optional)
-//   ├── assets/                       (optional)
-//   │   ├── fonts/*.woff2
-//   │   ├── logo.svg
-//   │   ├── favicon.ico
-//   │   └── ...
-//   └── README.md
+// This script checks for updates automatically. To disable, set:
+//   PUREADMIN_NO_UPDATE_CHECK=1
+// =============================================================================
+
+const TOOL_VERSION = '1.0.0';
+const TOOL_NAME = 'pack-theme.js';
+const UPDATE_URL = process.env.PUREADMIN_URL
+  ? `${process.env.PUREADMIN_URL.replace(/\/api\/.*$/, '')}/api/tools/${TOOL_NAME}`
+  : `https://pureadmin.io/api/tools/${TOOL_NAME}`;
+
+// ---------------------------------------------------------------------------
+// Self-update check (non-blocking, best-effort)
+// ---------------------------------------------------------------------------
+async function checkForUpdates() {
+  if (process.env.PUREADMIN_NO_UPDATE_CHECK === '1') return;
+
+  try {
+    const https = require(UPDATE_URL.startsWith('https') ? 'https' : 'http');
+    const res = await new Promise((resolve, reject) => {
+      const req = https.get(UPDATE_URL, { method: 'HEAD', timeout: 3000 }, resolve);
+      req.on('error', reject);
+      req.on('timeout', () => { req.destroy(); reject(new Error('timeout')); });
+    });
+
+    const serverVersion = res.headers['x-tool-version'];
+    if (serverVersion && serverVersion !== TOOL_VERSION) {
+      console.log(`\n  Update available: ${TOOL_NAME} ${TOOL_VERSION} → ${serverVersion}`);
+      console.log(`  Run: curl -o ${TOOL_NAME} ${UPDATE_URL}\n`);
+
+      // Auto-update if PUREADMIN_AUTO_UPDATE=1
+      if (process.env.PUREADMIN_AUTO_UPDATE === '1') {
+        console.log('  Auto-updating...');
+        const fs = require('fs');
+        const data = await new Promise((resolve, reject) => {
+          https.get(UPDATE_URL, { timeout: 10000 }, (res) => {
+            const chunks = [];
+            res.on('data', c => chunks.push(c));
+            res.on('end', () => resolve(Buffer.concat(chunks)));
+            res.on('error', reject);
+          }).on('error', reject);
+        });
+        fs.writeFileSync(__filename, data);
+        console.log('  Updated. Re-run the command.\n');
+        process.exit(0);
+      }
+    }
+  } catch {
+    // Update check failed silently — not critical
+  }
+}
+
+// Fire off update check but don't block
+const updateCheck = checkForUpdates();
+
+// =============================================================================
+// Main script
 // =============================================================================
 
 const fs = require('fs');
@@ -49,17 +81,25 @@ let outputDir = null;
 for (let i = 0; i < args.length; i++) {
   if (args[i] === '--output' && args[i + 1]) {
     outputDir = args[++i];
+  } else if (args[i] === '--version' || args[i] === '-V') {
+    console.log(`${TOOL_NAME} v${TOOL_VERSION}`);
+    process.exit(0);
   } else if (args[i] === '--help' || args[i] === '-h') {
     console.log(`
 Usage: node pack-theme.js <theme-dir> [--output <dir>]
 
 Options:
   --output <dir>   Output directory for the zip (default: theme-dir/dist/)
+  --version, -V    Show tool version
   --help, -h       Show this help message
 
 Examples:
   node pack-theme.js corporate
   node pack-theme.js audi --output ./releases/
+
+Environment:
+  PUREADMIN_NO_UPDATE_CHECK=1   Disable automatic update check
+  PUREADMIN_AUTO_UPDATE=1       Enable automatic self-update
 `);
     process.exit(0);
   } else if (!themeDir) {
@@ -117,6 +157,10 @@ if (!/^\d+\.\d+\.\d+(-[a-zA-Z0-9.]+)?$/.test(theme.version)) {
   console.error(`Error: theme.version "${theme.version}" must be semver (e.g. "1.0.0")`);
   process.exit(1);
 }
+
+// Set manifest version
+const MANIFEST_VERSION = '1.0';
+theme.manifestVersion = MANIFEST_VERSION;
 
 console.log(`Packaging theme: ${theme.name} v${theme.version} (${theme.id})`);
 
@@ -404,7 +448,7 @@ if (scssSourcePath) {
 }
 
 // ---------------------------------------------------------------------------
-// 7. Generate README.md (was section 6)
+// 7. Generate README.md
 // ---------------------------------------------------------------------------
 // Derive supported modes from colorVariants
 const allModeIds = new Set();
@@ -485,15 +529,15 @@ These files are located in the \`assets/\` directory of the theme package.
 ` : ''}## More Information
 
 - Pure Admin documentation: https://pure-admin.keenmate.dev
-- Theme gallery: https://pure-theme-park.keenmate.dev
+- Theme gallery: https://pureadmin.io
 ${theme.homepage ? `- Theme homepage: ${theme.homepage}` : ''}
 
 ---
-*Generated by pure-admin-core pack-theme*
+*Generated by pure-admin pack-theme v${TOOL_VERSION}*
 `;
 
 // ---------------------------------------------------------------------------
-// 7. Create the zip
+// 8. Create the zip
 // ---------------------------------------------------------------------------
 const zipName = `pure-admin-theme-${theme.id}-${theme.version}.zip`;
 
@@ -563,7 +607,7 @@ function sha256String(content) {
   return `sha256:${crypto.createHash('sha256').update(content, 'utf-8').digest('hex')}`;
 }
 
-// Checksum the rewritten content (what actually goes into the ZIP)
+// Legacy checksums (css, scss, assets) — kept for backward compatibility
 const checksums = {
   css: sha256String(cssContent),
 };
@@ -571,7 +615,7 @@ if (scssSourcePath && scssContent !== null) {
   checksums.scss = sha256String(scssContent);
 }
 
-// Compute asset checksums
+// Legacy asset checksums
 if (assetFiles.length > 0) {
   checksums.assets = {};
   for (const af of assetFiles) {
@@ -579,7 +623,128 @@ if (assetFiles.length > 0) {
   }
 }
 
-const enrichedTheme = { ...theme, checksums };
+// ---------------------------------------------------------------------------
+// checksums.files — SHA-256 for ALL files in the ZIP (excluding theme.json)
+// ---------------------------------------------------------------------------
+const fileChecksums = {};
+
+// CSS
+fileChecksums[`css/${theme.id}.css`] = sha256String(cssContent);
+
+// SCSS
+if (scssSourcePath && scssContent !== null) {
+  fileChecksums[`scss/${theme.id}.scss`] = sha256String(scssContent);
+}
+
+// Preview thumbnail
+if (thumbnailPath) {
+  fileChecksums[`preview/${path.basename(thumbnailPath)}`] = sha256File(thumbnailPath);
+}
+
+// Asset files
+for (const af of assetFiles) {
+  fileChecksums[af.zipPath] = sha256File(af.sourcePath);
+}
+
+// README.md (generated content)
+fileChecksums['README.md'] = sha256String(readme);
+
+checksums.files = fileChecksums;
+
+// ---------------------------------------------------------------------------
+// checksums.metadata — SHA-256 of canonical JSON of descriptive fields
+// ---------------------------------------------------------------------------
+// Must match the server-side computation in PureAdminIo.ThemeIntegrity
+const METADATA_FIELDS = ['author', 'content', 'description', 'id', 'license', 'name', 'tags', 'version'];
+
+const metadataObj = {};
+for (const key of METADATA_FIELDS) {
+  if (theme[key] !== undefined) {
+    metadataObj[key] = theme[key];
+  }
+}
+// Canonical JSON: sorted keys (METADATA_FIELDS is already sorted), no whitespace
+const canonicalMetadata = JSON.stringify(metadataObj, METADATA_FIELDS.filter(k => k in metadataObj));
+checksums.metadata = sha256String(canonicalMetadata);
+
+// ---------------------------------------------------------------------------
+// checksums.content_sha — single hash representing the entire package state
+// ---------------------------------------------------------------------------
+// Must match PureAdminIo.ThemeIntegrity.compute_content_sha/1:
+//   sort files by path, join as "path:hash\n", append metadata hash, then hash
+// Sort by byte order (default JS sort) to match Elixir's Enum.sort_by
+const contentShaPayload = Object.entries(fileChecksums)
+  .sort(([a], [b]) => (a < b ? -1 : a > b ? 1 : 0))
+  .map(([p, h]) => `${p}:${h}`)
+  .join('\n') + '\n' + checksums.metadata;
+checksums.content_sha = sha256String(contentShaPayload);
+
+// ---------------------------------------------------------------------------
+// Detect external domains in CSS
+// ---------------------------------------------------------------------------
+const URL_PATTERN = /url\(\s*['"]?(https?:\/\/[^'"\)\s]+)['"]?\s*\)/gi;
+const IMPORT_PATTERN = /@import\s+['"]?(https?:\/\/[^'"\s;]+)['"]?/gi;
+
+function extractExternalDomains(cssText) {
+  const domains = new Set();
+  let match;
+
+  URL_PATTERN.lastIndex = 0;
+  while ((match = URL_PATTERN.exec(cssText)) !== null) {
+    try {
+      const url = new URL(match[1]);
+      domains.add(url.hostname.toLowerCase());
+    } catch {}
+  }
+
+  IMPORT_PATTERN.lastIndex = 0;
+  while ((match = IMPORT_PATTERN.exec(cssText)) !== null) {
+    try {
+      const url = new URL(match[1]);
+      domains.add(url.hostname.toLowerCase());
+    } catch {}
+  }
+
+  return domains;
+}
+
+const detectedDomains = extractExternalDomains(cssContent);
+const declaredDomains = new Set(theme.external_domains || []);
+const undeclaredDomains = [...detectedDomains].filter(d => !declaredDomains.has(d));
+
+if (undeclaredDomains.length > 0) {
+  console.warn(`\n  Warning: CSS references external domains not declared in theme.json:`);
+  for (const d of undeclaredDomains) {
+    console.warn(`    - ${d}`);
+  }
+  console.warn(`  Add them to "external_domains" in theme.json or they will be rejected on upload.\n`);
+}
+
+// Include external_domains in the enriched theme
+const externalDomains = [...new Set([...(theme.external_domains || []), ...detectedDomains])].sort();
+
+// ---------------------------------------------------------------------------
+// Detect undeclared JS files
+// ---------------------------------------------------------------------------
+const declaredScripts = new Set((theme.scripts || []).map(s => s.file));
+const jsFilesInAssets = assetFiles.filter(af => af.zipPath.endsWith('.js'));
+const undeclaredJs = jsFilesInAssets.filter(af => !declaredScripts.has(af.zipPath));
+
+if (undeclaredJs.length > 0) {
+  console.error(`\n  Error: Undeclared JavaScript files found in assets:`);
+  for (const af of undeclaredJs) {
+    console.error(`    - ${af.zipPath}`);
+  }
+  console.error(`  All .js files must be declared in "scripts" in theme.json.`);
+  process.exit(1);
+}
+
+const enrichedTheme = {
+  ...theme,
+  checksums,
+  external_domains: externalDomains.length > 0 ? externalDomains : undefined,
+  scripts: theme.scripts && theme.scripts.length > 0 ? theme.scripts : undefined,
+};
 // Remove $schema from the packed copy (not useful inside the ZIP)
 delete enrichedTheme.$schema;
 
@@ -587,10 +752,16 @@ const enrichedJson = JSON.stringify(enrichedTheme, null, 2) + '\n';
 console.log(`  Checksums:`);
 console.log(`    CSS:  ${checksums.css}`);
 if (checksums.scss) console.log(`    SCSS: ${checksums.scss}`);
+console.log(`    Metadata: ${checksums.metadata}`);
+console.log(`    Content SHA: ${checksums.content_sha}`);
+console.log(`    Files: ${Object.keys(fileChecksums).length} entries`);
 if (checksums.assets) {
   for (const [zipPath, hash] of Object.entries(checksums.assets)) {
     console.log(`    ${zipPath}: ${hash}`);
   }
+}
+if (externalDomains.length > 0) {
+  console.log(`  External domains: ${externalDomains.join(', ')}`);
 }
 
 // Add enriched theme.json (with checksums)

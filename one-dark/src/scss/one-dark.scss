@@ -5,25 +5,25 @@
 // =============================================================================
 // THEME COLOR SLOTS (1-9) - One Dark palette
 // =============================================================================
-$color-1: #61afef;  // Blue (primary accent)
-$color-2: #c678dd;  // Purple
+$color-1: #e5c07b;  // Yellow (warning)
+$color-2: #abb2bf;  // Foreground text
 $color-3: #98c379;  // Green (success)
-$color-4: #e06c75;  // Red (danger)
-$color-5: #56b6c2;  // Cyan (info)
-$color-6: #e5c07b;  // Yellow (warning)
-$color-7: #d19a66;  // Orange
-$color-8: #abb2bf;  // Foreground text
+$color-4: #d19a66;  // Orange
+$color-5: #61afef;  // Blue (primary accent)
+$color-6: #c678dd;  // Purple
+$color-7: #56b6c2;  // Cyan (info)
+$color-8: #e06c75;  // Red (danger)
 $color-9: #5c6370;  // Comment gray
 
 // Contrast text colors for color slots
-$color-1-text: #1e2127;  // Dark on Blue
-$color-2-text: #1e2127;  // Dark on Purple
+$color-1-text: #1e2127;  // Dark on Yellow
+$color-2-text: #1e2127;  // Dark on Foreground
 $color-3-text: #1e2127;  // Dark on Green
-$color-4-text: #ffffff;  // White on Red
-$color-5-text: #1e2127;  // Dark on Cyan
-$color-6-text: #1e2127;  // Dark on Yellow
-$color-7-text: #1e2127;  // Dark on Orange
-$color-8-text: #1e2127;  // Dark on Foreground
+$color-4-text: #1e2127;  // Dark on Orange
+$color-5-text: #1e2127;  // Dark on Blue
+$color-6-text: #1e2127;  // Dark on Purple
+$color-7-text: #1e2127;  // Dark on Cyan
+$color-8-text: #ffffff;  // White on Red
 $color-9-text: #ffffff;  // White on Comment
 
 // =============================================================================
@@ -158,7 +158,7 @@ $sidebar-text:                $od-text;
 $sidebar-text-secondary:      $od-text-sec;
 $sidebar-submenu-bg:          $od-surface;
 $sidebar-submenu-hover-bg:    $od-elevated;
-$sidebar-submenu-active-bg:   $od-accent;
+$sidebar-submenu-active-bg: rgba($od-accent, 0.2);
 $footer-bg:                   $od-bg-deep;
 $footer-border-color:         $od-border;
 
