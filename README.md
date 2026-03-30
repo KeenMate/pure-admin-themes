@@ -6,8 +6,8 @@ Official theme collection for [Pure Admin](https://github.com/keenmate/pure-admi
 
 | Theme | Description | Modes / Variants | Custom Fonts |
 |-------|-------------|-----------------|--------------|
-| **Audi** | Premium dark theme with red accents inspired by Audi's design language | dark, light | Fira Sans Condensed |
-| **Ayu** | Warm, elegant theme inspired by the Ayu editor color scheme | dark, light + Dark/Light variants | - |
+| **Audi** | Premium dark theme with sharp corners and red accents inspired by Audi's design language | dark, light | Fira Sans Condensed |
+| **Ayu** | Warm, elegant theme inspired by the Ayu editor color scheme | dark, light + Dark/Light variants | Monda |
 | **Cobalt2** | Rich cobalt blues with signature yellow accent (Wes Bos's Cobalt2) | dark | - |
 | **Corporate** | Professional blue/gray theme for business applications | dark, light | - |
 | **Dark** | Neutral dark theme with color variants (blue, green, red) | dark + Blue/Green/Red variants | - |

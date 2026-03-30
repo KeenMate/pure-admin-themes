@@ -2,6 +2,21 @@
 
 All notable changes to the Pure Admin Themes collection are documented in this file.
 
+## [2.3.2] - 2026-03-30
+
+### Changed
+
+- **audi:** Rewritten from scratch — clean structure matching modern theme template (Tokyo Night). Removed all `!important` hacks and redundant overrides
+- **audi:** Border-radius now zero via `--pa-border-radius: 0` CSS variable override (no more `border-radius: 0 !important` per-component)
+
+### Fixed
+
+- **audi:** Outline-secondary button now readable on dark background (was #333 on #0a0a0a)
+- **ayu:** Added `--pa-btn-secondary-outline-color` override for readable outline-secondary on Mirage bg
+- **ayu:** Added `ascent-override: 105%`, `descent-override: 30%`, `size-adjust: 100%` to Monda @font-face for correct baseline alignment
+
+---
+
 ## [2.3.0] - 2026-03-26
 
 ### Changed
