@@ -1,7 +1,0 @@
-# pureadmin.io publish config
-# Copy to .pureadmin and fill in your API key
-#
-# Lookup order: .pureadmin (project) → ~/.pureadmin (home) → env vars → CLI flags
-
-PUREADMIN_API_KEY=your-api-key-here
-PUREADMIN_URL=https://pureadmin.io/api/themes/upload

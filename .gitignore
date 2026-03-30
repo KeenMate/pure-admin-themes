@@ -2,5 +2,5 @@ node_modules/
 dist/
 */dist/
 
-# API key config
-.pureadmin
+# Local config (secrets)
+.pureadmin.json
