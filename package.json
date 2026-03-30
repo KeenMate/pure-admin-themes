@@ -1,19 +1,20 @@
 {
   "name": "pure-admin-themes",
-  "version": "2.3.0",
+  "version": "2.3.2",
   "private": true,
   "description": "Theme collection for Pure Admin framework",
   "author": "KeenMate",
   "license": "MIT",
   "scripts": {
-    "build": "node scripts/build-themes.js",
-    "pack": "node scripts/pack-themes.js",
-    "publish": "node scripts/publish-themes.js"
+    "build": "pureadmin build",
+    "pack": "pureadmin pack",
+    "publish": "pureadmin publish"
   },
   "dependencies": {
     "@keenmate/pure-admin-core": "file:../pure-admin/packages/core"
   },
   "devDependencies": {
+    "@keenmate/pureadmin": "file:../pure-admin-cli",
     "archiver": "^7.0.0",
     "sass": "^1.70.0"
   }
