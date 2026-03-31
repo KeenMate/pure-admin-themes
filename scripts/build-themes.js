@@ -6,7 +6,7 @@
 // Distributed by pureadmin.io — https://pureadmin.io/api/tools/build-themes.js
 // =============================================================================
 
-const TOOL_VERSION = '1.0.0';
+const TOOL_VERSION = '1.1.0';
 const TOOL_NAME = 'build-themes.js';
 const UPDATE_URL = process.env.PUREADMIN_URL
   ? `${process.env.PUREADMIN_URL.replace(/\/api\/.*$/, '')}/api/tools/${TOOL_NAME}`
@@ -73,6 +73,8 @@ const allThemes = fs.readdirSync(root).filter(dir => {
 });
 
 const targets = themeName ? [themeName] : allThemes;
+
+console.log(`\x1b[1mPure Admin Theme Builder v${TOOL_VERSION}\x1b[0m \x1b[2m— by keenmate.com\x1b[0m\n`);
 
 for (const t of targets) {
   const themeDir = path.join(root, t);

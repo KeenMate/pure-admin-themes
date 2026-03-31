@@ -12,7 +12,7 @@
 // or a .pureadmin config file.
 // =============================================================================
 
-const TOOL_VERSION = '1.0.0';
+const TOOL_VERSION = '1.1.0';
 const TOOL_NAME = 'publish-themes.js';
 const UPDATE_URL = process.env.PUREADMIN_URL
   ? `${process.env.PUREADMIN_URL.replace(/\/api\/.*$/, '')}/api/tools/${TOOL_NAME}`
@@ -136,6 +136,11 @@ if (themeName && !allThemes.includes(themeName)) {
   console.error(`Error: theme "${themeName}" not found. Available: ${allThemes.join(', ')}`);
   process.exit(1);
 }
+
+// ---------------------------------------------------------------------------
+// Header
+// ---------------------------------------------------------------------------
+console.log(`\x1b[1mPure Admin Theme Publisher v${TOOL_VERSION}\x1b[0m \x1b[2m— by keenmate.com\x1b[0m\n`);
 
 // ---------------------------------------------------------------------------
 // Pack first

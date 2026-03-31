@@ -9,7 +9,7 @@
 //   PUREADMIN_NO_UPDATE_CHECK=1
 // =============================================================================
 
-const TOOL_VERSION = '1.0.0';
+const TOOL_VERSION = '1.1.0';
 const TOOL_NAME = 'pack-theme.js';
 const UPDATE_URL = process.env.PUREADMIN_URL
   ? `${process.env.PUREADMIN_URL.replace(/\/api\/.*$/, '')}/api/tools/${TOOL_NAME}`
@@ -718,6 +718,8 @@ if (undeclaredDomains.length > 0) {
     console.warn(`    - ${d}`);
   }
   console.warn(`  Add them to "external_domains" in theme.json or they will be rejected on upload.\n`);
+} else if (detectedDomains.size > 0) {
+  console.log(`\x1b[32m  External domains: all declared in theme.json\x1b[0m`);
 }
 
 // Include external_domains in the enriched theme

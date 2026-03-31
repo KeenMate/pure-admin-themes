@@ -2,7 +2,7 @@
   "$schema": "../schemas/pure-admin-theme.schema.json",
   "name": "Gruvbox",
   "id": "gruvbox",
-  "version": "2.3.0",
+  "version": "2.3.4",
   "description": "Retro groove color scheme with warm earthy tones and orange accents",
   "content": "## Gruvbox\n\nA retro groove color scheme inspired by the legendary Gruvbox palette for Vim. Warm, earthy tones with vibrant accents create a comfortable, low-fatigue interface.\n\n### Highlights\n\n- **Three variants** — Dark (medium contrast, default), Soft (warmer, lower contrast), and Light (cream backgrounds)\n- **Orange accent (#fe8019)** — the signature Gruvbox color\n- **System fonts** — no custom font download required\n- Warm, desaturated backgrounds reduce eye strain\n\n### Variants\n\nSwitch variants by adding a CSS class to `<body>`:\n\n```html\n<body>                          <!-- Dark (default) -->\n<body class=\"pa-color-soft\">    <!-- Soft dark -->\n<body class=\"pa-color-light\">   <!-- Light -->\n```\n\n### Usage\n\n```html\n<link rel=\"stylesheet\" href=\"css/gruvbox.css\">\n```",
   "author": "KeenMate",
@@ -93,6 +93,6 @@
   },
 
   "dependencies": {
-    "core": "^2.2.0"
+    "core": "^2.3.4"
   }
 }

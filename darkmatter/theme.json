@@ -2,7 +2,7 @@
   "$schema": "../schemas/pure-admin-theme.schema.json",
   "name": "Darkmatter",
   "id": "darkmatter",
-  "version": "2.3.0",
+  "version": "2.3.4",
   "description": "Deep space blue theme with cool tones and minimal aesthetic",
   "content": "## Darkmatter\n\nA deep space blue theme inspired by the Darkmatter Sublime Text theme. Cool navy backgrounds with soft blue text and cyan accents create a sleek, minimal interface ideal for long sessions.\n\n### Highlights\n\n- **Deep navy palette** — backgrounds from `#0e1217` to `#212b37`\n- **Blue accent (#4cbbff)** for interactive elements\n- **System fonts** — no custom font download required\n- Dark-only — designed for a single cohesive look\n\n### Usage\n\n```html\n<link rel=\"stylesheet\" href=\"css/darkmatter.css\">\n```",
   "author": "KeenMate",
@@ -51,6 +51,6 @@
   },
 
   "dependencies": {
-    "core": "^2.2.0"
+    "core": "^2.3.4"
   }
 }

@@ -2,6 +2,15 @@
 
 All notable changes to the Pure Admin Themes collection are documented in this file.
 
+## [2.3.4] - 2026-03-31
+
+### Changed
+
+- **All themes:** Bumped core dependency to `^2.3.4` and theme versions to 2.3.4
+- **All themes:** Now consume `var(--pa-border-radius)`, `--pa-btn-secondary-outline-color`, `--pa-command-palette-key-*` CSS variables from core
+
+---
+
 ## [2.3.2] - 2026-03-30
 
 ### Changed
