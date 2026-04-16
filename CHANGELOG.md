@@ -2,6 +2,23 @@
 
 All notable changes to the Pure Admin Themes collection are documented in this file.
 
+## [Unreleased] - 2026-04-16
+
+### Changed
+
+- **nato:** Switched body font from `Inter` (system fallback) to self-hosted **Noto Sans Condensed Medium** matching NATO's actual web identity
+- **nato:** Bundled woff2 font files in `assets/fonts/` (Source Sans Pro Regular/SemiBold/Bold + Noto Sans Condensed Medium) — `customFonts` flag now `true`
+- **nato:** Tightened border-radius to 2px throughout (cards, buttons, modals, inputs, badges) for institutional feel
+- **nato:** Brand color slots 6/8/9 (all dark navies in the institutional palette) remapped for dark mode — `--pa-color-6: #2e5a8e`, `--pa-color-8: #3f78b8`, `--pa-color-9: $nato-gray-400`. Light mode unchanged. Keeps the navy family while restoring readable contrast for outline buttons on dark bg.
+
+### Fixed
+
+- **nato:** Active sidebar link no longer renders azure-on-azure (unreadable) — now navy text on subtle azure tint in light mode, white on azure-dark in dark mode
+- **nato:** Card header inner corners now respect 2px radius (were stuck at 8px from compiled `$card-border-radius`)
+- **nato:** Outline-secondary button was invisible on light card bg (default `--pa-btn-secondary-outline-color` resolved to white via `$btn-secondary-text`). Now `$nato-navy` in light mode, `$nato-dark-text-2` in dark mode
+
+---
+
 ## [2.3.4] - 2026-03-31
 
 ### Changed
