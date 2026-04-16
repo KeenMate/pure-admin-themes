@@ -88,12 +88,7 @@ pure-admin-themes/
 ├── tokyo-night/
 ├── schemas/
 │   └── pure-admin-theme.schema.json
-├── scripts/
-│   ├── build-themes.js         # SCSS compilation
-│   ├── pack-theme.js           # Single theme packaging
-│   ├── pack-themes.js          # All themes packaging
-│   └── publish-themes.js       # Upload to pureadmin.io
-├── .pureadmin.example          # Config template
+├── .pureadmin.json             # API key for `pureadmin themes publish`
 ├── package.json
 └── Makefile
 ```

@@ -32,16 +32,16 @@ install:
 	npm install
 
 build:
-	npx pureadmin build $(THEME)
+	npx pureadmin themes build $(THEME)
 
 pack:
-	npx pureadmin pack $(THEME)
+	npx pureadmin themes pack $(THEME)
 
 publish:
-	npx pureadmin publish $(THEME) $(if $(PUREADMIN_API_KEY),--api-key $(PUREADMIN_API_KEY))
+	npx pureadmin themes publish $(THEME) $(if $(PUREADMIN_API_KEY),--api-key $(PUREADMIN_API_KEY))
 
 validate:
-	npx pureadmin validate $(THEME)
+	npx pureadmin themes validate $(THEME)
 
 clean:
 	node -e "const fs=require('fs'),p=require('path');fs.readdirSync('.').filter(d=>fs.existsSync(p.join(d,'theme.json'))).forEach(d=>{fs.rmSync(p.join(d,'dist'),{recursive:true,force:true})});fs.rmSync('dist',{recursive:true,force:true})"

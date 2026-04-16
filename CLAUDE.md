@@ -4,19 +4,18 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-Theme collection for the Pure Admin framework. Contains 5 SCSS themes (audi, corporate, dark, express, minimal) that compile to self-contained CSS + ZIP packages for upload to pureadmin.io.
+Theme collection for the Pure Admin framework. SCSS themes compile to self-contained CSS + ZIP packages for upload to pureadmin.io. All build/pack/publish operations are driven by the `pureadmin` CLI (`@keenmate/pureadmin`).
 
 ## Key Commands
 
 ```bash
 # Install dependencies (requires sibling ../pure-admin/packages/core directory)
-make install          # or: npm install
+make install                       # or: npm install
 
 # Build SCSS → CSS (all themes or one)
-make build            # all themes
-make build THEME=audi # single theme
-npm run build         # all themes
-node scripts/build-themes.js audi  # single theme
+make build                         # all themes
+make build THEME=audi              # single theme
+npx pureadmin themes build audi    # equivalent direct CLI call
 
 # Build + create ZIP packages
 make pack
@@ -26,6 +25,10 @@ make pack THEME=audi
 make publish
 make publish THEME=express
 
+# Validate compiled CSS
+make validate
+make validate THEME=audi
+
 # Remove all dist/ directories
 make clean
 ```
@@ -34,11 +37,7 @@ make clean
 
 **Theme discovery** is automatic — any directory containing a `theme.json` is treated as a theme.
 
-**Build pipeline:** SCSS compile → ZIP package → upload to pureadmin.io
-- `scripts/build-themes.js` — Compiles SCSS via Dart Sass with `--load-path=node_modules`
-- `scripts/pack-theme.js` — Validates against JSON schema, rewrites `url()` paths for fonts, computes SHA-256 checksums, generates README, creates ZIP
-- `scripts/pack-themes.js` — Orchestrates build + pack for all/selected themes
-- `scripts/publish-themes.js` — Packs + uploads ZIPs via API with key from `.pureadmin` config file
+**Build pipeline:** SCSS compile → ZIP package → upload to pureadmin.io. Everything is handled by the `pureadmin` CLI; this repo contains no local build scripts. The Makefile and npm scripts are thin wrappers around `pureadmin themes <subcommand>`.
 
 **Each theme directory contains:**
 - `theme.json` — Manifest validated against `schemas/pure-admin-theme.schema.json` (modes, colors, features, fonts, exports)
@@ -51,8 +50,7 @@ make clean
 ## Dependencies
 
 - `@keenmate/pure-admin-core` — **file dependency** on `../pure-admin/packages/core` (must exist locally)
-- `sass` — SCSS compilation
-- `archiver` — ZIP creation
+- `@keenmate/pureadmin` — CLI that handles all build/pack/publish/validate operations (file dependency on `../pure-admin-cli`)
 
 ## Theme-Specific Notes
 
@@ -63,4 +61,4 @@ make clean
 
 ## Publishing
 
-Requires `.pureadmin` config file with API key (see `.pureadmin.example`). Uploads to `https://pureadmin.io/api/themes/upload`.
+Requires a `.pureadmin.json` config file in the repo root containing the API key (`{"apiKey": "..."}`). The CLI reads it automatically. Uploads go to `https://pureadmin.io/api/themes/upload`.

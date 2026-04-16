@@ -6,9 +6,9 @@
   "author": "KeenMate",
   "license": "MIT",
   "scripts": {
-    "build": "pureadmin build",
-    "pack": "pureadmin pack",
-    "publish": "pureadmin publish"
+    "build": "pureadmin themes build",
+    "pack": "pureadmin themes pack",
+    "publish": "pureadmin themes publish"
   },
   "dependencies": {
     "@keenmate/pure-admin-core": "file:../pure-admin/packages/core"
