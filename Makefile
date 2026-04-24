@@ -8,11 +8,13 @@
 #   make pack THEME=dark        Build + ZIP only dark
 #   make publish THEME=audi     Pack + upload audi
 #   make publish                Pack + upload all
-#   make validate               Validate all themes
+#   make validate               Validate all themes (hard correctness)
 #   make validate THEME=audi    Validate one theme
+#   make lint                   Lint all themes (quality recommendations)
+#   make lint THEME=audi        Lint one theme
 #   make clean                  Clean all dist dirs
 
-.PHONY: help install build pack publish validate clean
+.PHONY: help install build pack publish validate lint clean
 
 THEME ?=
 PUREADMIN_API_KEY ?=
@@ -24,7 +26,8 @@ help:
 	@echo   make build [THEME=name]          Build SCSS to CSS
 	@echo   make pack  [THEME=name]          Build + ZIP
 	@echo   make publish [THEME=name]        Pack + upload
-	@echo   make validate [THEME=name]       Validate theme CSS
+	@echo   make validate [THEME=name]       Hard correctness checks (manifest, vars)
+	@echo   make lint [THEME=name]           Quality recommendations (contrast, etc)
 	@echo   make clean                       Clean dist directories
 	@echo ""
 
@@ -42,6 +45,9 @@ publish:
 
 validate:
 	npx pureadmin themes validate $(THEME)
+
+lint:
+	npx pureadmin themes lint $(THEME)
 
 clean:
 	node -e "const fs=require('fs'),p=require('path');fs.readdirSync('.').filter(d=>fs.existsSync(p.join(d,'theme.json'))).forEach(d=>{fs.rmSync(p.join(d,'dist'),{recursive:true,force:true})});fs.rmSync('dist',{recursive:true,force:true})"

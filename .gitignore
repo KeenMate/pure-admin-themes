@@ -4,3 +4,6 @@ dist/
 
 # Local config (secrets)
 .pureadmin.json
+
+# Local Claude permissions (per-machine)
+.claude/settings.local.json
