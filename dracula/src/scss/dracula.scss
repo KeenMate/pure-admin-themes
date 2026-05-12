@@ -191,9 +191,9 @@ $table-stripe:    $bg;
 // Button colors
 $btn-primary-bg:          color.adjust($accent, $lightness: -8%);
 $btn-primary-bg-hover:    color.adjust($accent, $lightness: -15%);
-$btn-secondary-bg:        $border;
-$btn-secondary-bg-hover:  $dracula-current-line;
-$btn-secondary-text:      $text-1;
+$btn-secondary-bg:        $dracula-comment;
+$btn-secondary-bg-hover:  #7c8bb5;
+$btn-secondary-text:      $dracula-foreground;
 $btn-light-bg:            $elevated;
 $btn-light-text:          $text-1;
 $btn-light-bg-hover:      $border;

@@ -2,7 +2,7 @@
   "$schema": "../schemas/pure-admin-theme.schema.json",
   "name": "Audi",
   "id": "audi",
-  "version": "2.3.4",
+  "version": "2.7.0",
   "description": "Premium dark theme inspired by Audi's design language with red accents",
   "content": "## Audi\n\nA premium dark theme drawing inspiration from Audi's iconic design language. Deep blacks and precise red accents create a sophisticated, high-contrast interface.\n\n### Highlights\n\n- **Dark-first design** with carefully tuned contrast ratios\n- **Red accent (#bb0a30)** for interactive elements and focus states\n- **Fira Sans Condensed** bundled font for a sleek, condensed typographic feel\n- Light mode included for well-lit environments\n\n### Usage\n\n```html\n<link rel=\"stylesheet\" href=\"css/audi.css\">\n```\n\nThe theme defaults to dark mode. Switch with `pa-mode-light` / `pa-mode-dark` on `<body>`. Auto-switching via `prefers-color-scheme` is enabled by default.",
   "author": "KeenMate",
@@ -77,6 +77,6 @@
   },
 
   "dependencies": {
-    "core": "^2.3.4"
+    "core": "^2.7.0"
   }
 }

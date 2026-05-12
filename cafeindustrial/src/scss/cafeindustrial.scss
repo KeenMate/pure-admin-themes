@@ -189,9 +189,9 @@ $table-hover-accent-width: 3px;
 $table-hover-accent-color: $ci-gold;
 
 // Button overrides
-$btn-secondary-bg: $ci-dark-border;
-$btn-secondary-bg-hover: #4a3f32;
-$btn-secondary-text: $ci-dark-text-1;
+$btn-secondary-bg: $ci-dark-text-2;
+$btn-secondary-bg-hover: #c4b399;
+$btn-secondary-text: $ci-dark-card;
 $btn-dark-bg: #0d0b09;
 $btn-dark-bg-hover: #050403;
 $btn-dark-text: $ci-dark-text-1;
@@ -240,7 +240,7 @@ $color-3: $ci-gold-hover;       // Light amber
 $color-3-text: #1a1714;
 $color-4: $ci-copper;           // Deep bronze
 $color-4-text: #ffffff;
-$color-5: #4a3f32;              // Warm brown
+$color-5: #857258;              // Mid warm-brown (was #4a3f32 — too close to dark card)
 $color-5-text: $ci-dark-text-1;
 $color-6: #c94444;              // Industrial red
 $color-6-text: #ffffff;
@@ -248,8 +248,8 @@ $color-7: #4a9e5c;              // Muted green
 $color-7-text: #ffffff;
 $color-8: #3a8fa0;              // Warm teal
 $color-8-text: #ffffff;
-$color-9: $ci-dark-surface;     // Dark surface
-$color-9-text: $ci-dark-text-1;
+$color-9: $ci-dark-text-2;      // Visible warm tan (was $ci-dark-surface — almost identical to card bg)
+$color-9-text: $ci-dark-card;
 
 // =============================================================================
 // IMPORT PURE ADMIN CORE

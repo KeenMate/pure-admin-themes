@@ -89,7 +89,7 @@
               "properties": {
                 "id": {
                   "type": "string",
-                  "enum": ["light", "dark"],
+                  "enum": ["light", "dark", "high-contrast"],
                   "description": "Mode identifier"
                 },
                 "name": {
@@ -170,6 +170,11 @@
           "type": "boolean",
           "default": false,
           "description": "Theme includes print-optimized styles"
+        },
+        "highContrast": {
+          "type": "boolean",
+          "default": false,
+          "description": "Theme provides a high-contrast accessibility mode"
         }
       }
     },

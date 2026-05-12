@@ -447,10 +447,11 @@ $checkbox-focus-shadow: 0 0 0 2px rgba($base-accent-color, 0.25);
   }
 
   // Buttons
-  --pa-btn-secondary-bg: #{$nato-dark-border};
-  --pa-btn-secondary-bg-hover: #{$nato-dark-surface};
-  --pa-btn-secondary-text: #{$nato-dark-text};
-  --pa-btn-secondary-outline-color: #{$nato-dark-text-2};
+  // Inverted secondary: light blue-grey button with dark navy text — navy-on-navy
+  // (border on card) had only ~2:1 contrast. Outline-color now defaults to bg in core.
+  --pa-btn-secondary-bg: #{$nato-dark-text-2};
+  --pa-btn-secondary-bg-hover: #{$nato-dark-text};
+  --pa-btn-secondary-text: #{$nato-dark-card};
   --pa-btn-light-bg: #{$nato-dark-surface};
   --pa-btn-light-bg-hover: #{$nato-dark-border};
   --pa-btn-light-text: #{$nato-dark-text};

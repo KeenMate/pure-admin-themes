@@ -176,8 +176,8 @@ $table-stripe: $cobalt2-bg;
 // Button colors
 $btn-primary-bg: color.adjust($cobalt2-accent, $lightness: -8%);
 $btn-primary-bg-hover: color.adjust($cobalt2-accent, $lightness: -15%);
-$btn-secondary-bg: $cobalt2-border;
-$btn-secondary-bg-hover: $cobalt2-gutter;
+$btn-secondary-bg: $cobalt2-gutter;
+$btn-secondary-bg-hover: $cobalt2-text-sec;
 $btn-secondary-text: $cobalt2-text;
 $btn-light-bg: $cobalt2-elevated;
 $btn-light-text: $cobalt2-text;

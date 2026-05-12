@@ -1,5 +1,5 @@
 /* Ayu Theme for Pure Admin - Warm, elegant editor-inspired theme */
-/* Three variants: Mirage (default dark), Dark (deeper), Light */
+/* Default variant (Mirage): dark + light modes. Dark variant: dark only. */
 @use 'sass:color';
 
 // Bundled font: Monda
@@ -367,9 +367,9 @@ $checkbox-focus-shadow: 0 0 0 2px $base-focus-ring-color;
 }
 
 // =============================================================================
-// COLOR VARIANT: LIGHT
+// MODE: LIGHT (applies to Default/Mirage variant)
 // =============================================================================
-.pa-color-light {
+.pa-mode-light {
   --page-loader-bg: rgba(252, 252, 252, 0.95);
   --page-loader-spinner-border: #{$light-border};
   --page-loader-spinner-accent: #f29718;

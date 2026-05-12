@@ -341,7 +341,8 @@ $modal-content-bg: $minimal-white;
   --pa-btn-primary-bg-hover: #ffffff;
   --pa-btn-primary-text: #{$dark-bg};
   --pa-btn-secondary-bg: #{$dark-border};
-  --pa-btn-secondary-bg-hover: #{$dark-surface};
+  // Hover bumps to text-bg (was $dark-surface, which is darker than border — backwards progression).
+  --pa-btn-secondary-bg-hover: #{$dark-text-bg};
   --pa-btn-secondary-text: #{$dark-text};
   --pa-btn-light-bg: #{$dark-surface};
   --pa-btn-light-bg-hover: #{$dark-border};

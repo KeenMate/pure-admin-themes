@@ -182,8 +182,8 @@ $table-stripe:    $od-page-bg;
 // Button colors
 $btn-primary-bg:         color.adjust($od-accent, $lightness: -8%);
 $btn-primary-bg-hover:   color.adjust($od-accent, $lightness: -15%);
-$btn-secondary-bg:       $od-border;
-$btn-secondary-bg-hover: $od-gutter;
+$btn-secondary-bg:       $od-gutter;
+$btn-secondary-bg-hover: $od-text-sec;
 $btn-secondary-text:     $od-text;
 $btn-light-bg:           $od-elevated;
 $btn-light-text:         $od-text;

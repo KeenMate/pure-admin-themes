@@ -181,8 +181,8 @@ $table-stripe: $dm-bg;
 // Buttons
 $btn-primary-bg: $dm-blue;
 $btn-primary-bg-hover: color.adjust($dm-blue, $lightness: -5%);
-$btn-secondary-bg: $dm-border;
-$btn-secondary-bg-hover: $dm-gutter;
+$btn-secondary-bg: $dm-gutter;
+$btn-secondary-bg-hover: $dm-text-sec;
 $btn-secondary-text: $dm-text;
 $btn-light-bg: $dm-elevated;
 $btn-light-text: $dm-text;

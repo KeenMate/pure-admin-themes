@@ -6,15 +6,17 @@
 #   make build THEME=audi       Build only audi
 #   make pack                   Build + ZIP all themes
 #   make pack THEME=dark        Build + ZIP only dark
-#   make publish THEME=audi     Pack + upload audi
-#   make publish                Pack + upload all
+#   make publish THEME=audi     Pack + upload audi (production)
+#   make publish                Pack + upload all (production)
+#   make publish-local          Pack + upload all to local pureadmin server
+#   make publish-local THEME=x  Pack + upload one theme to local pureadmin server
 #   make validate               Validate all themes (hard correctness)
 #   make validate THEME=audi    Validate one theme
 #   make lint                   Lint all themes (quality recommendations)
 #   make lint THEME=audi        Lint one theme
 #   make clean                  Clean all dist dirs
 
-.PHONY: help install build pack publish validate lint clean
+.PHONY: help install build pack publish publish-local validate lint clean
 
 THEME ?=
 PUREADMIN_API_KEY ?=
@@ -25,7 +27,8 @@ help:
 	@echo   make install                     Install dependencies
 	@echo   make build [THEME=name]          Build SCSS to CSS
 	@echo   make pack  [THEME=name]          Build + ZIP
-	@echo   make publish [THEME=name]        Pack + upload
+	@echo   make publish [THEME=name]        Pack + upload (production pureadmin.io)
+	@echo   make publish-local [THEME=name]  Pack + upload to local pureadmin server
 	@echo   make validate [THEME=name]       Hard correctness checks (manifest, vars)
 	@echo   make lint [THEME=name]           Quality recommendations (contrast, etc)
 	@echo   make clean                       Clean dist directories
@@ -42,6 +45,9 @@ pack:
 
 publish:
 	npx pureadmin themes publish $(THEME) $(if $(PUREADMIN_API_KEY),--api-key $(PUREADMIN_API_KEY))
+
+publish-local:
+	npx @keenmate/pureadmin themes publish $(THEME) --server local $(if $(PUREADMIN_API_KEY),--api-key $(PUREADMIN_API_KEY))
 
 validate:
 	npx pureadmin themes validate $(THEME)

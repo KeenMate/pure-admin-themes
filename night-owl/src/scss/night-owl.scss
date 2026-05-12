@@ -181,8 +181,8 @@ $table-stripe:    $no-bg;
 // Buttons
 $btn-primary-bg:         color.adjust($no-accent, $lightness: -10%);
 $btn-primary-bg-hover:   color.adjust($no-accent, $lightness: -18%);
-$btn-secondary-bg:       $no-border;
-$btn-secondary-bg-hover: $no-gutter;
+$btn-secondary-bg:       $no-gutter;
+$btn-secondary-bg-hover: $no-text-sec;
 $btn-secondary-text:     $no-text;
 $btn-light-bg:           $no-elevated;
 $btn-light-text:         $no-text;

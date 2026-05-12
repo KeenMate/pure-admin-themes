@@ -1,5 +1,5 @@
 /* Gruvbox Theme for Pure Admin - Retro groove color scheme */
-/* Three variants: Dark (default), Soft (warmer dark), Light */
+/* Default variant: dark + light modes. Soft variant: dark only. */
 @use 'sass:color';
 
 // =============================================================================
@@ -202,8 +202,8 @@ $table-stripe: $dark0;
 // Buttons
 $btn-primary-bg: $neutral-orange;
 $btn-primary-bg-hover: color.adjust($neutral-orange, $lightness: -5%);
-$btn-secondary-bg: $dark3;
-$btn-secondary-bg-hover: $dark4;
+$btn-secondary-bg: $dark4;
+$btn-secondary-bg-hover: $gray;
 $btn-secondary-text: $light1;
 $btn-light-bg: $dark2;
 $btn-light-text: $light1;
@@ -322,9 +322,9 @@ $checkbox-focus-shadow: 0 0 0 2px $base-focus-ring-color;
 }
 
 // =============================================================================
-// COLOR VARIANT: LIGHT
+// MODE: LIGHT (applies to Default variant)
 // =============================================================================
-.pa-color-light {
+.pa-mode-light {
   --page-loader-bg: rgba(251, 241, 199, 0.95);
   --page-loader-spinner-border: #{$light2};
   --page-loader-spinner-accent: #{$neutral-orange};

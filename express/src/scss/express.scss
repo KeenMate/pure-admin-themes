@@ -571,8 +571,9 @@ $header-profile-name-color: $express-black;  // Black text on yellow header
   }
 
   // Buttons - adjust for dark mode
-  --pa-btn-secondary-bg: #{$dark-border};
-  --pa-btn-secondary-bg-hover: #{$dark-surface};
+  // bg sits between $dark-border (#3a3a3a, too subtle on #242424 card) and $dark-text-bg (#aaaaaa).
+  --pa-btn-secondary-bg: #555555;
+  --pa-btn-secondary-bg-hover: #{$dark-text-bg};
   --pa-btn-secondary-text: #{$dark-text};
   --pa-btn-light-bg: #{$dark-surface};
   --pa-btn-light-bg-hover: #{$dark-border};

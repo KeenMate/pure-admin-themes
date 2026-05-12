@@ -346,6 +346,7 @@ $checkbox-focus-shadow: 0 0 0 2px rgba($base-accent-color, 0.25);
   --pa-sidebar-submenu-bg: #{$dark-bg};
   --pa-sidebar-submenu-hover-bg: rgba(14, 165, 233, 0.1);
   --pa-sidebar-submenu-active-bg: #{$corporate-blue-600};
+  --pa-sidebar-submenu-active-text: #ffffff;
 
   // Footer
   --pa-footer-bg: #{$dark-card};
@@ -413,12 +414,20 @@ $checkbox-focus-shadow: 0 0 0 2px rgba($base-accent-color, 0.25);
   }
 
   // Buttons
-  --pa-btn-secondary-bg: #{$dark-border};
-  --pa-btn-secondary-bg-hover: #{$dark-surface};
-  --pa-btn-secondary-text: #{$dark-text};
+  // Inverted secondary: light slate-blue button with dark navy text — $dark-border (#475569)
+  // on $dark-card (#1e293b) was only ~2.5:1 contrast and read as disabled.
+  --pa-btn-secondary-bg: #{$dark-text-bg};
+  --pa-btn-secondary-bg-hover: #{$dark-text};
+  --pa-btn-secondary-text: #{$dark-card};
   --pa-btn-light-bg: #{$dark-surface};
   --pa-btn-light-bg-hover: #{$dark-border};
   --pa-btn-light-text: #{$dark-text};
+
+  // Color palette adjustment for dark mode
+  // $color-9 (#334155 Dark Slate) is ~1.5:1 on $dark-card #1e293b — invisible.
+  // Bump to mid-slate that's distinct from $color-7 (#64748b) and from the
+  // secondary button bg ($dark-text-bg #94a3b8) while keeping the "dark slate" intent.
+  --pa-color-9: #5a6478;
 
   // Semantic colors
   --pa-success-bg: #{$corporate-emerald-500};

@@ -190,8 +190,8 @@ $table-stripe: $night-bg;
 // Button colors
 $btn-primary-bg: color.adjust($tn-accent, $lightness: -10%);
 $btn-primary-bg-hover: color.adjust($tn-accent, $lightness: -18%);
-$btn-secondary-bg: $night-border;
-$btn-secondary-bg-hover: $night-gutter;
+$btn-secondary-bg: $night-gutter;
+$btn-secondary-bg-hover: $night-text-sec;
 $btn-secondary-text: $night-text;
 $btn-light-bg: $night-elevated;
 $btn-light-text: $night-text;

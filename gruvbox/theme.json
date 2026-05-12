@@ -2,19 +2,20 @@
   "$schema": "../schemas/pure-admin-theme.schema.json",
   "name": "Gruvbox",
   "id": "gruvbox",
-  "version": "2.3.4",
+  "version": "2.7.0",
   "description": "Retro groove color scheme with warm earthy tones and orange accents",
-  "content": "## Gruvbox\n\nA retro groove color scheme inspired by the legendary Gruvbox palette for Vim. Warm, earthy tones with vibrant accents create a comfortable, low-fatigue interface.\n\n### Highlights\n\n- **Three variants** — Dark (medium contrast, default), Soft (warmer, lower contrast), and Light (cream backgrounds)\n- **Orange accent (#fe8019)** — the signature Gruvbox color\n- **System fonts** — no custom font download required\n- Warm, desaturated backgrounds reduce eye strain\n\n### Variants\n\nSwitch variants by adding a CSS class to `<body>`:\n\n```html\n<body>                          <!-- Dark (default) -->\n<body class=\"pa-color-soft\">    <!-- Soft dark -->\n<body class=\"pa-color-light\">   <!-- Light -->\n```\n\n### Usage\n\n```html\n<link rel=\"stylesheet\" href=\"css/gruvbox.css\">\n```",
+  "content": "## Gruvbox\n\nA retro groove color scheme inspired by the legendary Gruvbox palette for Vim. Warm, earthy tones with vibrant accents create a comfortable, low-fatigue interface.\n\n### Highlights\n\n- **Dark and Light modes** on the Default variant — toggle with `pa-mode-light` / `pa-mode-dark`\n- **Soft variant** — a warmer, lower-contrast dark mode (dark only)\n- **Orange accent (#fe8019)** — the signature Gruvbox color\n- **System fonts** — no custom font download required\n- Warm, desaturated backgrounds reduce eye strain\n\n### Variants and Modes\n\nDefault is the standard Gruvbox medium-contrast palette with both dark and light modes. The Soft variant is a dark-only alternative with warmer, lower-contrast backgrounds.\n\n```html\n<body>                                  <!-- Default Dark -->\n<body class=\"pa-mode-light\">            <!-- Default Light -->\n<body class=\"pa-color-soft\">            <!-- Soft (dark only) -->\n```\n\n### Usage\n\n```html\n<link rel=\"stylesheet\" href=\"css/gruvbox.css\">\n```",
   "author": "KeenMate",
   "license": "MIT",
 
+  "modeCssClass": "pa-mode-{mode}",
   "variantCssClass": "pa-color-{variant}",
 
   "colorVariants": [
     {
       "id": "",
-      "name": "Dark",
-      "description": "Medium contrast dark mode with warm earthy tones",
+      "name": "Default",
+      "description": "Medium-contrast Gruvbox palette with warm earthy tones",
       "file": "dist/gruvbox.css",
       "modes": [
         {
@@ -29,13 +30,25 @@
             "header": "#1d2021",
             "sidebar": "#3c3836"
           }
+        },
+        {
+          "id": "light",
+          "name": "Light",
+          "colors": {
+            "accent": "#d65d0e",
+            "background": "#fbf1c7",
+            "surface": "#f9f5d7",
+            "text": "#3c3836",
+            "header": "#1d2021",
+            "sidebar": "#ebdbb2"
+          }
         }
       ]
     },
     {
       "id": "soft",
       "name": "Soft",
-      "description": "Warmer dark mode with lower contrast",
+      "description": "Warmer dark mode with lower contrast (dark only)",
       "file": "dist/gruvbox.css",
       "modes": [
         {
@@ -49,27 +62,6 @@
             "text": "#ebdbb2",
             "header": "#3c3836",
             "sidebar": "#32302f"
-          }
-        }
-      ]
-    },
-    {
-      "id": "light",
-      "name": "Light",
-      "description": "Warm cream backgrounds with earthy accents",
-      "file": "dist/gruvbox.css",
-      "modes": [
-        {
-          "id": "light",
-          "name": "Light",
-          "default": true,
-          "colors": {
-            "accent": "#d65d0e",
-            "background": "#fbf1c7",
-            "surface": "#f9f5d7",
-            "text": "#3c3836",
-            "header": "#1d2021",
-            "sidebar": "#ebdbb2"
           }
         }
       ]
@@ -93,6 +85,6 @@
   },
 
   "dependencies": {
-    "core": "^2.3.4"
+    "core": "^2.7.0"
   }
 }

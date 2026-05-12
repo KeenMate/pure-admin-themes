@@ -2,17 +2,41 @@
 
 All notable changes to the Pure Admin Themes collection are documented in this file.
 
-## [Unreleased] - 2026-04-16
+## [2.7.0] - 2026-05-11
 
 ### Changed
+
+- **All themes:** Bumped core dependency to `^2.7.0` and theme versions to 2.7.0 to track the Pure Admin Core 2.6.0 + 2.7.0 releases (2.6.0 of themes was never published — folded into this release). Themes need a rebuild against the new core SCSS to ship the upstream changes — most visibly the new role-colour palette (warning yellow → orange, success/danger shifted to Tailwind-500), the consolidated `--pa-success / --pa-warning / --pa-danger / --pa-info` canonical role tokens, the 5-step `--pa-very-positive ↦ --pa-very-negative` sentiment scale, the `--pa-text-strong / -secondary / -tertiary` contrast tiers, and `--pa-surface-hover / --pa-surface-track` tints. Themes that override `$base-success-color` / `$base-warning-color` / `$base-danger-color` still win via the `!default` cascade
+- **All themes:** Pick up the 2.7.0 core CSS variable consolidation pass — ~180 SCSS-baked role-colour references across `_statistics.scss`, `_data-viz.scss`, `_data-display.scss`, `_comparison.scss`, `_timeline.scss`, `_file-selector.scss`, `_query-editor.scss`, `_lists.scss`, `_cards.scss`, `_logic-tree.scss`, `_checkbox-lists.scss`, `_input-wrapper.scss`, `_composite-badge.scss`, `_tabs.scss`, `_notifications.scss`, `_alerts.scss`, `_callouts.scss`, `_popconfirm.scss`, and `_base.scss` migrated to `var(--pa-X)` / `color-mix()` so runtime role-colour overrides finally reach KPI tiles, stat icons, progress bars, gauges, sparklines, heatmaps, chips, timelines, file uploaders, query editors, and notifications
+- **All themes:** Pick up upstream fixes for progress ring / gauge inner circle theme tracking and progress / ring / gauge track visibility on dark surfaces (was `rgba(0,0,0,0.08)` invisible on dark; now theme-inverting `color-mix` against `--pa-text-color-1`)
+- **All themes:** Inherit new 2.7.0 token defaults — `--pa-link-color` / `--pa-link-color-hover` / `--pa-link-color-visited` (anchors now derive from `--pa-accent` instead of falling back to browser-default `#0000EE` blue, which was unreadable on dark themes), `--pa-sidebar-submenu-active-text` (submenu active text colour can now be themed independently of regular sidebar text — fixes contrast on themes with accent-coloured active bg), `--pa-modal-band-bg / -text / -border` for the new banded modal variant (auto-derives from the alert palette so banded modals stay in lock-step with theme alert colours), and `--pa-gauge-fill` / `--pa-gauge-size` for the rebuilt gauge component
+- **corporate:** Sidebar submenu active state now sets `--pa-sidebar-submenu-active-text: #ffffff` so navigation labels stay readable against the bright `$corporate-blue-600` active background. Dark-mode secondary button bg/text inverted (was `$dark-border` on `$dark-card` at ~2.5:1 contrast — read as disabled) and `--pa-color-9` bumped to a mid-slate (`#5a6478`) that's distinguishable from neighbouring palette slots and the new secondary button bg
+
+## [2.4.0] - 2026-05-03
+
+### Schema
+
+- **`modes[].id` enum extended** to `["light", "dark", "high-contrast"]`. Themes can now declare a high-contrast accessibility mode alongside light/dark
+- **`features.highContrast`** boolean added — companion flag for declaring HC support
+
+### Changed
+
+- **gruvbox:** Restructured from three-variants-each-with-one-mode to **2 variants** — Default (with both `dark` and `light` modes, toggleable) and Soft (dark only). The hidden mode-toggle UX is fixed: settings panels now expose dark/light switching on the Default variant. SCSS rename: `.pa-color-light` → `.pa-mode-light`. Soft remains unchanged
+- **ayu:** Same restructure pattern — **2 variants**: Default/Mirage (with `dark` and `light` modes, toggleable) and Dark (deeper black, dark only). SCSS rename: `.pa-color-light` → `.pa-mode-light`
+- **dark:** README content corrected — clarified theme is dark-only with four color tints (Default, Blue, Green, Red). Previous content claimed light-mode auto-switch; in reality there is no light mode. `features.darkMode: true, lightMode: false` declared explicitly
+- **All themes:** Bumped to v2.4.0
+
+### Normalized
+
+- **cobalt2, darkmatter, dracula, gruvbox, ayu, night-owl, one-dark, tokyo-night:** Added explicit `modeCssClass: "pa-mode-{mode}"` (previously relied on schema default — now matches the rest of the collection)
+- **cafeindustrial:** `$schema` URI changed from absolute (`https://pureadmin.io/...`) to relative (`../schemas/...`) for consistency
+
+### Earlier (previously [Unreleased] - 2026-04-16)
 
 - **nato:** Switched body font from `Inter` (system fallback) to self-hosted **Noto Sans Condensed Medium** matching NATO's actual web identity
 - **nato:** Bundled woff2 font files in `assets/fonts/` (Source Sans Pro Regular/SemiBold/Bold + Noto Sans Condensed Medium) — `customFonts` flag now `true`
 - **nato:** Tightened border-radius to 2px throughout (cards, buttons, modals, inputs, badges) for institutional feel
-- **nato:** Brand color slots 6/8/9 (all dark navies in the institutional palette) remapped for dark mode — `--pa-color-6: #2e5a8e`, `--pa-color-8: #3f78b8`, `--pa-color-9: $nato-gray-400`. Light mode unchanged. Keeps the navy family while restoring readable contrast for outline buttons on dark bg.
-
-### Fixed
-
+- **nato:** Brand color slots 6/8/9 (all dark navies in the institutional palette) remapped for dark mode — `--pa-color-6: #2e5a8e`, `--pa-color-8: #3f78b8`, `--pa-color-9: $nato-gray-400`. Light mode unchanged. Keeps the navy family while restoring readable contrast for outline buttons on dark bg
 - **nato:** Active sidebar link no longer renders azure-on-azure (unreadable) — now navy text on subtle azure tint in light mode, white on azure-dark in dark mode
 - **nato:** Card header inner corners now respect 2px radius (were stuck at 8px from compiled `$card-border-radius`)
 - **nato:** Outline-secondary button was invisible on light card bg (default `--pa-btn-secondary-outline-color` resolved to white via `$btn-secondary-text`). Now `$nato-navy` in light mode, `$nato-dark-text-2` in dark mode

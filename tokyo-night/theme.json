@@ -2,12 +2,13 @@
   "$schema": "../schemas/pure-admin-theme.schema.json",
   "name": "Tokyo Night",
   "id": "tokyo-night",
-  "version": "2.3.4",
+  "version": "2.7.0",
   "description": "VS Code Tokyo Night-inspired dark theme with blue-purple accents and deep blue-black backgrounds",
   "content": "## Tokyo Night\n\nA dark theme inspired by the popular Tokyo Night color scheme for VS Code. Deep blue-black backgrounds with cool blue-purple accents create a calm, focused interface perfect for long sessions.\n\n### Highlights\n\n- **Two variants** — Night (deep blue-black, default) and Storm (lighter blue, more contrast)\n- **Blue accent (#7dcfff)** for a cool, crisp feel\n- **System fonts** — no custom font download required\n\n### Variants\n\nSwitch variants by adding a CSS class to `<body>`:\n\n```html\n<body>                            <!-- Night (default) -->\n<body class=\"pa-color-storm\">     <!-- Storm (lighter dark) -->\n```\n\n### Usage\n\n```html\n<link rel=\"stylesheet\" href=\"css/tokyo-night.css\">\n```",
   "author": "KeenMate",
   "license": "MIT",
 
+  "modeCssClass": "pa-mode-{mode}",
   "variantCssClass": "pa-color-{variant}",
 
   "colorVariants": [
@@ -72,6 +73,6 @@
   },
 
   "dependencies": {
-    "core": "^2.3.4"
+    "core": "^2.7.0"
   }
 }

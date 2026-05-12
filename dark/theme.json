@@ -2,9 +2,9 @@
   "$schema": "../schemas/pure-admin-theme.schema.json",
   "name": "Dark",
   "id": "dark",
-  "version": "2.3.4",
-  "description": "Neutral dark theme with optional color variants (blue, green, red)",
-  "content": "## Dark\n\nA versatile dark theme with a neutral base and optional color variants. The default palette uses soft blue accents on dark grays, but you can switch to green or red tints for a completely different feel.\n\n### Highlights\n\n- **Color variants** — switch between Default (blue), Blue, Green, and Red accents\n- **Neutral gray base** that works well with any content\n- **System fonts** — no custom font download required\n- Light mode included as an alternative\n\n### Color Variants\n\nApply a variant by adding a CSS class to `<body>`:\n\n```html\n<body class=\"pa-mode-dark\">                     <!-- default blue accent -->\n<body class=\"pa-mode-dark pa-color-blue\">        <!-- slate blue tint -->\n<body class=\"pa-mode-dark pa-color-green\">       <!-- green tint -->\n<body class=\"pa-mode-dark pa-color-red\">         <!-- red tint -->\n```\n\n### Usage\n\n```html\n<link rel=\"stylesheet\" href=\"css/dark.css\">\n```\n\nDefaults to dark mode. Auto-switching via `prefers-color-scheme` is enabled by default.",
+  "version": "2.7.0",
+  "description": "Dark-only theme with neutral gray base and four color tints (default blue, blue, green, red)",
+  "content": "## Dark\n\nA dark-only theme — four color-tinted variants of the same dark base. The default palette uses soft blue accents on neutral grays; switch to a tinted variant for a different mood while staying in dark mode.\n\n### Highlights\n\n- **Four tints** — Default (neutral gray), Blue (slate), Green, Red\n- **Dark only** — no light mode; for a light/dark-toggleable theme see Corporate or Minimal\n- **Neutral gray base** that works well with any content\n- **Play** font family for a modern technical feel\n\n### Variants\n\nApply a variant by adding a CSS class to `<body>`:\n\n```html\n<body>                          <!-- Default (neutral gray) -->\n<body class=\"pa-color-blue\">    <!-- slate blue tint -->\n<body class=\"pa-color-green\">   <!-- green tint -->\n<body class=\"pa-color-red\">     <!-- red tint -->\n```\n\n### Usage\n\n```html\n<link rel=\"stylesheet\" href=\"css/dark.css\">\n```",
   "author": "KeenMate",
   "license": "MIT",
 
@@ -111,6 +111,8 @@
 
   "features": {
     "cssVariables": true,
+    "darkMode": true,
+    "lightMode": false,
     "responsiveLayout": true,
     "compactMode": true,
     "sidebarCollapse": true,
@@ -126,6 +128,6 @@
   },
 
   "dependencies": {
-    "core": "^2.3.4"
+    "core": "^2.7.0"
   }
 }

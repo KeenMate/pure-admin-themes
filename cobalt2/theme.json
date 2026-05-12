@@ -2,12 +2,13 @@
   "$schema": "../schemas/pure-admin-theme.schema.json",
   "name": "Cobalt2",
   "id": "cobalt2",
-  "version": "2.3.4",
+  "version": "2.7.0",
   "description": "Dark theme inspired by Wes Bos's Cobalt2 editor color scheme — rich cobalt blues with a signature yellow accent",
   "content": "## Cobalt2\n\nA dark-only theme inspired by the iconic [Cobalt2](https://github.com/wesbos/cobalt2) color scheme for VS Code by Wes Bos. Deep cobalt blue backgrounds with a striking yellow (`#ffc600`) accent color create an immediately recognizable, high-contrast interface.\n\n### Highlights\n\n- **Signature yellow accent (#ffc600)** — the unmistakable Cobalt2 touch\n- **Rich cobalt blue backgrounds** — editor-authentic depth from `#0d1f2d` to `#193549`\n- **High-contrast text** — pure white on dark cobalt for maximum readability\n- **System fonts** — no custom font download required\n\n### Usage\n\n```html\n<link rel=\"stylesheet\" href=\"css/cobalt2.css\">\n```",
   "author": "KeenMate",
   "license": "MIT",
 
+  "modeCssClass": "pa-mode-{mode}",
   "variantCssClass": "pa-color-{variant}",
 
   "colorVariants": [
@@ -51,6 +52,6 @@
   },
 
   "dependencies": {
-    "core": "^2.3.4"
+    "core": "^2.7.0"
   }
 }
