@@ -303,6 +303,12 @@ $checkbox-focus-shadow: 0 0 0 2px rgba($base-accent-color, 0.25);
 // CSS VARIABLES - DARK MODE
 // =============================================================================
 .pa-mode-dark {
+  // Tell the browser this scope is dark — drives native scrollbars,
+  // form controls, and `light-dark()` in any embedded web component
+  // (e.g. <web-multiselect>). Without this, the cascade still sees
+  // `color-scheme: light` from :root and adaptive palettes pick wrong.
+  color-scheme: dark;
+
   // Corporate dark palette
   $dark-bg: #0f172a;
   $dark-card: #1e293b;
@@ -448,11 +454,7 @@ $checkbox-focus-shadow: 0 0 0 2px rgba($base-accent-color, 0.25);
   --base-active-bg: #{$dark-border};
   --base-disabled-bg: #{$dark-surface};
   --base-elevated-bg: #{$dark-surface};
-  // Legacy aliases
-  --base-surface-1: #{$dark-card};
-  --base-surface-2: #{$dark-bg};
-  --base-surface-3: #{$dark-surface};
-  --base-surface-inverse: #{$dark-text};
+  --base-inverse-bg: #{$dark-text};
   --base-color-1-bg: #{$dark-bg};
   --base-color-1-bg-hover: #{$dark-surface};
   // Text colors

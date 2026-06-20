@@ -137,6 +137,8 @@ $alert-border-opacity-dark: 40;
 // =============================================================================
 // FRAMEWORK VARIABLES - Import and let them derive from base
 // =============================================================================
+$theme-color-scheme: dark;
+
 @import '@keenmate/pure-admin-core/src/scss/variables/index';
 
 // Layout-specific overrides

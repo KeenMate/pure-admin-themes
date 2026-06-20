@@ -165,6 +165,8 @@ $base-font-family: 'Play', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto
 // ============================================================================
 // FRAMEWORK VARIABLES - Import and let them derive from base
 // ============================================================================
+$theme-color-scheme: dark;
+
 @import '@keenmate/pure-admin-core/src/scss/variables/index';
 
 // Layout-specific overrides (these are Pure Admin specific)
@@ -266,6 +268,8 @@ $checkbox-focus-shadow: 0 0 0 2px $base-focus-ring-color;
 // CSS VARIABLES - LIGHT MODE
 // ============================================================================
 .pa-mode-light {
+  color-scheme: light;
+
   // Light palette for dark theme's light mode
   $light-bg: #f8fafc;
   $light-card: #ffffff;
@@ -389,10 +393,6 @@ $checkbox-focus-shadow: 0 0 0 2px $base-focus-ring-color;
   --base-active-bg: #{$light-border};
   --base-disabled-bg: #{$light-surface};
   --base-elevated-bg: #{$light-surface};
-  // Legacy aliases
-  --base-surface-1: #{$light-card};
-  --base-surface-2: #{$light-bg};
-  --base-surface-3: #{$light-surface};
   // Text colors
   --base-text-color-1: #{$light-text};
   --base-text-color-2: #{$light-text-secondary};
@@ -500,9 +500,6 @@ $checkbox-focus-shadow: 0 0 0 2px $base-focus-ring-color;
   --base-main-bg: #{$blue-card};
   --base-page-bg: #{$blue-bg};
   --base-hover-bg: #{$blue-surface};
-  // Legacy aliases
-  --base-surface-1: #{$blue-card};
-  --base-surface-2: #{$blue-bg};
   --base-border-color: #{$blue-surface};
   --base-input-bg: #{$blue-bg};
   --base-dropdown-bg: #{$blue-card};
@@ -561,9 +558,6 @@ $checkbox-focus-shadow: 0 0 0 2px $base-focus-ring-color;
   --base-main-bg: #{$green-card};
   --base-page-bg: #{$green-bg};
   --base-hover-bg: #{$green-surface};
-  // Legacy aliases
-  --base-surface-1: #{$green-card};
-  --base-surface-2: #{$green-bg};
   --base-border-color: #{$green-surface};
   --base-input-bg: #{$green-bg};
   --base-dropdown-bg: #{$green-card};
@@ -622,9 +616,6 @@ $checkbox-focus-shadow: 0 0 0 2px $base-focus-ring-color;
   --base-main-bg: #{$red-card};
   --base-page-bg: #{$red-bg};
   --base-hover-bg: #{$red-surface};
-  // Legacy aliases
-  --base-surface-1: #{$red-card};
-  --base-surface-2: #{$red-bg};
   --base-border-color: #{$red-surface};
   --base-input-bg: #{$red-bg};
   --base-dropdown-bg: #{$red-card};

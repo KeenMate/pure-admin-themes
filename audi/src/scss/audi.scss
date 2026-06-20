@@ -130,6 +130,8 @@ $base-font-family: "Fira Sans Condensed", "Arial Narrow", "Arial", sans-serif;
 // =============================================================================
 // IMPORT CORE VARIABLES
 // =============================================================================
+$theme-color-scheme: dark;
+
 @import '@keenmate/pure-admin-core/src/scss/variables/index';
 
 // =============================================================================
@@ -330,6 +332,8 @@ $btn-dark-text: #ffffff;
 // CSS VARIABLES - LIGHT MODE
 // =============================================================================
 .pa-mode-light {
+  color-scheme: light;
+
   $light-white: #ffffff;
   $light-gray-50: #f8f9fa;
   $light-gray-100: #f1f3f5;
@@ -425,9 +429,6 @@ $btn-dark-text: #ffffff;
   --base-active-bg: #{$light-gray-300};
   --base-disabled-bg: #{$light-gray-100};
   --base-elevated-bg: #{$light-gray-100};
-  --base-surface-1: #{$light-white};
-  --base-surface-2: #{$light-gray-100};
-  --base-surface-3: #{$light-gray-200};
   --base-text-color-1: #{$light-gray-900};
   --base-text-color-2: #{$light-gray-600};
   --base-text-color-3: #{$light-gray-500};

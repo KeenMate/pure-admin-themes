@@ -2,7 +2,7 @@
   "$schema": "../schemas/pure-admin-theme.schema.json",
   "name": "Night Owl",
   "id": "night-owl",
-  "version": "2.7.0",
+  "version": "2.9.0",
   "description": "Sarah Drasner's Night Owl editor palette adapted for Pure Admin — deep navy blues with electric blue accents",
   "content": "## Night Owl\n\nBased on Sarah Drasner's beloved Night Owl theme for VS Code. Deep navy backgrounds layered with electric blue accents create a calm, focused interface perfect for night-time work.\n\n### Highlights\n\n- **Deep navy palette** — #011627 backgrounds from the original Night Owl spec\n- **Electric blue accent (#82AAFF)** — the signature Night Owl highlight color\n- **Semantic palette** — green (#addb67), cyan (#7fdbca), red (#EF5350), yellow (#ffcb8b)\n- **System fonts** — no custom font download required\n\n### Usage\n\n```html\n<link rel=\"stylesheet\" href=\"css/night-owl.css\">\n```",
   "author": "KeenMate",
@@ -52,6 +52,6 @@
   },
 
   "dependencies": {
-    "core": "^2.7.0"
+    "core": "^2.9.0-rc03"
   }
 }

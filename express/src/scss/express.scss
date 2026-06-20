@@ -457,6 +457,8 @@ $header-profile-name-color: $express-black;  // Black text on yellow header
 // CSS VARIABLES - DARK MODE
 // ============================================================================
 .pa-mode-dark {
+  color-scheme: dark;
+
   // Express dark palette
   $dark-bg: #1a1a1a;
   $dark-card: #242424;
@@ -598,10 +600,6 @@ $header-profile-name-color: $express-black;  // Black text on yellow header
   --base-active-bg: #{$dark-border};
   --base-disabled-bg: #{$dark-surface};
   --base-elevated-bg: #{$dark-surface};
-  // Legacy aliases
-  --base-surface-1: #{$dark-card};
-  --base-surface-2: #{$dark-bg};
-  --base-surface-3: #{$dark-surface};
   // Text colors
   --base-text-color-1: #{$dark-text};
   --base-text-color-2: #{$dark-text-bg};

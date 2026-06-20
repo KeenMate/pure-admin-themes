@@ -2,7 +2,7 @@
   "$schema": "../schemas/pure-admin-theme.schema.json",
   "name": "Café Industrial",
   "id": "cafeindustrial",
-  "version": "2.7.0",
+  "version": "2.9.0",
   "description": "Dark warm theme with golden amber accents, inspired by the Café Industrial brand",
   "content": "## Café Industrial\n\nA warm, industrial-themed design inspired by the Café Industrial brand. Golden amber accents from the gear motif pair with warm black and cream backgrounds for a sophisticated, steampunk-tinged aesthetic.\n\n### Highlights\n\n- **Golden amber accent (#d4952b)** drawn from the Café Industrial gear logo\n- **Dark mode** with warm brownish-black backgrounds (not pure black)\n- **Light mode** with cream/linen tones — aged paper, coffee-stained warmth\n- **Barlow** font family (Google Fonts) for an industrial, mechanical character\n- Supports `prefers-color-scheme` auto-switching\n\n### Usage\n\n```html\n<link rel=\"stylesheet\" href=\"css/cafeindustrial.css\">\n```\n\nDefaults to dark mode. Switch with `pa-mode-light` / `pa-mode-dark` on `<body>`. Auto-switching via `prefers-color-scheme` is enabled by default.",
   "author": "KeenMate",
@@ -69,6 +69,6 @@
   },
 
   "dependencies": {
-    "core": "^2.7.0"
+    "core": "^2.9.0-rc03"
   }
 }

@@ -345,6 +345,8 @@ $checkbox-focus-shadow: 0 0 0 2px rgba($base-accent-color, 0.25);
 // CSS VARIABLES - DARK MODE
 // =============================================================================
 .pa-mode-dark {
+  color-scheme: dark;
+
   --page-loader-bg: rgba(10, 31, 61, 0.95);
   --page-loader-spinner-border: #{$nato-dark-border};
   --page-loader-spinner-accent: #{$nato-azure};
@@ -481,10 +483,7 @@ $checkbox-focus-shadow: 0 0 0 2px rgba($base-accent-color, 0.25);
   --base-active-bg: #{$nato-dark-border};
   --base-disabled-bg: #{$nato-dark-surface};
   --base-elevated-bg: #{$nato-dark-surface};
-  --base-surface-1: #{$nato-dark-card};
-  --base-surface-2: #{$nato-dark-bg};
-  --base-surface-3: #{$nato-dark-surface};
-  --base-surface-inverse: #{$nato-dark-text};
+  --base-inverse-bg: #{$nato-dark-text};
   --base-color-1-bg: #{$nato-dark-bg};
   --base-color-1-bg-hover: #{$nato-dark-surface};
   --base-text-color-1: #{$nato-dark-text};

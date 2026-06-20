@@ -151,6 +151,8 @@ $alert-border-opacity-dark: 40;
 // =============================================================================
 // FRAMEWORK VARIABLES - Import and let them derive from base
 // =============================================================================
+$theme-color-scheme: dark;
+
 @import '@keenmate/pure-admin-core/src/scss/variables/index';
 
 // Layout-specific overrides
@@ -314,9 +316,6 @@ $checkbox-focus-shadow: 0 0 0 2px $base-focus-ring-color;
   --base-subtle-bg: #{$storm-elevated};
   --base-hover-bg: #{$storm-elevated};
   --base-elevated-bg: #{$storm-elevated};
-  --base-surface-1: #{$storm-surface};
-  --base-surface-2: #{$storm-bg};
-  --base-surface-3: #{$storm-border};
   --base-text-color-1: #{$storm-text};
   --base-text-color-2: #{$storm-text-sec};
   --base-border-color: #{$storm-border};

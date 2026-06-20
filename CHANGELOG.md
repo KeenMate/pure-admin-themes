@@ -2,6 +2,28 @@
 
 All notable changes to the Pure Admin Themes collection are documented in this file.
 
+## [2.9.0-rc03] - 2026-06-20
+
+### Changed
+
+- **All 15 themes:** `theme.json` `version` field bumped from `2.7.0` to `2.9.0` and `dependencies.core` from `^2.7.0` to `^2.9.0-rc03`. The 2.7.0 → 2.9.0 catch-up bump should have shipped with the 2.9.0 changelog entry below but the `theme.json` files weren't touched at the time — this entry closes that gap and resyncs to the current core RC. The `^2.9.0-rc03` core dep accepts the just-published RC plus any future 2.9.x release (eventual stable 2.9.0, future patches / RCs); themes don't need to re-publish for a 2.9.0 stable cut unless theme code changes.
+- **No theme code changes this cycle.** Upstream core 2.9.0-rc02 (`pa-splitter`, `pa-card__actions--responsive` / `--overflow`, `pa-btn--ghost`) and rc03 (splitter drag-model rework, `restorePane` gap-awareness, `--pa-splitter-rail-size` rem-unit fix, sibling-gutter highlight isolation) are all framework-side. Themes consume them automatically via the existing `var(--pa-*)` / `var(--base-*)` cascade — no SCSS override, no per-theme tuning required. A rebuild against core 2.9.0-rc03 ships the new components and behaviour in each theme's CSS bundle.
+
+## [2.9.0] - 2026-06-11
+
+### Added
+
+- **All 15 themes:** `color-scheme` declarations added to signal each theme's colour mode to the browser. Required to fix native UA elements (scrollbars, `<input type="date">`, etc.) and the `light-dark()` CSS function — both feed off the browser's "used colour scheme" which until now was `normal` (effectively light) for every theme regardless of palette. Most visibly: embedded web components (`web-multiselect`, `web-daterangepicker`) using `light-dark()` for adaptive dark/light palettes silently rendered the light value on dark themes; native scrollbars stayed white on dark backgrounds; date pickers and other native widgets ignored the theme entirely. The exact form of the declaration depends on each theme's mode structure:
+    - **Always-dark themes (cobalt2, darkmatter, dracula, night-owl, one-dark, tokyo-night):** added `$theme-color-scheme: dark;` before the `@import variables/index` line. The new core 2.9.0 `output-pa-css-variables` mixin reads the variable and emits `color-scheme: dark;` at `:root` automatically.
+    - **Light-default dual-mode themes (corporate, express, minimal, nato):** kept the default `$theme-color-scheme: light` (so the mixin emits `color-scheme: light;` at `:root, .pa-mode-light`) and added an explicit `color-scheme: dark;` declaration as the first line inside each `.pa-mode-dark` block.
+    - **Dark-default themes with `.pa-mode-light` opt-in (audi, cafeindustrial, dark, ayu, gruvbox):** set `$theme-color-scheme: dark;` before `@import variables/index` (so the dark scope gets `color-scheme: dark;`) and added `color-scheme: light;` as the first line inside each `.pa-mode-light` block.
+- **All 15 themes:** Bumped to 2.9.0 to track Pure Admin Core 2.9.0. The workspace `package.json` keeps its `file:` link to `../pure-admin/packages/core` for local dev (root `package.json` is `private: true` and isn't published — each theme is packaged as a standalone CSS+ZIP by `pureadmin themes pack`); the upstream core version this release was built against is `2.9.0`.
+
+### Changed
+
+- **10 themes:** `--base-surface-1` / `-2` / `-3` / `-inverse` declarations in mode-override blocks renamed to `--base-main-bg` / `--base-page-bg` / `--base-subtle-bg` / `--base-inverse-bg` respectively. Pure Admin Core 2.9.0 dropped the six `--base-*` legacy aliases from its emitted CSS surface (see the core changelog for the why — mainly the web-multiselect dark-mode hover regression and taxonomy de-duplication); themes had to migrate their override blocks to keep producing dark/light-mode surface colours. Mechanical rename, no behavioural change. Themes affected: audi, ayu, cafeindustrial, corporate, dark, express, gruvbox, minimal, nato, tokyo-night. The 5 always-dark themes without `.pa-mode-*` override blocks (cobalt2, darkmatter, dracula, night-owl, one-dark) needed no edits. A small follow-up cleanup is available for themes that previously set both the semantic name AND the alias to the same value in the same block — the rename produces two identical declarations that can be deduplicated.
+- **All themes:** Pick up upstream `.pa-card__header` fixes from core 2.9.0 — no theme code changes needed, just a rebuild. The header's `border-top-*-radius: 8px` declarations were dropped (they conflicted with the card's `overflow: hidden` clipping at the effective inner radius of ~7px, exposing wedges of card background at each top corner — most visible on coloured variants as white slivers against the variant colour). Coloured variants (`--primary` / `--success` / `--warning` / `--danger` / `--color-1` through `--color-9`) also gained matching `border-bottom-color` on the header to collapse the previously-gray hairline between the coloured header bg and the white card body.
+
 ## [2.7.0] - 2026-05-11
 
 ### Changed

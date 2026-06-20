@@ -184,6 +184,8 @@ $alert-border-opacity-dark: 45;
 // =============================================================================
 // FRAMEWORK VARIABLES - Import and let them derive from base
 // =============================================================================
+$theme-color-scheme: dark;
+
 @import '@keenmate/pure-admin-core/src/scss/variables/index';
 
 // Layout-specific overrides
@@ -356,9 +358,6 @@ $checkbox-focus-shadow: 0 0 0 2px $base-focus-ring-color;
   --base-subtle-bg: #{$dark-border};
   --base-hover-bg: #{$dark-border};
   --base-elevated-bg: #{$dark-elevated};
-  --base-surface-1: #{$dark-elevated};
-  --base-surface-2: #{$dark-bg};
-  --base-surface-3: #{$dark-border};
   --base-text-color-1: #{$dark-text};
   --base-text-color-2: #{$dark-text-sec};
   --base-border-color: #{$dark-border};
@@ -370,6 +369,8 @@ $checkbox-focus-shadow: 0 0 0 2px $base-focus-ring-color;
 // MODE: LIGHT (applies to Default/Mirage variant)
 // =============================================================================
 .pa-mode-light {
+  color-scheme: light;
+
   --page-loader-bg: rgba(252, 252, 252, 0.95);
   --page-loader-spinner-border: #{$light-border};
   --page-loader-spinner-accent: #f29718;
@@ -476,9 +477,6 @@ $checkbox-focus-shadow: 0 0 0 2px $base-focus-ring-color;
   --base-active-bg: #{$light-border};
   --base-disabled-bg: #{$light-surface};
   --base-elevated-bg: #{$light-surface};
-  --base-surface-1: #ffffff;
-  --base-surface-2: #{$light-bg};
-  --base-surface-3: #{$light-elevated};
   --base-text-color-1: #{$light-text};
   --base-text-color-2: #{$light-text-sec};
   --base-text-color-3: #a0a6ad;
