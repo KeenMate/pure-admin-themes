@@ -150,6 +150,12 @@ $main-bg: $nato-gray-50;
 $subtle-bg: $nato-gray-50;
 $header-bg: $nato-navy;
 $header-border-color: $nato-navy-deep;
+// Header sits on navy, so its text tokens are LIGHT (the defaults are dark,
+// for a light header). Setting them honestly here lets the brand, nav, title,
+// profile, burger and theme-switcher all read light straight from the tokens —
+// no !important white hard-codes needed.
+$header-text: #ffffff;
+$header-text-secondary: rgba(#ffffff, 0.85);
 $header-profile-name-color: #ffffff;
 $sidebar-bg: #ffffff;
 $footer-bg: $nato-navy;
@@ -214,71 +220,54 @@ $checkbox-focus-shadow: 0 0 0 2px rgba($base-accent-color, 0.25);
 @import '@keenmate/pure-admin-core/src/scss/utilities';
 @import '@keenmate/pure-admin-core/src/scss/base-css-variables';
 
-// Header - white text on navy
+// Header - navy bar. Brand / nav / title / profile / burger / switcher-label
+// all now inherit their light colour from the --pa-header-text* tokens set
+// above; what stays here is genuine NATO brand identity, not colour hacks.
 .pa-header {
   border-bottom: 2px solid $nato-azure;
 
   &__brand h1 {
-    color: #ffffff !important;
     letter-spacing: 0.04em;
   }
 
-  &__nav > ul > li > a {
-    color: rgba(#ffffff, 0.85) !important;
+  // Nav hover / active — NATO azure brand tint, overriding core's neutral
+  // currentColor pill. Equal specificity to the core rules but later in source
+  // order, so no !important needed. Active is a stronger tint than hover; text
+  // colour + semibold still come from core.
+  &__nav > ul > li {
+    > a:hover {
+      background-color: rgba($nato-azure, 0.25);
+    }
 
-    &:hover {
-      color: #ffffff !important;
-      background-color: rgba($nato-azure, 0.25) !important;
+    &.pa-header__nav-item--active > a {
+      &,
+      &:hover {
+        background-color: rgba($nato-azure, 0.35);
+      }
     }
   }
 
+  // Dropdown sits on a white surface — dark text + azure hover.
   &__dropdown li a {
-    color: $nato-gray-800 !important;
+    color: $nato-gray-800;
 
     &:hover {
-      color: $nato-navy !important;
-      background-color: rgba($nato-azure, 0.10) !important;
-    }
-  }
-
-  &__title h2 {
-    color: rgba(#ffffff, 0.85) !important;
-  }
-
-  &__profile-btn {
-    color: #ffffff !important;
-
-    &:hover {
-      background-color: rgba($nato-azure, 0.25) !important;
+      color: $nato-navy;
+      background-color: rgba($nato-azure, 0.10);
     }
   }
 }
 
-// Burger menu - white bars on navy header
-.burger-menu {
-  span {
-    background-color: #ffffff !important;
-  }
+// Theme switcher — the select needs a darker navy than the header so the
+// control reads as a distinct element (bg would otherwise match --pa-header-bg).
+// The label colour now comes from --pa-header-text-secondary.
+.theme-switcher select {
+  background-color: $nato-navy-deep;
+  color: #ffffff;
+  border-color: $nato-azure-dark;
 
-  &:hover span {
-    background-color: $nato-azure !important;
-  }
-}
-
-// Theme switcher in header
-.theme-switcher {
-  label {
-    color: rgba(#ffffff, 0.85) !important;
-  }
-
-  select {
-    background-color: $nato-navy-deep !important;
-    color: #ffffff !important;
-    border-color: $nato-azure-dark !important;
-
-    &:focus {
-      border-color: $nato-azure !important;
-    }
+  &:focus {
+    border-color: $nato-azure;
   }
 }
 
