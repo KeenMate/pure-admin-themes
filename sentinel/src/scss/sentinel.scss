@@ -1,0 +1,602 @@
+/* Sentinel Theme for Pure Admin - Sharp graphite & crimson for investigation/audit portals */
+@use 'sass:color';
+
+// =============================================================================
+// THEME COLOR SLOTS (1-9) - Sentinel palette (crimson primary)
+// =============================================================================
+$color-1: #d97706;  // Amber (attention)
+$color-2: #be123c;  // Rose (highlight)
+$color-3: #2f8f4e;  // Green (success)
+$color-4: #2563eb;  // Blue (info)
+$color-5: #7c3aed;  // Violet (creative)
+$color-6: #9f1239;  // Deep rose (accent)
+$color-7: #6b7280;  // Slate (neutral)
+$color-8: #c01b2b;  // Crimson (primary)
+$color-9: #23272e;  // Graphite (contrast)
+
+// Contrast text colors for color slots
+$color-1-text: #1a1a1a;
+$color-2-text: #ffffff;
+$color-3-text: #ffffff;
+$color-4-text: #ffffff;
+$color-5-text: #ffffff;
+$color-6-text: #ffffff;
+$color-7-text: #ffffff;
+$color-8-text: #ffffff;
+$color-9-text: #ffffff;
+
+// =============================================================================
+// SENTINEL COLOR PALETTE
+// =============================================================================
+
+// Brand crimson
+$sentinel-crimson:        #c01b2b;  // primary accent
+$sentinel-crimson-hover:  #a31624;
+$sentinel-crimson-active: #87121d;
+$sentinel-crimson-light:  #e0414f;  // brighter — for use on dark surfaces
+
+// Neutral graphite scale (cool-leaning)
+$sentinel-gray-50:  #f7f8f9;
+$sentinel-gray-100: #eef0f2;
+$sentinel-gray-200: #dfe2e6;
+$sentinel-gray-300: #c4c9d0;
+$sentinel-gray-400: #9aa1ab;
+$sentinel-gray-500: #6b7280;
+$sentinel-gray-600: #4b515c;
+$sentinel-gray-700: #353a43;
+$sentinel-gray-800: #23272e;
+$sentinel-gray-900: #15181d;  // ink
+
+// Dark-mode graphites
+$sentinel-dark-bg:      #15181d;
+$sentinel-dark-card:    #1e2228;
+$sentinel-dark-surface: #2a2f37;
+$sentinel-dark-border:  #3a4049;
+$sentinel-dark-text:    #eceef1;
+$sentinel-dark-text-2:  #9aa1ab;
+
+// Semantic
+$sentinel-success-500: #2f8f4e;
+$sentinel-success-600: #257540;
+$sentinel-warning-500: #d97706;
+$sentinel-warning-600: #b45309;
+$sentinel-danger-500:  #dc2626;
+$sentinel-danger-600:  #b91c1c;
+$sentinel-info-500:    #2563eb;
+$sentinel-info-600:    #1d4ed8;
+
+// =============================================================================
+// TYPOGRAPHY - Noto Sans Condensed (shared with NATO)
+// =============================================================================
+$base-font-family: 'Noto Sans Condensed', 'Noto Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+
+// =============================================================================
+// BASE VARIABLES - Single Source of Truth
+// =============================================================================
+
+// Accent colors (brand)
+$base-accent-color: $sentinel-crimson;
+$base-accent-color-hover: $sentinel-crimson-hover;
+$base-accent-color-active: $sentinel-crimson-active;
+$base-accent-color-light: rgba($sentinel-crimson, 0.06);
+$base-accent-color-light-hover: rgba($sentinel-crimson, 0.10);
+
+// Text colors
+$base-text-color-1: $sentinel-gray-800;
+$base-text-color-2: $sentinel-gray-600;
+$base-text-color-3: $sentinel-gray-500;
+$base-text-color-4: $sentinel-gray-400;
+$base-text-color-on-accent: #ffffff;
+
+// Surface colors
+$base-surface-1: #ffffff;
+$base-surface-2: $sentinel-gray-50;
+$base-surface-3: $sentinel-gray-200;
+$base-surface-inverse: $sentinel-gray-900;
+$base-overlay-bg: rgba($sentinel-gray-900, 0.55);
+
+// Border
+$base-border-color: $sentinel-gray-200;
+
+// Input
+$base-input-bg: #ffffff;
+$base-input-color: $sentinel-gray-800;
+$base-input-border: 1px solid $sentinel-gray-200;
+$base-input-border-hover: 1px solid $sentinel-crimson;
+$base-input-border-focus: 1px solid $sentinel-crimson;
+
+// Contextual colors
+$base-success-color: $sentinel-success-500;
+$base-success-color-hover: $sentinel-success-600;
+$base-success-bg-light: rgba($sentinel-success-500, 0.12);
+$base-text-on-success: #ffffff;
+
+$base-danger-color: $sentinel-danger-500;
+$base-danger-color-hover: $sentinel-danger-600;
+$base-danger-bg-light: rgba($sentinel-danger-500, 0.12);
+$base-text-on-danger: #ffffff;
+
+$base-warning-color: $sentinel-warning-500;
+$base-warning-color-hover: $sentinel-warning-600;
+$base-warning-bg-light: rgba($sentinel-warning-500, 0.15);
+$base-text-on-warning: #1a1a1a;
+
+$base-info-color: $sentinel-info-500;
+$base-info-color-hover: $sentinel-info-600;
+$base-info-bg-light: rgba($sentinel-info-500, 0.12);
+$base-text-on-info: #ffffff;
+
+// =============================================================================
+// IMPORT CORE (with base variables already set)
+// =============================================================================
+
+@import '@keenmate/pure-admin-core/src/scss/variables/index';
+
+// =============================================================================
+// LAYOUT-SPECIFIC OVERRIDES
+// =============================================================================
+
+$footer-height: 3.2rem;
+$sidebar-width: 29rem;
+$base-border-radius-sm: 0.2;
+$base-border-radius-md: 0.2;
+$base-border-radius-lg: 0.2;
+
+// Layout colors - ink header, white sidebar
+$main-bg: $sentinel-gray-50;
+$subtle-bg: $sentinel-gray-50;
+$header-bg: $sentinel-gray-900;
+$header-border-color: $sentinel-gray-800;
+$header-profile-name-color: #ffffff;
+$sidebar-bg: #ffffff;
+$footer-bg: $sentinel-gray-900;
+
+// Card colors
+$card-header-bg: $sentinel-gray-100;
+$card-footer-bg: $sentinel-gray-50;
+$card-tabs-bg: $sentinel-gray-200;
+
+// Input border
+$input-border: $sentinel-gray-200;
+
+// Table colors
+$table-header-bg: $sentinel-gray-100;
+$table-hover-bg: $sentinel-gray-50;
+$table-stripe: $sentinel-gray-50;
+
+// Secondary button
+$btn-bg-bg: $sentinel-gray-500;
+$btn-bg-bg-hover: $sentinel-gray-600;
+
+// Light/dark buttons
+$btn-light-bg: $sentinel-gray-100;
+$btn-light-text: $sentinel-gray-700;
+$btn-light-bg-hover: $sentinel-gray-200;
+$btn-dark-bg: $sentinel-gray-800;
+$btn-dark-bg-hover: $sentinel-gray-900;
+
+// Modal
+$modal-overlay-bg: rgba($sentinel-gray-900, 0.55);
+$modal-content-bg: #ffffff;
+
+// Form focus colors
+$input-focus-border-color: $base-accent-color;
+$select-focus-border-color: $base-accent-color;
+$textarea-focus-border-color: $base-accent-color;
+
+// Checkbox colors
+$checkbox-border-color-hover: $base-accent-color;
+$checkbox-border-color-checked: $base-accent-color;
+$checkbox-bg-checked: $base-accent-color;
+$checkbox-bg-indeterminate: $base-accent-color;
+$checkbox-focus-shadow: 0 0 0 2px rgba($base-accent-color, 0.25);
+
+// =============================================================================
+// FONTS - Noto Sans Condensed (shared with NATO)
+// =============================================================================
+
+@font-face {
+  font-family: 'Noto Sans Condensed';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(../assets/fonts/NotoSansCondensed-Medium.woff2) format('woff2');
+}
+
+// =============================================================================
+// IMPORT CORE STYLES
+// =============================================================================
+
+@import '@keenmate/pure-admin-core/src/scss/core';
+@import '@keenmate/pure-admin-core/src/scss/utilities';
+@import '@keenmate/pure-admin-core/src/scss/base-css-variables';
+
+// Header - white text on ink, crimson underline
+.pa-header {
+  border-bottom: 2px solid $sentinel-crimson;
+
+  &__brand h1 {
+    color: #ffffff !important;
+    letter-spacing: 0.03em;
+  }
+
+  &__nav > ul > li > a {
+    color: rgba(#ffffff, 0.82) !important;
+
+    &:hover {
+      color: #ffffff !important;
+      background-color: rgba($sentinel-crimson, 0.30) !important;
+    }
+  }
+
+  &__dropdown li a {
+    color: $sentinel-gray-800 !important;
+
+    &:hover {
+      color: $sentinel-crimson !important;
+      background-color: rgba($sentinel-crimson, 0.08) !important;
+    }
+  }
+
+  &__title h2 {
+    color: rgba(#ffffff, 0.82) !important;
+  }
+
+  &__profile-btn {
+    color: #ffffff !important;
+
+    &:hover {
+      background-color: rgba($sentinel-crimson, 0.30) !important;
+    }
+  }
+}
+
+// Burger menu - white bars on ink header
+.burger-menu {
+  span {
+    background-color: #ffffff !important;
+  }
+
+  &:hover span {
+    background-color: $sentinel-crimson-light !important;
+  }
+}
+
+// Theme switcher in header
+.theme-switcher {
+  label {
+    color: rgba(#ffffff, 0.82) !important;
+  }
+
+  select {
+    background-color: $sentinel-gray-800 !important;
+    color: #ffffff !important;
+    border-color: $sentinel-gray-700 !important;
+
+    &:focus {
+      border-color: $sentinel-crimson !important;
+    }
+  }
+}
+
+// Footer - light text on ink
+.pa-layout__footer {
+  color: rgba(#ffffff, 0.82);
+  border-top: 2px solid $sentinel-crimson;
+
+  a {
+    color: #ffffff;
+
+    &:hover {
+      color: $sentinel-crimson-light;
+    }
+  }
+}
+
+// Sidebar - white with graphite text, crimson active state
+.pa-sidebar {
+  border-right: 1px solid $sentinel-gray-200;
+
+  a:hover {
+    background-color: rgba($sentinel-crimson, 0.06) !important;
+  }
+
+  .active > a,
+  a.active {
+    background-color: rgba($sentinel-crimson, 0.10) !important;
+    color: $sentinel-crimson !important;
+    border-left: 3px solid $sentinel-crimson !important;
+  }
+
+  .pa-sidebar__submenu-item--active a {
+    color: $sentinel-crimson !important;
+    font-weight: 600;
+  }
+}
+
+// =============================================================================
+// CSS VARIABLES - LIGHT MODE (Default)
+// =============================================================================
+:root, .pa-mode-light {
+  --page-loader-bg: rgba(255, 255, 255, 0.95);
+  --page-loader-spinner-border: #{$sentinel-gray-200};
+  --page-loader-spinner-accent: #{$sentinel-crimson};
+
+  // Output all CSS variables
+  @include output-base-css-variables;
+  @include output-pa-css-variables;
+  @include output-pa-alert-variables-light;
+
+  // Input group - light gray background for light mode
+  --pa-input-group-prepend-bg: #{$sentinel-gray-100};
+  --pa-input-group-prepend-text: #{$sentinel-gray-700};
+  --pa-input-group-append-bg: #{$sentinel-gray-100};
+  --pa-input-group-append-text: #{$sentinel-gray-700};
+
+  // Outline-secondary button: default resolves to white (secondary text),
+  // invisible on light cards. Use graphite.
+  --pa-btn-secondary-outline-color: #{$sentinel-gray-800};
+}
+
+// =============================================================================
+// CSS VARIABLES - DARK MODE
+// =============================================================================
+.pa-mode-dark {
+  color-scheme: dark;
+
+  --page-loader-bg: rgba(21, 24, 29, 0.95);
+  --page-loader-spinner-border: #{$sentinel-dark-border};
+  --page-loader-spinner-accent: #{$sentinel-crimson-light};
+
+  // Core colors
+  --pa-main-bg: #{$sentinel-dark-bg};
+  --pa-page-bg: #{$sentinel-dark-bg};
+  --pa-subtle-bg: #101216;
+
+  // Text
+  --pa-text-color-1: #{$sentinel-dark-text};
+  --pa-text-color-2: #{$sentinel-dark-text-2};
+
+  // Brand - brighter crimson on dark
+  --pa-accent: #{$sentinel-crimson-light};
+  --pa-accent-hover: rgba(224, 65, 79, 0.25);
+  --pa-accent-light: rgba(224, 65, 79, 0.15);
+
+  // Border
+  --pa-border-color: #{$sentinel-dark-border};
+
+  // Header
+  --pa-header-bg: #0e1014;
+  --pa-header-border-color: #{$sentinel-dark-border};
+  --pa-header-text: #{$sentinel-dark-text};
+  --pa-header-text-secondary: #{$sentinel-dark-text-2};
+  --pa-header-profile-name-color: #{$sentinel-dark-text};
+
+  // Sidebar
+  --pa-sidebar-bg: #{$sentinel-dark-card};
+  --pa-sidebar-text: #{$sentinel-dark-text};
+  --pa-sidebar-text-secondary: #{$sentinel-dark-text-2};
+  --pa-sidebar-submenu-bg: #{$sentinel-dark-bg};
+  --pa-sidebar-submenu-hover-bg: rgba(224, 65, 79, 0.12);
+  --pa-sidebar-submenu-active-bg: #{$sentinel-crimson};
+
+  // Footer
+  --pa-footer-bg: #0e1014;
+  --pa-footer-border-color: #{$sentinel-dark-border};
+
+  // Cards
+  --pa-card-bg: #{$sentinel-dark-card};
+  --pa-card-header-bg: #{$sentinel-dark-surface};
+  --pa-card-footer-bg: #{$sentinel-dark-surface};
+  --pa-card-tabs-bg: #{$sentinel-dark-border};
+
+  // Inputs
+  --pa-input-bg: #{$sentinel-dark-surface};
+  --pa-input-border: #{$sentinel-dark-border};
+  --pa-input-text: #{$sentinel-dark-text};
+  --pa-input-focus-border-color: #{$sentinel-crimson-light};
+
+  // Input group
+  --pa-input-group-prepend-bg: rgba(224, 65, 79, 0.18);
+  --pa-input-group-prepend-text: #{$sentinel-crimson-light};
+  --pa-input-group-append-bg: rgba(224, 65, 79, 0.18);
+  --pa-input-group-append-text: #{$sentinel-crimson-light};
+
+  .pa-input-group__button {
+    background-color: rgba(224, 65, 79, 0.18) !important;
+    color: $sentinel-crimson-light !important;
+    border-color: $sentinel-dark-border !important;
+
+    &:hover {
+      background-color: rgba(224, 65, 79, 0.28) !important;
+    }
+  }
+
+  // Tables
+  --pa-table-bg: #{$sentinel-dark-card};
+  --pa-table-header-bg: #{$sentinel-dark-surface};
+  --pa-table-stripe: #{$sentinel-dark-bg};
+  --pa-table-hover-bg: #{$sentinel-dark-surface};
+
+  // Modals
+  --pa-modal-content-bg: #{$sentinel-dark-card};
+  --pa-modal-overlay-bg: rgba(8, 9, 12, 0.85);
+
+  // Loader/Profile
+  --pa-loader-overlay-bg: rgba(8, 9, 12, 0.75);
+  --pa-profile-overlay-bg: rgba(8, 9, 12, 0.55);
+
+  // Tooltip/Popover
+  --pa-tooltip-bg: #{$sentinel-dark-border};
+  --pa-tooltip-text: #{$sentinel-dark-text};
+  --pa-popover-content-bg: #{$sentinel-dark-card};
+
+  // Command palette
+  --pa-command-palette-backdrop-bg: rgba(8, 9, 12, 0.85);
+  --pa-command-palette-item-hover-bg: #{$sentinel-dark-surface};
+  --pa-command-palette-item-active-bg: rgba(224, 65, 79, 0.22);
+  --pa-command-palette-highlight-bg: rgba(224, 65, 79, 0.32);
+
+  // Alert colors
+  @include output-pa-alert-variables-dark;
+
+  .pa-alert code {
+    color: inherit;
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+
+  // Buttons
+  --pa-btn-secondary-bg: #{$sentinel-dark-text-2};
+  --pa-btn-secondary-bg-hover: #{$sentinel-dark-text};
+  --pa-btn-secondary-text: #{$sentinel-dark-card};
+  --pa-btn-light-bg: #{$sentinel-dark-surface};
+  --pa-btn-light-bg-hover: #{$sentinel-dark-border};
+  --pa-btn-light-text: #{$sentinel-dark-text};
+
+  // Brand color slot 8 is crimson; brighten for dark outline buttons.
+  // Slot 9 is graphite-800 — invisible on dark card; shift to mid-slate.
+  --pa-color-8: #{$sentinel-crimson-light};
+  --pa-color-9: #{$sentinel-gray-400};
+
+  // Semantic
+  --pa-success-bg: #{$sentinel-success-500};
+  --pa-success-bg-light: rgba(47, 143, 78, 0.22);
+  --pa-warning-bg: #{$sentinel-warning-500};
+  --pa-warning-bg-light: rgba(217, 119, 6, 0.22);
+  --pa-danger-bg: #{$sentinel-danger-500};
+  --pa-danger-bg-light: rgba(220, 38, 38, 0.22);
+  --pa-info-bg: #{$sentinel-info-500};
+  --pa-info-bg-light: rgba(37, 99, 235, 0.22);
+
+  // Base variables for web components (dark mode)
+  --base-main-bg: #{$sentinel-dark-card};
+  --base-page-bg: #{$sentinel-dark-bg};
+  --base-subtle-bg: #{$sentinel-dark-surface};
+  --base-hover-bg: #{$sentinel-dark-surface};
+  --base-active-bg: #{$sentinel-dark-border};
+  --base-disabled-bg: #{$sentinel-dark-surface};
+  --base-elevated-bg: #{$sentinel-dark-surface};
+  --base-inverse-bg: #{$sentinel-dark-text};
+  --base-color-1-bg: #{$sentinel-dark-bg};
+  --base-color-1-bg-hover: #{$sentinel-dark-surface};
+  --base-text-color-1: #{$sentinel-dark-text};
+  --base-text-color-2: #{$sentinel-dark-text-2};
+  --base-text-color-3: #{$sentinel-gray-500};
+  --base-text-color-4: #{$sentinel-gray-600};
+  --base-border-color: #{$sentinel-dark-border};
+  --base-border: 1px solid #{$sentinel-dark-border};
+  --base-input-bg: #{$sentinel-dark-surface};
+  --base-input-color: #{$sentinel-dark-text};
+  --base-input-border: 1px solid #{$sentinel-dark-border};
+  --base-input-border-hover: 1px solid #{$sentinel-crimson-light};
+  --base-input-border-focus: 1px solid #{$sentinel-crimson-light};
+  --base-input-placeholder-color: #{$sentinel-gray-500};
+  --base-dropdown-bg: #{$sentinel-dark-card};
+  --base-dropdown-border: 1px solid #{$sentinel-dark-border};
+  --base-dropdown-box-shadow: 0 8px 16px rgba(0, 0, 0, 0.45);
+  --base-tooltip-bg: #{$sentinel-dark-border};
+  --base-tooltip-text-color: #{$sentinel-dark-text};
+}
+
+// =============================================================================
+// DARK MODE COMPONENT ADJUSTMENTS
+// =============================================================================
+.pa-mode-dark {
+  .pa-header {
+    border-bottom-color: $sentinel-crimson;
+  }
+
+  .pa-header__dropdown li a {
+    color: $sentinel-dark-text !important;
+
+    &:hover {
+      color: $sentinel-crimson-light !important;
+      background-color: rgba(224, 65, 79, 0.22) !important;
+    }
+  }
+
+  .pa-sidebar {
+    border-right-color: $sentinel-dark-border;
+
+    a:hover {
+      background-color: rgba(224, 65, 79, 0.12) !important;
+    }
+
+    .active > a,
+    a.active {
+      background-color: rgba(224, 65, 79, 0.18) !important;
+      color: $sentinel-crimson-light !important;
+      border-left-color: $sentinel-crimson-light !important;
+    }
+
+    .pa-sidebar__submenu-item--active a {
+      color: $sentinel-crimson-light !important;
+      font-weight: 600;
+    }
+  }
+
+  .pa-card {
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.45);
+  }
+
+  .pa-btn--secondary {
+    background-color: $sentinel-dark-border !important;
+    color: $sentinel-dark-text !important;
+    border-color: $sentinel-dark-surface !important;
+
+    &:hover {
+      background-color: $sentinel-dark-surface !important;
+      border-color: $sentinel-crimson-light !important;
+    }
+  }
+
+  .pa-btn--outline-bg {
+    border-color: $sentinel-dark-border !important;
+    color: $sentinel-dark-text-2 !important;
+
+    &:hover {
+      background-color: $sentinel-dark-surface !important;
+      color: $sentinel-dark-text !important;
+    }
+  }
+}
+
+// =============================================================================
+// SIDEBAR ACTIVE LINK FIX
+// =============================================================================
+.pa-sidebar__link--active {
+  color: $sentinel-crimson !important;
+  background-color: rgba($sentinel-crimson, 0.10) !important;
+  border-inline-end-color: $sentinel-crimson !important;
+}
+
+.pa-mode-dark .pa-sidebar__link--active {
+  color: #ffffff !important;
+  background-color: $sentinel-crimson !important;
+  border-inline-end-color: $sentinel-crimson-light !important;
+}
+
+// =============================================================================
+// BORDER RADIUS - Sharp 2px corners for a precise, audit-grade feel
+// =============================================================================
+:root, .pa-mode-light {
+  --pa-border-radius-sm: 2px;
+  --pa-border-radius: 2px;
+  --pa-border-radius-lg: 2px;
+}
+
+.pa-mode-dark {
+  --pa-border-radius-sm: 2px;
+  --pa-border-radius: 2px;
+  --pa-border-radius-lg: 2px;
+}
+
+.pa-card__header {
+  border-top-left-radius: 2px !important;
+  border-top-right-radius: 2px !important;
+}
+
+.pa-card__footer {
+  border-bottom-left-radius: 2px !important;
+  border-bottom-right-radius: 2px !important;
+}

@@ -16,6 +16,24 @@
 #   make lint THEME=audi        Lint one theme
 #   make clean                  Clean all dist dirs
 
+# --- Windows recipe-shell fix -------------------------------------------------
+# GNU make on Windows picks Git's bare `usr/bin/sh.exe` as the recipe shell.
+# Launched from cmd.exe / PowerShell, that sh runs npm/npx's Unix shell-shims,
+# whose `#!/usr/bin/env bash` searches PATH for `bash` — and on a stock Windows
+# PATH the first hit is `C:\Windows\System32\bash.exe` (WSL bash), which can't
+# see Windows paths and dies with "No such file or directory". Pinning the
+# recipe shell to Git's FULL bash launcher rebuilds PATH with `/usr/bin` first
+# so `env bash` resolves to MSYS bash regardless of the launching shell. The
+# `?` in the check matches the space in "Program Files" (a literal space would
+# make $(wildcard) split into two never-matching patterns); guarded so it's a
+# no-op when Git isn't at the default location.
+ifeq ($(OS),Windows_NT)
+  ifneq ($(wildcard C:/Program?Files/Git/bin/bash.exe),)
+    SHELL := C:/Program Files/Git/bin/bash.exe
+  endif
+endif
+# -----------------------------------------------------------------------------
+
 .PHONY: help install build pack publish publish-local validate lint clean
 
 THEME ?=
