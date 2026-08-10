@@ -2,6 +2,17 @@
 
 All notable changes to the Pure Admin Themes collection are documented in this file.
 
+## [2.9.0-rc11] - 2026-08-10
+
+### Changed
+
+- **All themes rebuilt against Pure Admin Core `2.9.0-rc11`.** Every change below is framework-side — themes consume it through the existing `var(--pa-*)` / `var(--base-*)` cascade, so this is a rebuild only, with **no theme SCSS changes**. This build catches up all core deltas since the last theme build (rc03). The headline items this rebuild ships in each theme's CSS bundle:
+    - **Sidebar drag-resize works in icon-collapse mode.** Core's expanded-state rule `body:not(.sidebar-hidden) .pa-layout__sidebar--icon-collapse` no longer hard-codes `width: $sidebar-width` (which, at specificity `(0,3,0)`, beat the zero-specificity `:where(.pa-layout__sidebar){ width: var(--pa-local-sidebar-width) }` and froze the width); it now reads the same runtime variable, so an icon-collapse sidebar can actually be dragged. The stale hard-coded width was baked into every theme's bundle, so a rebuild is required to fix it.
+    - **Touch-grabbable sidebar resize handle.** On coarse pointers `.pa-sidebar-resize` now shows a persistent, theme-styled grip knob (uses `--pa-border-radius-lg`, `--pa-card-bg`, `--pa-border-color`, `--pa-accent` while dragging) centred on the sidebar edge and pinned to mid-viewport.
+    - **`.pa-table-card__description`** — new optional subtitle element for table cards (mirrors `.pa-card__description`).
+    - **Table-in-card wrappers consolidated** to `.pa-table-container` + `.pa-table-card` (rc10), plus the `.pa-table-card` header corner-wedge fix.
+    - **Responsive navbar progressive collapse** (`data-pa-nav-collapse`), `.pa-header__nav-item--active`, `.pa-sidebar__section` / `__divider`, and touch support for navbar dropdowns (rc09).
+
 ## [2.9.0-rc03] - 2026-06-20
 
 ### Changed
