@@ -685,5 +685,13 @@ $header-profile-name-color: $express-black;  // Black text on yellow header
     .pa-profile-panel__email {
       color: #aaaaaa;
     }
+
+    // Close button uses --pa-header-profile-name-color, which express keeps
+    // BLACK for its yellow navbar header. This panel header is dark, so the
+    // masked X (painted with currentColor) rendered black-on-dark-gray. Match
+    // the name's light colour; :hover still flips to the accent.
+    .pa-profile-panel__close {
+      color: #ffffff;
+    }
   }
 }
