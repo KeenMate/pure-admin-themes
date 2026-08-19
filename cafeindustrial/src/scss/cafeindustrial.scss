@@ -321,24 +321,32 @@ $theme-color-scheme: dark;
   // Border
   --pa-border-color: #{$light-tan};
 
-  // Header - keep dark (brand identity, like the logo's dark background)
-  --pa-header-bg: #{$ci-dark-card};
-  --pa-header-border-color: #{$ci-dark-border};
-  --pa-header-text: #{$ci-dark-text-1};
-  --pa-header-text-secondary: #{$ci-dark-text-2};
-  --pa-header-profile-name-color: #{$ci-dark-text-1};
+  // Header / sidebar / footer - light "café" chrome.
+  // These used to stay dark in light mode for brand identity, but the near-black
+  // bars read as heavy and were hard to use in daylight. They're now warm, bright
+  // surfaces (white / sand / cream) with dark-brown text and the amber accent —
+  // the theme's own "linen / aged-paper" light palette carried into the chrome,
+  // so it still reads as Café Industrial, just lively instead of dim.
+  --pa-header-bg: #{$light-white};
+  --pa-header-border-color: #{$light-tan};
+  --pa-header-text: #{$light-brown-dark};
+  --pa-header-text-secondary: #{$light-brown};
+  --pa-header-profile-name-color: #{$light-brown-dark};
 
-  // Sidebar - keep dark (brand identity)
-  --pa-sidebar-bg: #{$ci-dark-sidebar};
-  --pa-sidebar-text: #{$ci-dark-text-1};
-  --pa-sidebar-text-secondary: #{$ci-dark-text-2};
-  --pa-sidebar-submenu-bg: #{$ci-dark-input};
-  --pa-sidebar-submenu-hover-bg: rgba($ci-gold, 0.15);
-  --pa-sidebar-submenu-active-bg: rgba($ci-gold, 0.25);
+  --pa-sidebar-bg: #{$light-sand};
+  --pa-sidebar-text: #{$light-brown-dark};
+  --pa-sidebar-text-secondary: #{$light-brown};
+  --pa-sidebar-submenu-bg: #{$light-cream};
+  --pa-sidebar-submenu-hover-bg: rgba($light-accent, 0.12);
+  --pa-sidebar-submenu-active-bg: rgba($light-accent, 0.22);
+  // Active submenu link text: defaults to $sidebar-text, which is the dark-mode
+  // light off-white ($ci-dark-text-1) — faint on the light active tint. Pin it
+  // to the dark brown so the selected item reads clearly (the amber tint + edge
+  // bar already signal "active").
+  --pa-sidebar-submenu-active-text: #{$light-brown-dark};
 
-  // Footer - keep dark
-  --pa-footer-bg: #{$ci-dark-card};
-  --pa-footer-border-color: #{$ci-dark-border};
+  --pa-footer-bg: #{$light-cream};
+  --pa-footer-border-color: #{$light-tan};
 
   // Cards - warm cream
   --pa-card-bg: #{$light-white};
@@ -511,27 +519,27 @@ $theme-color-scheme: dark;
     }
   }
 
-  // Footer - light text on dark background
+  // Footer - dark text on the light footer
   .pa-layout__footer {
-    color: #{$ci-dark-text-2};
+    color: #{$light-brown};
 
     a {
-      color: #{$ci-dark-text-1};
+      color: #{$light-brown-dark};
 
       &:hover {
-        color: #{$ci-gold};
+        color: #{$light-accent};
       }
     }
   }
 
-  // Profile panel header - dark background needs light text
+  // Profile panel header now sits on the light chrome - dark text
   .pa-profile-panel__header {
     .pa-profile-panel__name {
-      color: #{$ci-dark-text-1};
+      color: #{$light-brown-dark};
     }
 
     .pa-profile-panel__email {
-      color: #{$ci-dark-text-2};
+      color: #{$light-brown};
     }
   }
 

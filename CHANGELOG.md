@@ -13,6 +13,7 @@ All notable changes to the Pure Admin Themes collection are documented in this f
     - **`.pa-table-card__description`** — new optional subtitle element for table cards (mirrors `.pa-card__description`).
     - **Table-in-card wrappers consolidated** to `.pa-table-container` + `.pa-table-card` (rc10), plus the `.pa-table-card` header corner-wedge fix.
     - **Responsive navbar progressive collapse** (`data-pa-nav-collapse`), `.pa-header__nav-item--active`, `.pa-sidebar__section` / `__divider`, and touch support for navbar dropdowns (rc09).
+- **cafeindustrial (light mode):** Lightened the navbar / sidebar / footer. They previously stayed near-black (`#1e1a15` / `#181410`) in light mode "for brand identity", which read as heavy and hard to use in daylight. They're now warm, bright café chrome — white header (`#fffcf8`), sand sidebar (`#ede6db`), cream footer (`#f7f2eb`), all with dark-brown text (`#3d3428`) and the amber accent retained. Also flipped the footer link colours and the profile-panel name/email to dark text (they assumed a dark header), and pinned `--pa-sidebar-submenu-active-text` to dark brown — it defaulted to the dark-mode off-white (`$sidebar-text`) and left the selected second-level item faint on the light active tint. Dark mode unchanged.
 
 ### Fixed
 
