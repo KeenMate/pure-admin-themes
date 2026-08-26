@@ -221,7 +221,7 @@ $checkbox-focus-shadow: 0 0 0 2px rgba($base-accent-color, 0.25);
 @import '@keenmate/pure-admin-core/src/scss/base-css-variables';
 
 // Header - navy bar. Brand / nav / title / profile / burger / switcher-label
-// all now inherit their light colour from the --pa-navbar-text* tokens set
+// all now inherit their light colour from the --pc-navbar-text* tokens set
 // above; what stays here is genuine NATO brand identity, not colour hacks.
 .pa-navbar {
   border-bottom: 2px solid $nato-azure;
@@ -259,8 +259,8 @@ $checkbox-focus-shadow: 0 0 0 2px rgba($base-accent-color, 0.25);
 }
 
 // Theme switcher — the select needs a darker navy than the header so the
-// control reads as a distinct element (bg would otherwise match --pa-navbar-bg).
-// The label colour now comes from --pa-navbar-text-secondary.
+// control reads as a distinct element (bg would otherwise match --pc-navbar-bg).
+// The label colour now comes from --pc-navbar-text-secondary.
 .theme-switcher select {
   background-color: $nato-navy-deep;
   color: #ffffff;
@@ -316,18 +316,19 @@ $checkbox-focus-shadow: 0 0 0 2px rgba($base-accent-color, 0.25);
 
   // Output all CSS variables
   @include output-base-css-variables;
-  @include output-pa-css-variables;
-  @include output-pa-alert-variables-light;
+  @include output-pc-css-variables;
+  @include output-pc-component-variables;
+  @include output-pc-alert-variables-light;
 
   // Input group - light gray background for light mode
-  --pa-input-group-prepend-bg: #{$nato-gray-100};
-  --pa-input-group-prepend-text: #{$nato-gray-700};
-  --pa-input-group-append-bg: #{$nato-gray-100};
-  --pa-input-group-append-text: #{$nato-gray-700};
+  --pc-input-group-prepend-bg: #{$nato-gray-100};
+  --pc-input-group-prepend-text: #{$nato-gray-700};
+  --pc-input-group-append-bg: #{$nato-gray-100};
+  --pc-input-group-append-text: #{$nato-gray-700};
 
   // Outline-secondary button: default resolves to white (secondary text),
   // which is invisible on our light card backgrounds. Use navy.
-  --pa-btn-secondary-outline-color: #{$nato-navy};
+  --pc-btn-secondary-outline-color: #{$nato-navy};
 }
 
 // =============================================================================
@@ -341,58 +342,58 @@ $checkbox-focus-shadow: 0 0 0 2px rgba($base-accent-color, 0.25);
   --page-loader-spinner-accent: #{$nato-azure};
 
   // Core colors
-  --pa-main-bg: #{$nato-dark-bg};
-  --pa-page-bg: #{$nato-dark-bg};
-  --pa-subtle-bg: #04122a;
+  --pc-main-bg: #{$nato-dark-bg};
+  --pc-page-bg: #{$nato-dark-bg};
+  --pc-subtle-bg: #04122a;
 
   // Text
-  --pa-text-color-1: #{$nato-dark-text};
-  --pa-text-color-2: #{$nato-dark-text-2};
+  --pc-text-color-1: #{$nato-dark-text};
+  --pc-text-color-2: #{$nato-dark-text-2};
 
   // Brand
-  --pa-accent: #{$nato-azure};
-  --pa-accent-hover: rgba(17, 138, 203, 0.25);
-  --pa-accent-light: rgba(17, 138, 203, 0.15);
+  --pc-accent: #{$nato-azure};
+  --pc-accent-hover: rgba(17, 138, 203, 0.25);
+  --pc-accent-light: rgba(17, 138, 203, 0.15);
 
   // Border
-  --pa-border-color: #{$nato-dark-border};
+  --pc-border-color: #{$nato-dark-border};
 
   // Header
-  --pa-navbar-bg: #{$nato-midnight};
-  --pa-navbar-border-color: #{$nato-dark-border};
-  --pa-navbar-text: #{$nato-dark-text};
-  --pa-navbar-text-secondary: #{$nato-dark-text-2};
-  --pa-navbar-profile-name-color: #{$nato-dark-text};
+  --pc-navbar-bg: #{$nato-midnight};
+  --pc-navbar-border-color: #{$nato-dark-border};
+  --pc-navbar-text: #{$nato-dark-text};
+  --pc-navbar-text-secondary: #{$nato-dark-text-2};
+  --pc-navbar-profile-name-color: #{$nato-dark-text};
 
   // Sidebar
-  --pa-sidebar-bg: #{$nato-dark-card};
-  --pa-sidebar-text: #{$nato-dark-text};
-  --pa-sidebar-text-secondary: #{$nato-dark-text-2};
-  --pa-sidebar-submenu-bg: #{$nato-dark-bg};
-  --pa-sidebar-submenu-hover-bg: rgba(17, 138, 203, 0.12);
-  --pa-sidebar-submenu-active-bg: #{$nato-azure-dark};
+  --pc-sidebar-bg: #{$nato-dark-card};
+  --pc-sidebar-text: #{$nato-dark-text};
+  --pc-sidebar-text-secondary: #{$nato-dark-text-2};
+  --pc-sidebar-submenu-bg: #{$nato-dark-bg};
+  --pc-sidebar-submenu-hover-bg: rgba(17, 138, 203, 0.12);
+  --pc-sidebar-submenu-active-bg: #{$nato-azure-dark};
 
   // Footer
-  --pa-footer-bg: #{$nato-midnight};
-  --pa-footer-border-color: #{$nato-dark-border};
+  --pc-footer-bg: #{$nato-midnight};
+  --pc-footer-border-color: #{$nato-dark-border};
 
   // Cards
-  --pa-card-bg: #{$nato-dark-card};
-  --pa-card-header-bg: #{$nato-dark-surface};
-  --pa-card-footer-bg: #{$nato-dark-surface};
-  --pa-card-tabs-bg: #{$nato-dark-border};
+  --pc-card-bg: #{$nato-dark-card};
+  --pc-card-header-bg: #{$nato-dark-surface};
+  --pc-card-footer-bg: #{$nato-dark-surface};
+  --pc-card-tabs-bg: #{$nato-dark-border};
 
   // Inputs
-  --pa-input-bg: #{$nato-dark-surface};
-  --pa-input-border: #{$nato-dark-border};
-  --pa-input-text: #{$nato-dark-text};
-  --pa-input-focus-border-color: #{$nato-azure};
+  --pc-input-bg: #{$nato-dark-surface};
+  --pc-input-border: #{$nato-dark-border};
+  --pc-input-text: #{$nato-dark-text};
+  --pc-input-focus-border-color: #{$nato-azure};
 
   // Input group
-  --pa-input-group-prepend-bg: rgba(17, 138, 203, 0.18);
-  --pa-input-group-prepend-text: #{$nato-azure-light};
-  --pa-input-group-append-bg: rgba(17, 138, 203, 0.18);
-  --pa-input-group-append-text: #{$nato-azure-light};
+  --pc-input-group-prepend-bg: rgba(17, 138, 203, 0.18);
+  --pc-input-group-prepend-text: #{$nato-azure-light};
+  --pc-input-group-append-bg: rgba(17, 138, 203, 0.18);
+  --pc-input-group-append-text: #{$nato-azure-light};
 
   .pa-input-group__button {
     background-color: rgba(17, 138, 203, 0.18) !important;
@@ -405,32 +406,32 @@ $checkbox-focus-shadow: 0 0 0 2px rgba($base-accent-color, 0.25);
   }
 
   // Tables
-  --pa-table-bg: #{$nato-dark-card};
-  --pa-table-header-bg: #{$nato-dark-surface};
-  --pa-table-stripe: #{$nato-dark-bg};
-  --pa-table-hover-bg: #{$nato-dark-surface};
+  --pc-table-bg: #{$nato-dark-card};
+  --pc-table-header-bg: #{$nato-dark-surface};
+  --pc-table-stripe: #{$nato-dark-bg};
+  --pc-table-hover-bg: #{$nato-dark-surface};
 
   // Modals
-  --pa-modal-content-bg: #{$nato-dark-card};
-  --pa-modal-overlay-bg: rgba(4, 18, 42, 0.85);
+  --pc-modal-content-bg: #{$nato-dark-card};
+  --pc-modal-overlay-bg: rgba(4, 18, 42, 0.85);
 
   // Loader/Profile
-  --pa-loader-overlay-bg: rgba(4, 18, 42, 0.75);
-  --pa-profile-overlay-bg: rgba(4, 18, 42, 0.55);
+  --pc-loader-overlay-bg: rgba(4, 18, 42, 0.75);
+  --pc-profile-overlay-bg: rgba(4, 18, 42, 0.55);
 
   // Tooltip/Popover
-  --pa-tooltip-bg: #{$nato-dark-border};
-  --pa-tooltip-text: #{$nato-dark-text};
-  --pa-popover-content-bg: #{$nato-dark-card};
+  --pc-tooltip-bg: #{$nato-dark-border};
+  --pc-tooltip-text: #{$nato-dark-text};
+  --pc-popover-content-bg: #{$nato-dark-card};
 
   // Command palette
-  --pa-command-palette-backdrop-bg: rgba(4, 18, 42, 0.85);
-  --pa-command-palette-item-hover-bg: #{$nato-dark-surface};
-  --pa-command-palette-item-active-bg: rgba(17, 138, 203, 0.22);
-  --pa-command-palette-highlight-bg: rgba(17, 138, 203, 0.32);
+  --pc-command-palette-backdrop-bg: rgba(4, 18, 42, 0.85);
+  --pc-command-palette-item-hover-bg: #{$nato-dark-surface};
+  --pc-command-palette-item-active-bg: rgba(17, 138, 203, 0.22);
+  --pc-command-palette-highlight-bg: rgba(17, 138, 203, 0.32);
 
   // Alert colors
-  @include output-pa-alert-variables-dark;
+  @include output-pc-alert-variables-dark;
 
   .pa-alert code {
     color: inherit;
@@ -440,29 +441,29 @@ $checkbox-focus-shadow: 0 0 0 2px rgba($base-accent-color, 0.25);
   // Buttons
   // Inverted secondary: light blue-grey button with dark navy text — navy-on-navy
   // (border on card) had only ~2:1 contrast. Outline-color now defaults to bg in core.
-  --pa-btn-secondary-bg: #{$nato-dark-text-2};
-  --pa-btn-secondary-bg-hover: #{$nato-dark-text};
-  --pa-btn-secondary-text: #{$nato-dark-card};
-  --pa-btn-light-bg: #{$nato-dark-surface};
-  --pa-btn-light-bg-hover: #{$nato-dark-border};
-  --pa-btn-light-text: #{$nato-dark-text};
+  --pc-btn-secondary-bg: #{$nato-dark-text-2};
+  --pc-btn-secondary-bg-hover: #{$nato-dark-text};
+  --pc-btn-secondary-text: #{$nato-dark-card};
+  --pc-btn-light-bg: #{$nato-dark-surface};
+  --pc-btn-light-bg-hover: #{$nato-dark-border};
+  --pc-btn-light-text: #{$nato-dark-text};
 
   // Brand color slots 6/8/9 are dark navies — shift to medium navy/slate
   // for dark mode so outline buttons (color text + border on dark bg)
   // stay readable while keeping NATO's navy identity.
-  --pa-color-6: #2e5a8e;  // medium navy (lighter than nato-navy-deep)
-  --pa-color-8: #3f78b8;  // medium blue (lighter than nato-navy)
-  --pa-color-9: #{$nato-gray-400};  // medium slate (replaces midnight)
+  --pc-color-6: #2e5a8e;  // medium navy (lighter than nato-navy-deep)
+  --pc-color-8: #3f78b8;  // medium blue (lighter than nato-navy)
+  --pc-color-9: #{$nato-gray-400};  // medium slate (replaces midnight)
 
   // Semantic
-  --pa-success-bg: #{$nato-success-500};
-  --pa-success-bg-light: rgba(46, 133, 64, 0.22);
-  --pa-warning-bg: #{$nato-warning-500};
-  --pa-warning-bg-light: rgba(245, 183, 0, 0.22);
-  --pa-danger-bg: #{$nato-danger-500};
-  --pa-danger-bg-light: rgba(200, 16, 46, 0.22);
-  --pa-info-bg: #{$nato-info-500};
-  --pa-info-bg-light: rgba(17, 138, 203, 0.22);
+  --pc-success-bg: #{$nato-success-500};
+  --pc-success-bg-light: rgba(46, 133, 64, 0.22);
+  --pc-warning-bg: #{$nato-warning-500};
+  --pc-warning-bg-light: rgba(245, 183, 0, 0.22);
+  --pc-danger-bg: #{$nato-danger-500};
+  --pc-danger-bg-light: rgba(200, 16, 46, 0.22);
+  --pc-info-bg: #{$nato-info-500};
+  --pc-info-bg-light: rgba(17, 138, 203, 0.22);
 
   // Base variables for web components (dark mode)
   --base-main-bg: #{$nato-dark-card};
@@ -577,15 +578,15 @@ $checkbox-focus-shadow: 0 0 0 2px rgba($base-accent-color, 0.25);
 // Override via CSS variables + direct rules (SCSS vars locked by @use modules)
 // =============================================================================
 :root, .pc-mode-light {
-  --pa-border-radius-sm: 2px;
-  --pa-border-radius: 2px;
-  --pa-border-radius-lg: 2px;
+  --pc-border-radius-sm: 2px;
+  --pc-border-radius: 2px;
+  --pc-border-radius-lg: 2px;
 }
 
 .pc-mode-dark {
-  --pa-border-radius-sm: 2px;
-  --pa-border-radius: 2px;
-  --pa-border-radius-lg: 2px;
+  --pc-border-radius-sm: 2px;
+  --pc-border-radius: 2px;
+  --pc-border-radius-lg: 2px;
 }
 
 .pa-card__header {

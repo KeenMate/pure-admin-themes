@@ -250,14 +250,15 @@ $checkbox-focus-shadow: 0 0 0 2px $base-focus-ring-color;
   --page-loader-spinner-accent: #{$tn-accent};
 
   @include output-base-css-variables;
-  @include output-pa-css-variables;
-  @include output-pa-alert-variables-dark;
+  @include output-pc-css-variables;
+  @include output-pc-component-variables;
+  @include output-pc-alert-variables-dark;
 
   // Override alert text: use saturated tints of the alert color instead of white
-  --pa-alert-success-text: color-mix(in srgb, var(--pa-success-bg) 90%, black);
-  --pa-alert-danger-text: color-mix(in srgb, var(--pa-danger-bg) 90%, black);
-  --pa-alert-warning-text: color-mix(in srgb, var(--pa-warning-bg) 90%, black);
-  --pa-alert-info-text: color-mix(in srgb, var(--pa-info-bg) 90%, black);
+  --pc-alert-success-text: color-mix(in srgb, var(--pc-success-bg) 90%, black);
+  --pc-alert-danger-text: color-mix(in srgb, var(--pc-danger-bg) 90%, black);
+  --pc-alert-warning-text: color-mix(in srgb, var(--pc-warning-bg) 90%, black);
+  --pc-alert-info-text: color-mix(in srgb, var(--pc-info-bg) 90%, black);
 
   --base-elevated-bg: #{$night-elevated};
 }
@@ -269,46 +270,46 @@ $checkbox-focus-shadow: 0 0 0 2px $base-focus-ring-color;
   --page-loader-bg: rgba(36, 40, 59, 0.95);
   --page-loader-spinner-accent: #{$tn-accent};
 
-  --pa-main-bg: #{$storm-bg};
-  --pa-page-bg: #{$storm-bg};
-  --pa-subtle-bg: #{$storm-surface};
+  --pc-main-bg: #{$storm-bg};
+  --pc-page-bg: #{$storm-bg};
+  --pc-subtle-bg: #{$storm-surface};
 
-  --pa-navbar-bg: #{$storm-bg-deep};
-  --pa-navbar-border-color: #{$storm-border};
-  --pa-sidebar-bg: #{$storm-surface};
-  --pa-sidebar-submenu-bg: #{$storm-elevated};
-  --pa-sidebar-submenu-hover-bg: #{$storm-border};
-  --pa-sidebar-submenu-active-bg: #{rgba($tn-accent, 0.2)};
-  --pa-footer-bg: #{$storm-bg-deep};
-  --pa-footer-border-color: #{$storm-border};
+  --pc-navbar-bg: #{$storm-bg-deep};
+  --pc-navbar-border-color: #{$storm-border};
+  --pc-sidebar-bg: #{$storm-surface};
+  --pc-sidebar-submenu-bg: #{$storm-elevated};
+  --pc-sidebar-submenu-hover-bg: #{$storm-border};
+  --pc-sidebar-submenu-active-bg: #{rgba($tn-accent, 0.2)};
+  --pc-footer-bg: #{$storm-bg-deep};
+  --pc-footer-border-color: #{$storm-border};
 
-  --pa-text-color-1: #{$storm-text};
-  --pa-text-color-2: #{$storm-text-sec};
-  --pa-border-color: #{$storm-border};
-  --pa-accent: #{$tn-accent};
-  --pa-accent-hover: rgba(125, 207, 255, 0.15);
-  --pa-accent-light: rgba(125, 207, 255, 0.08);
+  --pc-text-color-1: #{$storm-text};
+  --pc-text-color-2: #{$storm-text-sec};
+  --pc-border-color: #{$storm-border};
+  --pc-accent: #{$tn-accent};
+  --pc-accent-hover: rgba(125, 207, 255, 0.15);
+  --pc-accent-light: rgba(125, 207, 255, 0.08);
 
-  --pa-card-bg: #{$storm-surface};
-  --pa-card-header-bg: #{$storm-bg};
-  --pa-card-footer-bg: #{$storm-bg};
-  --pa-card-tabs-bg: #{$storm-elevated};
+  --pc-card-bg: #{$storm-surface};
+  --pc-card-header-bg: #{$storm-bg};
+  --pc-card-footer-bg: #{$storm-bg};
+  --pc-card-tabs-bg: #{$storm-elevated};
 
-  --pa-input-bg: #{$storm-bg};
-  --pa-input-border: #{$storm-border};
-  --pa-input-text: #{$storm-text};
-  --pa-input-focus-border-color: #{$tn-accent};
+  --pc-input-bg: #{$storm-bg};
+  --pc-input-border: #{$storm-border};
+  --pc-input-text: #{$storm-text};
+  --pc-input-focus-border-color: #{$tn-accent};
 
   // Input group
-  --pa-input-group-prepend-bg: #{$storm-elevated};
-  --pa-input-group-prepend-text: #{$storm-text-sec};
-  --pa-input-group-append-bg: #{$storm-elevated};
-  --pa-input-group-append-text: #{$storm-text-sec};
+  --pc-input-group-prepend-bg: #{$storm-elevated};
+  --pc-input-group-prepend-text: #{$storm-text-sec};
+  --pc-input-group-append-bg: #{$storm-elevated};
+  --pc-input-group-append-text: #{$storm-text-sec};
 
-  --pa-table-bg: #{$storm-surface};
-  --pa-table-header-bg: #{$storm-bg};
-  --pa-table-stripe: #{$storm-bg};
-  --pa-table-hover-bg: #{$storm-elevated};
+  --pc-table-bg: #{$storm-surface};
+  --pc-table-header-bg: #{$storm-bg};
+  --pc-table-stripe: #{$storm-bg};
+  --pc-table-hover-bg: #{$storm-elevated};
 
   --base-accent-color: #{$tn-accent};
   --base-main-bg: #{$storm-surface};

@@ -271,8 +271,9 @@ $theme-color-scheme: dark;
   --page-loader-spinner-accent: #{$ci-gold};
 
   @include output-base-css-variables;
-  @include output-pa-css-variables;
-  @include output-pa-alert-variables-dark;
+  @include output-pc-css-variables;
+  @include output-pc-component-variables;
+  @include output-pc-alert-variables-dark;
 
   // Override base-elevated-bg for dark mode
   --base-elevated-bg: #{$ci-dark-elevated};
@@ -305,21 +306,21 @@ $theme-color-scheme: dark;
   --page-loader-spinner-accent: #{$light-accent};
 
   // Core colors - warm cream backgrounds
-  --pa-main-bg: #{$light-cream};
-  --pa-page-bg: #{$light-white};
-  --pa-subtle-bg: #{$light-cream};
+  --pc-main-bg: #{$light-cream};
+  --pc-page-bg: #{$light-white};
+  --pc-subtle-bg: #{$light-cream};
 
   // Text colors - dark warm text
-  --pa-text-color-1: #{$light-brown-dark};
-  --pa-text-color-2: #{$light-brown-light};
+  --pc-text-color-1: #{$light-brown-dark};
+  --pc-text-color-2: #{$light-brown-light};
 
   // Accent - slightly darker gold for contrast on light bg
-  --pa-accent: #{$light-accent};
-  --pa-accent-hover: rgba($light-accent, 0.12);
-  --pa-accent-light: rgba($light-accent, 0.06);
+  --pc-accent: #{$light-accent};
+  --pc-accent-hover: rgba($light-accent, 0.12);
+  --pc-accent-light: rgba($light-accent, 0.06);
 
   // Border
-  --pa-border-color: #{$light-tan};
+  --pc-border-color: #{$light-tan};
 
   // Header / sidebar / footer - light "café" chrome.
   // These used to stay dark in light mode for brand identity, but the near-black
@@ -327,147 +328,147 @@ $theme-color-scheme: dark;
   // surfaces (white / sand / cream) with dark-brown text and the amber accent —
   // the theme's own "linen / aged-paper" light palette carried into the chrome,
   // so it still reads as Café Industrial, just lively instead of dim.
-  --pa-navbar-bg: #{$light-white};
-  --pa-navbar-border-color: #{$light-tan};
-  --pa-navbar-text: #{$light-brown-dark};
-  --pa-navbar-text-secondary: #{$light-brown};
-  --pa-navbar-profile-name-color: #{$light-brown-dark};
+  --pc-navbar-bg: #{$light-white};
+  --pc-navbar-border-color: #{$light-tan};
+  --pc-navbar-text: #{$light-brown-dark};
+  --pc-navbar-text-secondary: #{$light-brown};
+  --pc-navbar-profile-name-color: #{$light-brown-dark};
 
-  --pa-sidebar-bg: #{$light-sand};
-  --pa-sidebar-text: #{$light-brown-dark};
-  --pa-sidebar-text-secondary: #{$light-brown};
-  --pa-sidebar-submenu-bg: #{$light-cream};
-  --pa-sidebar-submenu-hover-bg: rgba($light-accent, 0.12);
-  --pa-sidebar-submenu-active-bg: rgba($light-accent, 0.22);
+  --pc-sidebar-bg: #{$light-sand};
+  --pc-sidebar-text: #{$light-brown-dark};
+  --pc-sidebar-text-secondary: #{$light-brown};
+  --pc-sidebar-submenu-bg: #{$light-cream};
+  --pc-sidebar-submenu-hover-bg: rgba($light-accent, 0.12);
+  --pc-sidebar-submenu-active-bg: rgba($light-accent, 0.22);
   // Active submenu link text: defaults to $sidebar-text, which is the dark-mode
   // light off-white ($ci-dark-text-1) — faint on the light active tint. Pin it
   // to the dark brown so the selected item reads clearly (the amber tint + edge
   // bar already signal "active").
-  --pa-sidebar-submenu-active-text: #{$light-brown-dark};
+  --pc-sidebar-submenu-active-text: #{$light-brown-dark};
 
-  --pa-footer-bg: #{$light-cream};
-  --pa-footer-border-color: #{$light-tan};
+  --pc-footer-bg: #{$light-cream};
+  --pc-footer-border-color: #{$light-tan};
 
   // Cards - warm cream
-  --pa-card-bg: #{$light-white};
-  --pa-card-header-bg: #{$light-cream};
-  --pa-card-footer-bg: #{$light-cream};
-  --pa-card-tabs-bg: #{$light-sand};
+  --pc-card-bg: #{$light-white};
+  --pc-card-header-bg: #{$light-cream};
+  --pc-card-footer-bg: #{$light-cream};
+  --pc-card-tabs-bg: #{$light-sand};
 
   // Inputs - clean warm white
-  --pa-input-bg: #{$light-white};
-  --pa-input-border: #{$light-tan};
-  --pa-input-text: #{$light-brown-dark};
-  --pa-input-focus-border-color: #{$light-accent};
-  --pa-select-focus-border-color: #{$light-accent};
-  --pa-textarea-focus-border-color: #{$light-accent};
+  --pc-input-bg: #{$light-white};
+  --pc-input-border: #{$light-tan};
+  --pc-input-text: #{$light-brown-dark};
+  --pc-input-focus-border-color: #{$light-accent};
+  --pc-select-focus-border-color: #{$light-accent};
+  --pc-textarea-focus-border-color: #{$light-accent};
 
   // Input group
-  --pa-input-group-prepend-bg: #{$light-sand};
-  --pa-input-group-prepend-text: #{$light-brown};
-  --pa-input-group-append-bg: #{$light-sand};
-  --pa-input-group-append-text: #{$light-brown};
+  --pc-input-group-prepend-bg: #{$light-sand};
+  --pc-input-group-prepend-text: #{$light-brown};
+  --pc-input-group-append-bg: #{$light-sand};
+  --pc-input-group-append-text: #{$light-brown};
 
   // Checkbox
-  --pa-checkbox-border-color: #{$light-tan};
-  --pa-checkbox-border-color-hover: #{$light-accent};
-  --pa-checkbox-border-color-checked: #{$light-accent};
-  --pa-checkbox-bg: #{$light-white};
-  --pa-checkbox-bg-checked: #{$light-accent};
-  --pa-checkbox-bg-indeterminate: #{$light-accent};
-  --pa-checkbox-checkmark-color: #ffffff;
-  --pa-checkbox-focus-shadow: 0 0 0 2px rgba($light-accent, 0.25);
+  --pc-checkbox-border-color: #{$light-tan};
+  --pc-checkbox-border-color-hover: #{$light-accent};
+  --pc-checkbox-border-color-checked: #{$light-accent};
+  --pc-checkbox-bg: #{$light-white};
+  --pc-checkbox-bg-checked: #{$light-accent};
+  --pc-checkbox-bg-indeterminate: #{$light-accent};
+  --pc-checkbox-checkmark-color: #ffffff;
+  --pc-checkbox-focus-shadow: 0 0 0 2px rgba($light-accent, 0.25);
 
   // Tables - light surfaces
-  --pa-table-bg: #{$light-white};
-  --pa-table-header-bg: #{$light-cream};
-  --pa-table-stripe: #{$light-cream};
-  --pa-table-hover-bg: #{$light-sand};
-  --pa-table-hover-accent-color: #{$light-accent};
+  --pc-table-bg: #{$light-white};
+  --pc-table-header-bg: #{$light-cream};
+  --pc-table-stripe: #{$light-cream};
+  --pc-table-hover-bg: #{$light-sand};
+  --pc-table-hover-accent-color: #{$light-accent};
 
   // Modals
-  --pa-modal-content-bg: #{$light-white};
-  --pa-modal-overlay-bg: rgba(42, 32, 21, 0.5);
+  --pc-modal-content-bg: #{$light-white};
+  --pc-modal-overlay-bg: rgba(42, 32, 21, 0.5);
 
   // Loader overlay
-  --pa-loader-overlay-bg: rgba(247, 242, 235, 0.85);
+  --pc-loader-overlay-bg: rgba(247, 242, 235, 0.85);
 
   // Profile panel
-  --pa-profile-overlay-bg: rgba(42, 32, 21, 0.3);
+  --pc-profile-overlay-bg: rgba(42, 32, 21, 0.3);
 
   // Detail panel
-  --pa-detail-panel-overlay-bg: rgba(42, 32, 21, 0.3);
-  --pa-detail-panel-selected-bg: rgba($light-accent, 0.08);
+  --pc-detail-panel-overlay-bg: rgba(42, 32, 21, 0.3);
+  --pc-detail-panel-selected-bg: rgba($light-accent, 0.08);
 
   // Tooltip/Popover - dark tooltip on light bg
-  --pa-tooltip-bg: #{$light-espresso};
-  --pa-tooltip-text: #{$ci-dark-text-1};
-  --pa-popover-content-bg: #{$light-white};
+  --pc-tooltip-bg: #{$light-espresso};
+  --pc-tooltip-text: #{$ci-dark-text-1};
+  --pc-popover-content-bg: #{$light-white};
 
   // Command palette
-  --pa-command-palette-backdrop-bg: rgba(42, 32, 21, 0.5);
-  --pa-command-palette-item-hover-bg: #{$light-sand};
-  --pa-command-palette-item-active-bg: rgba($light-accent, 0.15);
-  --pa-command-palette-highlight-bg: rgba($light-accent, 0.2);
-  --pa-command-palette-highlight-text: #{$light-accent};
+  --pc-command-palette-backdrop-bg: rgba(42, 32, 21, 0.5);
+  --pc-command-palette-item-hover-bg: #{$light-sand};
+  --pc-command-palette-item-active-bg: rgba($light-accent, 0.15);
+  --pc-command-palette-highlight-bg: rgba($light-accent, 0.2);
+  --pc-command-palette-highlight-text: #{$light-accent};
 
   // Multiselect
-  --pa-multiselect-dropdown-bg: #{$light-white};
-  --pa-multiselect-dropdown-border: #{$light-tan};
-  --pa-multiselect-dropdown-text: #{$light-brown-dark};
-  --pa-multiselect-hint-bg: #{$light-cream};
-  --pa-multiselect-hint-border: #{$light-tan};
-  --pa-multiselect-option-hover-bg: #{$light-cream};
-  --pa-multiselect-pill-bg: rgba($light-accent, 0.1);
-  --pa-multiselect-pill-border: #{$light-accent};
+  --pc-multiselect-dropdown-bg: #{$light-white};
+  --pc-multiselect-dropdown-border: #{$light-tan};
+  --pc-multiselect-dropdown-text: #{$light-brown-dark};
+  --pc-multiselect-hint-bg: #{$light-cream};
+  --pc-multiselect-hint-border: #{$light-tan};
+  --pc-multiselect-option-hover-bg: #{$light-cream};
+  --pc-multiselect-pill-bg: rgba($light-accent, 0.1);
+  --pc-multiselect-pill-border: #{$light-accent};
 
   // Buttons
-  --pa-btn-primary-bg: #{$light-accent};
-  --pa-btn-primary-bg-hover: #{$light-accent-hover};
-  --pa-btn-primary-bg-light: rgba($light-accent, 0.08);
-  --pa-btn-primary-text: #ffffff;
-  --pa-btn-secondary-bg: #{$light-sand};
-  --pa-btn-secondary-bg-hover: #{$light-tan};
-  --pa-btn-secondary-text: #{$light-brown-dark};
-  --pa-btn-light-bg: #{$light-cream};
-  --pa-btn-light-bg-hover: #{$light-sand};
-  --pa-btn-light-text: #{$light-brown-dark};
-  --pa-btn-dark-bg: #{$light-espresso};
-  --pa-btn-dark-bg-hover: #1a1510;
-  --pa-btn-dark-text: #{$ci-dark-text-1};
+  --pc-btn-primary-bg: #{$light-accent};
+  --pc-btn-primary-bg-hover: #{$light-accent-hover};
+  --pc-btn-primary-bg-light: rgba($light-accent, 0.08);
+  --pc-btn-primary-text: #ffffff;
+  --pc-btn-secondary-bg: #{$light-sand};
+  --pc-btn-secondary-bg-hover: #{$light-tan};
+  --pc-btn-secondary-text: #{$light-brown-dark};
+  --pc-btn-light-bg: #{$light-cream};
+  --pc-btn-light-bg-hover: #{$light-sand};
+  --pc-btn-light-text: #{$light-brown-dark};
+  --pc-btn-dark-bg: #{$light-espresso};
+  --pc-btn-dark-bg-hover: #1a1510;
+  --pc-btn-dark-text: #{$ci-dark-text-1};
 
   // Semantic colors (slightly adjusted for light bg)
-  --pa-success-bg: #3d8b4e;
-  --pa-success-bg-light: rgba(61, 139, 78, 0.1);
-  --pa-success-bg-subtle: rgba(61, 139, 78, 0.06);
-  --pa-warning-bg: #c4901e;
-  --pa-warning-bg-light: rgba(196, 144, 30, 0.1);
-  --pa-warning-bg-subtle: rgba(196, 144, 30, 0.06);
-  --pa-danger-bg: #b83a3a;
-  --pa-danger-bg-light: rgba(184, 58, 58, 0.1);
-  --pa-danger-bg-subtle: rgba(184, 58, 58, 0.06);
-  --pa-info-bg: #2e7a89;
-  --pa-info-bg-light: rgba(46, 122, 137, 0.1);
-  --pa-info-bg-subtle: rgba(46, 122, 137, 0.06);
+  --pc-success-bg: #3d8b4e;
+  --pc-success-bg-light: rgba(61, 139, 78, 0.1);
+  --pc-success-bg-subtle: rgba(61, 139, 78, 0.06);
+  --pc-warning-bg: #c4901e;
+  --pc-warning-bg-light: rgba(196, 144, 30, 0.1);
+  --pc-warning-bg-subtle: rgba(196, 144, 30, 0.06);
+  --pc-danger-bg: #b83a3a;
+  --pc-danger-bg-light: rgba(184, 58, 58, 0.1);
+  --pc-danger-bg-subtle: rgba(184, 58, 58, 0.06);
+  --pc-info-bg: #2e7a89;
+  --pc-info-bg-light: rgba(46, 122, 137, 0.1);
+  --pc-info-bg-subtle: rgba(46, 122, 137, 0.06);
 
   // Badge colors - light mode
-  --pa-badge-success-bg: rgba(61, 139, 78, 0.12);
-  --pa-badge-success-text: #2d6e3c;
-  --pa-badge-warning-bg: rgba(196, 144, 30, 0.12);
-  --pa-badge-warning-text: #8b6914;
-  --pa-badge-info-bg: rgba(46, 122, 137, 0.12);
-  --pa-badge-info-text: #1e5f6d;
-  --pa-badge-danger-bg: rgba(184, 58, 58, 0.12);
-  --pa-badge-danger-text: #8b2c2c;
+  --pc-badge-success-bg: rgba(61, 139, 78, 0.12);
+  --pc-badge-success-text: #2d6e3c;
+  --pc-badge-warning-bg: rgba(196, 144, 30, 0.12);
+  --pc-badge-warning-text: #8b6914;
+  --pc-badge-info-bg: rgba(46, 122, 137, 0.12);
+  --pc-badge-info-text: #1e5f6d;
+  --pc-badge-danger-bg: rgba(184, 58, 58, 0.12);
+  --pc-badge-danger-text: #8b2c2c;
 
   // Composite badge
-  --pa-composite-badge-icon-bg: #{$light-sand};
-  --pa-composite-badge-label-bg: #{$light-cream};
-  --pa-composite-badge-label-text: #{$light-brown-dark};
-  --pa-composite-badge-label-hover-bg: #{$light-sand};
+  --pc-composite-badge-icon-bg: #{$light-sand};
+  --pc-composite-badge-label-bg: #{$light-cream};
+  --pc-composite-badge-label-text: #{$light-brown-dark};
+  --pc-composite-badge-label-hover-bg: #{$light-sand};
 
   // Alert colors - light mode derivation
-  @include output-pa-alert-variables-light;
+  @include output-pc-alert-variables-light;
 
   // Base variables for web components (light mode)
   --base-main-bg: #{$light-white};

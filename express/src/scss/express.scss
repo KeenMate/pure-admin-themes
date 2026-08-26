@@ -434,20 +434,21 @@ $navbar-profile-name-color: $express-black;  // Black text on yellow header
   @include output-base-css-variables;
 
   // Pure Admin theme CSS variables
-  @include output-pa-css-variables;
-  @include output-pa-alert-variables-light;
+  @include output-pc-css-variables;
+  @include output-pc-component-variables;
+  @include output-pc-alert-variables-light;
 
   // Input group - light gray background for light mode
-  --pa-input-group-prepend-bg: #{$express-gray-lightest};
-  --pa-input-group-prepend-text: #{$express-dark};
-  --pa-input-group-append-bg: #{$express-gray-lightest};
-  --pa-input-group-append-text: #{$express-dark};
+  --pc-input-group-prepend-bg: #{$express-gray-lightest};
+  --pc-input-group-prepend-text: #{$express-dark};
+  --pc-input-group-append-bg: #{$express-gray-lightest};
+  --pc-input-group-append-text: #{$express-dark};
 
   // Override alert text for readability on saturated backgrounds
-  --pa-alert-success-text: #{$base-success-text};
-  --pa-alert-warning-text: #{$base-warning-text};
-  --pa-alert-danger-text: #ffffff;
-  --pa-alert-info-text: #{$base-info-text};
+  --pc-alert-success-text: #{$base-success-text};
+  --pc-alert-warning-text: #{$base-warning-text};
+  --pc-alert-danger-text: #ffffff;
+  --pc-alert-info-text: #{$base-info-text};
 
 }
 
@@ -470,58 +471,58 @@ $navbar-profile-name-color: $express-black;  // Black text on yellow header
   --page-loader-spinner-accent: #{$express-yellow};
 
   // Core colors - dark backgrounds
-  --pa-main-bg: #{$dark-bg};
-  --pa-page-bg: #{$dark-bg};
-  --pa-subtle-bg: #121212;
+  --pc-main-bg: #{$dark-bg};
+  --pc-page-bg: #{$dark-bg};
+  --pc-subtle-bg: #121212;
 
   // Text colors - light text on dark bg
-  --pa-text-color-1: #{$dark-text};
-  --pa-text-color-2: #{$dark-text-bg};
+  --pc-text-color-1: #{$dark-text};
+  --pc-text-color-2: #{$dark-text-bg};
 
   // Keep Express brand colors
-  --pa-accent: #{$express-red};
-  --pa-accent-hover: rgba(212, 5, 17, 0.2);
-  --pa-accent-light: rgba(212, 5, 17, 0.15);
+  --pc-accent: #{$express-red};
+  --pc-accent-hover: rgba(212, 5, 17, 0.2);
+  --pc-accent-light: rgba(212, 5, 17, 0.15);
 
   // Border
-  --pa-border-color: #{$dark-border};
+  --pc-border-color: #{$dark-border};
 
   // Header stays yellow (Express brand)
-  --pa-navbar-bg: #{$express-yellow};
-  --pa-navbar-border-color: #{$express-yellow};
-  --pa-navbar-text: #{$express-black};
-  --pa-navbar-text-secondary: #{$express-dark};
-  --pa-navbar-profile-name-color: #{$express-black};
+  --pc-navbar-bg: #{$express-yellow};
+  --pc-navbar-border-color: #{$express-yellow};
+  --pc-navbar-text: #{$express-black};
+  --pc-navbar-text-secondary: #{$express-dark};
+  --pc-navbar-profile-name-color: #{$express-black};
 
   // Sidebar stays black
-  --pa-sidebar-bg: #{$express-black};
-  --pa-sidebar-text: #ffffff;
-  --pa-sidebar-text-secondary: #ffffff;
-  --pa-sidebar-submenu-bg: #{$dark-bg};
-  --pa-sidebar-submenu-hover-bg: rgba(255, 255, 255, 0.1);
-  --pa-sidebar-submenu-active-bg: #{rgba($express-red, 0.2)};
+  --pc-sidebar-bg: #{$express-black};
+  --pc-sidebar-text: #ffffff;
+  --pc-sidebar-text-secondary: #ffffff;
+  --pc-sidebar-submenu-bg: #{$dark-bg};
+  --pc-sidebar-submenu-hover-bg: rgba(255, 255, 255, 0.1);
+  --pc-sidebar-submenu-active-bg: #{rgba($express-red, 0.2)};
 
   // Footer stays yellow
-  --pa-footer-bg: #{$express-yellow};
-  --pa-footer-border-color: #{$express-yellow};
+  --pc-footer-bg: #{$express-yellow};
+  --pc-footer-border-color: #{$express-yellow};
 
   // Cards - dark backgrounds
-  --pa-card-bg: #{$dark-card};
-  --pa-card-header-bg: #{$dark-surface};
-  --pa-card-footer-bg: #{$dark-surface};
-  --pa-card-tabs-bg: #{$dark-border};
+  --pc-card-bg: #{$dark-card};
+  --pc-card-header-bg: #{$dark-surface};
+  --pc-card-footer-bg: #{$dark-surface};
+  --pc-card-tabs-bg: #{$dark-border};
 
   // Inputs - dark backgrounds
-  --pa-input-bg: #{$dark-surface};
-  --pa-input-border: #{$dark-border};
-  --pa-input-text: #{$dark-text};
-  --pa-input-focus-border-color: #{$express-red};
+  --pc-input-bg: #{$dark-surface};
+  --pc-input-border: #{$dark-border};
+  --pc-input-text: #{$dark-text};
+  --pc-input-focus-border-color: #{$express-red};
 
   // Input group - vibrant yellow for Express branding
-  --pa-input-group-prepend-bg: rgba(255, 204, 0, 0.35);
-  --pa-input-group-prepend-text: #{$express-yellow};
-  --pa-input-group-append-bg: rgba(255, 204, 0, 0.35);
-  --pa-input-group-append-text: #{$express-yellow};
+  --pc-input-group-prepend-bg: rgba(255, 204, 0, 0.35);
+  --pc-input-group-prepend-text: #{$express-yellow};
+  --pc-input-group-append-bg: rgba(255, 204, 0, 0.35);
+  --pc-input-group-append-text: #{$express-yellow};
 
   // Input group buttons
   .pa-input-group__button {
@@ -535,34 +536,34 @@ $navbar-profile-name-color: $express-black;  // Black text on yellow header
   }
 
   // Tables - dark backgrounds
-  --pa-table-bg: #{$dark-card};
-  --pa-table-header-bg: #{$dark-surface};
-  --pa-table-stripe: #{$dark-bg};
-  --pa-table-hover-bg: #{$dark-surface};
+  --pc-table-bg: #{$dark-card};
+  --pc-table-header-bg: #{$dark-surface};
+  --pc-table-stripe: #{$dark-bg};
+  --pc-table-hover-bg: #{$dark-surface};
 
   // Modals
-  --pa-modal-content-bg: #{$dark-card};
-  --pa-modal-overlay-bg: rgba(0, 0, 0, 0.8);
+  --pc-modal-content-bg: #{$dark-card};
+  --pc-modal-overlay-bg: rgba(0, 0, 0, 0.8);
 
   // Loader overlay
-  --pa-loader-overlay-bg: rgba(0, 0, 0, 0.7);
+  --pc-loader-overlay-bg: rgba(0, 0, 0, 0.7);
 
   // Profile panel
-  --pa-profile-overlay-bg: rgba(0, 0, 0, 0.5);
+  --pc-profile-overlay-bg: rgba(0, 0, 0, 0.5);
 
   // Tooltip/Popover
-  --pa-tooltip-bg: #{$dark-border};
-  --pa-tooltip-text: #{$dark-text};
-  --pa-popover-content-bg: #{$dark-card};
+  --pc-tooltip-bg: #{$dark-border};
+  --pc-tooltip-text: #{$dark-text};
+  --pc-popover-content-bg: #{$dark-card};
 
   // Command palette
-  --pa-command-palette-backdrop-bg: rgba(0, 0, 0, 0.8);
-  --pa-command-palette-item-hover-bg: #{$dark-surface};
-  --pa-command-palette-item-active-bg: rgba(212, 5, 17, 0.2);
-  --pa-command-palette-highlight-bg: rgba(212, 5, 17, 0.3);
+  --pc-command-palette-backdrop-bg: rgba(0, 0, 0, 0.8);
+  --pc-command-palette-item-hover-bg: #{$dark-surface};
+  --pc-command-palette-item-active-bg: rgba(212, 5, 17, 0.2);
+  --pc-command-palette-highlight-bg: rgba(212, 5, 17, 0.3);
 
   // Alert colors - derived from semantic colors
-  @include output-pa-alert-variables-dark;
+  @include output-pc-alert-variables-dark;
 
   // Code inside alerts - inherit alert text color
   .pa-alert code {
@@ -572,22 +573,22 @@ $navbar-profile-name-color: $express-black;  // Black text on yellow header
 
   // Buttons - adjust for dark mode
   // bg sits between $dark-border (#3a3a3a, too subtle on #242424 card) and $dark-text-bg (#aaaaaa).
-  --pa-btn-secondary-bg: #555555;
-  --pa-btn-secondary-bg-hover: #{$dark-text-bg};
-  --pa-btn-secondary-text: #{$dark-text};
-  --pa-btn-light-bg: #{$dark-surface};
-  --pa-btn-light-bg-hover: #{$dark-border};
-  --pa-btn-light-text: #{$dark-text};
+  --pc-btn-secondary-bg: #555555;
+  --pc-btn-secondary-bg-hover: #{$dark-text-bg};
+  --pc-btn-secondary-text: #{$dark-text};
+  --pc-btn-light-bg: #{$dark-surface};
+  --pc-btn-light-bg-hover: #{$dark-border};
+  --pc-btn-light-text: #{$dark-text};
 
   // Semantic colors - brighter for dark mode visibility
-  --pa-success-bg: #34d399;
-  --pa-success-bg-light: rgba(16, 185, 129, 0.2);
-  --pa-warning-bg: #fbbf24;
-  --pa-warning-bg-light: rgba(245, 158, 11, 0.2);
-  --pa-danger-bg: #f87171;
-  --pa-danger-bg-light: rgba(248, 113, 113, 0.2);
-  --pa-info-bg: #22d3ee;
-  --pa-info-bg-light: rgba(6, 182, 212, 0.2);
+  --pc-success-bg: #34d399;
+  --pc-success-bg-light: rgba(16, 185, 129, 0.2);
+  --pc-warning-bg: #fbbf24;
+  --pc-warning-bg-light: rgba(245, 158, 11, 0.2);
+  --pc-danger-bg: #f87171;
+  --pc-danger-bg-light: rgba(248, 113, 113, 0.2);
+  --pc-info-bg: #22d3ee;
+  --pc-info-bg-light: rgba(6, 182, 212, 0.2);
 
   // Base variables for web components (dark mode)
   // Semantic names (preferred)
@@ -684,7 +685,7 @@ $navbar-profile-name-color: $express-black;  // Black text on yellow header
       color: #aaaaaa;
     }
 
-    // Close button uses --pa-navbar-profile-name-color, which express keeps
+    // Close button uses --pc-navbar-profile-name-color, which express keeps
     // BLACK for its yellow navbar header. This panel header is dark, so the
     // masked X (painted with currentColor) rendered black-on-dark-gray. Match
     // the name's light colour; :hover still flips to the accent.

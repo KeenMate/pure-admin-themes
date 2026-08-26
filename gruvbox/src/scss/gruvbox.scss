@@ -267,14 +267,15 @@ $checkbox-focus-shadow: 0 0 0 2px $base-focus-ring-color;
   --page-loader-spinner-accent: #{$bright-orange};
 
   @include output-base-css-variables;
-  @include output-pa-css-variables;
-  @include output-pa-alert-variables-dark;
+  @include output-pc-css-variables;
+  @include output-pc-component-variables;
+  @include output-pc-alert-variables-dark;
 
   // Override alert text for better readability
-  --pa-alert-success-text: color-mix(in srgb, var(--pa-success-bg) 90%, black);
-  --pa-alert-danger-text: color-mix(in srgb, var(--pa-danger-bg) 90%, black);
-  --pa-alert-warning-text: color-mix(in srgb, var(--pa-warning-bg) 90%, black);
-  --pa-alert-info-text: color-mix(in srgb, var(--pa-info-bg) 90%, black);
+  --pc-alert-success-text: color-mix(in srgb, var(--pc-success-bg) 90%, black);
+  --pc-alert-danger-text: color-mix(in srgb, var(--pc-danger-bg) 90%, black);
+  --pc-alert-warning-text: color-mix(in srgb, var(--pc-warning-bg) 90%, black);
+  --pc-alert-info-text: color-mix(in srgb, var(--pc-info-bg) 90%, black);
 
   --base-elevated-bg: #{$dark2};
 }
@@ -285,32 +286,32 @@ $checkbox-focus-shadow: 0 0 0 2px $base-focus-ring-color;
 .pa-color-soft {
   --page-loader-bg: rgba(50, 48, 47, 0.95);
 
-  --pa-main-bg: #{$dark0-soft};
-  --pa-page-bg: #{$dark0-soft};
-  --pa-subtle-bg: #{$dark1};
+  --pc-main-bg: #{$dark0-soft};
+  --pc-page-bg: #{$dark0-soft};
+  --pc-subtle-bg: #{$dark1};
 
-  --pa-navbar-bg: #{$dark1};
-  --pa-navbar-border-color: #{$dark2};
-  --pa-sidebar-bg: #{$dark0-soft};
-  --pa-sidebar-submenu-bg: #{$dark1};
-  --pa-sidebar-submenu-hover-bg: #{$dark2};
-  --pa-footer-bg: #{$dark1};
-  --pa-footer-border-color: #{$dark2};
+  --pc-navbar-bg: #{$dark1};
+  --pc-navbar-border-color: #{$dark2};
+  --pc-sidebar-bg: #{$dark0-soft};
+  --pc-sidebar-submenu-bg: #{$dark1};
+  --pc-sidebar-submenu-hover-bg: #{$dark2};
+  --pc-footer-bg: #{$dark1};
+  --pc-footer-border-color: #{$dark2};
 
-  --pa-border-color: #{$dark2};
+  --pc-border-color: #{$dark2};
 
-  --pa-card-bg: #{$dark0-soft};
-  --pa-card-header-bg: #{$dark1};
-  --pa-card-footer-bg: #{$dark1};
-  --pa-card-tabs-bg: #{$dark2};
+  --pc-card-bg: #{$dark0-soft};
+  --pc-card-header-bg: #{$dark1};
+  --pc-card-footer-bg: #{$dark1};
+  --pc-card-tabs-bg: #{$dark2};
 
-  --pa-input-bg: #{$dark1};
-  --pa-input-border: #{$dark2};
+  --pc-input-bg: #{$dark1};
+  --pc-input-border: #{$dark2};
 
-  --pa-table-bg: #{$dark0-soft};
-  --pa-table-header-bg: #{$dark1};
-  --pa-table-stripe: #{$dark1};
-  --pa-table-hover-bg: #{$dark2};
+  --pc-table-bg: #{$dark0-soft};
+  --pc-table-header-bg: #{$dark1};
+  --pc-table-stripe: #{$dark1};
+  --pc-table-hover-bg: #{$dark2};
 
   --base-main-bg: #{$dark0-soft};
   --base-page-bg: #{$dark0-soft};
@@ -331,98 +332,98 @@ $checkbox-focus-shadow: 0 0 0 2px $base-focus-ring-color;
   --page-loader-spinner-border: #{$light2};
   --page-loader-spinner-accent: #{$neutral-orange};
 
-  --pa-main-bg: #{$light0};
-  --pa-page-bg: #{$light0};
-  --pa-subtle-bg: #{$light1};
-  --pa-text-color-1: #{$dark1};
-  --pa-text-color-2: #{$dark3};
-  --pa-accent: #{$neutral-orange};
-  --pa-accent-hover: rgba($neutral-orange, 0.12);
-  --pa-accent-light: rgba($neutral-orange, 0.06);
-  --pa-border-color: #{$light2};
+  --pc-main-bg: #{$light0};
+  --pc-page-bg: #{$light0};
+  --pc-subtle-bg: #{$light1};
+  --pc-text-color-1: #{$dark1};
+  --pc-text-color-2: #{$dark3};
+  --pc-accent: #{$neutral-orange};
+  --pc-accent-hover: rgba($neutral-orange, 0.12);
+  --pc-accent-light: rgba($neutral-orange, 0.06);
+  --pc-border-color: #{$light2};
 
   // Header - dark (Gruvbox identity)
-  --pa-navbar-bg: #{$dark0-hard};
-  --pa-navbar-border-color: #{$dark2};
-  --pa-navbar-text: #{$light1};
-  --pa-navbar-text-secondary: #{$light4};
-  --pa-navbar-profile-name-color: #{$light1};
+  --pc-navbar-bg: #{$dark0-hard};
+  --pc-navbar-border-color: #{$dark2};
+  --pc-navbar-text: #{$light1};
+  --pc-navbar-text-secondary: #{$light4};
+  --pc-navbar-profile-name-color: #{$light1};
 
   // Sidebar - light
-  --pa-sidebar-bg: #{$light1};
-  --pa-sidebar-text: #{$dark1};
-  --pa-sidebar-text-secondary: #{$dark3};
-  --pa-sidebar-submenu-bg: #{$light2};
-  --pa-sidebar-submenu-hover-bg: #{$light3};
-  --pa-sidebar-submenu-active-bg: #{rgba($neutral-orange, 0.2)};
+  --pc-sidebar-bg: #{$light1};
+  --pc-sidebar-text: #{$dark1};
+  --pc-sidebar-text-secondary: #{$dark3};
+  --pc-sidebar-submenu-bg: #{$light2};
+  --pc-sidebar-submenu-hover-bg: #{$light3};
+  --pc-sidebar-submenu-active-bg: #{rgba($neutral-orange, 0.2)};
 
   // Footer - dark
-  --pa-footer-bg: #{$dark0-hard};
-  --pa-footer-border-color: #{$dark2};
+  --pc-footer-bg: #{$dark0-hard};
+  --pc-footer-border-color: #{$dark2};
 
   // Cards
-  --pa-card-bg: #{$light0-hard};
-  --pa-card-header-bg: #{$light1};
-  --pa-card-footer-bg: #{$light1};
-  --pa-card-tabs-bg: #{$light2};
+  --pc-card-bg: #{$light0-hard};
+  --pc-card-header-bg: #{$light1};
+  --pc-card-footer-bg: #{$light1};
+  --pc-card-tabs-bg: #{$light2};
 
   // Inputs
-  --pa-input-bg: #{$light0-hard};
-  --pa-input-border: #{$light2};
-  --pa-input-text: #{$dark1};
-  --pa-input-focus-border-color: #{$neutral-orange};
+  --pc-input-bg: #{$light0-hard};
+  --pc-input-border: #{$light2};
+  --pc-input-text: #{$dark1};
+  --pc-input-focus-border-color: #{$neutral-orange};
 
   // Input group
-  --pa-input-group-prepend-bg: #{$light1};
-  --pa-input-group-prepend-text: #{$dark3};
-  --pa-input-group-append-bg: #{$light1};
-  --pa-input-group-append-text: #{$dark3};
+  --pc-input-group-prepend-bg: #{$light1};
+  --pc-input-group-prepend-text: #{$dark3};
+  --pc-input-group-append-bg: #{$light1};
+  --pc-input-group-append-text: #{$dark3};
 
   // Tables
-  --pa-table-bg: #{$light0-hard};
-  --pa-table-header-bg: #{$light1};
-  --pa-table-stripe: #{$light0};
-  --pa-table-hover-bg: #{$light1};
+  --pc-table-bg: #{$light0-hard};
+  --pc-table-header-bg: #{$light1};
+  --pc-table-stripe: #{$light0};
+  --pc-table-hover-bg: #{$light1};
 
   // Modals
-  --pa-modal-content-bg: #{$light0-hard};
-  --pa-modal-overlay-bg: rgba(0, 0, 0, 0.5);
+  --pc-modal-content-bg: #{$light0-hard};
+  --pc-modal-overlay-bg: rgba(0, 0, 0, 0.5);
 
   // Loader
-  --pa-loader-overlay-bg: rgba(251, 241, 199, 0.8);
-  --pa-profile-overlay-bg: rgba(0, 0, 0, 0.3);
+  --pc-loader-overlay-bg: rgba(251, 241, 199, 0.8);
+  --pc-profile-overlay-bg: rgba(0, 0, 0, 0.3);
 
   // Tooltip/Popover
-  --pa-tooltip-bg: #{$dark1};
-  --pa-tooltip-text: #{$light1};
-  --pa-popover-content-bg: #{$light0-hard};
+  --pc-tooltip-bg: #{$dark1};
+  --pc-tooltip-text: #{$light1};
+  --pc-popover-content-bg: #{$light0-hard};
 
   // Command palette
-  --pa-command-palette-backdrop-bg: rgba(0, 0, 0, 0.5);
-  --pa-command-palette-item-hover-bg: #{$light1};
-  --pa-command-palette-item-active-bg: rgba($neutral-orange, 0.15);
-  --pa-command-palette-highlight-bg: rgba($neutral-orange, 0.2);
+  --pc-command-palette-backdrop-bg: rgba(0, 0, 0, 0.5);
+  --pc-command-palette-item-hover-bg: #{$light1};
+  --pc-command-palette-item-active-bg: rgba($neutral-orange, 0.15);
+  --pc-command-palette-highlight-bg: rgba($neutral-orange, 0.2);
 
   // Alerts - light mode
-  @include output-pa-alert-variables-light;
+  @include output-pc-alert-variables-light;
 
   // Buttons
-  --pa-btn-secondary-bg: #{$light2};
-  --pa-btn-secondary-bg-hover: #{$light3};
-  --pa-btn-secondary-text: #{$dark1};
-  --pa-btn-light-bg: #{$light1};
-  --pa-btn-light-bg-hover: #{$light2};
-  --pa-btn-light-text: #{$dark1};
+  --pc-btn-secondary-bg: #{$light2};
+  --pc-btn-secondary-bg-hover: #{$light3};
+  --pc-btn-secondary-text: #{$dark1};
+  --pc-btn-light-bg: #{$light1};
+  --pc-btn-light-bg-hover: #{$light2};
+  --pc-btn-light-text: #{$dark1};
 
   // Semantic colors (faded for light mode)
-  --pa-success-bg: #{$faded-green};
-  --pa-success-bg-light: rgba($faded-green, 0.1);
-  --pa-warning-bg: #{$faded-yellow};
-  --pa-warning-bg-light: rgba($faded-yellow, 0.1);
-  --pa-danger-bg: #{$faded-red};
-  --pa-danger-bg-light: rgba($faded-red, 0.1);
-  --pa-info-bg: #{$faded-blue};
-  --pa-info-bg-light: rgba($faded-blue, 0.1);
+  --pc-success-bg: #{$faded-green};
+  --pc-success-bg-light: rgba($faded-green, 0.1);
+  --pc-warning-bg: #{$faded-yellow};
+  --pc-warning-bg-light: rgba($faded-yellow, 0.1);
+  --pc-danger-bg: #{$faded-red};
+  --pc-danger-bg-light: rgba($faded-red, 0.1);
+  --pc-info-bg: #{$faded-blue};
+  --pc-info-bg-light: rgba($faded-blue, 0.1);
 
   // Base variables for web components
   --base-main-bg: #{$light0-hard};

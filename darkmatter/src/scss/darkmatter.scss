@@ -231,14 +231,15 @@ $checkbox-focus-shadow: 0 0 0 2px $base-focus-ring-color;
   --page-loader-spinner-accent: #{$dm-blue-bright};
 
   @include output-base-css-variables;
-  @include output-pa-css-variables;
-  @include output-pa-alert-variables-dark;
+  @include output-pc-css-variables;
+  @include output-pc-component-variables;
+  @include output-pc-alert-variables-dark;
 
   // Override alert text for readability on deep backgrounds
-  --pa-alert-success-text: color-mix(in srgb, var(--pa-success-bg) 90%, black);
-  --pa-alert-danger-text: color-mix(in srgb, var(--pa-danger-bg) 90%, black);
-  --pa-alert-warning-text: color-mix(in srgb, var(--pa-warning-bg) 90%, black);
-  --pa-alert-info-text: color-mix(in srgb, var(--pa-info-bg) 90%, black);
+  --pc-alert-success-text: color-mix(in srgb, var(--pc-success-bg) 90%, black);
+  --pc-alert-danger-text: color-mix(in srgb, var(--pc-danger-bg) 90%, black);
+  --pc-alert-warning-text: color-mix(in srgb, var(--pc-warning-bg) 90%, black);
+  --pc-alert-info-text: color-mix(in srgb, var(--pc-info-bg) 90%, black);
 
   --base-elevated-bg: #{$dm-elevated};
 }

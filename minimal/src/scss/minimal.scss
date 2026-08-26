@@ -209,14 +209,15 @@ $modal-content-bg: $minimal-white;
   @include output-base-css-variables;
 
   // Pure Admin theme CSS variables
-  @include output-pa-css-variables;
-  @include output-pa-alert-variables-light;
+  @include output-pc-css-variables;
+  @include output-pc-component-variables;
+  @include output-pc-alert-variables-light;
 
   // Input group - light gray background for light mode
-  --pa-input-group-prepend-bg: #{$minimal-gray-100};
-  --pa-input-group-prepend-text: #{$minimal-gray-800};
-  --pa-input-group-append-bg: #{$minimal-gray-100};
-  --pa-input-group-append-text: #{$minimal-gray-800};
+  --pc-input-group-prepend-bg: #{$minimal-gray-100};
+  --pc-input-group-prepend-text: #{$minimal-gray-800};
+  --pc-input-group-append-bg: #{$minimal-gray-100};
+  --pc-input-group-append-text: #{$minimal-gray-800};
 }
 
 // ============================================================================
@@ -238,58 +239,58 @@ $modal-content-bg: $minimal-white;
   --page-loader-spinner-accent: #e8e8e8;
 
   // Core colors - dark backgrounds
-  --pa-main-bg: #{$dark-bg};
-  --pa-page-bg: #{$dark-bg};
-  --pa-subtle-bg: #141414;
+  --pc-main-bg: #{$dark-bg};
+  --pc-page-bg: #{$dark-bg};
+  --pc-subtle-bg: #141414;
 
   // Text colors - light text on dark bg
-  --pa-text-color-1: #{$dark-text};
-  --pa-text-color-2: #{$dark-text-bg};
+  --pc-text-color-1: #{$dark-text};
+  --pc-text-color-2: #{$dark-text-bg};
 
   // Accent stays grayscale
-  --pa-accent: #{$dark-text};
-  --pa-accent-hover: rgba(232, 232, 232, 0.15);
-  --pa-accent-light: rgba(232, 232, 232, 0.08);
+  --pc-accent: #{$dark-text};
+  --pc-accent-hover: rgba(232, 232, 232, 0.15);
+  --pc-accent-light: rgba(232, 232, 232, 0.08);
 
   // Border
-  --pa-border-color: #{$dark-border};
+  --pc-border-color: #{$dark-border};
 
   // Header - dark grayscale
-  --pa-navbar-bg: #{$dark-card};
-  --pa-navbar-border-color: #{$dark-border};
-  --pa-navbar-text: #{$dark-text};
-  --pa-navbar-text-secondary: #{$dark-text-bg};
-  --pa-navbar-profile-name-color: #{$dark-text};
+  --pc-navbar-bg: #{$dark-card};
+  --pc-navbar-border-color: #{$dark-border};
+  --pc-navbar-text: #{$dark-text};
+  --pc-navbar-text-secondary: #{$dark-text-bg};
+  --pc-navbar-profile-name-color: #{$dark-text};
 
   // Sidebar - dark grayscale
-  --pa-sidebar-bg: #{$dark-card};
-  --pa-sidebar-text: #{$dark-text};
-  --pa-sidebar-text-secondary: #{$dark-text-bg};
-  --pa-sidebar-submenu-bg: #{$dark-bg};
-  --pa-sidebar-submenu-hover-bg: rgba(255, 255, 255, 0.08);
-  --pa-sidebar-submenu-active-bg: #{$dark-surface};
+  --pc-sidebar-bg: #{$dark-card};
+  --pc-sidebar-text: #{$dark-text};
+  --pc-sidebar-text-secondary: #{$dark-text-bg};
+  --pc-sidebar-submenu-bg: #{$dark-bg};
+  --pc-sidebar-submenu-hover-bg: rgba(255, 255, 255, 0.08);
+  --pc-sidebar-submenu-active-bg: #{$dark-surface};
 
   // Footer - dark grayscale
-  --pa-footer-bg: #{$dark-card};
-  --pa-footer-border-color: #{$dark-border};
+  --pc-footer-bg: #{$dark-card};
+  --pc-footer-border-color: #{$dark-border};
 
   // Cards - dark backgrounds
-  --pa-card-bg: #{$dark-card};
-  --pa-card-header-bg: #{$dark-surface};
-  --pa-card-footer-bg: #{$dark-surface};
-  --pa-card-tabs-bg: #{$dark-border};
+  --pc-card-bg: #{$dark-card};
+  --pc-card-header-bg: #{$dark-surface};
+  --pc-card-footer-bg: #{$dark-surface};
+  --pc-card-tabs-bg: #{$dark-border};
 
   // Inputs - dark backgrounds
-  --pa-input-bg: #{$dark-surface};
-  --pa-input-border: #{$dark-border};
-  --pa-input-text: #{$dark-text};
-  --pa-input-focus-border-color: #{$dark-text};
+  --pc-input-bg: #{$dark-surface};
+  --pc-input-border: #{$dark-border};
+  --pc-input-text: #{$dark-text};
+  --pc-input-focus-border-color: #{$dark-text};
 
   // Input group
-  --pa-input-group-prepend-bg: #{$dark-border};
-  --pa-input-group-prepend-text: #{$dark-text-bg};
-  --pa-input-group-append-bg: #{$dark-border};
-  --pa-input-group-append-text: #{$dark-text-bg};
+  --pc-input-group-prepend-bg: #{$dark-border};
+  --pc-input-group-prepend-text: #{$dark-text-bg};
+  --pc-input-group-append-bg: #{$dark-border};
+  --pc-input-group-append-text: #{$dark-text-bg};
 
   // Input group buttons
   .pa-input-group__button {
@@ -303,34 +304,34 @@ $modal-content-bg: $minimal-white;
   }
 
   // Tables - dark backgrounds
-  --pa-table-bg: #{$dark-card};
-  --pa-table-header-bg: #{$dark-surface};
-  --pa-table-stripe: #{$dark-bg};
-  --pa-table-hover-bg: #{$dark-surface};
+  --pc-table-bg: #{$dark-card};
+  --pc-table-header-bg: #{$dark-surface};
+  --pc-table-stripe: #{$dark-bg};
+  --pc-table-hover-bg: #{$dark-surface};
 
   // Modals
-  --pa-modal-content-bg: #{$dark-card};
-  --pa-modal-overlay-bg: rgba(0, 0, 0, 0.7);
+  --pc-modal-content-bg: #{$dark-card};
+  --pc-modal-overlay-bg: rgba(0, 0, 0, 0.7);
 
   // Loader overlay
-  --pa-loader-overlay-bg: rgba(0, 0, 0, 0.7);
+  --pc-loader-overlay-bg: rgba(0, 0, 0, 0.7);
 
   // Profile panel
-  --pa-profile-overlay-bg: rgba(0, 0, 0, 0.5);
+  --pc-profile-overlay-bg: rgba(0, 0, 0, 0.5);
 
   // Tooltip/Popover
-  --pa-tooltip-bg: #{$dark-border};
-  --pa-tooltip-text: #{$dark-text};
-  --pa-popover-content-bg: #{$dark-card};
+  --pc-tooltip-bg: #{$dark-border};
+  --pc-tooltip-text: #{$dark-text};
+  --pc-popover-content-bg: #{$dark-card};
 
   // Command palette
-  --pa-command-palette-backdrop-bg: rgba(0, 0, 0, 0.8);
-  --pa-command-palette-item-hover-bg: #{$dark-surface};
-  --pa-command-palette-item-active-bg: rgba(255, 255, 255, 0.1);
-  --pa-command-palette-highlight-bg: rgba(255, 255, 255, 0.15);
+  --pc-command-palette-backdrop-bg: rgba(0, 0, 0, 0.8);
+  --pc-command-palette-item-hover-bg: #{$dark-surface};
+  --pc-command-palette-item-active-bg: rgba(255, 255, 255, 0.1);
+  --pc-command-palette-highlight-bg: rgba(255, 255, 255, 0.15);
 
   // Alert colors - derived from semantic colors
-  @include output-pa-alert-variables-dark;
+  @include output-pc-alert-variables-dark;
 
   // Code inside alerts - inherit alert text color
   .pa-alert code {
@@ -339,26 +340,26 @@ $modal-content-bg: $minimal-white;
   }
 
   // Buttons - adjust for dark mode (grayscale)
-  --pa-btn-primary-bg: #{$dark-text};
-  --pa-btn-primary-bg-hover: #ffffff;
-  --pa-btn-primary-text: #{$dark-bg};
-  --pa-btn-secondary-bg: #{$dark-border};
+  --pc-btn-primary-bg: #{$dark-text};
+  --pc-btn-primary-bg-hover: #ffffff;
+  --pc-btn-primary-text: #{$dark-bg};
+  --pc-btn-secondary-bg: #{$dark-border};
   // Hover bumps to text-bg (was $dark-surface, which is darker than border — backwards progression).
-  --pa-btn-secondary-bg-hover: #{$dark-text-bg};
-  --pa-btn-secondary-text: #{$dark-text};
-  --pa-btn-light-bg: #{$dark-surface};
-  --pa-btn-light-bg-hover: #{$dark-border};
-  --pa-btn-light-text: #{$dark-text};
+  --pc-btn-secondary-bg-hover: #{$dark-text-bg};
+  --pc-btn-secondary-text: #{$dark-text};
+  --pc-btn-light-bg: #{$dark-surface};
+  --pc-btn-light-bg-hover: #{$dark-border};
+  --pc-btn-light-text: #{$dark-text};
 
   // Semantic colors - kept colored for visibility
-  --pa-success-bg: #28a745;
-  --pa-success-bg-light: rgba(40, 167, 69, 0.2);
-  --pa-warning-bg: #ffc107;
-  --pa-warning-bg-light: rgba(255, 193, 7, 0.2);
-  --pa-danger-bg: #dc3545;
-  --pa-danger-bg-light: rgba(220, 53, 69, 0.2);
-  --pa-info-bg: #17a2b8;
-  --pa-info-bg-light: rgba(23, 162, 184, 0.2);
+  --pc-success-bg: #28a745;
+  --pc-success-bg-light: rgba(40, 167, 69, 0.2);
+  --pc-warning-bg: #ffc107;
+  --pc-warning-bg-light: rgba(255, 193, 7, 0.2);
+  --pc-danger-bg: #dc3545;
+  --pc-danger-bg-light: rgba(220, 53, 69, 0.2);
+  --pc-info-bg: #17a2b8;
+  --pc-info-bg-light: rgba(23, 162, 184, 0.2);
 
   // Base variables for web components (dark mode)
   // Semantic names (preferred)

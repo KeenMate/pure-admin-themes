@@ -304,7 +304,7 @@ $btn-dark-text: #ffffff;
 }
 
 .pa-sidebar__link--active {
-  border-inline-start-color: var(--pa-accent);
+  border-inline-start-color: var(--pc-accent);
 }
 
 // =============================================================================
@@ -316,15 +316,16 @@ $btn-dark-text: #ffffff;
   --page-loader-spinner-accent: #ff0000;
 
   @include output-base-css-variables;
-  @include output-pa-css-variables;
-  @include output-pa-alert-variables-dark;
+  @include output-pc-css-variables;
+  @include output-pc-component-variables;
+  @include output-pc-alert-variables-dark;
 
   --base-elevated-bg: #{$audi-gray};
 
   // Audi design language: sharp corners
-  --pa-border-radius-sm: 0;
-  --pa-border-radius: 0;
-  --pa-border-radius-lg: 0;
+  --pc-border-radius-sm: 0;
+  --pc-border-radius: 0;
+  --pc-border-radius-lg: 0;
 
 }
 
@@ -351,75 +352,75 @@ $btn-dark-text: #ffffff;
   --page-loader-spinner-accent: #ff0000;
 
   // Core colors
-  --pa-main-bg: #{$light-gray-100};
-  --pa-page-bg: #{$light-gray-50};
-  --pa-subtle-bg: #{$light-gray-100};
-  --pa-text-color-1: #{$light-gray-900};
-  --pa-text-color-2: #{$light-gray-600};
-  --pa-accent: #ff0000;
-  --pa-accent-hover: rgba(255, 0, 0, 0.1);
-  --pa-accent-light: rgba(255, 0, 0, 0.05);
-  --pa-border-color: #{$light-gray-200};
+  --pc-main-bg: #{$light-gray-100};
+  --pc-page-bg: #{$light-gray-50};
+  --pc-subtle-bg: #{$light-gray-100};
+  --pc-text-color-1: #{$light-gray-900};
+  --pc-text-color-2: #{$light-gray-600};
+  --pc-accent: #ff0000;
+  --pc-accent-hover: rgba(255, 0, 0, 0.1);
+  --pc-accent-light: rgba(255, 0, 0, 0.05);
+  --pc-border-color: #{$light-gray-200};
 
   // Header/Sidebar/Footer stay dark
-  --pa-navbar-bg: #1a1a1a;
-  --pa-navbar-border-color: #{$light-gray-300};
-  --pa-navbar-text: #ffffff;
-  --pa-navbar-text-secondary: rgba(255, 255, 255, 0.7);
-  --pa-navbar-profile-name-color: #ffffff;
-  --pa-sidebar-bg: #1a1a1a;
-  --pa-sidebar-text: #ffffff;
-  --pa-sidebar-text-secondary: #ffffff;
-  --pa-sidebar-submenu-bg: #333333;
-  --pa-sidebar-submenu-hover-bg: rgba(255, 0, 0, 0.25);
-  --pa-sidebar-submenu-active-bg: rgba(255, 0, 0, 0.3);
-  --pa-footer-bg: #1a1a1a;
-  --pa-footer-border-color: #{$light-gray-300};
+  --pc-navbar-bg: #1a1a1a;
+  --pc-navbar-border-color: #{$light-gray-300};
+  --pc-navbar-text: #ffffff;
+  --pc-navbar-text-secondary: rgba(255, 255, 255, 0.7);
+  --pc-navbar-profile-name-color: #ffffff;
+  --pc-sidebar-bg: #1a1a1a;
+  --pc-sidebar-text: #ffffff;
+  --pc-sidebar-text-secondary: #ffffff;
+  --pc-sidebar-submenu-bg: #333333;
+  --pc-sidebar-submenu-hover-bg: rgba(255, 0, 0, 0.25);
+  --pc-sidebar-submenu-active-bg: rgba(255, 0, 0, 0.3);
+  --pc-footer-bg: #1a1a1a;
+  --pc-footer-border-color: #{$light-gray-300};
 
   // Cards
-  --pa-card-bg: #{$light-white};
-  --pa-card-header-bg: #{$light-gray-50};
-  --pa-card-footer-bg: #{$light-gray-50};
-  --pa-card-tabs-bg: #{$light-gray-200};
+  --pc-card-bg: #{$light-white};
+  --pc-card-header-bg: #{$light-gray-50};
+  --pc-card-footer-bg: #{$light-gray-50};
+  --pc-card-tabs-bg: #{$light-gray-200};
 
   // Inputs
-  --pa-input-bg: #{$light-white};
-  --pa-input-border: #{$light-gray-300};
-  --pa-input-text: #{$light-gray-900};
-  --pa-input-group-prepend-bg: #{$light-gray-200};
-  --pa-input-group-prepend-text: #{$light-gray-700};
-  --pa-input-group-append-bg: #{$light-gray-200};
-  --pa-input-group-append-text: #{$light-gray-700};
+  --pc-input-bg: #{$light-white};
+  --pc-input-border: #{$light-gray-300};
+  --pc-input-text: #{$light-gray-900};
+  --pc-input-group-prepend-bg: #{$light-gray-200};
+  --pc-input-group-prepend-text: #{$light-gray-700};
+  --pc-input-group-append-bg: #{$light-gray-200};
+  --pc-input-group-append-text: #{$light-gray-700};
 
   // Tables
-  --pa-table-bg: #{$light-white};
-  --pa-table-header-bg: #{$light-gray-100};
-  --pa-table-stripe: #{$light-gray-50};
-  --pa-table-hover-bg: #{$light-gray-100};
+  --pc-table-bg: #{$light-white};
+  --pc-table-header-bg: #{$light-gray-100};
+  --pc-table-stripe: #{$light-gray-50};
+  --pc-table-hover-bg: #{$light-gray-100};
 
   // Modals
-  --pa-modal-content-bg: #{$light-white};
-  --pa-modal-overlay-bg: rgba(0, 0, 0, 0.75);
+  --pc-modal-content-bg: #{$light-white};
+  --pc-modal-overlay-bg: rgba(0, 0, 0, 0.75);
 
   // Buttons
-  --pa-btn-light-bg: #{$light-gray-200};
-  --pa-btn-light-bg-hover: #{$light-gray-300};
-  --pa-btn-light-text: #{$light-gray-900};
-  --pa-btn-secondary-bg: #{$light-gray-600};
-  --pa-btn-secondary-bg-hover: #{$light-gray-700};
+  --pc-btn-light-bg: #{$light-gray-200};
+  --pc-btn-light-bg-hover: #{$light-gray-300};
+  --pc-btn-light-text: #{$light-gray-900};
+  --pc-btn-secondary-bg: #{$light-gray-600};
+  --pc-btn-secondary-bg-hover: #{$light-gray-700};
 
   // Tooltip/Popover
-  --pa-tooltip-bg: #{$light-gray-800};
-  --pa-tooltip-text: #ffffff;
-  --pa-popover-content-bg: #{$light-white};
+  --pc-tooltip-bg: #{$light-gray-800};
+  --pc-tooltip-text: #ffffff;
+  --pc-popover-content-bg: #{$light-white};
 
   // Semantic
-  --pa-success-bg-light: rgba(0, 204, 68, 0.1);
-  --pa-warning-bg-light: rgba(255, 102, 0, 0.1);
-  --pa-danger-bg-light: rgba(255, 0, 0, 0.1);
-  --pa-info-bg-light: rgba(0, 153, 255, 0.1);
+  --pc-success-bg-light: rgba(0, 204, 68, 0.1);
+  --pc-warning-bg-light: rgba(255, 102, 0, 0.1);
+  --pc-danger-bg-light: rgba(255, 0, 0, 0.1);
+  --pc-info-bg-light: rgba(0, 153, 255, 0.1);
 
-  @include output-pa-alert-variables-light;
+  @include output-pc-alert-variables-light;
 
   // Base variables for web components
   --base-main-bg: #{$light-white};
@@ -452,8 +453,8 @@ $btn-dark-text: #ffffff;
   }
 
   .pa-profile-panel__header {
-    .pa-profile-panel__name { color: var(--pa-navbar-text); }
-    .pa-profile-panel__email { color: var(--pa-navbar-text-secondary); }
+    .pa-profile-panel__name { color: var(--pc-navbar-text); }
+    .pa-profile-panel__email { color: var(--pc-navbar-text-secondary); }
   }
 
   .pa-layout__footer {
