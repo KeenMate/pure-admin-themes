@@ -143,9 +143,9 @@ $sidebar-width: 29rem;
 // Layout colors (derived from base but with specific overrides)
 $main-bg: #f4f6f9;
 $subtle-bg: #f4f6f9;
-$header-bg: $corporate-slate-800;
-$header-border-color: $corporate-slate-200;
-$header-profile-name-color: #ffffff;
+$navbar-bg: $corporate-slate-800;
+$navbar-border-color: $corporate-slate-200;
+$navbar-profile-name-color: #ffffff;
 $sidebar-bg: $corporate-slate-50;
 $footer-bg: $corporate-slate-800;
 
@@ -202,39 +202,37 @@ $checkbox-focus-shadow: 0 0 0 2px rgba($base-accent-color, 0.25);
 // =============================================================================
 
 // Header text visibility - light text on dark header
-.pa-header {
-  &__brand h1 {
-    color: #ffffff !important;
+.pa-app-header h1 {
+  color: #ffffff !important;
+}
+
+.pa-navmenu > ul > li > a {
+  color: $corporate-slate-300 !important;
+
+  &:hover {
+    color: $corporate-blue-500 !important;
+    background-color: rgba($corporate-blue-500, 0.1) !important;
   }
+}
 
-  &__nav > ul > li > a {
-    color: $corporate-slate-300 !important;
+.pa-navmenu__dropdown li a {
+  color: $corporate-slate-700 !important;
 
-    &:hover {
-      color: $corporate-blue-500 !important;
-      background-color: rgba($corporate-blue-500, 0.1) !important;
-    }
+  &:hover {
+    color: $corporate-blue-500 !important;
+    background-color: rgba($corporate-blue-500, 0.1) !important;
   }
+}
 
-  &__dropdown li a {
-    color: $corporate-slate-700 !important;
+.pa-page-header h2 {
+  color: $corporate-slate-300 !important;
+}
 
-    &:hover {
-      color: $corporate-blue-500 !important;
-      background-color: rgba($corporate-blue-500, 0.1) !important;
-    }
-  }
+.pa-navbar__profile-btn {
+  color: #ffffff !important;
 
-  &__title h2 {
-    color: $corporate-slate-300 !important;
-  }
-
-  &__profile-btn {
-    color: #ffffff !important;
-
-    &:hover {
-      background-color: rgba($corporate-blue-500, 0.2) !important;
-    }
+  &:hover {
+    background-color: rgba($corporate-blue-500, 0.2) !important;
   }
 }
 
@@ -282,7 +280,7 @@ $checkbox-focus-shadow: 0 0 0 2px rgba($base-accent-color, 0.25);
 // =============================================================================
 // CSS VARIABLES - LIGHT MODE (Default)
 // =============================================================================
-:root, .pa-mode-light {
+:root, .pc-mode-light {
   --page-loader-bg: rgba(255, 255, 255, 0.95);
   --page-loader-spinner-border: #ccc;
   --page-loader-spinner-accent: #{$corporate-blue-500};
@@ -302,7 +300,7 @@ $checkbox-focus-shadow: 0 0 0 2px rgba($base-accent-color, 0.25);
 // =============================================================================
 // CSS VARIABLES - DARK MODE
 // =============================================================================
-.pa-mode-dark {
+.pc-mode-dark {
   // Tell the browser this scope is dark — drives native scrollbars,
   // form controls, and `light-dark()` in any embedded web component
   // (e.g. <web-multiselect>). Without this, the cascade still sees
@@ -339,11 +337,11 @@ $checkbox-focus-shadow: 0 0 0 2px rgba($base-accent-color, 0.25);
   --pa-border-color: #{$dark-border};
 
   // Header
-  --pa-header-bg: #{$dark-card};
-  --pa-header-border-color: #{$dark-border};
-  --pa-header-text: #{$dark-text};
-  --pa-header-text-secondary: #{$dark-text-bg};
-  --pa-header-profile-name-color: #{$dark-text};
+  --pa-navbar-bg: #{$dark-card};
+  --pa-navbar-border-color: #{$dark-border};
+  --pa-navbar-text: #{$dark-text};
+  --pa-navbar-text-secondary: #{$dark-text-bg};
+  --pa-navbar-profile-name-color: #{$dark-text};
 
   // Sidebar
   --pa-sidebar-bg: #{$dark-card};
@@ -481,8 +479,8 @@ $checkbox-focus-shadow: 0 0 0 2px rgba($base-accent-color, 0.25);
 // =============================================================================
 // DARK MODE COMPONENT ADJUSTMENTS
 // =============================================================================
-.pa-mode-dark {
-  .pa-header__dropdown li a {
+.pc-mode-dark {
+  .pa-navmenu__dropdown li a {
     color: #f1f5f9 !important;
 
     &:hover {

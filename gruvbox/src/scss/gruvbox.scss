@@ -170,11 +170,11 @@ $theme-color-scheme: dark;
 // Layout overrides
 $main-bg: $dark0;
 $subtle-bg: $dark0-hard;
-$header-bg: $dark0-hard;
-$header-border-color: $dark2;
-$header-text: $light1;
-$header-text-secondary: $light4;
-$header-profile-name-color: $light1;
+$navbar-bg: $dark0-hard;
+$navbar-border-color: $dark2;
+$navbar-text: $light1;
+$navbar-text-secondary: $light4;
+$navbar-profile-name-color: $light1;
 $sidebar-bg: $dark1;
 $sidebar-text: $light1;
 $sidebar-text-secondary: $light4;
@@ -244,7 +244,7 @@ $checkbox-focus-shadow: 0 0 0 2px $base-focus-ring-color;
 @import '@keenmate/pure-admin-core/src/scss/base-css-variables';
 
 // Navbar hover — ensure text is readable on accent background
-.pa-header__nav a:hover {
+.pa-navmenu a:hover {
   color: $light1 !important;
 }
 
@@ -289,8 +289,8 @@ $checkbox-focus-shadow: 0 0 0 2px $base-focus-ring-color;
   --pa-page-bg: #{$dark0-soft};
   --pa-subtle-bg: #{$dark1};
 
-  --pa-header-bg: #{$dark1};
-  --pa-header-border-color: #{$dark2};
+  --pa-navbar-bg: #{$dark1};
+  --pa-navbar-border-color: #{$dark2};
   --pa-sidebar-bg: #{$dark0-soft};
   --pa-sidebar-submenu-bg: #{$dark1};
   --pa-sidebar-submenu-hover-bg: #{$dark2};
@@ -324,7 +324,7 @@ $checkbox-focus-shadow: 0 0 0 2px $base-focus-ring-color;
 // =============================================================================
 // MODE: LIGHT (applies to Default variant)
 // =============================================================================
-.pa-mode-light {
+.pc-mode-light {
   color-scheme: light;
 
   --page-loader-bg: rgba(251, 241, 199, 0.95);
@@ -342,11 +342,11 @@ $checkbox-focus-shadow: 0 0 0 2px $base-focus-ring-color;
   --pa-border-color: #{$light2};
 
   // Header - dark (Gruvbox identity)
-  --pa-header-bg: #{$dark0-hard};
-  --pa-header-border-color: #{$dark2};
-  --pa-header-text: #{$light1};
-  --pa-header-text-secondary: #{$light4};
-  --pa-header-profile-name-color: #{$light1};
+  --pa-navbar-bg: #{$dark0-hard};
+  --pa-navbar-border-color: #{$dark2};
+  --pa-navbar-text: #{$light1};
+  --pa-navbar-text-secondary: #{$light4};
+  --pa-navbar-profile-name-color: #{$light1};
 
   // Sidebar - light
   --pa-sidebar-bg: #{$light1};

@@ -167,7 +167,7 @@ $alert-text-mix-dark: 80%;
 // =============================================================================
 
 // Layout colors
-$header-bg: $ci-dark-card;
+$navbar-bg: $ci-dark-card;
 $sidebar-bg: $ci-dark-sidebar;
 $sidebar-submenu-bg: $ci-dark-input;
 $sidebar-submenu-hover-bg: $ci-dark-elevated;
@@ -265,7 +265,7 @@ $theme-color-scheme: dark;
 // =============================================================================
 // CSS VARIABLES - DARK MODE (Default)
 // =============================================================================
-:root, .pa-mode-dark {
+:root, .pc-mode-dark {
   --page-loader-bg: rgba(21, 18, 16, 0.95);
   --page-loader-spinner-border: #{$ci-dark-border};
   --page-loader-spinner-accent: #{$ci-gold};
@@ -281,7 +281,7 @@ $theme-color-scheme: dark;
 // =============================================================================
 // CSS VARIABLES - LIGHT MODE
 // =============================================================================
-.pa-mode-light {
+.pc-mode-light {
   color-scheme: light;
 
   // Light palette: warm cream/linen tones inspired by café aesthetics
@@ -327,11 +327,11 @@ $theme-color-scheme: dark;
   // surfaces (white / sand / cream) with dark-brown text and the amber accent —
   // the theme's own "linen / aged-paper" light palette carried into the chrome,
   // so it still reads as Café Industrial, just lively instead of dim.
-  --pa-header-bg: #{$light-white};
-  --pa-header-border-color: #{$light-tan};
-  --pa-header-text: #{$light-brown-dark};
-  --pa-header-text-secondary: #{$light-brown};
-  --pa-header-profile-name-color: #{$light-brown-dark};
+  --pa-navbar-bg: #{$light-white};
+  --pa-navbar-border-color: #{$light-tan};
+  --pa-navbar-text: #{$light-brown-dark};
+  --pa-navbar-text-secondary: #{$light-brown};
+  --pa-navbar-profile-name-color: #{$light-brown-dark};
 
   --pa-sidebar-bg: #{$light-sand};
   --pa-sidebar-text: #{$light-brown-dark};

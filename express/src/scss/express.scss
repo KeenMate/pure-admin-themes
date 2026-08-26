@@ -139,8 +139,8 @@ $sidebar-width: 29rem;   // 290px (10px base)
 // Layout-specific overrides (Express brand identity)
 $main-bg: #ffffff;
 $subtle-bg: $express-bg;
-$header-bg: $express-yellow;        // Bold yellow header
-$header-border-color: $express-yellow;
+$navbar-bg: $express-yellow;        // Bold yellow header
+$navbar-border-color: $express-yellow;
 $sidebar-bg: $express-black;        // Black sidebar
 $sidebar-submenu-bg: #1a1a1a;
 $sidebar-submenu-hover-bg: rgba(255, 255, 255, 0.1);
@@ -204,7 +204,7 @@ $modal-overlay-bg: $base-overlay-bg;
 $modal-content-bg: #ffffff;
 
 // Profile name in header
-$header-profile-name-color: $express-black;  // Black text on yellow header
+$navbar-profile-name-color: $express-black;  // Black text on yellow header
 
 // ============================================================================
 // FONTS - Fira Sans Condensed
@@ -285,29 +285,27 @@ $header-profile-name-color: $express-black;  // Black text on yellow header
 // ============================================================================
 
 // Header text visibility - black text on yellow header
-.pa-header {
-  &__brand h1 {
-    color: $express-black !important;
-    font-weight: $font-weight-bold !important;
+.pa-app-header h1 {
+  color: $express-black !important;
+  font-weight: $font-weight-bold !important;
+}
+
+.pa-navmenu > ul > li > a {
+  color: $express-dark !important;
+
+  &:hover {
+    color: $express-red !important;
+    background-color: rgba(212, 5, 17, 0.08) !important;
   }
+}
 
-  &__nav > ul > li > a {
-    color: $express-dark !important;
+.pa-page-header h2 {
+  color: $express-dark !important;
+}
 
-    &:hover {
-      color: $express-red !important;
-      background-color: rgba(212, 5, 17, 0.08) !important;
-    }
-  }
-
-  &__title h2 {
-    color: $express-dark !important;
-  }
-
-  &__profile-btn {
-    &:hover {
-      background-color: rgba(212, 5, 17, 0.12) !important;
-    }
+.pa-navbar__profile-btn {
+  &:hover {
+    background-color: rgba(212, 5, 17, 0.12) !important;
   }
 }
 
@@ -427,7 +425,7 @@ $header-profile-name-color: $express-black;  // Black text on yellow header
 // ============================================================================
 // CSS VARIABLES - LIGHT MODE (Default - matches current Express)
 // ============================================================================
-:root, .pa-mode-light {
+:root, .pc-mode-light {
   --page-loader-bg: rgba(255, 255, 255, 0.95);
   --page-loader-spinner-border: #ccc;
   --page-loader-spinner-accent: #{$express-red};
@@ -456,7 +454,7 @@ $header-profile-name-color: $express-black;  // Black text on yellow header
 // ============================================================================
 // CSS VARIABLES - DARK MODE
 // ============================================================================
-.pa-mode-dark {
+.pc-mode-dark {
   color-scheme: dark;
 
   // Express dark palette
@@ -489,11 +487,11 @@ $header-profile-name-color: $express-black;  // Black text on yellow header
   --pa-border-color: #{$dark-border};
 
   // Header stays yellow (Express brand)
-  --pa-header-bg: #{$express-yellow};
-  --pa-header-border-color: #{$express-yellow};
-  --pa-header-text: #{$express-black};
-  --pa-header-text-secondary: #{$express-dark};
-  --pa-header-profile-name-color: #{$express-black};
+  --pa-navbar-bg: #{$express-yellow};
+  --pa-navbar-border-color: #{$express-yellow};
+  --pa-navbar-text: #{$express-black};
+  --pa-navbar-text-secondary: #{$express-dark};
+  --pa-navbar-profile-name-color: #{$express-black};
 
   // Sidebar stays black
   --pa-sidebar-bg: #{$express-black};
@@ -629,7 +627,7 @@ $header-profile-name-color: $express-black;  // Black text on yellow header
 // ============================================================================
 // DARK MODE COMPONENT ADJUSTMENTS
 // ============================================================================
-.pa-mode-dark {
+.pc-mode-dark {
   // Footer text - keep dark on yellow background
   .pa-layout__footer {
     color: $express-dark !important;
@@ -686,7 +684,7 @@ $header-profile-name-color: $express-black;  // Black text on yellow header
       color: #aaaaaa;
     }
 
-    // Close button uses --pa-header-profile-name-color, which express keeps
+    // Close button uses --pa-navbar-profile-name-color, which express keeps
     // BLACK for its yellow navbar header. This panel header is dark, so the
     // masked X (painted with currentColor) rendered black-on-dark-gray. Match
     // the name's light colour; :hover still flips to the accent.

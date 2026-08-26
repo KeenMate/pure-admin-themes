@@ -47,7 +47,7 @@
     },
     "modeCssClass": {
       "type": "string",
-      "default": "pa-mode-{mode}",
+      "default": "pc-mode-{mode}",
       "description": "CSS class pattern for mode switching. Use {mode} as placeholder."
     },
     "variantCssClass": {

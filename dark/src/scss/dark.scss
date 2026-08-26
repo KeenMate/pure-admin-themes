@@ -172,7 +172,7 @@ $theme-color-scheme: dark;
 // Layout-specific overrides (these are Pure Admin specific)
 $main-bg: $dark-bg-primary;
 $subtle-bg: $dark-bg-primary;
-$header-bg: $dark-bg-header;
+$navbar-bg: $dark-bg-header;
 $sidebar-bg: $dark-bg-sidebar;
 $sidebar-submenu-bg: $dark-bg-tertiary;
 $sidebar-submenu-hover-bg: $dark-bg-hover;
@@ -223,7 +223,7 @@ $modal-overlay-bg: $base-overlay-bg;
 $modal-content-bg: $dark-bg-secondary;
 
 // Profile name in header
-$header-profile-name-color: #ffffff;
+$navbar-profile-name-color: #ffffff;
 
 // Form focus colors
 $input-focus-border-color: $base-accent-color;
@@ -247,7 +247,7 @@ $checkbox-focus-shadow: 0 0 0 2px $base-focus-ring-color;
 // ============================================================================
 // CSS VARIABLES - DARK MODE (Default for dark theme)
 // ============================================================================
-:root, .pa-mode-dark {
+:root, .pc-mode-dark {
   --page-loader-bg: rgba(26, 26, 26, 0.95);
   --page-loader-spinner-border: #333;
   --page-loader-spinner-accent: #{$dark-accent};
@@ -267,7 +267,7 @@ $checkbox-focus-shadow: 0 0 0 2px $base-focus-ring-color;
 // ============================================================================
 // CSS VARIABLES - LIGHT MODE
 // ============================================================================
-.pa-mode-light {
+.pc-mode-light {
   color-scheme: light;
 
   // Light palette for dark theme's light mode
@@ -300,11 +300,11 @@ $checkbox-focus-shadow: 0 0 0 2px $base-focus-ring-color;
   --pa-border-color: #{$light-border};
 
   // Header - dark header in light mode too (brand identity)
-  --pa-header-bg: #{$dark-bg-header};
-  --pa-header-border-color: #{$dark-bg-quaternary};
-  --pa-header-text: #ffffff;
-  --pa-header-text-secondary: #{$dark-text-secondary};
-  --pa-header-profile-name-color: #ffffff;
+  --pa-navbar-bg: #{$dark-bg-header};
+  --pa-navbar-border-color: #{$dark-bg-quaternary};
+  --pa-navbar-text: #ffffff;
+  --pa-navbar-text-secondary: #{$dark-text-secondary};
+  --pa-navbar-profile-name-color: #ffffff;
 
   // Sidebar - light background
   --pa-sidebar-bg: #{$light-card};
@@ -462,8 +462,8 @@ $checkbox-focus-shadow: 0 0 0 2px $base-focus-ring-color;
   --pa-page-bg: #{$blue-bg};
   --pa-subtle-bg: #020617;
 
-  --pa-header-bg: #{$blue-card};
-  --pa-header-border-color: #{$blue-border};
+  --pa-navbar-bg: #{$blue-card};
+  --pa-navbar-border-color: #{$blue-border};
   --pa-sidebar-bg: #{$blue-card};
   --pa-sidebar-submenu-bg: #{$blue-surface};
   --pa-sidebar-submenu-hover-bg: #{$blue-border};
@@ -518,8 +518,8 @@ $checkbox-focus-shadow: 0 0 0 2px $base-focus-ring-color;
   --pa-page-bg: #{$green-bg};
   --pa-subtle-bg: #0a0f0b;
 
-  --pa-header-bg: #{$green-card};
-  --pa-header-border-color: #{$green-border};
+  --pa-navbar-bg: #{$green-card};
+  --pa-navbar-border-color: #{$green-border};
   --pa-sidebar-bg: #{$green-card};
   --pa-sidebar-submenu-bg: #{$green-surface};
   --pa-sidebar-submenu-hover-bg: #{$green-border};
@@ -576,8 +576,8 @@ $checkbox-focus-shadow: 0 0 0 2px $base-focus-ring-color;
   --pa-page-bg: #{$red-bg};
   --pa-subtle-bg: #18080a;
 
-  --pa-header-bg: #{$red-card};
-  --pa-header-border-color: #{$red-border};
+  --pa-navbar-bg: #{$red-card};
+  --pa-navbar-border-color: #{$red-border};
   --pa-sidebar-bg: #{$red-card};
   --pa-sidebar-submenu-bg: #{$red-surface};
   --pa-sidebar-submenu-hover-bg: #{$red-border};

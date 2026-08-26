@@ -159,11 +159,11 @@ $theme-color-scheme: dark;
 // Layout-specific overrides
 $main-bg:                       $bg;
 $subtle-bg:                     $bg-deep;
-$header-bg:                     $bg-deep;
-$header-border-color:           $border;
-$header-text:                   $text-1;
-$header-text-secondary:         color.adjust($text-2, $lightness: 15%);
-$header-profile-name-color:     $text-1;
+$navbar-bg:                     $bg-deep;
+$navbar-border-color:           $border;
+$navbar-text:                   $text-1;
+$navbar-text-secondary:         color.adjust($text-2, $lightness: 15%);
+$navbar-profile-name-color:     $text-1;
 $sidebar-bg:                    $surface;
 $sidebar-text:                  $text-1;
 $sidebar-text-secondary:        color.adjust($text-2, $lightness: 15%);
@@ -233,7 +233,7 @@ $checkbox-focus-shadow:             0 0 0 2px $base-focus-ring-color;
 @import '@keenmate/pure-admin-core/src/scss/base-css-variables';
 
 // Navbar hover — ensure text is readable on accent background
-.pa-header__nav a:hover {
+.pa-navmenu a:hover {
   color: $text-1 !important;
 }
 

@@ -55,7 +55,7 @@ make clean
 ## Theme-Specific Notes
 
 - **Dark** theme is the only one with color variants (blue/green/red) via `pa-color-{variant}` CSS class
-- Light/dark mode switching uses `pa-mode-{mode}` CSS class on body; autoSwitch via `prefers-color-scheme` is enabled by default
+- Light/dark mode switching uses `pc-mode-{mode}` CSS class on body; autoSwitch via `prefers-color-scheme` is enabled by default
 - Audi and Express bundle custom Fira Sans Condensed fonts
 - SCSS compiles with `--silence-deprecation=import` (legacy @import usage)
 

@@ -133,8 +133,8 @@ sass scss/audi.scss output.css --load-path=node_modules --silence-deprecation=im
 ### Mode switching
 
 ```html
-<body class="pa-mode-dark">   <!-- dark mode -->
-<body class="pa-mode-light">  <!-- light mode -->
+<body class="pc-mode-dark">   <!-- dark mode -->
+<body class="pc-mode-light">  <!-- light mode -->
 ```
 
 ## Requirements

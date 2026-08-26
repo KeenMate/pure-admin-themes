@@ -191,11 +191,11 @@ $theme-color-scheme: dark;
 // Layout-specific overrides
 $main-bg: $mirage-bg;
 $subtle-bg: $mirage-bg-deep;
-$header-bg: $mirage-bg-deep;
-$header-border-color: $mirage-border;
-$header-text: $mirage-text;
-$header-text-secondary: $mirage-text-sec;
-$header-profile-name-color: $mirage-text;
+$navbar-bg: $mirage-bg-deep;
+$navbar-border-color: $mirage-border;
+$navbar-text: $mirage-text;
+$navbar-text-secondary: $mirage-text-sec;
+$navbar-profile-name-color: $mirage-text;
 $sidebar-bg: $mirage-surface;
 $sidebar-text: $mirage-text;
 $sidebar-text-secondary: $mirage-text-sec;
@@ -315,8 +315,8 @@ $checkbox-focus-shadow: 0 0 0 2px $base-focus-ring-color;
   --pa-page-bg: #{$dark-bg};
   --pa-subtle-bg: #{$dark-surface};
 
-  --pa-header-bg: #{$dark-surface};
-  --pa-header-border-color: #{$dark-border};
+  --pa-navbar-bg: #{$dark-surface};
+  --pa-navbar-border-color: #{$dark-border};
   --pa-sidebar-bg: #{$dark-surface};
   --pa-sidebar-submenu-bg: #{$dark-elevated};
   --pa-sidebar-submenu-hover-bg: #{$dark-border};
@@ -368,7 +368,7 @@ $checkbox-focus-shadow: 0 0 0 2px $base-focus-ring-color;
 // =============================================================================
 // MODE: LIGHT (applies to Default/Mirage variant)
 // =============================================================================
-.pa-mode-light {
+.pc-mode-light {
   color-scheme: light;
 
   --page-loader-bg: rgba(252, 252, 252, 0.95);
@@ -387,11 +387,11 @@ $checkbox-focus-shadow: 0 0 0 2px $base-focus-ring-color;
   --pa-border-color: #{$light-border};
 
   // Header - stays dark (Ayu signature)
-  --pa-header-bg: #{$mirage-bg-deep};
-  --pa-header-border-color: #{$mirage-border};
-  --pa-header-text: #{$mirage-text};
-  --pa-header-text-secondary: #{$mirage-text-sec};
-  --pa-header-profile-name-color: #{$mirage-text};
+  --pa-navbar-bg: #{$mirage-bg-deep};
+  --pa-navbar-border-color: #{$mirage-border};
+  --pa-navbar-text: #{$mirage-text};
+  --pa-navbar-text-secondary: #{$mirage-text-sec};
+  --pa-navbar-profile-name-color: #{$mirage-text};
 
   // Sidebar - light
   --pa-sidebar-bg: #{$light-surface};

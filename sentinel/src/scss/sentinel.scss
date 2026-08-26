@@ -145,9 +145,9 @@ $base-border-radius-lg: 0.2;
 // Layout colors - ink header, white sidebar
 $main-bg: $sentinel-gray-50;
 $subtle-bg: $sentinel-gray-50;
-$header-bg: $sentinel-gray-900;
-$header-border-color: $sentinel-gray-800;
-$header-profile-name-color: #ffffff;
+$navbar-bg: $sentinel-gray-900;
+$navbar-border-color: $sentinel-gray-800;
+$navbar-profile-name-color: #ffffff;
 $sidebar-bg: #ffffff;
 $footer-bg: $sentinel-gray-900;
 
@@ -212,42 +212,42 @@ $checkbox-focus-shadow: 0 0 0 2px rgba($base-accent-color, 0.25);
 @import '@keenmate/pure-admin-core/src/scss/base-css-variables';
 
 // Header - white text on ink, crimson underline
-.pa-header {
+.pa-navbar {
   border-bottom: 2px solid $sentinel-crimson;
+}
 
-  &__brand h1 {
+.pa-app-header h1 {
+  color: #ffffff !important;
+  letter-spacing: 0.03em;
+}
+
+.pa-navmenu > ul > li > a {
+  color: rgba(#ffffff, 0.82) !important;
+
+  &:hover {
     color: #ffffff !important;
-    letter-spacing: 0.03em;
+    background-color: rgba($sentinel-crimson, 0.30) !important;
   }
+}
 
-  &__nav > ul > li > a {
-    color: rgba(#ffffff, 0.82) !important;
+.pa-navmenu__dropdown li a {
+  color: $sentinel-gray-800 !important;
 
-    &:hover {
-      color: #ffffff !important;
-      background-color: rgba($sentinel-crimson, 0.30) !important;
-    }
+  &:hover {
+    color: $sentinel-crimson !important;
+    background-color: rgba($sentinel-crimson, 0.08) !important;
   }
+}
 
-  &__dropdown li a {
-    color: $sentinel-gray-800 !important;
+.pa-page-header h2 {
+  color: rgba(#ffffff, 0.82) !important;
+}
 
-    &:hover {
-      color: $sentinel-crimson !important;
-      background-color: rgba($sentinel-crimson, 0.08) !important;
-    }
-  }
+.pa-navbar__profile-btn {
+  color: #ffffff !important;
 
-  &__title h2 {
-    color: rgba(#ffffff, 0.82) !important;
-  }
-
-  &__profile-btn {
-    color: #ffffff !important;
-
-    &:hover {
-      background-color: rgba($sentinel-crimson, 0.30) !important;
-    }
+  &:hover {
+    background-color: rgba($sentinel-crimson, 0.30) !important;
   }
 }
 
@@ -317,7 +317,7 @@ $checkbox-focus-shadow: 0 0 0 2px rgba($base-accent-color, 0.25);
 // =============================================================================
 // CSS VARIABLES - LIGHT MODE (Default)
 // =============================================================================
-:root, .pa-mode-light {
+:root, .pc-mode-light {
   --page-loader-bg: rgba(255, 255, 255, 0.95);
   --page-loader-spinner-border: #{$sentinel-gray-200};
   --page-loader-spinner-accent: #{$sentinel-crimson};
@@ -341,7 +341,7 @@ $checkbox-focus-shadow: 0 0 0 2px rgba($base-accent-color, 0.25);
 // =============================================================================
 // CSS VARIABLES - DARK MODE
 // =============================================================================
-.pa-mode-dark {
+.pc-mode-dark {
   color-scheme: dark;
 
   --page-loader-bg: rgba(21, 24, 29, 0.95);
@@ -366,11 +366,11 @@ $checkbox-focus-shadow: 0 0 0 2px rgba($base-accent-color, 0.25);
   --pa-border-color: #{$sentinel-dark-border};
 
   // Header
-  --pa-header-bg: #0e1014;
-  --pa-header-border-color: #{$sentinel-dark-border};
-  --pa-header-text: #{$sentinel-dark-text};
-  --pa-header-text-secondary: #{$sentinel-dark-text-2};
-  --pa-header-profile-name-color: #{$sentinel-dark-text};
+  --pa-navbar-bg: #0e1014;
+  --pa-navbar-border-color: #{$sentinel-dark-border};
+  --pa-navbar-text: #{$sentinel-dark-text};
+  --pa-navbar-text-secondary: #{$sentinel-dark-text-2};
+  --pa-navbar-profile-name-color: #{$sentinel-dark-text};
 
   // Sidebar
   --pa-sidebar-bg: #{$sentinel-dark-card};
@@ -501,12 +501,12 @@ $checkbox-focus-shadow: 0 0 0 2px rgba($base-accent-color, 0.25);
 // =============================================================================
 // DARK MODE COMPONENT ADJUSTMENTS
 // =============================================================================
-.pa-mode-dark {
-  .pa-header {
+.pc-mode-dark {
+  .pa-navbar {
     border-bottom-color: $sentinel-crimson;
   }
 
-  .pa-header__dropdown li a {
+  .pa-navmenu__dropdown li a {
     color: $sentinel-dark-text !important;
 
     &:hover {
@@ -570,7 +570,7 @@ $checkbox-focus-shadow: 0 0 0 2px rgba($base-accent-color, 0.25);
   border-inline-end-color: $sentinel-crimson !important;
 }
 
-.pa-mode-dark .pa-sidebar__link--active {
+.pc-mode-dark .pa-sidebar__link--active {
   color: #ffffff !important;
   background-color: $sentinel-crimson !important;
   border-inline-end-color: $sentinel-crimson-light !important;
@@ -579,13 +579,13 @@ $checkbox-focus-shadow: 0 0 0 2px rgba($base-accent-color, 0.25);
 // =============================================================================
 // BORDER RADIUS - Sharp 2px corners for a precise, audit-grade feel
 // =============================================================================
-:root, .pa-mode-light {
+:root, .pc-mode-light {
   --pa-border-radius-sm: 2px;
   --pa-border-radius: 2px;
   --pa-border-radius-lg: 2px;
 }
 
-.pa-mode-dark {
+.pc-mode-dark {
   --pa-border-radius-sm: 2px;
   --pa-border-radius: 2px;
   --pa-border-radius-lg: 2px;

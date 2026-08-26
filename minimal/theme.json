@@ -4,11 +4,11 @@
   "id": "minimal",
   "version": "2.9.0",
   "description": "Ultra clean monochrome theme with grayscale palette",
-  "content": "## Minimal\n\nAn ultra-clean theme that strips the interface down to essentials. The entire palette is built from grays — no color distractions, just content.\n\n### Highlights\n\n- **Monochrome grayscale** palette for maximum simplicity\n- **Subtle accent (#555555)** that blends rather than pops\n- **System fonts** — no custom font download required\n- Dark mode included with inverted grays\n\n### Usage\n\n```html\n<link rel=\"stylesheet\" href=\"css/minimal.css\">\n```\n\nDefaults to light mode. Switch with `pa-mode-light` / `pa-mode-dark` on `<body>`. Auto-switching via `prefers-color-scheme` is enabled by default.",
+  "content": "## Minimal\n\nAn ultra-clean theme that strips the interface down to essentials. The entire palette is built from grays — no color distractions, just content.\n\n### Highlights\n\n- **Monochrome grayscale** palette for maximum simplicity\n- **Subtle accent (#555555)** that blends rather than pops\n- **System fonts** — no custom font download required\n- Dark mode included with inverted grays\n\n### Usage\n\n```html\n<link rel=\"stylesheet\" href=\"css/minimal.css\">\n```\n\nDefaults to light mode. Switch with `pc-mode-light` / `pc-mode-dark` on `<body>`. Auto-switching via `prefers-color-scheme` is enabled by default.",
   "author": "KeenMate",
   "license": "MIT",
 
-  "modeCssClass": "pa-mode-{mode}",
+  "modeCssClass": "pc-mode-{mode}",
   "variantCssClass": "pa-color-{variant}",
 
   "colorVariants": [

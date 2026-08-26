@@ -133,7 +133,7 @@ $sidebar-width: 29rem;     // 290px (10px base)
 // Layout-specific overrides
 $main-bg: $minimal-white;
 $subtle-bg: $minimal-white;
-$header-bg: $minimal-gray-50;
+$navbar-bg: $minimal-gray-50;
 $sidebar-bg: $minimal-gray-150;
 $footer-bg: $minimal-gray-50;
 $text-color-1: $base-text-color-1;
@@ -200,7 +200,7 @@ $modal-content-bg: $minimal-white;
 // ============================================================================
 // CSS VARIABLES - LIGHT MODE (Default)
 // ============================================================================
-:root, .pa-mode-light {
+:root, .pc-mode-light {
   --page-loader-bg: rgba(255, 255, 255, 0.95);
   --page-loader-spinner-border: #e0e0e0;
   --page-loader-spinner-accent: #{$minimal-gray-800};
@@ -222,7 +222,7 @@ $modal-content-bg: $minimal-white;
 // ============================================================================
 // CSS VARIABLES - DARK MODE
 // ============================================================================
-.pa-mode-dark {
+.pc-mode-dark {
   color-scheme: dark;
 
   // Minimal dark palette - grayscale focused
@@ -255,11 +255,11 @@ $modal-content-bg: $minimal-white;
   --pa-border-color: #{$dark-border};
 
   // Header - dark grayscale
-  --pa-header-bg: #{$dark-card};
-  --pa-header-border-color: #{$dark-border};
-  --pa-header-text: #{$dark-text};
-  --pa-header-text-secondary: #{$dark-text-bg};
-  --pa-header-profile-name-color: #{$dark-text};
+  --pa-navbar-bg: #{$dark-card};
+  --pa-navbar-border-color: #{$dark-border};
+  --pa-navbar-text: #{$dark-text};
+  --pa-navbar-text-secondary: #{$dark-text-bg};
+  --pa-navbar-profile-name-color: #{$dark-text};
 
   // Sidebar - dark grayscale
   --pa-sidebar-bg: #{$dark-card};
@@ -397,7 +397,7 @@ $modal-content-bg: $minimal-white;
 // ============================================================================
 // DARK MODE COMPONENT ADJUSTMENTS
 // ============================================================================
-.pa-mode-dark {
+.pc-mode-dark {
   // Card shadows darker
   .pa-card {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);

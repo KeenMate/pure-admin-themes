@@ -148,15 +148,15 @@ $base-border-radius-lg: 0.2;
 // Layout colors - navy header, white sidebar (echoes the logo's split panel)
 $main-bg: $nato-gray-50;
 $subtle-bg: $nato-gray-50;
-$header-bg: $nato-navy;
-$header-border-color: $nato-navy-deep;
+$navbar-bg: $nato-navy;
+$navbar-border-color: $nato-navy-deep;
 // Header sits on navy, so its text tokens are LIGHT (the defaults are dark,
 // for a light header). Setting them honestly here lets the brand, nav, title,
 // profile, burger and theme-switcher all read light straight from the tokens —
 // no !important white hard-codes needed.
-$header-text: #ffffff;
-$header-text-secondary: rgba(#ffffff, 0.85);
-$header-profile-name-color: #ffffff;
+$navbar-text: #ffffff;
+$navbar-text-secondary: rgba(#ffffff, 0.85);
+$navbar-profile-name-color: #ffffff;
 $sidebar-bg: #ffffff;
 $footer-bg: $nato-navy;
 
@@ -221,46 +221,46 @@ $checkbox-focus-shadow: 0 0 0 2px rgba($base-accent-color, 0.25);
 @import '@keenmate/pure-admin-core/src/scss/base-css-variables';
 
 // Header - navy bar. Brand / nav / title / profile / burger / switcher-label
-// all now inherit their light colour from the --pa-header-text* tokens set
+// all now inherit their light colour from the --pa-navbar-text* tokens set
 // above; what stays here is genuine NATO brand identity, not colour hacks.
-.pa-header {
+.pa-navbar {
   border-bottom: 2px solid $nato-azure;
+}
 
-  &__brand h1 {
-    letter-spacing: 0.04em;
+.pa-app-header h1 {
+  letter-spacing: 0.04em;
+}
+
+// Nav hover / active — NATO azure brand tint, overriding core's neutral
+// currentColor pill. Equal specificity to the core rules but later in source
+// order, so no !important needed. Active is a stronger tint than hover; text
+// colour + semibold still come from core.
+.pa-navmenu > ul > li {
+  > a:hover {
+    background-color: rgba($nato-azure, 0.25);
   }
 
-  // Nav hover / active — NATO azure brand tint, overriding core's neutral
-  // currentColor pill. Equal specificity to the core rules but later in source
-  // order, so no !important needed. Active is a stronger tint than hover; text
-  // colour + semibold still come from core.
-  &__nav > ul > li {
-    > a:hover {
-      background-color: rgba($nato-azure, 0.25);
-    }
-
-    &.pa-header__nav-item--active > a {
-      &,
-      &:hover {
-        background-color: rgba($nato-azure, 0.35);
-      }
-    }
-  }
-
-  // Dropdown sits on a white surface — dark text + azure hover.
-  &__dropdown li a {
-    color: $nato-gray-800;
-
+  &.pa-navmenu__item--active > a {
+    &,
     &:hover {
-      color: $nato-navy;
-      background-color: rgba($nato-azure, 0.10);
+      background-color: rgba($nato-azure, 0.35);
     }
   }
 }
 
+// Dropdown sits on a white surface — dark text + azure hover.
+.pa-navmenu__dropdown li a {
+  color: $nato-gray-800;
+
+  &:hover {
+    color: $nato-navy;
+    background-color: rgba($nato-azure, 0.10);
+  }
+}
+
 // Theme switcher — the select needs a darker navy than the header so the
-// control reads as a distinct element (bg would otherwise match --pa-header-bg).
-// The label colour now comes from --pa-header-text-secondary.
+// control reads as a distinct element (bg would otherwise match --pa-navbar-bg).
+// The label colour now comes from --pa-navbar-text-secondary.
 .theme-switcher select {
   background-color: $nato-navy-deep;
   color: #ffffff;
@@ -309,7 +309,7 @@ $checkbox-focus-shadow: 0 0 0 2px rgba($base-accent-color, 0.25);
 // =============================================================================
 // CSS VARIABLES - LIGHT MODE (Default)
 // =============================================================================
-:root, .pa-mode-light {
+:root, .pc-mode-light {
   --page-loader-bg: rgba(255, 255, 255, 0.95);
   --page-loader-spinner-border: #{$nato-gray-200};
   --page-loader-spinner-accent: #{$nato-azure};
@@ -333,7 +333,7 @@ $checkbox-focus-shadow: 0 0 0 2px rgba($base-accent-color, 0.25);
 // =============================================================================
 // CSS VARIABLES - DARK MODE
 // =============================================================================
-.pa-mode-dark {
+.pc-mode-dark {
   color-scheme: dark;
 
   --page-loader-bg: rgba(10, 31, 61, 0.95);
@@ -358,11 +358,11 @@ $checkbox-focus-shadow: 0 0 0 2px rgba($base-accent-color, 0.25);
   --pa-border-color: #{$nato-dark-border};
 
   // Header
-  --pa-header-bg: #{$nato-midnight};
-  --pa-header-border-color: #{$nato-dark-border};
-  --pa-header-text: #{$nato-dark-text};
-  --pa-header-text-secondary: #{$nato-dark-text-2};
-  --pa-header-profile-name-color: #{$nato-dark-text};
+  --pa-navbar-bg: #{$nato-midnight};
+  --pa-navbar-border-color: #{$nato-dark-border};
+  --pa-navbar-text: #{$nato-dark-text};
+  --pa-navbar-text-secondary: #{$nato-dark-text-2};
+  --pa-navbar-profile-name-color: #{$nato-dark-text};
 
   // Sidebar
   --pa-sidebar-bg: #{$nato-dark-card};
@@ -497,12 +497,12 @@ $checkbox-focus-shadow: 0 0 0 2px rgba($base-accent-color, 0.25);
 // =============================================================================
 // DARK MODE COMPONENT ADJUSTMENTS
 // =============================================================================
-.pa-mode-dark {
-  .pa-header {
+.pc-mode-dark {
+  .pa-navbar {
     border-bottom-color: $nato-azure;
   }
 
-  .pa-header__dropdown li a {
+  .pa-navmenu__dropdown li a {
     color: $nato-dark-text !important;
 
     &:hover {
@@ -566,7 +566,7 @@ $checkbox-focus-shadow: 0 0 0 2px rgba($base-accent-color, 0.25);
   border-inline-end-color: $nato-navy !important;
 }
 
-.pa-mode-dark .pa-sidebar__link--active {
+.pc-mode-dark .pa-sidebar__link--active {
   color: #ffffff !important;
   background-color: $nato-azure-dark !important;
   border-inline-end-color: $nato-azure-light !important;
@@ -576,13 +576,13 @@ $checkbox-focus-shadow: 0 0 0 2px rgba($base-accent-color, 0.25);
 // BORDER RADIUS - Tighter for institutional feel
 // Override via CSS variables + direct rules (SCSS vars locked by @use modules)
 // =============================================================================
-:root, .pa-mode-light {
+:root, .pc-mode-light {
   --pa-border-radius-sm: 2px;
   --pa-border-radius: 2px;
   --pa-border-radius-lg: 2px;
 }
 
-.pa-mode-dark {
+.pc-mode-dark {
   --pa-border-radius-sm: 2px;
   --pa-border-radius: 2px;
   --pa-border-radius-lg: 2px;

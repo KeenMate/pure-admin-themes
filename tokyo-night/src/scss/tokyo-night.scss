@@ -158,11 +158,11 @@ $theme-color-scheme: dark;
 // Layout-specific overrides
 $main-bg: $night-bg;
 $subtle-bg: $night-bg-deep;
-$header-bg: $night-bg-deep;
-$header-border-color: $night-border;
-$header-text: $night-text;
-$header-text-secondary: $night-text-sec;
-$header-profile-name-color: $night-text;
+$navbar-bg: $night-bg-deep;
+$navbar-border-color: $night-border;
+$navbar-text: $night-text;
+$navbar-text-secondary: $night-text-sec;
+$navbar-profile-name-color: $night-text;
 $sidebar-bg: $night-surface;
 $sidebar-text: $night-text;
 $sidebar-text-secondary: $night-text-sec;
@@ -273,8 +273,8 @@ $checkbox-focus-shadow: 0 0 0 2px $base-focus-ring-color;
   --pa-page-bg: #{$storm-bg};
   --pa-subtle-bg: #{$storm-surface};
 
-  --pa-header-bg: #{$storm-bg-deep};
-  --pa-header-border-color: #{$storm-border};
+  --pa-navbar-bg: #{$storm-bg-deep};
+  --pa-navbar-border-color: #{$storm-border};
   --pa-sidebar-bg: #{$storm-surface};
   --pa-sidebar-submenu-bg: #{$storm-elevated};
   --pa-sidebar-submenu-hover-bg: #{$storm-border};

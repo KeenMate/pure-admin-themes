@@ -4,11 +4,11 @@
   "id": "ayu",
   "version": "2.9.0",
   "description": "Warm, elegant theme inspired by the Ayu editor color scheme with golden accents",
-  "content": "## Ayu\n\nA warm, elegant theme inspired by the popular Ayu color scheme for code editors. Golden accents on carefully tuned backgrounds create a distinctive, eye-friendly interface.\n\n### Highlights\n\n- **Dark and Light modes** on the Default (Mirage) variant — toggle with `pa-mode-light` / `pa-mode-dark`\n- **Dark variant** — deeper, less-blue blacks (dark only)\n- **Golden accent (#e6b450)** for a warm, inviting feel\n- **Monda** bundled font (self-hosted woff2)\n\n### Variants and Modes\n\nDefault (Mirage) is the standard bluish-dark Ayu palette with both dark and light modes. The Dark variant is a darker, more neutral alternative — dark only.\n\n```html\n<body>                                <!-- Default (Mirage) Dark -->\n<body class=\"pa-mode-light\">          <!-- Default (Mirage) Light -->\n<body class=\"pa-color-dark\">          <!-- Dark variant (dark only) -->\n```\n\n### Usage\n\n```html\n<link rel=\"stylesheet\" href=\"css/ayu.css\">\n```",
+  "content": "## Ayu\n\nA warm, elegant theme inspired by the popular Ayu color scheme for code editors. Golden accents on carefully tuned backgrounds create a distinctive, eye-friendly interface.\n\n### Highlights\n\n- **Dark and Light modes** on the Default (Mirage) variant — toggle with `pc-mode-light` / `pc-mode-dark`\n- **Dark variant** — deeper, less-blue blacks (dark only)\n- **Golden accent (#e6b450)** for a warm, inviting feel\n- **Monda** bundled font (self-hosted woff2)\n\n### Variants and Modes\n\nDefault (Mirage) is the standard bluish-dark Ayu palette with both dark and light modes. The Dark variant is a darker, more neutral alternative — dark only.\n\n```html\n<body>                                <!-- Default (Mirage) Dark -->\n<body class=\"pc-mode-light\">          <!-- Default (Mirage) Light -->\n<body class=\"pa-color-dark\">          <!-- Dark variant (dark only) -->\n```\n\n### Usage\n\n```html\n<link rel=\"stylesheet\" href=\"css/ayu.css\">\n```",
   "author": "KeenMate",
   "license": "MIT",
 
-  "modeCssClass": "pa-mode-{mode}",
+  "modeCssClass": "pc-mode-{mode}",
   "variantCssClass": "pa-color-{variant}",
 
   "colorVariants": [

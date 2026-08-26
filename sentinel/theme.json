@@ -4,11 +4,11 @@
   "id": "sentinel",
   "version": "2.9.0",
   "description": "Sharp, high-contrast graphite theme with crimson accents for investigation, audit, and compliance portals",
-  "content": "## Sentinel\n\nA sharp, serious theme built for oversight work — investigations, audits, compliance reviews, and contract scrutiny. Neutral graphite surfaces keep dense data readable, while restrained crimson accents draw the eye to actions, active states, and alerts.\n\n### Highlights\n\n- **Graphite neutrals + crimson `#c01b2b`** — calm, professional base with red hints where they matter\n- **High-contrast, easy-to-read** typography on crisp white surfaces\n- **Sharp 2px corners** for a precise, no-nonsense feel\n- **System fonts** — no custom font download required\n- **Light and dark modes** with shared crimson accent\n\n### Usage\n\n```html\n<link rel=\"stylesheet\" href=\"css/sentinel.css\">\n```\n\nDefaults to light mode. Switch with `pa-mode-light` / `pa-mode-dark` on `<body>`. Auto-switching via `prefers-color-scheme` is enabled by default.",
+  "content": "## Sentinel\n\nA sharp, serious theme built for oversight work — investigations, audits, compliance reviews, and contract scrutiny. Neutral graphite surfaces keep dense data readable, while restrained crimson accents draw the eye to actions, active states, and alerts.\n\n### Highlights\n\n- **Graphite neutrals + crimson `#c01b2b`** — calm, professional base with red hints where they matter\n- **High-contrast, easy-to-read** typography on crisp white surfaces\n- **Sharp 2px corners** for a precise, no-nonsense feel\n- **System fonts** — no custom font download required\n- **Light and dark modes** with shared crimson accent\n\n### Usage\n\n```html\n<link rel=\"stylesheet\" href=\"css/sentinel.css\">\n```\n\nDefaults to light mode. Switch with `pc-mode-light` / `pc-mode-dark` on `<body>`. Auto-switching via `prefers-color-scheme` is enabled by default.",
   "author": "KeenMate",
   "license": "MIT",
 
-  "modeCssClass": "pa-mode-{mode}",
+  "modeCssClass": "pc-mode-{mode}",
   "variantCssClass": "pa-color-{variant}",
 
   "colorVariants": [

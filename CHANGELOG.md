@@ -2,11 +2,21 @@
 
 All notable changes to the Pure Admin Themes collection are documented in this file.
 
+## [2.9.0-rc12] - 2026-08-21
+
+### Changed
+
+- **All themes rebuilt against Pure Admin Core `2.9.0-rc14` + `@keenmate/pure-css` `1.0.0-rc03`.** This cycle carries **theme SCSS changes** (not a rebuild-only catch-up): the navbar dropped its legacy `pa-header__*` block naming, so every theme's navbar styling was migrated to the new blocks.
+    - **Selectors:** the per-theme navbar override blocks were decomposed from a single `.pa-header { … }` into `.pa-navbar` (bar), `.pa-app-header` (brand), `.pa-navmenu` / `.pa-navmenu__dropdown` (menu), `.pa-page-header` (title), and `.pa-navbar__profile-btn` (profile trigger).
+    - **Tokens:** navbar SCSS-var overrides and `--pa-*` emits renamed `header` → `navbar` (`$header-bg` → `$navbar-bg`, `--pa-header-text` → `--pa-navbar-text`, etc.), tracking the pure-css `1.0.0-rc03` foundation rename. Component-header tokens (`--pa-card-header-*`, `--pa-table-header-*`) are unchanged.
+    - Requires the bumped `@keenmate/pure-css` dependency (`^1.0.0-rc03`); themes built against rc02 would emit the old `--pa-header-*` names.
+
 ## [2.9.0-rc11] - 2026-08-10
 
 ### Changed
 
 - **All themes rebuilt against Pure Admin Core `2.9.0-rc11`.** Every change below is framework-side — themes consume it through the existing `var(--pa-*)` / `var(--base-*)` cascade, so the core catch-up is a rebuild only, with **no theme SCSS changes** (the per-theme fixes under _Fixed_ below are separate SCSS edits). This build catches up all core deltas since the last theme build (rc03). The headline items this rebuild ships in each theme's CSS bundle:
+    - **Unified resize grab-knob.** The sidebar resize handle and the splitter gutter now share one knob look (rounded `--pa-card-bg` tab with a ⋮/⋯ grip + `--pa-border-color` border, accenting on drag), with a viewport-responsive width (slim on desktop, chunkier on small screens) and a radius that follows — but caps — the theme's `--pa-border-radius-lg`. Baked into every theme's bundle, so a rebuild ships it.
     - **Sidebar drag-resize works in icon-collapse mode.** Core's expanded-state rule `body:not(.sidebar-hidden) .pa-layout__sidebar--icon-collapse` no longer hard-codes `width: $sidebar-width` (which, at specificity `(0,3,0)`, beat the zero-specificity `:where(.pa-layout__sidebar){ width: var(--pa-local-sidebar-width) }` and froze the width); it now reads the same runtime variable, so an icon-collapse sidebar can actually be dragged. The stale hard-coded width was baked into every theme's bundle, so a rebuild is required to fix it.
     - **Touch-grabbable sidebar resize handle.** On coarse pointers `.pa-sidebar-resize` now shows a persistent, theme-styled grip knob (uses `--pa-border-radius-lg`, `--pa-card-bg`, `--pa-border-color`, `--pa-accent` while dragging) centred on the sidebar edge and pinned to mid-viewport.
     - **Navbar search-pill overlap fix + tablet sidebar-width fix.** `.pa-header__center:has(.pa-navbar-search)` now reserves a width floor so a search pill no longer overflows the nav (and progressive collapse fires honestly); and the 769–1024px tablet sidebar rule now uses `min(var(--pa-local-sidebar-width), 16rem)` instead of a hard `16rem` literal, so a resized/theme-set width is no longer snapped away in that band. Both were baked into every theme's bundle, so a rebuild ships the fixes.
@@ -32,13 +42,13 @@ All notable changes to the Pure Admin Themes collection are documented in this f
 
 - **All 15 themes:** `color-scheme` declarations added to signal each theme's colour mode to the browser. Required to fix native UA elements (scrollbars, `<input type="date">`, etc.) and the `light-dark()` CSS function — both feed off the browser's "used colour scheme" which until now was `normal` (effectively light) for every theme regardless of palette. Most visibly: embedded web components (`web-multiselect`, `web-daterangepicker`) using `light-dark()` for adaptive dark/light palettes silently rendered the light value on dark themes; native scrollbars stayed white on dark backgrounds; date pickers and other native widgets ignored the theme entirely. The exact form of the declaration depends on each theme's mode structure:
     - **Always-dark themes (cobalt2, darkmatter, dracula, night-owl, one-dark, tokyo-night):** added `$theme-color-scheme: dark;` before the `@import variables/index` line. The new core 2.9.0 `output-pa-css-variables` mixin reads the variable and emits `color-scheme: dark;` at `:root` automatically.
-    - **Light-default dual-mode themes (corporate, express, minimal, nato):** kept the default `$theme-color-scheme: light` (so the mixin emits `color-scheme: light;` at `:root, .pa-mode-light`) and added an explicit `color-scheme: dark;` declaration as the first line inside each `.pa-mode-dark` block.
-    - **Dark-default themes with `.pa-mode-light` opt-in (audi, cafeindustrial, dark, ayu, gruvbox):** set `$theme-color-scheme: dark;` before `@import variables/index` (so the dark scope gets `color-scheme: dark;`) and added `color-scheme: light;` as the first line inside each `.pa-mode-light` block.
+    - **Light-default dual-mode themes (corporate, express, minimal, nato):** kept the default `$theme-color-scheme: light` (so the mixin emits `color-scheme: light;` at `:root, .pc-mode-light`) and added an explicit `color-scheme: dark;` declaration as the first line inside each `.pc-mode-dark` block.
+    - **Dark-default themes with `.pc-mode-light` opt-in (audi, cafeindustrial, dark, ayu, gruvbox):** set `$theme-color-scheme: dark;` before `@import variables/index` (so the dark scope gets `color-scheme: dark;`) and added `color-scheme: light;` as the first line inside each `.pc-mode-light` block.
 - **All 15 themes:** Bumped to 2.9.0 to track Pure Admin Core 2.9.0. The workspace `package.json` keeps its `file:` link to `../pure-admin/packages/core` for local dev (root `package.json` is `private: true` and isn't published — each theme is packaged as a standalone CSS+ZIP by `pureadmin themes pack`); the upstream core version this release was built against is `2.9.0`.
 
 ### Changed
 
-- **10 themes:** `--base-surface-1` / `-2` / `-3` / `-inverse` declarations in mode-override blocks renamed to `--base-main-bg` / `--base-page-bg` / `--base-subtle-bg` / `--base-inverse-bg` respectively. Pure Admin Core 2.9.0 dropped the six `--base-*` legacy aliases from its emitted CSS surface (see the core changelog for the why — mainly the web-multiselect dark-mode hover regression and taxonomy de-duplication); themes had to migrate their override blocks to keep producing dark/light-mode surface colours. Mechanical rename, no behavioural change. Themes affected: audi, ayu, cafeindustrial, corporate, dark, express, gruvbox, minimal, nato, tokyo-night. The 5 always-dark themes without `.pa-mode-*` override blocks (cobalt2, darkmatter, dracula, night-owl, one-dark) needed no edits. A small follow-up cleanup is available for themes that previously set both the semantic name AND the alias to the same value in the same block — the rename produces two identical declarations that can be deduplicated.
+- **10 themes:** `--base-surface-1` / `-2` / `-3` / `-inverse` declarations in mode-override blocks renamed to `--base-main-bg` / `--base-page-bg` / `--base-subtle-bg` / `--base-inverse-bg` respectively. Pure Admin Core 2.9.0 dropped the six `--base-*` legacy aliases from its emitted CSS surface (see the core changelog for the why — mainly the web-multiselect dark-mode hover regression and taxonomy de-duplication); themes had to migrate their override blocks to keep producing dark/light-mode surface colours. Mechanical rename, no behavioural change. Themes affected: audi, ayu, cafeindustrial, corporate, dark, express, gruvbox, minimal, nato, tokyo-night. The 5 always-dark themes without `.pc-mode-*` override blocks (cobalt2, darkmatter, dracula, night-owl, one-dark) needed no edits. A small follow-up cleanup is available for themes that previously set both the semantic name AND the alias to the same value in the same block — the rename produces two identical declarations that can be deduplicated.
 - **All themes:** Pick up upstream `.pa-card__header` fixes from core 2.9.0 — no theme code changes needed, just a rebuild. The header's `border-top-*-radius: 8px` declarations were dropped (they conflicted with the card's `overflow: hidden` clipping at the effective inner radius of ~7px, exposing wedges of card background at each top corner — most visible on coloured variants as white slivers against the variant colour). Coloured variants (`--primary` / `--success` / `--warning` / `--danger` / `--color-1` through `--color-9`) also gained matching `border-bottom-color` on the header to collapse the previously-gray hairline between the coloured header bg and the white card body.
 
 ## [2.7.0] - 2026-05-11
@@ -60,14 +70,14 @@ All notable changes to the Pure Admin Themes collection are documented in this f
 
 ### Changed
 
-- **gruvbox:** Restructured from three-variants-each-with-one-mode to **2 variants** — Default (with both `dark` and `light` modes, toggleable) and Soft (dark only). The hidden mode-toggle UX is fixed: settings panels now expose dark/light switching on the Default variant. SCSS rename: `.pa-color-light` → `.pa-mode-light`. Soft remains unchanged
-- **ayu:** Same restructure pattern — **2 variants**: Default/Mirage (with `dark` and `light` modes, toggleable) and Dark (deeper black, dark only). SCSS rename: `.pa-color-light` → `.pa-mode-light`
+- **gruvbox:** Restructured from three-variants-each-with-one-mode to **2 variants** — Default (with both `dark` and `light` modes, toggleable) and Soft (dark only). The hidden mode-toggle UX is fixed: settings panels now expose dark/light switching on the Default variant. SCSS rename: `.pa-color-light` → `.pc-mode-light`. Soft remains unchanged
+- **ayu:** Same restructure pattern — **2 variants**: Default/Mirage (with `dark` and `light` modes, toggleable) and Dark (deeper black, dark only). SCSS rename: `.pa-color-light` → `.pc-mode-light`
 - **dark:** README content corrected — clarified theme is dark-only with four color tints (Default, Blue, Green, Red). Previous content claimed light-mode auto-switch; in reality there is no light mode. `features.darkMode: true, lightMode: false` declared explicitly
 - **All themes:** Bumped to v2.4.0
 
 ### Normalized
 
-- **cobalt2, darkmatter, dracula, gruvbox, ayu, night-owl, one-dark, tokyo-night:** Added explicit `modeCssClass: "pa-mode-{mode}"` (previously relied on schema default — now matches the rest of the collection)
+- **cobalt2, darkmatter, dracula, gruvbox, ayu, night-owl, one-dark, tokyo-night:** Added explicit `modeCssClass: "pc-mode-{mode}"` (previously relied on schema default — now matches the rest of the collection)
 - **cafeindustrial:** `$schema` URI changed from absolute (`https://pureadmin.io/...`) to relative (`../schemas/...`) for consistency
 
 ### Earlier (previously [Unreleased] - 2026-04-16)

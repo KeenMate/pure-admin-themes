@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "@keenmate/pure-admin-core": "file:../pure-admin/packages/core",
-    "@keenmate/pure-css": "^1.0.0-rc02"
+    "@keenmate/pure-css": "^1.0.0-rc04"
   },
   "devDependencies": {
     "@keenmate/pureadmin": "file:../pure-admin-cli",
