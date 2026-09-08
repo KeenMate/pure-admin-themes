@@ -133,6 +133,9 @@ $base-text-on-info: #ffffff;
 // IMPORT CORE (with base variables already set)
 // =============================================================================
 
+// Elevated surface (card/table headers, striped rows) — header tint, distinct from the white card
+$base-elevated-bg: $nato-gray-100;
+
 @import '@keenmate/pure-admin-core/src/scss/variables/index';
 
 // =============================================================================
@@ -146,8 +149,8 @@ $base-border-radius-md: 0.2;
 $base-border-radius-lg: 0.2;
 
 // Layout colors - navy header, white sidebar (echoes the logo's split panel)
-$main-bg: $nato-gray-50;
-$subtle-bg: $nato-gray-50;
+$main-bg: $base-main-bg;
+$subtle-bg: $base-subtle-bg;
 $navbar-bg: $nato-navy;
 $navbar-border-color: $nato-navy-deep;
 // Header sits on navy, so its text tokens are LIGHT (the defaults are dark,
@@ -223,11 +226,11 @@ $checkbox-focus-shadow: 0 0 0 2px rgba($base-accent-color, 0.25);
 // Header - navy bar. Brand / nav / title / profile / burger / switcher-label
 // all now inherit their light colour from the --pc-navbar-text* tokens set
 // above; what stays here is genuine NATO brand identity, not colour hacks.
-.pa-navbar {
+.pc-navbar {
   border-bottom: 2px solid $nato-azure;
 }
 
-.pa-app-header h1 {
+.pc-app-header h1 {
   letter-spacing: 0.04em;
 }
 
@@ -235,12 +238,12 @@ $checkbox-focus-shadow: 0 0 0 2px rgba($base-accent-color, 0.25);
 // currentColor pill. Equal specificity to the core rules but later in source
 // order, so no !important needed. Active is a stronger tint than hover; text
 // colour + semibold still come from core.
-.pa-navmenu > ul > li {
+.pc-navmenu > ul > li {
   > a:hover {
     background-color: rgba($nato-azure, 0.25);
   }
 
-  &.pa-navmenu__item--active > a {
+  &.pc-navmenu__item--active > a {
     &,
     &:hover {
       background-color: rgba($nato-azure, 0.35);
@@ -249,7 +252,7 @@ $checkbox-focus-shadow: 0 0 0 2px rgba($base-accent-color, 0.25);
 }
 
 // Dropdown sits on a white surface — dark text + azure hover.
-.pa-navmenu__dropdown li a {
+.pc-navmenu__dropdown li a {
   color: $nato-gray-800;
 
   &:hover {
@@ -272,7 +275,7 @@ $checkbox-focus-shadow: 0 0 0 2px rgba($base-accent-color, 0.25);
 }
 
 // Footer - light text on navy
-.pa-layout__footer {
+.pc-layout__footer {
   color: rgba(#ffffff, 0.85);
   border-top: 2px solid $nato-azure;
 
@@ -286,7 +289,7 @@ $checkbox-focus-shadow: 0 0 0 2px rgba($base-accent-color, 0.25);
 }
 
 // Sidebar - white with navy text, azure active state
-.pa-sidebar {
+.pc-sidebar {
   border-right: 1px solid $nato-gray-200;
 
   a:hover {
@@ -300,7 +303,7 @@ $checkbox-focus-shadow: 0 0 0 2px rgba($base-accent-color, 0.25);
     border-left: 3px solid $nato-azure !important;
   }
 
-  .pa-sidebar__submenu-item--active a {
+  .pc-sidebar__submenu-item--active a {
     color: $nato-navy !important;
     font-weight: 600;
   }
@@ -342,9 +345,9 @@ $checkbox-focus-shadow: 0 0 0 2px rgba($base-accent-color, 0.25);
   --page-loader-spinner-accent: #{$nato-azure};
 
   // Core colors
-  --pc-main-bg: #{$nato-dark-bg};
-  --pc-page-bg: #{$nato-dark-bg};
-  --pc-subtle-bg: #04122a;
+  --pc-main-bg: var(--base-main-bg);
+  --pc-page-bg: var(--base-page-bg);
+  --pc-subtle-bg: var(--base-subtle-bg);
 
   // Text
   --pc-text-color-1: #{$nato-dark-text};
@@ -468,7 +471,7 @@ $checkbox-focus-shadow: 0 0 0 2px rgba($base-accent-color, 0.25);
   // Base variables for web components (dark mode)
   --base-main-bg: #{$nato-dark-card};
   --base-page-bg: #{$nato-dark-bg};
-  --base-subtle-bg: #{$nato-dark-surface};
+  --base-subtle-bg: #{$nato-dark-bg};
   --base-hover-bg: #{$nato-dark-surface};
   --base-active-bg: #{$nato-dark-border};
   --base-disabled-bg: #{$nato-dark-surface};
@@ -499,11 +502,11 @@ $checkbox-focus-shadow: 0 0 0 2px rgba($base-accent-color, 0.25);
 // DARK MODE COMPONENT ADJUSTMENTS
 // =============================================================================
 .pc-mode-dark {
-  .pa-navbar {
+  .pc-navbar {
     border-bottom-color: $nato-azure;
   }
 
-  .pa-navmenu__dropdown li a {
+  .pc-navmenu__dropdown li a {
     color: $nato-dark-text !important;
 
     &:hover {
@@ -512,7 +515,7 @@ $checkbox-focus-shadow: 0 0 0 2px rgba($base-accent-color, 0.25);
     }
   }
 
-  .pa-sidebar {
+  .pc-sidebar {
     border-right-color: $nato-dark-border;
 
     a:hover {
@@ -526,7 +529,7 @@ $checkbox-focus-shadow: 0 0 0 2px rgba($base-accent-color, 0.25);
       border-left-color: $nato-azure !important;
     }
 
-    .pa-sidebar__submenu-item--active a {
+    .pc-sidebar__submenu-item--active a {
       color: $nato-azure-light !important;
       font-weight: 600;
     }
@@ -561,13 +564,13 @@ $checkbox-focus-shadow: 0 0 0 2px rgba($base-accent-color, 0.25);
 // =============================================================================
 // SIDEBAR ACTIVE LINK FIX
 // =============================================================================
-.pa-sidebar__link--active {
+.pc-sidebar__link--active {
   color: $nato-navy !important;
   background-color: rgba($nato-azure, 0.12) !important;
   border-inline-end-color: $nato-navy !important;
 }
 
-.pc-mode-dark .pa-sidebar__link--active {
+.pc-mode-dark .pc-sidebar__link--active {
   color: #ffffff !important;
   background-color: $nato-azure-dark !important;
   border-inline-end-color: $nato-azure-light !important;

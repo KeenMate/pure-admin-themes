@@ -78,7 +78,7 @@ $base-text-color-on-accent: #1e2127;
 // Backgrounds
 $base-main-bg:       $od-surface;
 $base-page-bg:       $od-page-bg;
-$base-subtle-bg:     $od-elevated;
+$base-subtle-bg:     $od-bg-deep;
 $base-inverse-bg:    #ffffff;
 $base-hover-bg:      $od-elevated;
 $base-active-bg:     $od-border;
@@ -148,8 +148,8 @@ $theme-color-scheme: dark;
 @import '@keenmate/pure-admin-core/src/scss/variables/index';
 
 // Layout-specific overrides
-$main-bg:                     $od-page-bg;
-$subtle-bg:                   $od-bg-deep;
+$main-bg:                     $base-main-bg;
+$subtle-bg:                   $base-subtle-bg;
 $navbar-bg:                   $od-bg-deep;
 $navbar-border-color:         $od-border;
 $navbar-text:                 $od-text;
@@ -224,11 +224,11 @@ $checkbox-focus-shadow:            0 0 0 2px $base-focus-ring-color;
 @import '@keenmate/pure-admin-core/src/scss/base-css-variables';
 
 // Active sidebar link - white text on blue accent background is fine
-.pa-sidebar__toggle--active {
+.pc-sidebar__toggle--active {
   color: #ffffff !important;
 
-  .pa-sidebar__icon,
-  .pa-sidebar__label {
+  .pc-sidebar__icon,
+  .pc-sidebar__label {
     color: #ffffff !important;
   }
 }

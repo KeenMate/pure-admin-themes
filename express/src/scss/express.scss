@@ -131,14 +131,17 @@ $alert-bg-opacity-dark: 30;   // Standard dark mode backgrounds
 // ============================================================================
 // FRAMEWORK VARIABLES - Import and let them derive from base
 // ============================================================================
+// Elevated surface (card/table headers, striped rows) — header tint, distinct from the white card
+$base-elevated-bg: $express-gray-lightest;
+
 @import '@keenmate/pure-admin-core/src/scss/variables/index';
 
 // Layout overrides
 $sidebar-width: 29rem;   // 290px (10px base)
 
 // Layout-specific overrides (Express brand identity)
-$main-bg: #ffffff;
-$subtle-bg: $express-bg;
+$main-bg: $base-main-bg;
+$subtle-bg: $base-subtle-bg;
 $navbar-bg: $express-yellow;        // Bold yellow header
 $navbar-border-color: $express-yellow;
 $sidebar-bg: $express-black;        // Black sidebar
@@ -285,12 +288,12 @@ $navbar-profile-name-color: $express-black;  // Black text on yellow header
 // ============================================================================
 
 // Header text visibility - black text on yellow header
-.pa-app-header h1 {
+.pc-app-header h1 {
   color: $express-black !important;
   font-weight: $font-weight-bold !important;
 }
 
-.pa-navmenu > ul > li > a {
+.pc-navmenu > ul > li > a {
   color: $express-dark !important;
 
   &:hover {
@@ -299,11 +302,11 @@ $navbar-profile-name-color: $express-black;  // Black text on yellow header
   }
 }
 
-.pa-page-header h2 {
+.pc-page-header h2 {
   color: $express-dark !important;
 }
 
-.pa-navbar__profile-btn {
+.pc-navbar__profile-btn {
   &:hover {
     background-color: rgba(212, 5, 17, 0.12) !important;
   }
@@ -338,7 +341,7 @@ $navbar-profile-name-color: $express-black;  // Black text on yellow header
 }
 
 // Footer text - black on yellow
-.pa-layout__footer {
+.pc-layout__footer {
   color: $express-dark !important;
 
   p {
@@ -347,7 +350,7 @@ $navbar-profile-name-color: $express-black;  // Black text on yellow header
 }
 
 // Sidebar - black background with white/light text
-.pa-sidebar {
+.pc-sidebar {
   border-inline-end-color: $express-black !important;
 
   &__link,
@@ -471,9 +474,9 @@ $navbar-profile-name-color: $express-black;  // Black text on yellow header
   --page-loader-spinner-accent: #{$express-yellow};
 
   // Core colors - dark backgrounds
-  --pc-main-bg: #{$dark-bg};
-  --pc-page-bg: #{$dark-bg};
-  --pc-subtle-bg: #121212;
+  --pc-main-bg: var(--base-main-bg);
+  --pc-page-bg: var(--base-page-bg);
+  --pc-subtle-bg: var(--base-subtle-bg);
 
   // Text colors - light text on dark bg
   --pc-text-color-1: #{$dark-text};
@@ -594,7 +597,7 @@ $navbar-profile-name-color: $express-black;  // Black text on yellow header
   // Semantic names (preferred)
   --base-main-bg: #{$dark-card};
   --base-page-bg: #{$dark-bg};
-  --base-subtle-bg: #{$dark-surface};
+  --base-subtle-bg: #{$dark-bg};
   --base-hover-bg: #{$dark-surface};
   --base-active-bg: #{$dark-border};
   --base-disabled-bg: #{$dark-surface};
@@ -630,7 +633,7 @@ $navbar-profile-name-color: $express-black;  // Black text on yellow header
 // ============================================================================
 .pc-mode-dark {
   // Footer text - keep dark on yellow background
-  .pa-layout__footer {
+  .pc-layout__footer {
     color: $express-dark !important;
 
     p {

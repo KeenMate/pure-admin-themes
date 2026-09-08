@@ -67,7 +67,7 @@ $base-text-color-on-accent: #ffffff;
 // Backgrounds
 $base-main-bg: $audi-dark;
 $base-page-bg: $audi-near-black;
-$base-subtle-bg: $audi-gray;
+$base-subtle-bg: $audi-near-black;
 $base-inverse-bg: #ffffff;
 $base-hover-bg: $audi-gray;
 $base-active-bg: $audi-gray-light;
@@ -146,9 +146,9 @@ $table-hover-accent-width: 0.3rem;
 $table-hover-accent-position: left;
 
 // Layout colors
-$main-bg: $audi-near-black;
-$page-bg: $audi-near-black;
-$subtle-bg: $audi-dark;
+$main-bg: $base-main-bg;
+$page-bg: $base-page-bg;
+$subtle-bg: $base-subtle-bg;
 $navbar-bg: $audi-black;
 $navbar-border-color: $audi-gray-light;
 $navbar-text: #ffffff;
@@ -298,12 +298,12 @@ $btn-dark-text: #ffffff;
 }
 
 // Sidebar start-border accent
-.pa-sidebar__link {
+.pc-sidebar__link {
   border-inline-start: $border-width-thick solid transparent;
   border-inline-end: none;
 }
 
-.pa-sidebar__link--active {
+.pc-sidebar__link--active {
   border-inline-start-color: var(--pc-accent);
 }
 
@@ -352,9 +352,9 @@ $btn-dark-text: #ffffff;
   --page-loader-spinner-accent: #ff0000;
 
   // Core colors
-  --pc-main-bg: #{$light-gray-100};
-  --pc-page-bg: #{$light-gray-50};
-  --pc-subtle-bg: #{$light-gray-100};
+  --pc-main-bg: var(--base-main-bg);
+  --pc-page-bg: var(--base-page-bg);
+  --pc-subtle-bg: var(--base-subtle-bg);
   --pc-text-color-1: #{$light-gray-900};
   --pc-text-color-2: #{$light-gray-600};
   --pc-accent: #ff0000;
@@ -457,7 +457,7 @@ $btn-dark-text: #ffffff;
     .pa-profile-panel__email { color: var(--pc-navbar-text-secondary); }
   }
 
-  .pa-layout__footer {
+  .pc-layout__footer {
     color: #cccccc;
     a { color: #ffffff; &:hover { color: $audi-red; } }
   }

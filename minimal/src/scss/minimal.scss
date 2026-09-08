@@ -124,6 +124,9 @@ $base-focus-ring-color: rgba($minimal-gray-800, 0.25);
 // ============================================================================
 // FRAMEWORK VARIABLES - Import and let them derive from base
 // ============================================================================
+// Elevated surface (card/table headers, striped rows) — header tint, distinct from the white card
+$base-elevated-bg: $minimal-gray-50;
+
 @import '@keenmate/pure-admin-core/src/scss/variables/index';
 
 // Layout overrides
@@ -131,8 +134,8 @@ $footer-height: 3.2rem;    // 32px (10px base)
 $sidebar-width: 29rem;     // 290px (10px base)
 
 // Layout-specific overrides
-$main-bg: $minimal-white;
-$subtle-bg: $minimal-white;
+$main-bg: $base-main-bg;
+$subtle-bg: $base-subtle-bg;
 $navbar-bg: $minimal-gray-50;
 $sidebar-bg: $minimal-gray-150;
 $footer-bg: $minimal-gray-50;
@@ -239,9 +242,9 @@ $modal-content-bg: $minimal-white;
   --page-loader-spinner-accent: #e8e8e8;
 
   // Core colors - dark backgrounds
-  --pc-main-bg: #{$dark-bg};
-  --pc-page-bg: #{$dark-bg};
-  --pc-subtle-bg: #141414;
+  --pc-main-bg: var(--base-main-bg);
+  --pc-page-bg: var(--base-page-bg);
+  --pc-subtle-bg: var(--base-subtle-bg);
 
   // Text colors - light text on dark bg
   --pc-text-color-1: #{$dark-text};
@@ -365,7 +368,7 @@ $modal-content-bg: $minimal-white;
   // Semantic names (preferred)
   --base-main-bg: #{$dark-card};
   --base-page-bg: #{$dark-bg};
-  --base-subtle-bg: #{$dark-surface};
+  --base-subtle-bg: #{$dark-bg};
   --base-hover-bg: #{$dark-surface};
   --base-active-bg: #{$dark-border};
   --base-disabled-bg: #{$dark-surface};

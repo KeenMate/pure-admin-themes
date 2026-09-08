@@ -130,6 +130,9 @@ $base-input-size-xl-height: 4.4;  // was 4.1 (41px → 44px)
 // IMPORT CORE (with base variables already set)
 // =============================================================================
 
+// Elevated surface (card/table headers, striped rows) — header tint, distinct from the white card
+$base-elevated-bg: $corporate-slate-100;
+
 @import '@keenmate/pure-admin-core/src/scss/variables/index';
 
 // =============================================================================
@@ -141,8 +144,8 @@ $footer-height: 3.2rem;
 $sidebar-width: 29rem;
 
 // Layout colors (derived from base but with specific overrides)
-$main-bg: #f4f6f9;
-$subtle-bg: #f4f6f9;
+$main-bg: $base-main-bg;
+$subtle-bg: $base-subtle-bg;
 $navbar-bg: $corporate-slate-800;
 $navbar-border-color: $corporate-slate-200;
 $navbar-profile-name-color: #ffffff;
@@ -202,11 +205,11 @@ $checkbox-focus-shadow: 0 0 0 2px rgba($base-accent-color, 0.25);
 // =============================================================================
 
 // Header text visibility - light text on dark header
-.pa-app-header h1 {
+.pc-app-header h1 {
   color: #ffffff !important;
 }
 
-.pa-navmenu > ul > li > a {
+.pc-navmenu > ul > li > a {
   color: $corporate-slate-300 !important;
 
   &:hover {
@@ -215,7 +218,7 @@ $checkbox-focus-shadow: 0 0 0 2px rgba($base-accent-color, 0.25);
   }
 }
 
-.pa-navmenu__dropdown li a {
+.pc-navmenu__dropdown li a {
   color: $corporate-slate-700 !important;
 
   &:hover {
@@ -224,11 +227,11 @@ $checkbox-focus-shadow: 0 0 0 2px rgba($base-accent-color, 0.25);
   }
 }
 
-.pa-page-header h2 {
+.pc-page-header h2 {
   color: $corporate-slate-300 !important;
 }
 
-.pa-navbar__profile-btn {
+.pc-navbar__profile-btn {
   color: #ffffff !important;
 
   &:hover {
@@ -265,7 +268,7 @@ $checkbox-focus-shadow: 0 0 0 2px rgba($base-accent-color, 0.25);
 }
 
 // Footer - light text on dark background
-.pa-layout__footer {
+.pc-layout__footer {
   color: $corporate-slate-300;
 
   a {
@@ -321,9 +324,9 @@ $checkbox-focus-shadow: 0 0 0 2px rgba($base-accent-color, 0.25);
   --page-loader-spinner-accent: #{$corporate-blue-500};
 
   // Core colors - dark backgrounds
-  --pc-main-bg: #{$dark-bg};
-  --pc-page-bg: #{$dark-bg};
-  --pc-subtle-bg: #0a0f1a;
+  --pc-main-bg: var(--base-main-bg);
+  --pc-page-bg: var(--base-page-bg);
+  --pc-subtle-bg: var(--base-subtle-bg);
 
   // Text colors - light text on dark bg
   --pc-text-color-1: #{$dark-text};
@@ -448,7 +451,7 @@ $checkbox-focus-shadow: 0 0 0 2px rgba($base-accent-color, 0.25);
   // Semantic names (preferred)
   --base-main-bg: #{$dark-card};
   --base-page-bg: #{$dark-bg};
-  --base-subtle-bg: #{$dark-surface};
+  --base-subtle-bg: #{$dark-bg};
   --base-hover-bg: #{$dark-surface};
   --base-active-bg: #{$dark-border};
   --base-disabled-bg: #{$dark-surface};
@@ -481,7 +484,7 @@ $checkbox-focus-shadow: 0 0 0 2px rgba($base-accent-color, 0.25);
 // DARK MODE COMPONENT ADJUSTMENTS
 // =============================================================================
 .pc-mode-dark {
-  .pa-navmenu__dropdown li a {
+  .pc-navmenu__dropdown li a {
     color: #f1f5f9 !important;
 
     &:hover {

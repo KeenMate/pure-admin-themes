@@ -98,7 +98,7 @@ $base-text-color-on-accent: #1a1a1a;
 // Backgrounds
 $base-main-bg: $dark1;
 $base-page-bg: $dark0;
-$base-subtle-bg: $dark2;
+$base-subtle-bg: $dark0-hard;
 $base-inverse-bg: $light1;
 $base-hover-bg: $dark2;
 $base-active-bg: $dark3;
@@ -168,8 +168,8 @@ $theme-color-scheme: dark;
 @import '@keenmate/pure-admin-core/src/scss/variables/index';
 
 // Layout overrides
-$main-bg: $dark0;
-$subtle-bg: $dark0-hard;
+$main-bg: $base-main-bg;
+$subtle-bg: $base-subtle-bg;
 $navbar-bg: $dark0-hard;
 $navbar-border-color: $dark2;
 $navbar-text: $light1;
@@ -244,16 +244,16 @@ $checkbox-focus-shadow: 0 0 0 2px $base-focus-ring-color;
 @import '@keenmate/pure-admin-core/src/scss/base-css-variables';
 
 // Navbar hover — ensure text is readable on accent background
-.pa-navmenu a:hover {
+.pc-navmenu a:hover {
   color: $light1 !important;
 }
 
 // Active sidebar link - dark text on orange background
-.pa-sidebar__toggle--active {
+.pc-sidebar__toggle--active {
   color: #1a1a1a !important;
 
-  .pa-sidebar__icon,
-  .pa-sidebar__label {
+  .pc-sidebar__icon,
+  .pc-sidebar__label {
     color: #1a1a1a !important;
   }
 }
@@ -286,9 +286,9 @@ $checkbox-focus-shadow: 0 0 0 2px $base-focus-ring-color;
 .pa-color-soft {
   --page-loader-bg: rgba(50, 48, 47, 0.95);
 
-  --pc-main-bg: #{$dark0-soft};
-  --pc-page-bg: #{$dark0-soft};
-  --pc-subtle-bg: #{$dark1};
+  --pc-main-bg: var(--base-main-bg);
+  --pc-page-bg: var(--base-page-bg);
+  --pc-subtle-bg: var(--base-subtle-bg);
 
   --pc-navbar-bg: #{$dark1};
   --pc-navbar-border-color: #{$dark2};
@@ -332,9 +332,9 @@ $checkbox-focus-shadow: 0 0 0 2px $base-focus-ring-color;
   --page-loader-spinner-border: #{$light2};
   --page-loader-spinner-accent: #{$neutral-orange};
 
-  --pc-main-bg: #{$light0};
-  --pc-page-bg: #{$light0};
-  --pc-subtle-bg: #{$light1};
+  --pc-main-bg: var(--base-main-bg);
+  --pc-page-bg: var(--base-page-bg);
+  --pc-subtle-bg: var(--base-subtle-bg);
   --pc-text-color-1: #{$dark1};
   --pc-text-color-2: #{$dark3};
   --pc-accent: #{$neutral-orange};
@@ -482,7 +482,7 @@ $checkbox-focus-shadow: 0 0 0 2px $base-focus-ring-color;
   }
 
   // Footer - light text on dark background
-  .pa-layout__footer {
+  .pc-layout__footer {
     color: #{$light4};
 
     a {

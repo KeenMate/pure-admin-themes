@@ -77,7 +77,7 @@ $base-text-color-on-accent: #ffffff;
 // Backgrounds
 $base-main-bg: $dm-surface;
 $base-page-bg: $dm-bg;
-$base-subtle-bg: $dm-elevated;
+$base-subtle-bg: $dm-bg-deep;
 $base-inverse-bg: $dm-text;
 $base-hover-bg: $dm-elevated;
 $base-active-bg: $dm-border;
@@ -147,8 +147,8 @@ $theme-color-scheme: dark;
 @import '@keenmate/pure-admin-core/src/scss/variables/index';
 
 // Layout overrides
-$main-bg: $dm-bg;
-$subtle-bg: $dm-bg-deep;
+$main-bg: $base-main-bg;
+$subtle-bg: $base-subtle-bg;
 $navbar-bg: $dm-bg-deep;
 $navbar-border-color: $dm-border;
 $navbar-text: $dm-text;

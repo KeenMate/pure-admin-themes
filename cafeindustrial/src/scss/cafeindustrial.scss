@@ -71,7 +71,7 @@ $base-text-color-on-accent: #1a1714;
 // --- Backgrounds: Warm dark tones ---
 $base-main-bg: $ci-dark-card;
 $base-page-bg: $ci-dark-page;
-$base-subtle-bg: $ci-dark-surface;
+$base-subtle-bg: $ci-dark-input;
 $base-inverse-bg: $ci-dark-text-1;
 $base-overlay-bg: rgba(10, 8, 6, 0.7);
 $base-shadow-color: rgba(0, 0, 0, 0.4);
@@ -306,9 +306,9 @@ $theme-color-scheme: dark;
   --page-loader-spinner-accent: #{$light-accent};
 
   // Core colors - warm cream backgrounds
-  --pc-main-bg: #{$light-cream};
-  --pc-page-bg: #{$light-white};
-  --pc-subtle-bg: #{$light-cream};
+  --pc-main-bg: var(--base-main-bg);
+  --pc-page-bg: var(--base-page-bg);
+  --pc-subtle-bg: var(--base-subtle-bg);
 
   // Text colors - dark warm text
   --pc-text-color-1: #{$light-brown-dark};
@@ -521,7 +521,7 @@ $theme-color-scheme: dark;
   }
 
   // Footer - dark text on the light footer
-  .pa-layout__footer {
+  .pc-layout__footer {
     color: #{$light-brown};
 
     a {

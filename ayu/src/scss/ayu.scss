@@ -118,7 +118,7 @@ $base-text-color-on-accent: #1a1a1a;
 // Background colors (mirage - bluish surfaces)
 $base-main-bg: $mirage-surface;
 $base-page-bg: $mirage-bg;
-$base-subtle-bg: $mirage-elevated;
+$base-subtle-bg: $mirage-bg-deep;
 $base-inverse-bg: #ffffff;
 $base-hover-bg: $mirage-elevated;
 $base-active-bg: $mirage-border;
@@ -189,8 +189,8 @@ $theme-color-scheme: dark;
 @import '@keenmate/pure-admin-core/src/scss/variables/index';
 
 // Layout-specific overrides
-$main-bg: $mirage-bg;
-$subtle-bg: $mirage-bg-deep;
+$main-bg: $base-main-bg;
+$subtle-bg: $base-subtle-bg;
 $navbar-bg: $mirage-bg-deep;
 $navbar-border-color: $mirage-border;
 $navbar-text: $mirage-text;
@@ -266,11 +266,11 @@ $checkbox-focus-shadow: 0 0 0 2px $base-focus-ring-color;
 
 // Active sidebar link - dark text on golden background
 // Submenu toggle active: dark text on solid golden bg
-.pa-sidebar__toggle--active {
+.pc-sidebar__toggle--active {
   color: #1a1a1a !important;
 
-  .pa-sidebar__icon,
-  .pa-sidebar__label {
+  .pc-sidebar__icon,
+  .pc-sidebar__label {
     color: #1a1a1a !important;
   }
 }
@@ -312,9 +312,9 @@ $checkbox-focus-shadow: 0 0 0 2px $base-focus-ring-color;
   --page-loader-bg: rgba(11, 14, 20, 0.95);
   --page-loader-spinner-accent: #{$ayu-accent};
 
-  --pc-main-bg: #{$dark-bg};
-  --pc-page-bg: #{$dark-bg};
-  --pc-subtle-bg: #{$dark-surface};
+  --pc-main-bg: var(--base-main-bg);
+  --pc-page-bg: var(--base-page-bg);
+  --pc-subtle-bg: var(--base-subtle-bg);
 
   --pc-navbar-bg: #{$dark-surface};
   --pc-navbar-border-color: #{$dark-border};
@@ -356,7 +356,7 @@ $checkbox-focus-shadow: 0 0 0 2px $base-focus-ring-color;
   --base-accent-color: #{$ayu-accent};
   --base-main-bg: #{$dark-elevated};
   --base-page-bg: #{$dark-bg};
-  --base-subtle-bg: #{$dark-border};
+  --base-subtle-bg: #{$dark-surface};
   --base-hover-bg: #{$dark-border};
   --base-elevated-bg: #{$dark-elevated};
   --base-text-color-1: #{$dark-text};
@@ -377,9 +377,9 @@ $checkbox-focus-shadow: 0 0 0 2px $base-focus-ring-color;
   --page-loader-spinner-accent: #f29718;
 
   // Core colors
-  --pc-main-bg: #{$light-bg};
-  --pc-page-bg: #{$light-bg};
-  --pc-subtle-bg: #{$light-surface};
+  --pc-main-bg: var(--base-main-bg);
+  --pc-page-bg: var(--base-page-bg);
+  --pc-subtle-bg: var(--base-subtle-bg);
   --pc-text-color-1: #{$light-text};
   --pc-text-color-2: #{$light-text-sec};
   --pc-accent: #c47b10;
@@ -527,7 +527,7 @@ $checkbox-focus-shadow: 0 0 0 2px $base-focus-ring-color;
   }
 
   // Footer - light text on dark background
-  .pa-layout__footer {
+  .pc-layout__footer {
     color: #{$mirage-text-sec};
 
     a {

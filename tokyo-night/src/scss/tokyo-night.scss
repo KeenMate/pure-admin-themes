@@ -86,7 +86,7 @@ $base-text-color-on-accent: #1a1b26;
 // Background colors (night - deep blue-black surfaces)
 $base-main-bg: $night-surface;
 $base-page-bg: $night-bg;
-$base-subtle-bg: $night-elevated;
+$base-subtle-bg: $night-bg-deep;
 $base-inverse-bg: #ffffff;
 $base-hover-bg: $night-elevated;
 $base-active-bg: $night-border;
@@ -156,8 +156,8 @@ $theme-color-scheme: dark;
 @import '@keenmate/pure-admin-core/src/scss/variables/index';
 
 // Layout-specific overrides
-$main-bg: $night-bg;
-$subtle-bg: $night-bg-deep;
+$main-bg: $base-main-bg;
+$subtle-bg: $base-subtle-bg;
 $navbar-bg: $night-bg-deep;
 $navbar-border-color: $night-border;
 $navbar-text: $night-text;
@@ -232,11 +232,11 @@ $checkbox-focus-shadow: 0 0 0 2px $base-focus-ring-color;
 @import '@keenmate/pure-admin-core/src/scss/base-css-variables';
 
 // Active sidebar link - dark text on blue accent background
-.pa-sidebar__toggle--active {
+.pc-sidebar__toggle--active {
   color: #1a1b26 !important;
 
-  .pa-sidebar__icon,
-  .pa-sidebar__label {
+  .pc-sidebar__icon,
+  .pc-sidebar__label {
     color: #1a1b26 !important;
   }
 }
@@ -270,9 +270,9 @@ $checkbox-focus-shadow: 0 0 0 2px $base-focus-ring-color;
   --page-loader-bg: rgba(36, 40, 59, 0.95);
   --page-loader-spinner-accent: #{$tn-accent};
 
-  --pc-main-bg: #{$storm-bg};
-  --pc-page-bg: #{$storm-bg};
-  --pc-subtle-bg: #{$storm-surface};
+  --pc-main-bg: var(--base-main-bg);
+  --pc-page-bg: var(--base-page-bg);
+  --pc-subtle-bg: var(--base-subtle-bg);
 
   --pc-navbar-bg: #{$storm-bg-deep};
   --pc-navbar-border-color: #{$storm-border};
@@ -314,7 +314,7 @@ $checkbox-focus-shadow: 0 0 0 2px $base-focus-ring-color;
   --base-accent-color: #{$tn-accent};
   --base-main-bg: #{$storm-surface};
   --base-page-bg: #{$storm-bg};
-  --base-subtle-bg: #{$storm-elevated};
+  --base-subtle-bg: #{$storm-bg-deep};
   --base-hover-bg: #{$storm-elevated};
   --base-elevated-bg: #{$storm-elevated};
   --base-text-color-1: #{$storm-text};
