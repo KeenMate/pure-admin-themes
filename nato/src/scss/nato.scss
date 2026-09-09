@@ -340,6 +340,10 @@ $checkbox-focus-shadow: 0 0 0 2px rgba($base-accent-color, 0.25);
 .pc-mode-dark {
   color-scheme: dark;
 
+  // WS5: re-resolve mode-aware --pc-* against this scope's --base-* (set below).
+  // Replaces the hand-written --pc-* dark duplicates; only divergences remain.
+  @include output-pc-component-mode-variables;
+
   --page-loader-bg: rgba(10, 31, 61, 0.95);
   --page-loader-spinner-border: #{$nato-dark-border};
   --page-loader-spinner-accent: #{$nato-azure};
@@ -380,16 +384,13 @@ $checkbox-focus-shadow: 0 0 0 2px rgba($base-accent-color, 0.25);
   --pc-footer-bg: #{$nato-midnight};
   --pc-footer-border-color: #{$nato-dark-border};
 
-  // Cards
-  --pc-card-bg: #{$nato-dark-card};
-  --pc-card-header-bg: #{$nato-dark-surface};
+  // Cards — bg/header covered by the mixin; footer/tabs diverge, kept explicit.
   --pc-card-footer-bg: #{$nato-dark-surface};
   --pc-card-tabs-bg: #{$nato-dark-border};
 
-  // Inputs
-  --pc-input-bg: #{$nato-dark-surface};
+  // Inputs — bg/text covered by the mixin. input-border tracks unset
+  // --base-input-border-color; focus is the brand azure — both kept explicit.
   --pc-input-border: #{$nato-dark-border};
-  --pc-input-text: #{$nato-dark-text};
   --pc-input-focus-border-color: #{$nato-azure};
 
   // Input group
@@ -408,24 +409,18 @@ $checkbox-focus-shadow: 0 0 0 2px rgba($base-accent-color, 0.25);
     }
   }
 
-  // Tables
-  --pc-table-bg: #{$nato-dark-card};
-  --pc-table-header-bg: #{$nato-dark-surface};
+  // Tables — bg/header/hover covered by the mixin; stripe diverges (darker), kept.
   --pc-table-stripe: #{$nato-dark-bg};
-  --pc-table-hover-bg: #{$nato-dark-surface};
 
-  // Modals
-  --pc-modal-content-bg: #{$nato-dark-card};
+  // Modals — content covered by the mixin; overlay diverges, kept.
   --pc-modal-overlay-bg: rgba(4, 18, 42, 0.85);
 
   // Loader/Profile
   --pc-loader-overlay-bg: rgba(4, 18, 42, 0.75);
   --pc-profile-overlay-bg: rgba(4, 18, 42, 0.55);
 
-  // Tooltip/Popover
-  --pc-tooltip-bg: #{$nato-dark-border};
-  --pc-tooltip-text: #{$nato-dark-text};
-  --pc-popover-content-bg: #{$nato-dark-card};
+  // Tooltip/Popover — all three covered by the mixin (base tooltip-bg /
+  // tooltip-text-color / dropdown-bg), which nato dark-sets.
 
   // Command palette
   --pc-command-palette-backdrop-bg: rgba(4, 18, 42, 0.85);

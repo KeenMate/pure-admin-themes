@@ -348,6 +348,10 @@ $checkbox-focus-shadow: 0 0 0 2px rgba($base-accent-color, 0.25);
 .pc-mode-dark {
   color-scheme: dark;
 
+  // WS5: re-resolve mode-aware --pc-* against this scope's --base-* (set below).
+  // Replaces the hand-written --pc-* dark duplicates; only divergences remain.
+  @include output-pc-component-mode-variables;
+
   --page-loader-bg: rgba(21, 24, 29, 0.95);
   --page-loader-spinner-border: #{$sentinel-dark-border};
   --page-loader-spinner-accent: #{$sentinel-crimson-light};
@@ -388,16 +392,13 @@ $checkbox-focus-shadow: 0 0 0 2px rgba($base-accent-color, 0.25);
   --pc-footer-bg: #0e1014;
   --pc-footer-border-color: #{$sentinel-dark-border};
 
-  // Cards
-  --pc-card-bg: #{$sentinel-dark-card};
-  --pc-card-header-bg: #{$sentinel-dark-surface};
+  // Cards — bg/header covered by the mixin; footer/tabs diverge, kept explicit.
   --pc-card-footer-bg: #{$sentinel-dark-surface};
   --pc-card-tabs-bg: #{$sentinel-dark-border};
 
-  // Inputs
-  --pc-input-bg: #{$sentinel-dark-surface};
+  // Inputs — bg/text covered by the mixin. input-border tracks unset
+  // --base-input-border-color; focus is brand crimson — both kept explicit.
   --pc-input-border: #{$sentinel-dark-border};
-  --pc-input-text: #{$sentinel-dark-text};
   --pc-input-focus-border-color: #{$sentinel-crimson-light};
 
   // Input group
@@ -416,24 +417,18 @@ $checkbox-focus-shadow: 0 0 0 2px rgba($base-accent-color, 0.25);
     }
   }
 
-  // Tables
-  --pc-table-bg: #{$sentinel-dark-card};
-  --pc-table-header-bg: #{$sentinel-dark-surface};
+  // Tables — bg/header/hover covered by the mixin; stripe diverges (darker), kept.
   --pc-table-stripe: #{$sentinel-dark-bg};
-  --pc-table-hover-bg: #{$sentinel-dark-surface};
 
-  // Modals
-  --pc-modal-content-bg: #{$sentinel-dark-card};
+  // Modals — content covered by the mixin; overlay diverges, kept.
   --pc-modal-overlay-bg: rgba(8, 9, 12, 0.85);
 
   // Loader/Profile
   --pc-loader-overlay-bg: rgba(8, 9, 12, 0.75);
   --pc-profile-overlay-bg: rgba(8, 9, 12, 0.55);
 
-  // Tooltip/Popover
-  --pc-tooltip-bg: #{$sentinel-dark-border};
-  --pc-tooltip-text: #{$sentinel-dark-text};
-  --pc-popover-content-bg: #{$sentinel-dark-card};
+  // Tooltip/Popover — all three covered by the mixin (base tooltip-bg /
+  // tooltip-text-color / dropdown-bg), which sentinel dark-sets.
 
   // Command palette
   --pc-command-palette-backdrop-bg: rgba(8, 9, 12, 0.85);

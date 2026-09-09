@@ -311,6 +311,12 @@ $checkbox-focus-shadow: 0 0 0 2px rgba($base-accent-color, 0.25);
   // `color-scheme: light` from :root and adaptive palettes pick wrong.
   color-scheme: dark;
 
+  // WS5: re-resolve every mode-aware --pc-* component token against THIS scope's
+  // --base-* (set in the base block below). Replaces the hand-written --pc-*
+  // dark duplicates that used to compensate for var() freezing at :root; only
+  // deliberate divergences remain as explicit overrides after this include.
+  @include output-pc-component-mode-variables;
+
   // Corporate dark palette
   $dark-bg: #0f172a;
   $dark-card: #1e293b;
@@ -360,16 +366,15 @@ $checkbox-focus-shadow: 0 0 0 2px rgba($base-accent-color, 0.25);
   --pc-footer-bg: #{$dark-card};
   --pc-footer-border-color: #{$dark-border};
 
-  // Cards
-  --pc-card-bg: #{$dark-card};
-  --pc-card-header-bg: #{$dark-surface};
+  // Cards — bg/header covered by the mixin (base-main-bg / base-elevated-bg);
+  // footer + tabs diverge (surface / border), so kept explicit.
   --pc-card-footer-bg: #{$dark-surface};
   --pc-card-tabs-bg: #{$dark-border};
 
-  // Inputs
-  --pc-input-bg: #{$dark-surface};
+  // Inputs — bg/text covered by the mixin (base-input-bg / base-input-color).
+  // input-border tracks --base-input-border-color (not dark-set) so kept;
+  // focus is the brand accent, kept explicit.
   --pc-input-border: #{$dark-border};
-  --pc-input-text: #{$dark-text};
   --pc-input-focus-border-color: #{$corporate-blue-500};
 
   // Input group
@@ -388,24 +393,20 @@ $checkbox-focus-shadow: 0 0 0 2px rgba($base-accent-color, 0.25);
     }
   }
 
-  // Tables
-  --pc-table-bg: #{$dark-card};
-  --pc-table-header-bg: #{$dark-surface};
+  // Tables — bg/header/hover covered by the mixin (base-main/elevated/hover-bg).
+  // Stripe diverges (uses page/bg, darker than header) so kept explicit.
   --pc-table-stripe: #{$dark-bg};
-  --pc-table-hover-bg: #{$dark-surface};
 
-  // Modals
-  --pc-modal-content-bg: #{$dark-card};
+  // Modals — content covered by the mixin (base-main-bg). Overlay diverges
+  // (darker than base-overlay-bg) so kept explicit.
   --pc-modal-overlay-bg: rgba(0, 0, 0, 0.8);
 
   // Loader/Profile
   --pc-loader-overlay-bg: rgba(0, 0, 0, 0.7);
   --pc-profile-overlay-bg: rgba(0, 0, 0, 0.5);
 
-  // Tooltip/Popover
-  --pc-tooltip-bg: #{$dark-border};
-  --pc-tooltip-text: #{$dark-text};
-  --pc-popover-content-bg: #{$dark-card};
+  // Tooltip/Popover — all three covered by the mixin (base-tooltip-bg /
+  // base-tooltip-text-color / base-dropdown-bg), which corporate dark-sets.
 
   // Command palette
   --pc-command-palette-backdrop-bg: rgba(0, 0, 0, 0.8);

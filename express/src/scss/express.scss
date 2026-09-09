@@ -461,6 +461,10 @@ $navbar-profile-name-color: $express-black;  // Black text on yellow header
 .pc-mode-dark {
   color-scheme: dark;
 
+  // WS5: re-resolve mode-aware --pc-* against this scope's --base-* (set below).
+  // Replaces the hand-written --pc-* dark duplicates; only divergences remain.
+  @include output-pc-component-mode-variables;
+
   // Express dark palette
   $dark-bg: #1a1a1a;
   $dark-card: #242424;
@@ -509,16 +513,13 @@ $navbar-profile-name-color: $express-black;  // Black text on yellow header
   --pc-footer-bg: #{$express-yellow};
   --pc-footer-border-color: #{$express-yellow};
 
-  // Cards - dark backgrounds
-  --pc-card-bg: #{$dark-card};
-  --pc-card-header-bg: #{$dark-surface};
+  // Cards — bg/header covered by the mixin; footer/tabs diverge, kept explicit.
   --pc-card-footer-bg: #{$dark-surface};
   --pc-card-tabs-bg: #{$dark-border};
 
-  // Inputs - dark backgrounds
-  --pc-input-bg: #{$dark-surface};
+  // Inputs — bg/text covered by the mixin. input-border tracks unset
+  // --base-input-border-color; focus is brand red (not base yellow) — both kept.
   --pc-input-border: #{$dark-border};
-  --pc-input-text: #{$dark-text};
   --pc-input-focus-border-color: #{$express-red};
 
   // Input group - vibrant yellow for Express branding
@@ -538,14 +539,10 @@ $navbar-profile-name-color: $express-black;  // Black text on yellow header
     }
   }
 
-  // Tables - dark backgrounds
-  --pc-table-bg: #{$dark-card};
-  --pc-table-header-bg: #{$dark-surface};
+  // Tables — bg/header/hover covered by the mixin; stripe diverges (darker), kept.
   --pc-table-stripe: #{$dark-bg};
-  --pc-table-hover-bg: #{$dark-surface};
 
-  // Modals
-  --pc-modal-content-bg: #{$dark-card};
+  // Modals — content covered by the mixin; overlay diverges (darker), kept.
   --pc-modal-overlay-bg: rgba(0, 0, 0, 0.8);
 
   // Loader overlay
@@ -554,10 +551,8 @@ $navbar-profile-name-color: $express-black;  // Black text on yellow header
   // Profile panel
   --pc-profile-overlay-bg: rgba(0, 0, 0, 0.5);
 
-  // Tooltip/Popover
-  --pc-tooltip-bg: #{$dark-border};
-  --pc-tooltip-text: #{$dark-text};
-  --pc-popover-content-bg: #{$dark-card};
+  // Tooltip/Popover — all three covered by the mixin (base tooltip-bg /
+  // tooltip-text-color / dropdown-bg), which express dark-sets.
 
   // Command palette
   --pc-command-palette-backdrop-bg: rgba(0, 0, 0, 0.8);

@@ -229,6 +229,10 @@ $modal-content-bg: $minimal-white;
 .pc-mode-dark {
   color-scheme: dark;
 
+  // WS5: re-resolve mode-aware --pc-* against this scope's --base-* (set below).
+  // Replaces the hand-written --pc-* dark duplicates; only divergences remain.
+  @include output-pc-component-mode-variables;
+
   // Minimal dark palette - grayscale focused
   $dark-bg: #1a1a1a;
   $dark-card: #242424;
@@ -277,17 +281,13 @@ $modal-content-bg: $minimal-white;
   --pc-footer-bg: #{$dark-card};
   --pc-footer-border-color: #{$dark-border};
 
-  // Cards - dark backgrounds
-  --pc-card-bg: #{$dark-card};
-  --pc-card-header-bg: #{$dark-surface};
+  // Cards — bg/header covered by the mixin; footer/tabs diverge, kept explicit.
   --pc-card-footer-bg: #{$dark-surface};
   --pc-card-tabs-bg: #{$dark-border};
 
-  // Inputs - dark backgrounds
-  --pc-input-bg: #{$dark-surface};
+  // Inputs — bg/text/focus covered by the mixin (focus == grayscale accent).
+  // input-border tracks unset --base-input-border-color, kept explicit.
   --pc-input-border: #{$dark-border};
-  --pc-input-text: #{$dark-text};
-  --pc-input-focus-border-color: #{$dark-text};
 
   // Input group
   --pc-input-group-prepend-bg: #{$dark-border};
@@ -306,14 +306,10 @@ $modal-content-bg: $minimal-white;
     }
   }
 
-  // Tables - dark backgrounds
-  --pc-table-bg: #{$dark-card};
-  --pc-table-header-bg: #{$dark-surface};
+  // Tables — bg/header/hover covered by the mixin; stripe diverges (darker), kept.
   --pc-table-stripe: #{$dark-bg};
-  --pc-table-hover-bg: #{$dark-surface};
 
-  // Modals
-  --pc-modal-content-bg: #{$dark-card};
+  // Modals — content covered by the mixin; overlay diverges, kept.
   --pc-modal-overlay-bg: rgba(0, 0, 0, 0.7);
 
   // Loader overlay
@@ -322,10 +318,8 @@ $modal-content-bg: $minimal-white;
   // Profile panel
   --pc-profile-overlay-bg: rgba(0, 0, 0, 0.5);
 
-  // Tooltip/Popover
-  --pc-tooltip-bg: #{$dark-border};
-  --pc-tooltip-text: #{$dark-text};
-  --pc-popover-content-bg: #{$dark-card};
+  // Tooltip/Popover — all three covered by the mixin (base tooltip-bg /
+  // tooltip-text-color / dropdown-bg), which minimal dark-sets.
 
   // Command palette
   --pc-command-palette-backdrop-bg: rgba(0, 0, 0, 0.8);
