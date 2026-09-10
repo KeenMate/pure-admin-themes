@@ -320,70 +320,70 @@ $checkbox-focus-shadow: 0 0 0 2px $base-focus-ring-color;
   --pc-footer-border-color: #{$dark-bg-quaternary};
 
   // Cards - light backgrounds
-  --pc-card-bg: #{$light-card};
-  --pc-card-header-bg: #{$light-surface};
-  --pc-card-footer-bg: #{$light-surface};
-  --pc-card-tabs-bg: #{$light-border};
+  --pa-card-bg: #{$light-card};
+  --pa-card-header-bg: #{$light-surface};
+  --pa-card-footer-bg: #{$light-surface};
+  --pa-card-tabs-bg: #{$light-border};
 
   // Inputs - light backgrounds
-  --pc-input-bg: #{$light-card};
-  --pc-input-border: #{$light-border};
-  --pc-input-text: #{$light-text};
-  --pc-input-focus-border-color: #{$dark-accent};
+  --pa-input-bg: #{$light-card};
+  --pa-input-border: #{$light-border};
+  --pa-input-text: #{$light-text};
+  --pa-input-focus-border-color: #{$dark-accent};
 
   // Input group
-  --pc-input-group-prepend-bg: #{$light-surface};
-  --pc-input-group-prepend-text: #{$light-text-secondary};
-  --pc-input-group-append-bg: #{$light-surface};
-  --pc-input-group-append-text: #{$light-text-secondary};
+  --pa-input-group-prepend-bg: #{$light-surface};
+  --pa-input-group-prepend-text: #{$light-text-secondary};
+  --pa-input-group-append-bg: #{$light-surface};
+  --pa-input-group-append-text: #{$light-text-secondary};
 
   // Tables - light backgrounds
-  --pc-table-bg: #{$light-card};
-  --pc-table-header-bg: #{$light-surface};
-  --pc-table-stripe: #{$light-bg};
-  --pc-table-hover-bg: #{$light-surface};
+  --pa-table-bg: #{$light-card};
+  --pa-table-header-bg: #{$light-surface};
+  --pa-table-stripe: #{$light-bg};
+  --pa-table-hover-bg: #{$light-surface};
 
   // Modals
-  --pc-modal-content-bg: #{$light-card};
-  --pc-modal-overlay-bg: rgba(0, 0, 0, 0.5);
+  --pa-modal-content-bg: #{$light-card};
+  --pa-modal-overlay-bg: rgba(0, 0, 0, 0.5);
 
   // Loader overlay
-  --pc-loader-overlay-bg: rgba(255, 255, 255, 0.8);
+  --pa-loader-overlay-bg: rgba(255, 255, 255, 0.8);
 
   // Profile panel
-  --pc-profile-overlay-bg: rgba(0, 0, 0, 0.3);
+  --pa-profile-overlay-bg: rgba(0, 0, 0, 0.3);
 
   // Tooltip/Popover
-  --pc-tooltip-bg: #{$light-text};
-  --pc-tooltip-text: #ffffff;
-  --pc-popover-content-bg: #{$light-card};
+  --pa-tooltip-bg: #{$light-text};
+  --pa-tooltip-text: #ffffff;
+  --pa-popover-content-bg: #{$light-card};
 
   // Command palette
-  --pc-command-palette-backdrop-bg: rgba(0, 0, 0, 0.5);
-  --pc-command-palette-item-hover-bg: #{$light-surface};
-  --pc-command-palette-item-active-bg: rgba(77, 171, 247, 0.15);
-  --pc-command-palette-highlight-bg: rgba(77, 171, 247, 0.2);
+  --pa-command-palette-backdrop-bg: rgba(0, 0, 0, 0.5);
+  --pa-command-palette-item-hover-bg: #{$light-surface};
+  --pa-command-palette-item-active-bg: rgba(77, 171, 247, 0.15);
+  --pa-command-palette-highlight-bg: rgba(77, 171, 247, 0.2);
 
   // Alert colors - derived from semantic colors
   @include output-pc-alert-variables-light;
 
   // Buttons
-  --pc-btn-secondary-bg: #{$light-border};
-  --pc-btn-secondary-bg-hover: #cbd5e1;
-  --pc-btn-secondary-text: #{$light-text};
-  --pc-btn-light-bg: #{$light-surface};
-  --pc-btn-light-bg-hover: #{$light-border};
-  --pc-btn-light-text: #{$light-text};
+  --pa-btn-secondary-bg: #{$light-border};
+  --pa-btn-secondary-bg-hover: #cbd5e1;
+  --pa-btn-secondary-text: #{$light-text};
+  --pa-btn-light-bg: #{$light-surface};
+  --pa-btn-light-bg-hover: #{$light-border};
+  --pa-btn-light-text: #{$light-text};
 
   // Semantic colors
-  --pc-success-bg: #22c55e;
-  --pc-success-bg-light: rgba(34, 197, 94, 0.1);
-  --pc-warning-bg: #eab308;
-  --pc-warning-bg-light: rgba(234, 179, 8, 0.1);
-  --pc-danger-bg: #ef4444;
-  --pc-danger-bg-light: rgba(239, 68, 68, 0.1);
-  --pc-info-bg: #0ea5e9;
-  --pc-info-bg-light: rgba(14, 165, 233, 0.1);
+  --pa-success-bg: #22c55e;
+  --pa-success-bg-light: rgba(34, 197, 94, 0.1);
+  --pa-warning-bg: #eab308;
+  --pa-warning-bg-light: rgba(234, 179, 8, 0.1);
+  --pa-danger-bg: #ef4444;
+  --pa-danger-bg-light: rgba(239, 68, 68, 0.1);
+  --pa-info-bg: #0ea5e9;
+  --pa-info-bg-light: rgba(14, 165, 233, 0.1);
 
   // Base variables for web components (light mode)
   // Semantic names (preferred)
@@ -477,22 +477,22 @@ $checkbox-focus-shadow: 0 0 0 2px $base-focus-ring-color;
   --pc-accent-hover: rgba(59, 130, 246, 0.15);
   --pc-accent-light: rgba(59, 130, 246, 0.08);
 
-  --pc-card-bg: #{$blue-card};
-  --pc-card-header-bg: #{$blue-bg};
-  --pc-card-footer-bg: #{$blue-bg};
-  --pc-card-tabs-bg: #{$blue-surface};
+  --pa-card-bg: #{$blue-card};
+  --pa-card-header-bg: #{$blue-bg};
+  --pa-card-footer-bg: #{$blue-bg};
+  --pa-card-tabs-bg: #{$blue-surface};
 
-  --pc-input-bg: #{$blue-bg};
-  --pc-input-border: #{$blue-surface};
-  --pc-input-focus-border-color: #{$blue-accent};
+  --pa-input-bg: #{$blue-bg};
+  --pa-input-border: #{$blue-surface};
+  --pa-input-focus-border-color: #{$blue-accent};
 
-  --pc-table-bg: #{$blue-card};
-  --pc-table-header-bg: #{$blue-bg};
-  --pc-table-stripe: #{$blue-card};
-  --pc-table-hover-bg: #{$blue-surface};
+  --pa-table-bg: #{$blue-card};
+  --pa-table-header-bg: #{$blue-bg};
+  --pa-table-stripe: #{$blue-card};
+  --pa-table-hover-bg: #{$blue-surface};
 
-  --pc-btn-primary-bg: #1e40af;
-  --pc-btn-primary-bg-hover: #1e3a8a;
+  --pa-btn-primary-bg: #1e40af;
+  --pa-btn-primary-bg-hover: #1e3a8a;
 
   --page-loader-spinner-accent: #{$blue-accent};
 
@@ -535,22 +535,22 @@ $checkbox-focus-shadow: 0 0 0 2px $base-focus-ring-color;
 
   --pc-text-color-2: #86efac;
 
-  --pc-card-bg: #{$green-card};
-  --pc-card-header-bg: #{$green-bg};
-  --pc-card-footer-bg: #{$green-bg};
-  --pc-card-tabs-bg: #{$green-surface};
+  --pa-card-bg: #{$green-card};
+  --pa-card-header-bg: #{$green-bg};
+  --pa-card-footer-bg: #{$green-bg};
+  --pa-card-tabs-bg: #{$green-surface};
 
-  --pc-input-bg: #{$green-bg};
-  --pc-input-border: #{$green-surface};
-  --pc-input-focus-border-color: #{$green-accent};
+  --pa-input-bg: #{$green-bg};
+  --pa-input-border: #{$green-surface};
+  --pa-input-focus-border-color: #{$green-accent};
 
-  --pc-table-bg: #{$green-card};
-  --pc-table-header-bg: #{$green-bg};
-  --pc-table-stripe: #{$green-card};
-  --pc-table-hover-bg: #{$green-surface};
+  --pa-table-bg: #{$green-card};
+  --pa-table-header-bg: #{$green-bg};
+  --pa-table-stripe: #{$green-card};
+  --pa-table-hover-bg: #{$green-surface};
 
-  --pc-btn-primary-bg: #15803d;
-  --pc-btn-primary-bg-hover: #166534;
+  --pa-btn-primary-bg: #15803d;
+  --pa-btn-primary-bg-hover: #166534;
 
   --page-loader-spinner-accent: #{$green-accent};
 
@@ -593,22 +593,22 @@ $checkbox-focus-shadow: 0 0 0 2px $base-focus-ring-color;
 
   --pc-text-color-2: #fca5a5;
 
-  --pc-card-bg: #{$red-card};
-  --pc-card-header-bg: #{$red-bg};
-  --pc-card-footer-bg: #{$red-bg};
-  --pc-card-tabs-bg: #{$red-surface};
+  --pa-card-bg: #{$red-card};
+  --pa-card-header-bg: #{$red-bg};
+  --pa-card-footer-bg: #{$red-bg};
+  --pa-card-tabs-bg: #{$red-surface};
 
-  --pc-input-bg: #{$red-bg};
-  --pc-input-border: #{$red-surface};
-  --pc-input-focus-border-color: #{$red-accent};
+  --pa-input-bg: #{$red-bg};
+  --pa-input-border: #{$red-surface};
+  --pa-input-focus-border-color: #{$red-accent};
 
-  --pc-table-bg: #2d1b1b;
-  --pc-table-header-bg: #1a0e0e;
-  --pc-table-stripe: #2d1b1b;
-  --pc-table-hover-bg: #4a2323;
+  --pa-table-bg: #2d1b1b;
+  --pa-table-header-bg: #1a0e0e;
+  --pa-table-stripe: #2d1b1b;
+  --pa-table-hover-bg: #4a2323;
 
-  --pc-btn-primary-bg: #991b1b;
-  --pc-btn-primary-bg-hover: #7f1d1d;
+  --pa-btn-primary-bg: #991b1b;
+  --pa-btn-primary-bg-hover: #7f1d1d;
 
   --page-loader-spinner-accent: #{$red-accent};
 

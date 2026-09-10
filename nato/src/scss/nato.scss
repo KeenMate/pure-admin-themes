@@ -324,14 +324,14 @@ $checkbox-focus-shadow: 0 0 0 2px rgba($base-accent-color, 0.25);
   @include output-pc-alert-variables-light;
 
   // Input group - light gray background for light mode
-  --pc-input-group-prepend-bg: #{$nato-gray-100};
-  --pc-input-group-prepend-text: #{$nato-gray-700};
-  --pc-input-group-append-bg: #{$nato-gray-100};
-  --pc-input-group-append-text: #{$nato-gray-700};
+  --pa-input-group-prepend-bg: #{$nato-gray-100};
+  --pa-input-group-prepend-text: #{$nato-gray-700};
+  --pa-input-group-append-bg: #{$nato-gray-100};
+  --pa-input-group-append-text: #{$nato-gray-700};
 
   // Outline-secondary button: default resolves to white (secondary text),
   // which is invisible on our light card backgrounds. Use navy.
-  --pc-btn-secondary-outline-color: #{$nato-navy};
+  --pa-btn-secondary-outline-color: #{$nato-navy};
 }
 
 // =============================================================================
@@ -385,19 +385,19 @@ $checkbox-focus-shadow: 0 0 0 2px rgba($base-accent-color, 0.25);
   --pc-footer-border-color: #{$nato-dark-border};
 
   // Cards — bg/header covered by the mixin; footer/tabs diverge, kept explicit.
-  --pc-card-footer-bg: #{$nato-dark-surface};
-  --pc-card-tabs-bg: #{$nato-dark-border};
+  --pa-card-footer-bg: #{$nato-dark-surface};
+  --pa-card-tabs-bg: #{$nato-dark-border};
 
   // Inputs — bg/text covered by the mixin. input-border tracks unset
   // --base-input-border-color; focus is the brand azure — both kept explicit.
-  --pc-input-border: #{$nato-dark-border};
-  --pc-input-focus-border-color: #{$nato-azure};
+  --pa-input-border: #{$nato-dark-border};
+  --pa-input-focus-border-color: #{$nato-azure};
 
   // Input group
-  --pc-input-group-prepend-bg: rgba(17, 138, 203, 0.18);
-  --pc-input-group-prepend-text: #{$nato-azure-light};
-  --pc-input-group-append-bg: rgba(17, 138, 203, 0.18);
-  --pc-input-group-append-text: #{$nato-azure-light};
+  --pa-input-group-prepend-bg: rgba(17, 138, 203, 0.18);
+  --pa-input-group-prepend-text: #{$nato-azure-light};
+  --pa-input-group-append-bg: rgba(17, 138, 203, 0.18);
+  --pa-input-group-append-text: #{$nato-azure-light};
 
   .pa-input-group__button {
     background-color: rgba(17, 138, 203, 0.18) !important;
@@ -410,23 +410,23 @@ $checkbox-focus-shadow: 0 0 0 2px rgba($base-accent-color, 0.25);
   }
 
   // Tables — bg/header/hover covered by the mixin; stripe diverges (darker), kept.
-  --pc-table-stripe: #{$nato-dark-bg};
+  --pa-table-stripe: #{$nato-dark-bg};
 
   // Modals — content covered by the mixin; overlay diverges, kept.
-  --pc-modal-overlay-bg: rgba(4, 18, 42, 0.85);
+  --pa-modal-overlay-bg: rgba(4, 18, 42, 0.85);
 
   // Loader/Profile
-  --pc-loader-overlay-bg: rgba(4, 18, 42, 0.75);
-  --pc-profile-overlay-bg: rgba(4, 18, 42, 0.55);
+  --pa-loader-overlay-bg: rgba(4, 18, 42, 0.75);
+  --pa-profile-overlay-bg: rgba(4, 18, 42, 0.55);
 
   // Tooltip/Popover — all three covered by the mixin (base tooltip-bg /
   // tooltip-text-color / dropdown-bg), which nato dark-sets.
 
   // Command palette
-  --pc-command-palette-backdrop-bg: rgba(4, 18, 42, 0.85);
-  --pc-command-palette-item-hover-bg: #{$nato-dark-surface};
-  --pc-command-palette-item-active-bg: rgba(17, 138, 203, 0.22);
-  --pc-command-palette-highlight-bg: rgba(17, 138, 203, 0.32);
+  --pa-command-palette-backdrop-bg: rgba(4, 18, 42, 0.85);
+  --pa-command-palette-item-hover-bg: #{$nato-dark-surface};
+  --pa-command-palette-item-active-bg: rgba(17, 138, 203, 0.22);
+  --pa-command-palette-highlight-bg: rgba(17, 138, 203, 0.32);
 
   // Alert colors
   @include output-pc-alert-variables-dark;
@@ -439,12 +439,12 @@ $checkbox-focus-shadow: 0 0 0 2px rgba($base-accent-color, 0.25);
   // Buttons
   // Inverted secondary: light blue-grey button with dark navy text — navy-on-navy
   // (border on card) had only ~2:1 contrast. Outline-color now defaults to bg in core.
-  --pc-btn-secondary-bg: #{$nato-dark-text-2};
-  --pc-btn-secondary-bg-hover: #{$nato-dark-text};
-  --pc-btn-secondary-text: #{$nato-dark-card};
-  --pc-btn-light-bg: #{$nato-dark-surface};
-  --pc-btn-light-bg-hover: #{$nato-dark-border};
-  --pc-btn-light-text: #{$nato-dark-text};
+  --pa-btn-secondary-bg: #{$nato-dark-text-2};
+  --pa-btn-secondary-bg-hover: #{$nato-dark-text};
+  --pa-btn-secondary-text: #{$nato-dark-card};
+  --pa-btn-light-bg: #{$nato-dark-surface};
+  --pa-btn-light-bg-hover: #{$nato-dark-border};
+  --pa-btn-light-text: #{$nato-dark-text};
 
   // Brand color slots 6/8/9 are dark navies — shift to medium navy/slate
   // for dark mode so outline buttons (color text + border on dark bg)
@@ -454,14 +454,14 @@ $checkbox-focus-shadow: 0 0 0 2px rgba($base-accent-color, 0.25);
   --pc-color-9: #{$nato-gray-400};  // medium slate (replaces midnight)
 
   // Semantic
-  --pc-success-bg: #{$nato-success-500};
-  --pc-success-bg-light: rgba(46, 133, 64, 0.22);
-  --pc-warning-bg: #{$nato-warning-500};
-  --pc-warning-bg-light: rgba(245, 183, 0, 0.22);
-  --pc-danger-bg: #{$nato-danger-500};
-  --pc-danger-bg-light: rgba(200, 16, 46, 0.22);
-  --pc-info-bg: #{$nato-info-500};
-  --pc-info-bg-light: rgba(17, 138, 203, 0.22);
+  --pa-success-bg: #{$nato-success-500};
+  --pa-success-bg-light: rgba(46, 133, 64, 0.22);
+  --pa-warning-bg: #{$nato-warning-500};
+  --pa-warning-bg-light: rgba(245, 183, 0, 0.22);
+  --pa-danger-bg: #{$nato-danger-500};
+  --pa-danger-bg-light: rgba(200, 16, 46, 0.22);
+  --pa-info-bg: #{$nato-info-500};
+  --pa-info-bg-light: rgba(17, 138, 203, 0.22);
 
   // Base variables for web components (dark mode)
   --base-main-bg: #{$nato-dark-card};

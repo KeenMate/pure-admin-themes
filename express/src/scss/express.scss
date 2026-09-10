@@ -442,16 +442,16 @@ $navbar-profile-name-color: $express-black;  // Black text on yellow header
   @include output-pc-alert-variables-light;
 
   // Input group - light gray background for light mode
-  --pc-input-group-prepend-bg: #{$express-gray-lightest};
-  --pc-input-group-prepend-text: #{$express-dark};
-  --pc-input-group-append-bg: #{$express-gray-lightest};
-  --pc-input-group-append-text: #{$express-dark};
+  --pa-input-group-prepend-bg: #{$express-gray-lightest};
+  --pa-input-group-prepend-text: #{$express-dark};
+  --pa-input-group-append-bg: #{$express-gray-lightest};
+  --pa-input-group-append-text: #{$express-dark};
 
   // Override alert text for readability on saturated backgrounds
-  --pc-alert-success-text: #{$base-success-text};
-  --pc-alert-warning-text: #{$base-warning-text};
-  --pc-alert-danger-text: #ffffff;
-  --pc-alert-info-text: #{$base-info-text};
+  --pa-alert-success-text: #{$base-success-text};
+  --pa-alert-warning-text: #{$base-warning-text};
+  --pa-alert-danger-text: #ffffff;
+  --pa-alert-info-text: #{$base-info-text};
 
 }
 
@@ -514,19 +514,19 @@ $navbar-profile-name-color: $express-black;  // Black text on yellow header
   --pc-footer-border-color: #{$express-yellow};
 
   // Cards — bg/header covered by the mixin; footer/tabs diverge, kept explicit.
-  --pc-card-footer-bg: #{$dark-surface};
-  --pc-card-tabs-bg: #{$dark-border};
+  --pa-card-footer-bg: #{$dark-surface};
+  --pa-card-tabs-bg: #{$dark-border};
 
   // Inputs — bg/text covered by the mixin. input-border tracks unset
   // --base-input-border-color; focus is brand red (not base yellow) — both kept.
-  --pc-input-border: #{$dark-border};
-  --pc-input-focus-border-color: #{$express-red};
+  --pa-input-border: #{$dark-border};
+  --pa-input-focus-border-color: #{$express-red};
 
   // Input group - vibrant yellow for Express branding
-  --pc-input-group-prepend-bg: rgba(255, 204, 0, 0.35);
-  --pc-input-group-prepend-text: #{$express-yellow};
-  --pc-input-group-append-bg: rgba(255, 204, 0, 0.35);
-  --pc-input-group-append-text: #{$express-yellow};
+  --pa-input-group-prepend-bg: rgba(255, 204, 0, 0.35);
+  --pa-input-group-prepend-text: #{$express-yellow};
+  --pa-input-group-append-bg: rgba(255, 204, 0, 0.35);
+  --pa-input-group-append-text: #{$express-yellow};
 
   // Input group buttons
   .pa-input-group__button {
@@ -540,25 +540,25 @@ $navbar-profile-name-color: $express-black;  // Black text on yellow header
   }
 
   // Tables — bg/header/hover covered by the mixin; stripe diverges (darker), kept.
-  --pc-table-stripe: #{$dark-bg};
+  --pa-table-stripe: #{$dark-bg};
 
   // Modals — content covered by the mixin; overlay diverges (darker), kept.
-  --pc-modal-overlay-bg: rgba(0, 0, 0, 0.8);
+  --pa-modal-overlay-bg: rgba(0, 0, 0, 0.8);
 
   // Loader overlay
-  --pc-loader-overlay-bg: rgba(0, 0, 0, 0.7);
+  --pa-loader-overlay-bg: rgba(0, 0, 0, 0.7);
 
   // Profile panel
-  --pc-profile-overlay-bg: rgba(0, 0, 0, 0.5);
+  --pa-profile-overlay-bg: rgba(0, 0, 0, 0.5);
 
   // Tooltip/Popover — all three covered by the mixin (base tooltip-bg /
   // tooltip-text-color / dropdown-bg), which express dark-sets.
 
   // Command palette
-  --pc-command-palette-backdrop-bg: rgba(0, 0, 0, 0.8);
-  --pc-command-palette-item-hover-bg: #{$dark-surface};
-  --pc-command-palette-item-active-bg: rgba(212, 5, 17, 0.2);
-  --pc-command-palette-highlight-bg: rgba(212, 5, 17, 0.3);
+  --pa-command-palette-backdrop-bg: rgba(0, 0, 0, 0.8);
+  --pa-command-palette-item-hover-bg: #{$dark-surface};
+  --pa-command-palette-item-active-bg: rgba(212, 5, 17, 0.2);
+  --pa-command-palette-highlight-bg: rgba(212, 5, 17, 0.3);
 
   // Alert colors - derived from semantic colors
   @include output-pc-alert-variables-dark;
@@ -571,22 +571,22 @@ $navbar-profile-name-color: $express-black;  // Black text on yellow header
 
   // Buttons - adjust for dark mode
   // bg sits between $dark-border (#3a3a3a, too subtle on #242424 card) and $dark-text-bg (#aaaaaa).
-  --pc-btn-secondary-bg: #555555;
-  --pc-btn-secondary-bg-hover: #{$dark-text-bg};
-  --pc-btn-secondary-text: #{$dark-text};
-  --pc-btn-light-bg: #{$dark-surface};
-  --pc-btn-light-bg-hover: #{$dark-border};
-  --pc-btn-light-text: #{$dark-text};
+  --pa-btn-secondary-bg: #555555;
+  --pa-btn-secondary-bg-hover: #{$dark-text-bg};
+  --pa-btn-secondary-text: #{$dark-text};
+  --pa-btn-light-bg: #{$dark-surface};
+  --pa-btn-light-bg-hover: #{$dark-border};
+  --pa-btn-light-text: #{$dark-text};
 
   // Semantic colors - brighter for dark mode visibility
-  --pc-success-bg: #34d399;
-  --pc-success-bg-light: rgba(16, 185, 129, 0.2);
-  --pc-warning-bg: #fbbf24;
-  --pc-warning-bg-light: rgba(245, 158, 11, 0.2);
-  --pc-danger-bg: #f87171;
-  --pc-danger-bg-light: rgba(248, 113, 113, 0.2);
-  --pc-info-bg: #22d3ee;
-  --pc-info-bg-light: rgba(6, 182, 212, 0.2);
+  --pa-success-bg: #34d399;
+  --pa-success-bg-light: rgba(16, 185, 129, 0.2);
+  --pa-warning-bg: #fbbf24;
+  --pa-warning-bg-light: rgba(245, 158, 11, 0.2);
+  --pa-danger-bg: #f87171;
+  --pa-danger-bg-light: rgba(248, 113, 113, 0.2);
+  --pa-info-bg: #22d3ee;
+  --pa-info-bg-light: rgba(6, 182, 212, 0.2);
 
   // Base variables for web components (dark mode)
   // Semantic names (preferred)

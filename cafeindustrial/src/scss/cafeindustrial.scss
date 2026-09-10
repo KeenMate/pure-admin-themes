@@ -350,67 +350,67 @@ $theme-color-scheme: dark;
   --pc-footer-border-color: #{$light-tan};
 
   // Cards - warm cream
-  --pc-card-bg: #{$light-white};
-  --pc-card-header-bg: #{$light-cream};
-  --pc-card-footer-bg: #{$light-cream};
-  --pc-card-tabs-bg: #{$light-sand};
+  --pa-card-bg: #{$light-white};
+  --pa-card-header-bg: #{$light-cream};
+  --pa-card-footer-bg: #{$light-cream};
+  --pa-card-tabs-bg: #{$light-sand};
 
   // Inputs - clean warm white
-  --pc-input-bg: #{$light-white};
-  --pc-input-border: #{$light-tan};
-  --pc-input-text: #{$light-brown-dark};
-  --pc-input-focus-border-color: #{$light-accent};
-  --pc-select-focus-border-color: #{$light-accent};
-  --pc-textarea-focus-border-color: #{$light-accent};
+  --pa-input-bg: #{$light-white};
+  --pa-input-border: #{$light-tan};
+  --pa-input-text: #{$light-brown-dark};
+  --pa-input-focus-border-color: #{$light-accent};
+  --pa-select-focus-border-color: #{$light-accent};
+  --pa-textarea-focus-border-color: #{$light-accent};
 
   // Input group
-  --pc-input-group-prepend-bg: #{$light-sand};
-  --pc-input-group-prepend-text: #{$light-brown};
-  --pc-input-group-append-bg: #{$light-sand};
-  --pc-input-group-append-text: #{$light-brown};
+  --pa-input-group-prepend-bg: #{$light-sand};
+  --pa-input-group-prepend-text: #{$light-brown};
+  --pa-input-group-append-bg: #{$light-sand};
+  --pa-input-group-append-text: #{$light-brown};
 
   // Checkbox
-  --pc-checkbox-border-color: #{$light-tan};
-  --pc-checkbox-border-color-hover: #{$light-accent};
-  --pc-checkbox-border-color-checked: #{$light-accent};
-  --pc-checkbox-bg: #{$light-white};
-  --pc-checkbox-bg-checked: #{$light-accent};
-  --pc-checkbox-bg-indeterminate: #{$light-accent};
-  --pc-checkbox-checkmark-color: #ffffff;
-  --pc-checkbox-focus-shadow: 0 0 0 2px rgba($light-accent, 0.25);
+  --pa-checkbox-border-color: #{$light-tan};
+  --pa-checkbox-border-color-hover: #{$light-accent};
+  --pa-checkbox-border-color-checked: #{$light-accent};
+  --pa-checkbox-bg: #{$light-white};
+  --pa-checkbox-bg-checked: #{$light-accent};
+  --pa-checkbox-bg-indeterminate: #{$light-accent};
+  --pa-checkbox-checkmark-color: #ffffff;
+  --pa-checkbox-focus-shadow: 0 0 0 2px rgba($light-accent, 0.25);
 
   // Tables - light surfaces
-  --pc-table-bg: #{$light-white};
-  --pc-table-header-bg: #{$light-cream};
-  --pc-table-stripe: #{$light-cream};
-  --pc-table-hover-bg: #{$light-sand};
-  --pc-table-hover-accent-color: #{$light-accent};
+  --pa-table-bg: #{$light-white};
+  --pa-table-header-bg: #{$light-cream};
+  --pa-table-stripe: #{$light-cream};
+  --pa-table-hover-bg: #{$light-sand};
+  --pa-table-hover-accent-color: #{$light-accent};
 
   // Modals
-  --pc-modal-content-bg: #{$light-white};
-  --pc-modal-overlay-bg: rgba(42, 32, 21, 0.5);
+  --pa-modal-content-bg: #{$light-white};
+  --pa-modal-overlay-bg: rgba(42, 32, 21, 0.5);
 
   // Loader overlay
-  --pc-loader-overlay-bg: rgba(247, 242, 235, 0.85);
+  --pa-loader-overlay-bg: rgba(247, 242, 235, 0.85);
 
   // Profile panel
-  --pc-profile-overlay-bg: rgba(42, 32, 21, 0.3);
+  --pa-profile-overlay-bg: rgba(42, 32, 21, 0.3);
 
   // Detail panel
-  --pc-detail-panel-overlay-bg: rgba(42, 32, 21, 0.3);
-  --pc-detail-panel-selected-bg: rgba($light-accent, 0.08);
+  --pa-detail-panel-overlay-bg: rgba(42, 32, 21, 0.3);
+  --pa-detail-panel-selected-bg: rgba($light-accent, 0.08);
 
   // Tooltip/Popover - dark tooltip on light bg
-  --pc-tooltip-bg: #{$light-espresso};
-  --pc-tooltip-text: #{$ci-dark-text-1};
-  --pc-popover-content-bg: #{$light-white};
+  --pa-tooltip-bg: #{$light-espresso};
+  --pa-tooltip-text: #{$ci-dark-text-1};
+  --pa-popover-content-bg: #{$light-white};
 
   // Command palette
-  --pc-command-palette-backdrop-bg: rgba(42, 32, 21, 0.5);
-  --pc-command-palette-item-hover-bg: #{$light-sand};
-  --pc-command-palette-item-active-bg: rgba($light-accent, 0.15);
-  --pc-command-palette-highlight-bg: rgba($light-accent, 0.2);
-  --pc-command-palette-highlight-text: #{$light-accent};
+  --pa-command-palette-backdrop-bg: rgba(42, 32, 21, 0.5);
+  --pa-command-palette-item-hover-bg: #{$light-sand};
+  --pa-command-palette-item-active-bg: rgba($light-accent, 0.15);
+  --pa-command-palette-highlight-bg: rgba($light-accent, 0.2);
+  --pa-command-palette-highlight-text: #{$light-accent};
 
   // Multiselect
   --pc-multiselect-dropdown-bg: #{$light-white};
@@ -423,49 +423,39 @@ $theme-color-scheme: dark;
   --pc-multiselect-pill-border: #{$light-accent};
 
   // Buttons
-  --pc-btn-primary-bg: #{$light-accent};
-  --pc-btn-primary-bg-hover: #{$light-accent-hover};
-  --pc-btn-primary-bg-light: rgba($light-accent, 0.08);
-  --pc-btn-primary-text: #ffffff;
-  --pc-btn-secondary-bg: #{$light-sand};
-  --pc-btn-secondary-bg-hover: #{$light-tan};
-  --pc-btn-secondary-text: #{$light-brown-dark};
-  --pc-btn-light-bg: #{$light-cream};
-  --pc-btn-light-bg-hover: #{$light-sand};
-  --pc-btn-light-text: #{$light-brown-dark};
-  --pc-btn-dark-bg: #{$light-espresso};
-  --pc-btn-dark-bg-hover: #1a1510;
-  --pc-btn-dark-text: #{$ci-dark-text-1};
+  --pa-btn-primary-bg: #{$light-accent};
+  --pa-btn-primary-bg-hover: #{$light-accent-hover};
+  --pa-btn-primary-bg-light: rgba($light-accent, 0.08);
+  --pa-btn-primary-text: #ffffff;
+  --pa-btn-secondary-bg: #{$light-sand};
+  --pa-btn-secondary-bg-hover: #{$light-tan};
+  --pa-btn-secondary-text: #{$light-brown-dark};
+  --pa-btn-light-bg: #{$light-cream};
+  --pa-btn-light-bg-hover: #{$light-sand};
+  --pa-btn-light-text: #{$light-brown-dark};
+  --pa-btn-dark-bg: #{$light-espresso};
+  --pa-btn-dark-bg-hover: #1a1510;
+  --pa-btn-dark-text: #{$ci-dark-text-1};
 
   // Semantic colors (slightly adjusted for light bg)
-  --pc-success-bg: #3d8b4e;
-  --pc-success-bg-light: rgba(61, 139, 78, 0.1);
-  --pc-success-bg-subtle: rgba(61, 139, 78, 0.06);
-  --pc-warning-bg: #c4901e;
-  --pc-warning-bg-light: rgba(196, 144, 30, 0.1);
-  --pc-warning-bg-subtle: rgba(196, 144, 30, 0.06);
-  --pc-danger-bg: #b83a3a;
-  --pc-danger-bg-light: rgba(184, 58, 58, 0.1);
-  --pc-danger-bg-subtle: rgba(184, 58, 58, 0.06);
-  --pc-info-bg: #2e7a89;
-  --pc-info-bg-light: rgba(46, 122, 137, 0.1);
-  --pc-info-bg-subtle: rgba(46, 122, 137, 0.06);
-
-  // Badge colors - light mode
-  --pc-badge-success-bg: rgba(61, 139, 78, 0.12);
-  --pc-badge-success-text: #2d6e3c;
-  --pc-badge-warning-bg: rgba(196, 144, 30, 0.12);
-  --pc-badge-warning-text: #8b6914;
-  --pc-badge-info-bg: rgba(46, 122, 137, 0.12);
-  --pc-badge-info-text: #1e5f6d;
-  --pc-badge-danger-bg: rgba(184, 58, 58, 0.12);
-  --pc-badge-danger-text: #8b2c2c;
+  --pa-success-bg: #3d8b4e;
+  --pa-success-bg-light: rgba(61, 139, 78, 0.1);
+  --pa-success-bg-subtle: rgba(61, 139, 78, 0.06);
+  --pa-warning-bg: #c4901e;
+  --pa-warning-bg-light: rgba(196, 144, 30, 0.1);
+  --pa-warning-bg-subtle: rgba(196, 144, 30, 0.06);
+  --pa-danger-bg: #b83a3a;
+  --pa-danger-bg-light: rgba(184, 58, 58, 0.1);
+  --pa-danger-bg-subtle: rgba(184, 58, 58, 0.06);
+  --pa-info-bg: #2e7a89;
+  --pa-info-bg-light: rgba(46, 122, 137, 0.1);
+  --pa-info-bg-subtle: rgba(46, 122, 137, 0.06);
 
   // Composite badge
-  --pc-composite-badge-icon-bg: #{$light-sand};
-  --pc-composite-badge-label-bg: #{$light-cream};
-  --pc-composite-badge-label-text: #{$light-brown-dark};
-  --pc-composite-badge-label-hover-bg: #{$light-sand};
+  --pa-composite-badge-icon-bg: #{$light-sand};
+  --pa-composite-badge-label-bg: #{$light-cream};
+  --pa-composite-badge-label-text: #{$light-brown-dark};
+  --pa-composite-badge-label-hover-bg: #{$light-sand};
 
   // Alert colors - light mode derivation
   @include output-pc-alert-variables-light;

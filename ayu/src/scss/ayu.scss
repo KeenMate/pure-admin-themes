@@ -277,7 +277,7 @@ $checkbox-focus-shadow: 0 0 0 2px $base-focus-ring-color;
 
 // Secondary button: visible border in all variants
 .pa-btn--secondary {
-  border-color: var(--pc-btn-secondary-bg);
+  border-color: var(--pa-btn-secondary-bg);
 }
 
 // =============================================================================
@@ -294,15 +294,15 @@ $checkbox-focus-shadow: 0 0 0 2px $base-focus-ring-color;
   @include output-pc-alert-variables-dark;
 
   // Override alert text: use saturated tints of the alert color instead of white
-  --pc-alert-success-text: color-mix(in srgb, var(--pc-success-bg) 90%, black);
-  --pc-alert-danger-text: color-mix(in srgb, var(--pc-danger-bg) 90%, black);
-  --pc-alert-warning-text: color-mix(in srgb, var(--pc-warning-bg) 90%, black);
-  --pc-alert-info-text: color-mix(in srgb, var(--pc-info-bg) 90%, black);
+  --pa-alert-success-text: color-mix(in srgb, var(--pa-success-bg) 90%, black);
+  --pa-alert-danger-text: color-mix(in srgb, var(--pa-danger-bg) 90%, black);
+  --pa-alert-warning-text: color-mix(in srgb, var(--pa-warning-bg) 90%, black);
+  --pa-alert-info-text: color-mix(in srgb, var(--pa-info-bg) 90%, black);
 
   --base-elevated-bg: #{$mirage-elevated};
 
   // Secondary outline: use the button bg color (light gray), not text (dark bg)
-  --pc-btn-secondary-outline-color: #{$btn-secondary-bg};
+  --pa-btn-secondary-outline-color: #{$btn-secondary-bg};
 }
 
 // =============================================================================
@@ -332,26 +332,26 @@ $checkbox-focus-shadow: 0 0 0 2px $base-focus-ring-color;
   --pc-accent-hover: rgba(230, 180, 80, 0.15);
   --pc-accent-light: rgba(230, 180, 80, 0.08);
 
-  --pc-card-bg: #{$dark-elevated};
-  --pc-card-header-bg: #{$dark-surface};
-  --pc-card-footer-bg: #{$dark-surface};
-  --pc-card-tabs-bg: #{$dark-border};
+  --pa-card-bg: #{$dark-elevated};
+  --pa-card-header-bg: #{$dark-surface};
+  --pa-card-footer-bg: #{$dark-surface};
+  --pa-card-tabs-bg: #{$dark-border};
 
-  --pc-input-bg: #{$dark-surface};
-  --pc-input-border: #{$dark-border};
-  --pc-input-text: #{$dark-text};
-  --pc-input-focus-border-color: #{$ayu-accent};
+  --pa-input-bg: #{$dark-surface};
+  --pa-input-border: #{$dark-border};
+  --pa-input-text: #{$dark-text};
+  --pa-input-focus-border-color: #{$ayu-accent};
 
   // Input group
-  --pc-input-group-prepend-bg: #{$dark-elevated};
-  --pc-input-group-prepend-text: #{$dark-text-sec};
-  --pc-input-group-append-bg: #{$dark-elevated};
-  --pc-input-group-append-text: #{$dark-text-sec};
+  --pa-input-group-prepend-bg: #{$dark-elevated};
+  --pa-input-group-prepend-text: #{$dark-text-sec};
+  --pa-input-group-append-bg: #{$dark-elevated};
+  --pa-input-group-append-text: #{$dark-text-sec};
 
-  --pc-table-bg: #{$dark-elevated};
-  --pc-table-header-bg: #{$dark-surface};
-  --pc-table-stripe: #{$dark-surface};
-  --pc-table-hover-bg: #{$dark-border};
+  --pa-table-bg: #{$dark-elevated};
+  --pa-table-header-bg: #{$dark-surface};
+  --pa-table-stripe: #{$dark-surface};
+  --pa-table-hover-bg: #{$dark-border};
 
   --base-accent-color: #{$ayu-accent};
   --base-main-bg: #{$dark-elevated};
@@ -407,68 +407,68 @@ $checkbox-focus-shadow: 0 0 0 2px $base-focus-ring-color;
   --pc-footer-border-color: #{$mirage-border};
 
   // Cards
-  --pc-card-bg: #ffffff;
-  --pc-card-header-bg: #{$light-surface};
-  --pc-card-footer-bg: #{$light-surface};
-  --pc-card-tabs-bg: #{$light-border};
+  --pa-card-bg: #ffffff;
+  --pa-card-header-bg: #{$light-surface};
+  --pa-card-footer-bg: #{$light-surface};
+  --pa-card-tabs-bg: #{$light-border};
 
   // Inputs
-  --pc-input-bg: #ffffff;
-  --pc-input-border: #{$light-border};
-  --pc-input-text: #{$light-text};
-  --pc-input-focus-border-color: #f29718;
+  --pa-input-bg: #ffffff;
+  --pa-input-border: #{$light-border};
+  --pa-input-text: #{$light-text};
+  --pa-input-focus-border-color: #f29718;
 
   // Input group
-  --pc-input-group-prepend-bg: #{$light-elevated};
-  --pc-input-group-prepend-text: #{$light-text-sec};
-  --pc-input-group-append-bg: #{$light-elevated};
-  --pc-input-group-append-text: #{$light-text-sec};
+  --pa-input-group-prepend-bg: #{$light-elevated};
+  --pa-input-group-prepend-text: #{$light-text-sec};
+  --pa-input-group-append-bg: #{$light-elevated};
+  --pa-input-group-append-text: #{$light-text-sec};
 
   // Tables
-  --pc-table-bg: #ffffff;
-  --pc-table-header-bg: #{$light-surface};
-  --pc-table-stripe: #{$light-bg};
-  --pc-table-hover-bg: #{$light-elevated};
+  --pa-table-bg: #ffffff;
+  --pa-table-header-bg: #{$light-surface};
+  --pa-table-stripe: #{$light-bg};
+  --pa-table-hover-bg: #{$light-elevated};
 
   // Modals
-  --pc-modal-content-bg: #ffffff;
-  --pc-modal-overlay-bg: rgba(0, 0, 0, 0.5);
+  --pa-modal-content-bg: #ffffff;
+  --pa-modal-overlay-bg: rgba(0, 0, 0, 0.5);
 
   // Loader
-  --pc-loader-overlay-bg: rgba(255, 255, 255, 0.8);
-  --pc-profile-overlay-bg: rgba(0, 0, 0, 0.3);
+  --pa-loader-overlay-bg: rgba(255, 255, 255, 0.8);
+  --pa-profile-overlay-bg: rgba(0, 0, 0, 0.3);
 
   // Tooltip/Popover
-  --pc-tooltip-bg: #{$light-text};
-  --pc-tooltip-text: #ffffff;
-  --pc-popover-content-bg: #ffffff;
+  --pa-tooltip-bg: #{$light-text};
+  --pa-tooltip-text: #ffffff;
+  --pa-popover-content-bg: #ffffff;
 
   // Command palette
-  --pc-command-palette-backdrop-bg: rgba(0, 0, 0, 0.5);
-  --pc-command-palette-item-hover-bg: #{$light-elevated};
-  --pc-command-palette-item-active-bg: rgba(242, 151, 24, 0.15);
-  --pc-command-palette-highlight-bg: rgba(242, 151, 24, 0.2);
+  --pa-command-palette-backdrop-bg: rgba(0, 0, 0, 0.5);
+  --pa-command-palette-item-hover-bg: #{$light-elevated};
+  --pa-command-palette-item-active-bg: rgba(242, 151, 24, 0.15);
+  --pa-command-palette-highlight-bg: rgba(242, 151, 24, 0.2);
 
   // Alerts - light mode
   @include output-pc-alert-variables-light;
 
   // Buttons
-  --pc-btn-secondary-bg: #{$light-text-sec};
-  --pc-btn-secondary-bg-hover: #{$light-text};
-  --pc-btn-secondary-text: #ffffff;
-  --pc-btn-light-bg: #{$light-elevated};
-  --pc-btn-light-bg-hover: #{$light-border};
-  --pc-btn-light-text: #{$light-text};
+  --pa-btn-secondary-bg: #{$light-text-sec};
+  --pa-btn-secondary-bg-hover: #{$light-text};
+  --pa-btn-secondary-text: #ffffff;
+  --pa-btn-light-bg: #{$light-elevated};
+  --pa-btn-light-bg-hover: #{$light-border};
+  --pa-btn-light-text: #{$light-text};
 
   // Semantic colors
-  --pc-success-bg: #86b300;
-  --pc-success-bg-light: rgba(134, 179, 0, 0.1);
-  --pc-warning-bg: #fa8532;
-  --pc-warning-bg-light: rgba(250, 133, 50, 0.1);
-  --pc-danger-bg: #e65050;
-  --pc-danger-bg-light: rgba(230, 80, 80, 0.1);
-  --pc-info-bg: #399ee6;
-  --pc-info-bg-light: rgba(57, 158, 230, 0.1);
+  --pa-success-bg: #86b300;
+  --pa-success-bg-light: rgba(134, 179, 0, 0.1);
+  --pa-warning-bg: #fa8532;
+  --pa-warning-bg-light: rgba(250, 133, 50, 0.1);
+  --pa-danger-bg: #e65050;
+  --pa-danger-bg-light: rgba(230, 80, 80, 0.1);
+  --pa-info-bg: #399ee6;
+  --pa-info-bg-light: rgba(57, 158, 230, 0.1);
 
   // Base variables for web components
   --base-main-bg: #ffffff;

@@ -217,10 +217,10 @@ $modal-content-bg: $minimal-white;
   @include output-pc-alert-variables-light;
 
   // Input group - light gray background for light mode
-  --pc-input-group-prepend-bg: #{$minimal-gray-100};
-  --pc-input-group-prepend-text: #{$minimal-gray-800};
-  --pc-input-group-append-bg: #{$minimal-gray-100};
-  --pc-input-group-append-text: #{$minimal-gray-800};
+  --pa-input-group-prepend-bg: #{$minimal-gray-100};
+  --pa-input-group-prepend-text: #{$minimal-gray-800};
+  --pa-input-group-append-bg: #{$minimal-gray-100};
+  --pa-input-group-append-text: #{$minimal-gray-800};
 }
 
 // ============================================================================
@@ -282,18 +282,18 @@ $modal-content-bg: $minimal-white;
   --pc-footer-border-color: #{$dark-border};
 
   // Cards — bg/header covered by the mixin; footer/tabs diverge, kept explicit.
-  --pc-card-footer-bg: #{$dark-surface};
-  --pc-card-tabs-bg: #{$dark-border};
+  --pa-card-footer-bg: #{$dark-surface};
+  --pa-card-tabs-bg: #{$dark-border};
 
   // Inputs — bg/text/focus covered by the mixin (focus == grayscale accent).
   // input-border tracks unset --base-input-border-color, kept explicit.
-  --pc-input-border: #{$dark-border};
+  --pa-input-border: #{$dark-border};
 
   // Input group
-  --pc-input-group-prepend-bg: #{$dark-border};
-  --pc-input-group-prepend-text: #{$dark-text-bg};
-  --pc-input-group-append-bg: #{$dark-border};
-  --pc-input-group-append-text: #{$dark-text-bg};
+  --pa-input-group-prepend-bg: #{$dark-border};
+  --pa-input-group-prepend-text: #{$dark-text-bg};
+  --pa-input-group-append-bg: #{$dark-border};
+  --pa-input-group-append-text: #{$dark-text-bg};
 
   // Input group buttons
   .pa-input-group__button {
@@ -307,25 +307,25 @@ $modal-content-bg: $minimal-white;
   }
 
   // Tables — bg/header/hover covered by the mixin; stripe diverges (darker), kept.
-  --pc-table-stripe: #{$dark-bg};
+  --pa-table-stripe: #{$dark-bg};
 
   // Modals — content covered by the mixin; overlay diverges, kept.
-  --pc-modal-overlay-bg: rgba(0, 0, 0, 0.7);
+  --pa-modal-overlay-bg: rgba(0, 0, 0, 0.7);
 
   // Loader overlay
-  --pc-loader-overlay-bg: rgba(0, 0, 0, 0.7);
+  --pa-loader-overlay-bg: rgba(0, 0, 0, 0.7);
 
   // Profile panel
-  --pc-profile-overlay-bg: rgba(0, 0, 0, 0.5);
+  --pa-profile-overlay-bg: rgba(0, 0, 0, 0.5);
 
   // Tooltip/Popover — all three covered by the mixin (base tooltip-bg /
   // tooltip-text-color / dropdown-bg), which minimal dark-sets.
 
   // Command palette
-  --pc-command-palette-backdrop-bg: rgba(0, 0, 0, 0.8);
-  --pc-command-palette-item-hover-bg: #{$dark-surface};
-  --pc-command-palette-item-active-bg: rgba(255, 255, 255, 0.1);
-  --pc-command-palette-highlight-bg: rgba(255, 255, 255, 0.15);
+  --pa-command-palette-backdrop-bg: rgba(0, 0, 0, 0.8);
+  --pa-command-palette-item-hover-bg: #{$dark-surface};
+  --pa-command-palette-item-active-bg: rgba(255, 255, 255, 0.1);
+  --pa-command-palette-highlight-bg: rgba(255, 255, 255, 0.15);
 
   // Alert colors - derived from semantic colors
   @include output-pc-alert-variables-dark;
@@ -337,26 +337,26 @@ $modal-content-bg: $minimal-white;
   }
 
   // Buttons - adjust for dark mode (grayscale)
-  --pc-btn-primary-bg: #{$dark-text};
-  --pc-btn-primary-bg-hover: #ffffff;
-  --pc-btn-primary-text: #{$dark-bg};
-  --pc-btn-secondary-bg: #{$dark-border};
+  --pa-btn-primary-bg: #{$dark-text};
+  --pa-btn-primary-bg-hover: #ffffff;
+  --pa-btn-primary-text: #{$dark-bg};
+  --pa-btn-secondary-bg: #{$dark-border};
   // Hover bumps to text-bg (was $dark-surface, which is darker than border — backwards progression).
-  --pc-btn-secondary-bg-hover: #{$dark-text-bg};
-  --pc-btn-secondary-text: #{$dark-text};
-  --pc-btn-light-bg: #{$dark-surface};
-  --pc-btn-light-bg-hover: #{$dark-border};
-  --pc-btn-light-text: #{$dark-text};
+  --pa-btn-secondary-bg-hover: #{$dark-text-bg};
+  --pa-btn-secondary-text: #{$dark-text};
+  --pa-btn-light-bg: #{$dark-surface};
+  --pa-btn-light-bg-hover: #{$dark-border};
+  --pa-btn-light-text: #{$dark-text};
 
   // Semantic colors - kept colored for visibility
-  --pc-success-bg: #28a745;
-  --pc-success-bg-light: rgba(40, 167, 69, 0.2);
-  --pc-warning-bg: #ffc107;
-  --pc-warning-bg-light: rgba(255, 193, 7, 0.2);
-  --pc-danger-bg: #dc3545;
-  --pc-danger-bg-light: rgba(220, 53, 69, 0.2);
-  --pc-info-bg: #17a2b8;
-  --pc-info-bg-light: rgba(23, 162, 184, 0.2);
+  --pa-success-bg: #28a745;
+  --pa-success-bg-light: rgba(40, 167, 69, 0.2);
+  --pa-warning-bg: #ffc107;
+  --pa-warning-bg-light: rgba(255, 193, 7, 0.2);
+  --pa-danger-bg: #dc3545;
+  --pa-danger-bg-light: rgba(220, 53, 69, 0.2);
+  --pa-info-bg: #17a2b8;
+  --pa-info-bg-light: rgba(23, 162, 184, 0.2);
 
   // Base variables for web components (dark mode)
   // Semantic names (preferred)

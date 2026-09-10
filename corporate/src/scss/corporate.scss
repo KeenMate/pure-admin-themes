@@ -295,10 +295,10 @@ $checkbox-focus-shadow: 0 0 0 2px rgba($base-accent-color, 0.25);
   @include output-pc-alert-variables-light;
 
   // Input group - light gray background for light mode
-  --pc-input-group-prepend-bg: #{$corporate-slate-100};
-  --pc-input-group-prepend-text: #{$corporate-slate-700};
-  --pc-input-group-append-bg: #{$corporate-slate-100};
-  --pc-input-group-append-text: #{$corporate-slate-700};
+  --pa-input-group-prepend-bg: #{$corporate-slate-100};
+  --pa-input-group-prepend-text: #{$corporate-slate-700};
+  --pa-input-group-append-bg: #{$corporate-slate-100};
+  --pa-input-group-append-text: #{$corporate-slate-700};
 }
 
 // =============================================================================
@@ -368,20 +368,20 @@ $checkbox-focus-shadow: 0 0 0 2px rgba($base-accent-color, 0.25);
 
   // Cards — bg/header covered by the mixin (base-main-bg / base-elevated-bg);
   // footer + tabs diverge (surface / border), so kept explicit.
-  --pc-card-footer-bg: #{$dark-surface};
-  --pc-card-tabs-bg: #{$dark-border};
+  --pa-card-footer-bg: #{$dark-surface};
+  --pa-card-tabs-bg: #{$dark-border};
 
   // Inputs — bg/text covered by the mixin (base-input-bg / base-input-color).
   // input-border tracks --base-input-border-color (not dark-set) so kept;
   // focus is the brand accent, kept explicit.
-  --pc-input-border: #{$dark-border};
-  --pc-input-focus-border-color: #{$corporate-blue-500};
+  --pa-input-border: #{$dark-border};
+  --pa-input-focus-border-color: #{$corporate-blue-500};
 
   // Input group
-  --pc-input-group-prepend-bg: rgba(14, 165, 233, 0.15);
-  --pc-input-group-prepend-text: #{$corporate-blue-500};
-  --pc-input-group-append-bg: rgba(14, 165, 233, 0.15);
-  --pc-input-group-append-text: #{$corporate-blue-500};
+  --pa-input-group-prepend-bg: rgba(14, 165, 233, 0.15);
+  --pa-input-group-prepend-text: #{$corporate-blue-500};
+  --pa-input-group-append-bg: rgba(14, 165, 233, 0.15);
+  --pa-input-group-append-text: #{$corporate-blue-500};
 
   .pa-input-group__button {
     background-color: rgba(14, 165, 233, 0.15) !important;
@@ -395,24 +395,24 @@ $checkbox-focus-shadow: 0 0 0 2px rgba($base-accent-color, 0.25);
 
   // Tables — bg/header/hover covered by the mixin (base-main/elevated/hover-bg).
   // Stripe diverges (uses page/bg, darker than header) so kept explicit.
-  --pc-table-stripe: #{$dark-bg};
+  --pa-table-stripe: #{$dark-bg};
 
   // Modals — content covered by the mixin (base-main-bg). Overlay diverges
   // (darker than base-overlay-bg) so kept explicit.
-  --pc-modal-overlay-bg: rgba(0, 0, 0, 0.8);
+  --pa-modal-overlay-bg: rgba(0, 0, 0, 0.8);
 
   // Loader/Profile
-  --pc-loader-overlay-bg: rgba(0, 0, 0, 0.7);
-  --pc-profile-overlay-bg: rgba(0, 0, 0, 0.5);
+  --pa-loader-overlay-bg: rgba(0, 0, 0, 0.7);
+  --pa-profile-overlay-bg: rgba(0, 0, 0, 0.5);
 
   // Tooltip/Popover — all three covered by the mixin (base-tooltip-bg /
   // base-tooltip-text-color / base-dropdown-bg), which corporate dark-sets.
 
   // Command palette
-  --pc-command-palette-backdrop-bg: rgba(0, 0, 0, 0.8);
-  --pc-command-palette-item-hover-bg: #{$dark-surface};
-  --pc-command-palette-item-active-bg: rgba(14, 165, 233, 0.2);
-  --pc-command-palette-highlight-bg: rgba(14, 165, 233, 0.3);
+  --pa-command-palette-backdrop-bg: rgba(0, 0, 0, 0.8);
+  --pa-command-palette-item-hover-bg: #{$dark-surface};
+  --pa-command-palette-item-active-bg: rgba(14, 165, 233, 0.2);
+  --pa-command-palette-highlight-bg: rgba(14, 165, 233, 0.3);
 
   // Alert colors - derived from semantic colors
   @include output-pc-alert-variables-dark;
@@ -425,12 +425,12 @@ $checkbox-focus-shadow: 0 0 0 2px rgba($base-accent-color, 0.25);
   // Buttons
   // Inverted secondary: light slate-blue button with dark navy text — $dark-border (#475569)
   // on $dark-card (#1e293b) was only ~2.5:1 contrast and read as disabled.
-  --pc-btn-secondary-bg: #{$dark-text-bg};
-  --pc-btn-secondary-bg-hover: #{$dark-text};
-  --pc-btn-secondary-text: #{$dark-card};
-  --pc-btn-light-bg: #{$dark-surface};
-  --pc-btn-light-bg-hover: #{$dark-border};
-  --pc-btn-light-text: #{$dark-text};
+  --pa-btn-secondary-bg: #{$dark-text-bg};
+  --pa-btn-secondary-bg-hover: #{$dark-text};
+  --pa-btn-secondary-text: #{$dark-card};
+  --pa-btn-light-bg: #{$dark-surface};
+  --pa-btn-light-bg-hover: #{$dark-border};
+  --pa-btn-light-text: #{$dark-text};
 
   // Color palette adjustment for dark mode
   // $color-9 (#334155 Dark Slate) is ~1.5:1 on $dark-card #1e293b — invisible.
@@ -439,14 +439,14 @@ $checkbox-focus-shadow: 0 0 0 2px rgba($base-accent-color, 0.25);
   --pc-color-9: #5a6478;
 
   // Semantic colors
-  --pc-success-bg: #{$corporate-emerald-500};
-  --pc-success-bg-light: rgba(16, 185, 129, 0.2);
-  --pc-warning-bg: #{$corporate-amber-500};
-  --pc-warning-bg-light: rgba(245, 158, 11, 0.2);
-  --pc-danger-bg: #{$corporate-red-500};
-  --pc-danger-bg-light: rgba(239, 68, 68, 0.2);
-  --pc-info-bg: #{$corporate-cyan-500};
-  --pc-info-bg-light: rgba(6, 182, 212, 0.2);
+  --pa-success-bg: #{$corporate-emerald-500};
+  --pa-success-bg-light: rgba(16, 185, 129, 0.2);
+  --pa-warning-bg: #{$corporate-amber-500};
+  --pa-warning-bg-light: rgba(245, 158, 11, 0.2);
+  --pa-danger-bg: #{$corporate-red-500};
+  --pa-danger-bg-light: rgba(239, 68, 68, 0.2);
+  --pa-info-bg: #{$corporate-cyan-500};
+  --pa-info-bg-light: rgba(6, 182, 212, 0.2);
 
   // Base variables for web components (dark mode)
   // Semantic names (preferred)

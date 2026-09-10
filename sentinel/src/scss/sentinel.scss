@@ -332,14 +332,14 @@ $checkbox-focus-shadow: 0 0 0 2px rgba($base-accent-color, 0.25);
   @include output-pc-alert-variables-light;
 
   // Input group - light gray background for light mode
-  --pc-input-group-prepend-bg: #{$sentinel-gray-100};
-  --pc-input-group-prepend-text: #{$sentinel-gray-700};
-  --pc-input-group-append-bg: #{$sentinel-gray-100};
-  --pc-input-group-append-text: #{$sentinel-gray-700};
+  --pa-input-group-prepend-bg: #{$sentinel-gray-100};
+  --pa-input-group-prepend-text: #{$sentinel-gray-700};
+  --pa-input-group-append-bg: #{$sentinel-gray-100};
+  --pa-input-group-append-text: #{$sentinel-gray-700};
 
   // Outline-secondary button: default resolves to white (secondary text),
   // invisible on light cards. Use graphite.
-  --pc-btn-secondary-outline-color: #{$sentinel-gray-800};
+  --pa-btn-secondary-outline-color: #{$sentinel-gray-800};
 }
 
 // =============================================================================
@@ -393,19 +393,19 @@ $checkbox-focus-shadow: 0 0 0 2px rgba($base-accent-color, 0.25);
   --pc-footer-border-color: #{$sentinel-dark-border};
 
   // Cards — bg/header covered by the mixin; footer/tabs diverge, kept explicit.
-  --pc-card-footer-bg: #{$sentinel-dark-surface};
-  --pc-card-tabs-bg: #{$sentinel-dark-border};
+  --pa-card-footer-bg: #{$sentinel-dark-surface};
+  --pa-card-tabs-bg: #{$sentinel-dark-border};
 
   // Inputs — bg/text covered by the mixin. input-border tracks unset
   // --base-input-border-color; focus is brand crimson — both kept explicit.
-  --pc-input-border: #{$sentinel-dark-border};
-  --pc-input-focus-border-color: #{$sentinel-crimson-light};
+  --pa-input-border: #{$sentinel-dark-border};
+  --pa-input-focus-border-color: #{$sentinel-crimson-light};
 
   // Input group
-  --pc-input-group-prepend-bg: rgba(224, 65, 79, 0.18);
-  --pc-input-group-prepend-text: #{$sentinel-crimson-light};
-  --pc-input-group-append-bg: rgba(224, 65, 79, 0.18);
-  --pc-input-group-append-text: #{$sentinel-crimson-light};
+  --pa-input-group-prepend-bg: rgba(224, 65, 79, 0.18);
+  --pa-input-group-prepend-text: #{$sentinel-crimson-light};
+  --pa-input-group-append-bg: rgba(224, 65, 79, 0.18);
+  --pa-input-group-append-text: #{$sentinel-crimson-light};
 
   .pa-input-group__button {
     background-color: rgba(224, 65, 79, 0.18) !important;
@@ -418,23 +418,23 @@ $checkbox-focus-shadow: 0 0 0 2px rgba($base-accent-color, 0.25);
   }
 
   // Tables — bg/header/hover covered by the mixin; stripe diverges (darker), kept.
-  --pc-table-stripe: #{$sentinel-dark-bg};
+  --pa-table-stripe: #{$sentinel-dark-bg};
 
   // Modals — content covered by the mixin; overlay diverges, kept.
-  --pc-modal-overlay-bg: rgba(8, 9, 12, 0.85);
+  --pa-modal-overlay-bg: rgba(8, 9, 12, 0.85);
 
   // Loader/Profile
-  --pc-loader-overlay-bg: rgba(8, 9, 12, 0.75);
-  --pc-profile-overlay-bg: rgba(8, 9, 12, 0.55);
+  --pa-loader-overlay-bg: rgba(8, 9, 12, 0.75);
+  --pa-profile-overlay-bg: rgba(8, 9, 12, 0.55);
 
   // Tooltip/Popover — all three covered by the mixin (base tooltip-bg /
   // tooltip-text-color / dropdown-bg), which sentinel dark-sets.
 
   // Command palette
-  --pc-command-palette-backdrop-bg: rgba(8, 9, 12, 0.85);
-  --pc-command-palette-item-hover-bg: #{$sentinel-dark-surface};
-  --pc-command-palette-item-active-bg: rgba(224, 65, 79, 0.22);
-  --pc-command-palette-highlight-bg: rgba(224, 65, 79, 0.32);
+  --pa-command-palette-backdrop-bg: rgba(8, 9, 12, 0.85);
+  --pa-command-palette-item-hover-bg: #{$sentinel-dark-surface};
+  --pa-command-palette-item-active-bg: rgba(224, 65, 79, 0.22);
+  --pa-command-palette-highlight-bg: rgba(224, 65, 79, 0.32);
 
   // Alert colors
   @include output-pc-alert-variables-dark;
@@ -445,12 +445,12 @@ $checkbox-focus-shadow: 0 0 0 2px rgba($base-accent-color, 0.25);
   }
 
   // Buttons
-  --pc-btn-secondary-bg: #{$sentinel-dark-text-2};
-  --pc-btn-secondary-bg-hover: #{$sentinel-dark-text};
-  --pc-btn-secondary-text: #{$sentinel-dark-card};
-  --pc-btn-light-bg: #{$sentinel-dark-surface};
-  --pc-btn-light-bg-hover: #{$sentinel-dark-border};
-  --pc-btn-light-text: #{$sentinel-dark-text};
+  --pa-btn-secondary-bg: #{$sentinel-dark-text-2};
+  --pa-btn-secondary-bg-hover: #{$sentinel-dark-text};
+  --pa-btn-secondary-text: #{$sentinel-dark-card};
+  --pa-btn-light-bg: #{$sentinel-dark-surface};
+  --pa-btn-light-bg-hover: #{$sentinel-dark-border};
+  --pa-btn-light-text: #{$sentinel-dark-text};
 
   // Brand color slot 8 is crimson; brighten for dark outline buttons.
   // Slot 9 is graphite-800 — invisible on dark card; shift to mid-slate.
@@ -458,14 +458,14 @@ $checkbox-focus-shadow: 0 0 0 2px rgba($base-accent-color, 0.25);
   --pc-color-9: #{$sentinel-gray-400};
 
   // Semantic
-  --pc-success-bg: #{$sentinel-success-500};
-  --pc-success-bg-light: rgba(47, 143, 78, 0.22);
-  --pc-warning-bg: #{$sentinel-warning-500};
-  --pc-warning-bg-light: rgba(217, 119, 6, 0.22);
-  --pc-danger-bg: #{$sentinel-danger-500};
-  --pc-danger-bg-light: rgba(220, 38, 38, 0.22);
-  --pc-info-bg: #{$sentinel-info-500};
-  --pc-info-bg-light: rgba(37, 99, 235, 0.22);
+  --pa-success-bg: #{$sentinel-success-500};
+  --pa-success-bg-light: rgba(47, 143, 78, 0.22);
+  --pa-warning-bg: #{$sentinel-warning-500};
+  --pa-warning-bg-light: rgba(217, 119, 6, 0.22);
+  --pa-danger-bg: #{$sentinel-danger-500};
+  --pa-danger-bg-light: rgba(220, 38, 38, 0.22);
+  --pa-info-bg: #{$sentinel-info-500};
+  --pa-info-bg-light: rgba(37, 99, 235, 0.22);
 
   // Base variables for web components (dark mode)
   --base-main-bg: #{$sentinel-dark-card};

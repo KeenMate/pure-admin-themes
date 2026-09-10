@@ -373,47 +373,47 @@ $btn-dark-text: #ffffff;
   --pc-footer-border-color: #{$light-gray-300};
 
   // Cards
-  --pc-card-bg: #{$light-white};
-  --pc-card-header-bg: #{$light-gray-50};
-  --pc-card-footer-bg: #{$light-gray-50};
-  --pc-card-tabs-bg: #{$light-gray-200};
+  --pa-card-bg: #{$light-white};
+  --pa-card-header-bg: #{$light-gray-50};
+  --pa-card-footer-bg: #{$light-gray-50};
+  --pa-card-tabs-bg: #{$light-gray-200};
 
   // Inputs
-  --pc-input-bg: #{$light-white};
-  --pc-input-border: #{$light-gray-300};
-  --pc-input-text: #{$light-gray-900};
-  --pc-input-group-prepend-bg: #{$light-gray-200};
-  --pc-input-group-prepend-text: #{$light-gray-700};
-  --pc-input-group-append-bg: #{$light-gray-200};
-  --pc-input-group-append-text: #{$light-gray-700};
+  --pa-input-bg: #{$light-white};
+  --pa-input-border: #{$light-gray-300};
+  --pa-input-text: #{$light-gray-900};
+  --pa-input-group-prepend-bg: #{$light-gray-200};
+  --pa-input-group-prepend-text: #{$light-gray-700};
+  --pa-input-group-append-bg: #{$light-gray-200};
+  --pa-input-group-append-text: #{$light-gray-700};
 
   // Tables
-  --pc-table-bg: #{$light-white};
-  --pc-table-header-bg: #{$light-gray-100};
-  --pc-table-stripe: #{$light-gray-50};
-  --pc-table-hover-bg: #{$light-gray-100};
+  --pa-table-bg: #{$light-white};
+  --pa-table-header-bg: #{$light-gray-100};
+  --pa-table-stripe: #{$light-gray-50};
+  --pa-table-hover-bg: #{$light-gray-100};
 
   // Modals
-  --pc-modal-content-bg: #{$light-white};
-  --pc-modal-overlay-bg: rgba(0, 0, 0, 0.75);
+  --pa-modal-content-bg: #{$light-white};
+  --pa-modal-overlay-bg: rgba(0, 0, 0, 0.75);
 
   // Buttons
-  --pc-btn-light-bg: #{$light-gray-200};
-  --pc-btn-light-bg-hover: #{$light-gray-300};
-  --pc-btn-light-text: #{$light-gray-900};
-  --pc-btn-secondary-bg: #{$light-gray-600};
-  --pc-btn-secondary-bg-hover: #{$light-gray-700};
+  --pa-btn-light-bg: #{$light-gray-200};
+  --pa-btn-light-bg-hover: #{$light-gray-300};
+  --pa-btn-light-text: #{$light-gray-900};
+  --pa-btn-secondary-bg: #{$light-gray-600};
+  --pa-btn-secondary-bg-hover: #{$light-gray-700};
 
   // Tooltip/Popover
-  --pc-tooltip-bg: #{$light-gray-800};
-  --pc-tooltip-text: #ffffff;
-  --pc-popover-content-bg: #{$light-white};
+  --pa-tooltip-bg: #{$light-gray-800};
+  --pa-tooltip-text: #ffffff;
+  --pa-popover-content-bg: #{$light-white};
 
   // Semantic
-  --pc-success-bg-light: rgba(0, 204, 68, 0.1);
-  --pc-warning-bg-light: rgba(255, 102, 0, 0.1);
-  --pc-danger-bg-light: rgba(255, 0, 0, 0.1);
-  --pc-info-bg-light: rgba(0, 153, 255, 0.1);
+  --pa-success-bg-light: rgba(0, 204, 68, 0.1);
+  --pa-warning-bg-light: rgba(255, 102, 0, 0.1);
+  --pa-danger-bg-light: rgba(255, 0, 0, 0.1);
+  --pa-info-bg-light: rgba(0, 153, 255, 0.1);
 
   @include output-pc-alert-variables-light;
 
