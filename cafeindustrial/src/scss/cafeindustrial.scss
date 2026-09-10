@@ -277,6 +277,14 @@ $theme-color-scheme: dark;
 
   // Override base-elevated-bg for dark mode
   --base-elevated-bg: #{$ci-dark-elevated};
+
+  // Input-group addons: the core default fill ($secondary-bg) collides with this
+  // theme's inverted palette (addon text == addon bg). Give addons a coherent
+  // dark chip so the prepend/append text is readable.
+  --pa-input-group-prepend-bg: #{$ci-dark-elevated};
+  --pa-input-group-prepend-text: #{$ci-dark-text-1};
+  --pa-input-group-append-bg: #{$ci-dark-elevated};
+  --pa-input-group-append-text: #{$ci-dark-text-1};
 }
 
 // =============================================================================
