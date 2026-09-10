@@ -300,11 +300,11 @@ $checkbox-focus-shadow: 0 0 0 2px $base-focus-ring-color;
   --pa-input-text: #{$storm-text};
   --pa-input-focus-border-color: #{$tn-accent};
 
-  // Input group
+  // Input group — primary text (not -sec) so addon labels stay readable on the fill
   --pa-input-group-prepend-bg: #{$storm-elevated};
-  --pa-input-group-prepend-text: #{$storm-text-sec};
+  --pa-input-group-prepend-text: #{$storm-text};
   --pa-input-group-append-bg: #{$storm-elevated};
-  --pa-input-group-append-text: #{$storm-text-sec};
+  --pa-input-group-append-text: #{$storm-text};
 
   --pa-table-bg: #{$storm-surface};
   --pa-table-header-bg: #{$storm-bg};
