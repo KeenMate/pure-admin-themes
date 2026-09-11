@@ -2,6 +2,20 @@
 
 All notable changes to the Pure Admin Themes collection are documented in this file.
 
+## [2.9.0-rc13] - 2026-09-11
+
+### Fixed
+
+- **gruvbox (light mode):** Fixed several low-contrast pairs surfaced by the contrast audit.
+    - **Selected sidebar submenu item** (`--pc-sidebar-submenu-active-text`) inherited the dark-mode cream (`#ebdbb2`) and was near-invisible on the light active tint (1.49:1) → pinned to dark brown (`#3c3836`).
+    - **`color-5` theme-slot text** (`$color-5-text`) was white on the light purple slot in both modes (2.74:1) → switched to near-black (`#1a1a1a`).
+    - **Command-palette match highlight** (`--pa-command-palette-highlight-text`, 2.29:1) → faded-orange.
+    - **Text on the info fill** (`--base-text-on-info`) — faded-blue is dark in light mode, so on-fill text (badges / solid info surfaces) is now white; the info **button** keeps a dark label on its bright-blue fill (`--pa-btn-info-text`), staying consistent with the other role buttons.
+
+### Changed
+
+- **gruvbox (light mode):** Toned down the overall yellow cast. The warm cream surface palette (page / card / sidebar / table / input backgrounds + borders) is now desaturated ~45% toward a neutral warm off-white — e.g. page `#fbf1c7 → #efead3`, main `#f9f5d7 → #f1efdf`, sidebar `#ebdbb2 → #ded5bf`. Driven by a single `$light-desat` knob (`quantize()` keeps the output clean hex). Text, the dark navbar/footer, and the orange accent are unchanged; dark mode is untouched.
+
 ## [2.9.0-rc12] - 2026-08-21
 
 ### Changed
